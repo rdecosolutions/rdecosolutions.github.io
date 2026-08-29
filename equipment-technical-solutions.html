@@ -1630,6 +1630,54 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
 @media(prefers-reduced-motion:reduce){
   .hero-art path{stroke-dasharray:none;stroke-dashoffset:0;animation:none}
 }
+
+/* ══ craft layer ══════════════════════════════════════════════
+   1. cross document view transitions, so a page change is a move
+      rather than a white flash
+   2. a grain layer, so large dark fields read as material not as
+      flat #0B1A0E
+   3. a survey light that follows the pointer on dark sections
+   4. selection colour
+   ═══════════════════════════════════════════════════════════ */
+
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:vtOut .26s var(--ease) both}
+::view-transition-new(root){animation:vtIn .34s var(--ease) both}
+@keyframes vtOut{to{opacity:0;transform:translateY(-8px)}}
+@keyframes vtIn{from{opacity:0;transform:translateY(10px)}}
+/* the header and footer stay put across the change */
+.hdr{view-transition-name:site-hdr}
+.ftr{view-transition-name:site-ftr}
+::view-transition-group(site-hdr),::view-transition-group(site-ftr){animation-duration:.001s}
+
+::selection{background:var(--lime);color:#07210B}
+.on-dark ::selection,.hero ::selection,.stmt ::selection,.jn ::selection,
+.xp-sec ::selection,.fd-sec ::selection{background:var(--lime-d);color:#07210B}
+
+/* grain */
+body::after{
+  content:"";position:fixed;inset:0;z-index:400;pointer-events:none;
+  opacity:.038;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:180px 180px}
+
+/* the survey light: a soft pool that follows the pointer on dark ground */
+.on-dark,.hero,.stmt,.jn-sticky,.xp-sec,.fd-sec,.glance-band{position:relative}
+.on-dark::before,.hero::before,.stmt::before,.xp-sec::before,.fd-sec::before{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  opacity:0;transition:opacity .5s var(--ease);
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),
+    rgba(95,211,73,.09),transparent 68%)}
+.lit.on-dark::before,.lit.hero::before,.lit.stmt::before,
+.lit.xp-sec::before,.lit.fd-sec::before{opacity:1}
+.on-dark > *,.hero > *,.stmt > *,.xp-sec > *,.fd-sec > *{position:relative;z-index:1}
+
+@media(hover:none),(prefers-reduced-motion:reduce){
+  .on-dark::before,.hero::before,.stmt::before,.xp-sec::before,.fd-sec::before{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  ::view-transition-old(root),::view-transition-new(root){animation:none}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"@id":"https://rdecosolutions.org/#organization","name":"RD Eco Solutions","url":"https://rdecosolutions.org/","image":"https://rdecosolutions.org/og-card.png","logo":"https://rdecosolutions.org/apple-touch-icon.png","priceRange":"Quoted per project","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}],"description":"Civil and environmental infrastructure services for Urban Local Bodies and public sector organisations in Tamil Nadu, project consultancy, operation and maintenance, civil works, solid waste management, environmental solutions, equipment and manpower.","email":"rdecosolutionsofficial@gmail.com","telephone":"+919659443759","address":{"@type":"PostalAddress","addressLocality":"Sirkazhi","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Ariyalur"},{"@type":"AdministrativeArea","name":"Perambalur"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"knowsAbout":["Project Consultancy","Operation & Maintenance","Civil Infrastructure Works","Solid Waste Management","Environmental Solutions","Equipment & Technical Solutions","Manpower Services"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+919659443759","email":"rdecosolutionsofficial@gmail.com","availableLanguage":["en","ta"]}},{"@type":"WebSite","@id":"https://rdecosolutions.org/#website","url":"https://rdecosolutions.org/","name":"RD Eco Solutions","publisher":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"WebPage","@id":"https://rdecosolutions.org/equipment-technical-solutions.html#webpage","url":"https://rdecosolutions.org/equipment-technical-solutions.html","name":"Sewer Jetting, Desilting & Pump Solutions, Tamil Nadu","description":"Pumps, sewer jetting and desilting machinery, flow meters and battery operated collection vehicles, specified, installed and maintained in Tamil Nadu.","isPartOf":{"@id":"https://rdecosolutions.org/#website"},"about":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"BreadcrumbList","@id":"https://rdecosolutions.org/equipment-technical-solutions.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rdecosolutions.org/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://rdecosolutions.org/services.html"},{"@type":"ListItem","position":3,"name":"Equipment & Technical Solutions","item":"https://rdecosolutions.org/equipment-technical-solutions.html"}]},{"@type":"Service","@id":"https://rdecosolutions.org/equipment-technical-solutions.html#service","name":"Equipment & Technical Solutions","serviceType":"Equipment & Technical Solutions","description":"Pumps, sewer jetting and desilting machinery, flow meters and battery operated collection vehicles, specified, installed and maintained in Tamil Nadu.","provider":{"@id":"https://rdecosolutions.org/#organization"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Ariyalur"},{"@type":"AdministrativeArea","name":"Perambalur"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"audience":{"@type":"Audience","audienceType":"Urban Local Bodies, Municipal Corporations, Municipalities, Town Panchayats, Government Departments"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Equipment & Technical Solutions, scope","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pumps, motors and valve solutions"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Sewer cleaning and jetting equipment"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Desilting machinery"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Flow meters and monitoring instruments"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Battery operated waste collection vehicles"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Installation, commissioning and maintenance support"}}]}},{"@type":"FAQPage","@id":"https://rdecosolutions.org/equipment-technical-solutions.html#faq","mainEntity":[{"@type":"Question","name":"Do you supply equipment only, or operate it as a service?","acceptedAnswer":{"@type":"Answer","text":"Both. Some bodies want to own jetting or desilting machinery and run it themselves; others prefer to buy the cleaning as a service with our equipment and operators. Owning makes sense at sustained utilisation and where operator capacity exists in house; below that, contracted service is usually cheaper per kilometre cleaned."}},{"@type":"Question","name":"How do you size a pump for a municipal sewage pumping station?","acceptedAnswer":{"@type":"Answer","text":"Against the actual duty point, flow and total head including static lift and friction losses across the rising main, and against the realistic diurnal flow pattern rather than a peak figure alone. Oversizing is as damaging as undersizing: it causes short cycling and premature failure, and it is the more common error."}},{"@type":"Question","name":"Is spares support available locally?","acceptedAnswer":{"@type":"Answer","text":"Spares availability in the district is part of how we specify. Equipment that has to wait weeks for a component from another state is a poor choice for a municipal asset that has to run daily, regardless of how the quoted price compares."}}]}]}</script>
 </head>
@@ -2366,6 +2414,37 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
     });
   }, { threshold: 0.4 });
   Array.prototype.forEach.call(ns, function (el) { io.observe(el); });
+})();
+
+/* survey light: a pool of light that follows the pointer across dark sections */
+(function () {
+  if (!window.matchMedia("(hover:hover) and (pointer:fine)").matches) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var secs = document.querySelectorAll(
+    ".on-dark, .hero, .stmt, .xp-sec, .fd-sec");
+  if (!secs.length) return;
+  var pending = null;
+  function move(e) {
+    pending = e;
+    if (move.q) return;
+    move.q = true;
+    requestAnimationFrame(function () {
+      move.q = false;
+      var ev = pending;
+      Array.prototype.forEach.call(secs, function (s) {
+        var r = s.getBoundingClientRect();
+        var inside = ev.clientY > r.top - 120 && ev.clientY < r.bottom + 120;
+        if (!inside) { s.classList.remove("lit"); return; }
+        s.classList.add("lit");
+        s.style.setProperty("--mx", ((ev.clientX - r.left) / r.width * 100) + "%");
+        s.style.setProperty("--my", ((ev.clientY - r.top) / r.height * 100) + "%");
+      });
+    });
+  }
+  window.addEventListener("pointermove", move, { passive: true });
+  window.addEventListener("pointerleave", function () {
+    Array.prototype.forEach.call(secs, function (s) { s.classList.remove("lit"); });
+  }, { passive: true });
 })();
 </script>
 </body>

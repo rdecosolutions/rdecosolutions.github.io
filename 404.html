@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RDECO Solutions — Coming Soon</title>
+<meta name="description" content="RDECO Solutions — integrated waste management, government civil infrastructure projects, and IT services. New website launching soon.">
+<link rel="canonical" href="https://rdecosolutions.org/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rdecosolutions.org/">
+<meta property="og:title" content="RDECO Solutions — Coming Soon">
+<meta property="og:description" content="Integrated waste management, government civil infrastructure, and IT services. New site launching soon.">
+<meta property="og:site_name" content="RDECO Solutions">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RDECO Solutions — Coming Soon">
+<meta name="twitter:description" content="Integrated waste management, government civil infrastructure, and IT services.">
+<meta name="theme-color" content="#050d0b">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23050d0b'/%3E%3Cpath d='M28 74V26h24a15 15 0 0 1 0 30H40l20 18' fill='none' stroke='%2340e0a0' stroke-width='9' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "RDECO Solutions",
+  "url": "https://rdecosolutions.org/",
+  "description": "Integrated waste management, government civil infrastructure projects, and IT services.",
+  "email": "info@rdecosolutions.org"
+}
+</script>
+
+<style>
+:root{
+  --bg:#050d0b;
+  --ink:#e8f6f0;
+  --dim:#8fa9a0;
+  --faint:#5b736b;
+  --line:rgba(64,224,160,.16);
+  --acc:#40e0a0;
+  --acc2:#4dd8ff;
+  --sans:"Space Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);color:var(--ink);font-family:var(--sans);
+  line-height:1.55;-webkit-font-smoothing:antialiased;
+  min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;
+}
+
+/* ── ambient ─────────────────────────────────────────── */
+.field{position:fixed;inset:0;z-index:0;pointer-events:none}
+.field::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(880px 600px at 12% -8%, rgba(64,224,160,.13), transparent 62%),
+    radial-gradient(720px 520px at 92% 4%, rgba(77,216,255,.09), transparent 64%);
+}
+.field::after{
+  content:"";position:absolute;inset:0;opacity:.5;
+  background-image:
+    linear-gradient(var(--line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse 85% 70% at 50% 34%,#000 30%,transparent 100%);
+          mask-image:radial-gradient(ellipse 85% 70% at 50% 34%,#000 30%,transparent 100%);
+}
+
+.wrap{position:relative;z-index:1;width:100%;max-width:1180px;margin:0 auto;padding:0 28px}
+
+/* ── header ──────────────────────────────────────────── */
+header{padding:30px 0 0}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.mark{width:38px;height:38px;flex:0 0 auto}
+.brand-name{font-size:16.5px;font-weight:700;letter-spacing:.01em;line-height:1.2}
+.brand-sub{font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);font-weight:500}
+.status{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--faint);display:flex;align-items:center;gap:8px;
+}
+.blip{width:6px;height:6px;border-radius:50%;background:var(--acc);box-shadow:0 0 10px var(--acc);animation:blip 2.2s ease-in-out infinite}
+@keyframes blip{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* ── hero ────────────────────────────────────────────── */
+main{flex:1;padding:44px 0 8px}
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:0 56px;align-items:end}
+@media (max-width:960px){.hero{grid-template-columns:1fr;gap:0}}
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--acc);display:flex;align-items:center;gap:12px;margin-bottom:22px;
+}
+.eyebrow::after{content:"";height:1px;flex:1;max-width:200px;background:linear-gradient(90deg,var(--acc),transparent)}
+h1{
+  font-size:clamp(2.3rem,6.4vw,4.15rem);line-height:1.02;letter-spacing:-.035em;
+  font-weight:700;margin-bottom:20px;max-width:17ch;
+}
+h1 em{
+  font-style:normal;
+  background:linear-gradient(96deg,var(--acc),var(--acc2));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+}
+.lede{font-size:clamp(.98rem,1.9vw,1.12rem);color:var(--dim);max-width:54ch;margin-bottom:36px}
+
+/* ── instrument countdown ────────────────────────────── */
+.panel{
+  border:1px solid var(--line);border-radius:12px;
+  background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.008));
+  padding:16px 18px 14px;margin-bottom:26px;max-width:100%;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.panel-head{
+  display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--faint);margin-bottom:12px;
+}
+.panel-head b{color:var(--acc);font-weight:500}
+.clock{display:flex;align-items:flex-end;gap:0;font-family:var(--mono)}
+.seg{flex:1;text-align:center}
+.seg .n{
+  display:block;font-size:clamp(1.6rem,4.6vw,2.15rem);font-weight:700;
+  line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;
+}
+.seg .l{display:block;margin-top:8px;font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+.sep{align-self:flex-start;font-size:clamp(1.4rem,4vw,1.9rem);color:var(--faint);opacity:.45;line-height:1;padding:0 2px;font-family:var(--mono)}
+.track{height:2px;background:rgba(255,255,255,.07);border-radius:2px;margin-top:16px;overflow:hidden}
+.track i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--acc2));box-shadow:0 0 12px rgba(64,224,160,.5);transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+
+/* ── blueprint ───────────────────────────────────────── */
+.scene-wrap{position:relative;margin:0 0 4px}
+.scene{
+  position:relative;
+  overflow-x:auto;overflow-y:hidden;
+  scrollbar-width:none;-ms-overflow-style:none;
+  -webkit-overflow-scrolling:touch;
+}
+.scene::-webkit-scrollbar{display:none}
+.scene svg{width:100%;height:auto;display:block}
+
+.bp{fill:none;stroke:var(--acc);vector-effect:non-scaling-stroke}
+.bp-2{stroke:var(--acc2)}
+.hair{stroke:rgba(143,169,160,.42);stroke-width:1}
+.thin{stroke-width:1.4}
+.med{stroke-width:2}
+.fillnode{fill:var(--acc);stroke:none}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.15em;fill:var(--faint);text-transform:uppercase}
+.lbl-n{fill:var(--acc);font-weight:700}
+
+/* draw-on animation */
+.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.5s cubic-bezier(.6,.05,.2,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.fade{opacity:0;animation:fade .8s ease forwards}
+@keyframes fade{to{opacity:1}}
+.d1{animation-delay:.15s}.d2{animation-delay:.45s}.d3{animation-delay:.75s}
+.d4{animation-delay:1.05s}.d5{animation-delay:1.35s}.d6{animation-delay:1.7s}
+
+/* zone focus */
+.zone{transition:opacity .45s ease}
+svg[data-focus="a"] .zone:not(.za),
+svg[data-focus="b"] .zone:not(.zb),
+svg[data-focus="c"] .zone:not(.zc){opacity:.32}
+
+.pulse{animation:sig 3s ease-out infinite}
+.pulse2{animation:sig 3s ease-out infinite .8s}
+.pulse3{animation:sig 3s ease-out infinite 1.6s}
+@keyframes sig{0%{opacity:0}18%{opacity:.85}100%{opacity:0}}
+
+/* ── divisions ───────────────────────────────────────── */
+.divs{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);margin-bottom:40px}
+.div{
+  padding:22px 22px 22px 0;cursor:default;position:relative;
+  border-right:1px solid var(--line);transition:background .3s ease;
+}
+.div:first-child{padding-left:0}
+.div:not(:first-child){padding-left:22px}
+.div:last-child{border-right:0}
+.div::before{
+  content:"";position:absolute;top:-1px;left:0;height:1px;width:0;
+  background:linear-gradient(90deg,var(--acc),var(--acc2));transition:width .4s ease;
+}
+.div[data-on]::before{width:100%}
+.div .num{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--acc);font-weight:700;display:block;margin-bottom:9px}
+.div h2{font-size:15.5px;font-weight:700;letter-spacing:-.01em;margin-bottom:6px}
+.div p{font-size:13px;color:var(--dim);line-height:1.5}
+.new{
+  display:inline-block;margin-top:10px;font-family:var(--mono);
+  font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
+  color:var(--acc2);border:1px solid rgba(77,216,255,.32);border-radius:3px;padding:2px 6px;
+}
+
+/* ── contact ─────────────────────────────────────────── */
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:44px}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:9px;
+  font-size:14px;font-weight:500;text-decoration:none;font-family:var(--mono);
+  letter-spacing:.01em;transition:transform .16s ease,box-shadow .16s ease,background .16s ease;
+}
+.b1{background:var(--acc);color:#03231a;font-weight:700;box-shadow:0 8px 26px rgba(64,224,160,.2)}
+.b1:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(64,224,160,.3)}
+.b2{border:1px solid var(--line);color:var(--ink);background:rgba(255,255,255,.03)}
+.b2:hover{background:rgba(255,255,255,.07);transform:translateY(-2px)}
+
+/* ── footer ──────────────────────────────────────────── */
+footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:18px 0}
+.foot{
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);
+}
+
+@media (max-width:820px){
+  .divs{grid-template-columns:1fr}
+  .div{border-right:0;border-bottom:1px solid var(--line);padding:20px 0}
+  .div:not(:first-child){padding-left:0}
+  .div:last-child{border-bottom:0}
+}
+@media (max-width:1000px){
+  .scene svg{min-width:1080px}
+  .scene-wrap::after{
+    content:"";position:absolute;top:0;right:0;width:56px;height:100%;z-index:2;
+    pointer-events:none;background:linear-gradient(90deg,transparent,var(--bg));
+  }
+}
+@media (max-width:600px){
+  .wrap{padding:0 20px}
+  main{padding-top:32px}
+  .status{display:none}
+  .btn{flex:1 1 100%;justify-content:center}
+  .panel{padding:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important}
+  .draw{stroke-dashoffset:0}
+  .fade{opacity:1}
+}
+</style>
+</head>
+<body>
+
+<div class="field"></div>
+
+<header>
+  <div class="wrap bar">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="97" height="97" rx="22" stroke="rgba(64,224,160,.35)" stroke-width="2"/>
+        <path d="M30 74V28h22a14 14 0 0 1 0 28H41l21 18" stroke="#40e0a0" stroke-width="7.5" stroke-linecap="square"/>
+      </svg>
+      <div>
+        <div class="brand-name">RDECO Solutions</div>
+        <div class="brand-sub">Waste · Civil · IT</div>
+      </div>
+    </div>
+    <div class="status"><span class="blip"></span> Site in development</div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+
+   <div class="hero-copy">
+    <div class="eyebrow">Est. operations · Tamil Nadu</div>
+
+    <h1>Three divisions. <em>One standard of execution.</em></h1>
+
+    <p class="lede">
+      RDECO Solutions runs integrated waste management and government civil
+      infrastructure projects — and is now extending that same delivery discipline
+      into IT services. The full site is under construction.
+    </p>
+   </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <span>Launch countdown</span>
+        <span><b id="launch-date">—</b></span>
+      </div>
+      <div class="clock" role="timer" aria-label="Time until launch">
+        <div class="seg"><span class="n" id="d">--</span><span class="l">Days</span></div>
+        <div class="sep">:</div>
+        <div class="seg"><span class="n" id="h">--</span><span class="l">Hrs</span></div>
+        <div class="sep">:</div>
+        <div class="seg"><span class="n" id="m">--</span><span class="l">Min</span></div>
+        <div class="sep">:</div>
+        <div class="seg"><span class="n" id="s">--</span><span class="l">Sec</span></div>
+      </div>
+      <div class="track"><i id="bar"></i></div>
+    </div>
+
+  </div>
+
+  <!-- ── living blueprint ──────────────────────────────── -->
+  <div class="scene-wrap"><div class="scene">
+    <svg id="bp" viewBox="0 0 1200 322" preserveAspectRatio="xMidYMax meet" role="img"
+         aria-label="Technical blueprint of a waste processing plant, a civil construction site and a data centre, linked by a subsurface pipeline and an overhead data link.">
+
+      <!-- ground + chainage ticks -->
+      <path class="bp hair draw d1" pathLength="1" d="M0 250 H1200"/>
+      <g class="fade d1" opacity=".55">
+        <path class="bp hair" d="M20 250v8 M50 250v4 M80 250v4 M110 250v8 M140 250v4 M170 250v4 M200 250v8 M230 250v4 M260 250v4 M290 250v8 M320 250v4 M350 250v4 M380 250v8 M410 250v4 M440 250v4 M470 250v8 M500 250v4 M530 250v4 M560 250v8 M590 250v4 M620 250v4 M650 250v8 M680 250v4 M710 250v4 M740 250v8 M770 250v4 M800 250v4 M830 250v8 M860 250v4 M890 250v4 M920 250v8 M950 250v4 M980 250v4 M1010 250v8 M1040 250v4 M1070 250v4 M1100 250v8 M1130 250v4 M1160 250v4 M1190 250v8"/>
+      </g>
+
+      <!-- ══ ZONE A · WASTE ══ -->
+      <g class="zone za">
+        <!-- intake conveyor (runs off-frame) -->
+        <path class="bp thin draw d2" pathLength="1" d="M-10 236 L70 208 M-10 248 L70 220"/>
+        <g class="fade d3" opacity=".7">
+          <path class="bp hair" d="M8 230v12 M30 222v12 M52 214v12"/>
+        </g>
+        <!-- digester dome -->
+        <path class="bp med draw d2" pathLength="1" d="M70 250 V186 A52 52 0 0 1 174 186 V250"/>
+        <path class="bp thin draw d3" pathLength="1" d="M70 206 H174 M70 228 H174"/>
+        <!-- vent stack -->
+        <path class="bp thin draw d3" pathLength="1" d="M122 134 V116 M112 116 H132"/>
+        <!-- process tank -->
+        <path class="bp med draw d3" pathLength="1" d="M200 250 V200 L234 178 L268 200 V250"/>
+        <path class="bp thin draw d4" pathLength="1" d="M200 224 H268"/>
+        <!-- transfer line dome → tank -->
+        <path class="bp thin draw d4" pathLength="1" d="M174 196 H200"/>
+        <!-- label -->
+        <path class="bp hair draw d5" pathLength="1" d="M122 116 V72 H52"/>
+        <text class="lbl fade d5" x="52" y="63"><tspan class="lbl-n">01</tspan> · Waste Management</text>
+      </g>
+
+      <!-- ══ ZONE B · CIVIL ══ -->
+      <g class="zone zb">
+        <!-- box culvert -->
+        <path class="bp thin draw d3" pathLength="1" d="M312 250 Q346 198 380 250"/>
+        <!-- structure frame -->
+        <path class="bp med draw d3" pathLength="1" d="M418 250 V122 H546 V250"/>
+        <path class="bp thin draw d4" pathLength="1" d="M418 154 H546 M418 186 H546 M418 218 H546"/>
+        <path class="bp thin draw d4" pathLength="1" d="M450 122 V250 M482 122 V250 M514 122 V250"/>
+        <!-- tower crane -->
+        <path class="bp med draw d4" pathLength="1" d="M596 250 V78 M622 250 V78"/>
+        <path class="bp thin draw d5" pathLength="1" d="M596 250 L622 221 L596 192 L622 163 L596 134 L622 105 L596 78"/>
+        <path class="bp med draw d5" pathLength="1" d="M548 90 H724"/>
+        <path class="bp thin draw d5" pathLength="1" d="M609 58 L724 90 M609 58 L548 90 M609 78 V58"/>
+        <!-- hoist + load -->
+        <path class="bp bp-2 thin draw d6" pathLength="1" d="M686 90 V156"/>
+        <rect class="bp bp-2 thin fade d6" x="674" y="156" width="24" height="17"/>
+        <!-- label -->
+        <path class="bp hair draw d5" pathLength="1" d="M418 122 V80 H298"/>
+        <text class="lbl fade d5" x="298" y="71"><tspan class="lbl-n">02</tspan> · Civil &amp; Govt Projects</text>
+      </g>
+
+      <!-- ══ ZONE C · IT ══ -->
+      <g class="zone zc">
+        <!-- rack -->
+        <path class="bp med draw d4" pathLength="1" d="M792 250 V148 H890 V250"/>
+        <path class="bp thin draw d5" pathLength="1" d="M792 170 H890 M792 192 H890 M792 214 H890 M792 236 H890"/>
+        <circle class="fillnode fade d6" cx="875" cy="159" r="2.4"/>
+        <circle class="fillnode fade d6" cx="875" cy="181" r="2.4"/>
+        <circle class="fillnode fade d6" cx="875" cy="203" r="2.4" opacity=".4"/>
+        <circle class="fillnode fade d6" cx="875" cy="225" r="2.4"/>
+        <!-- node mesh -->
+        <g class="fade d6">
+          <path class="bp bp-2 thin" d="M818 116 L892 84 L956 118" opacity=".7"/>
+          <path class="bp bp-2 thin" d="M892 84 V140 L818 116" opacity=".4"/>
+          <circle class="fillnode" cx="818" cy="116" r="2.8"/>
+          <circle class="fillnode" cx="892" cy="84" r="2.8"/>
+          <circle class="fillnode" cx="956" cy="118" r="2.8"/>
+          <circle class="fillnode" cx="892" cy="140" r="2.2" opacity=".55"/>
+        </g>
+        <!-- transmission mast -->
+        <path class="bp med draw d4" pathLength="1" d="M1012 250 L1042 116 L1072 250"/>
+        <path class="bp thin draw d5" pathLength="1" d="M1020 214 H1064 M1027 176 H1057 M1033 144 H1051"/>
+        <path class="bp thin draw d5" pathLength="1" d="M1020 214 L1057 176 M1064 214 L1027 176"/>
+        <circle class="fillnode fade d6" cx="1042" cy="116" r="3.2"/>
+        <!-- broadcast arcs -->
+        <g class="bp bp-2 thin">
+          <path class="pulse"  d="M1056 104 A18 18 0 0 1 1056 128"/>
+          <path class="pulse2" d="M1068 94  A31 31 0 0 1 1068 138"/>
+          <path class="pulse3" d="M1080 84  A44 44 0 0 1 1080 148"/>
+        </g>
+        <!-- ground station dish -->
+        <path class="bp thin draw d5" pathLength="1" d="M1128 250 V222 H1144 V250"/>
+        <path class="bp thin draw d5" pathLength="1" d="M1136 222 V206"/>
+        <path class="bp thin draw d5" pathLength="1" d="M1112 210 A32 32 0 0 1 1158 186"/>
+        <path class="bp thin draw d6" pathLength="1" d="M1135 192 L1149 170"/>
+        <circle class="fillnode fade d6" cx="1149" cy="170" r="2.2"/>
+        <!-- label -->
+        <path class="bp hair draw d5" pathLength="1" d="M1042 116 V72 H978"/>
+        <text class="lbl fade d5" x="978" y="63"><tspan class="lbl-n">03</tspan> · IT Services</text>
+      </g>
+
+      <!-- ══ SUBSURFACE PIPELINE ══ -->
+      <path class="bp thin draw d5" pathLength="1" opacity=".5" d="M122 250 V282 H1042 V250"/>
+      <path class="bp hair draw d6" pathLength="1" opacity=".28" d="M122 258 V290 H1042 V258"/>
+      <circle r="3" fill="#40e0a0"><animateMotion dur="7s" repeatCount="indefinite" path="M122 282 H1042"/></circle>
+      <circle r="3" fill="#40e0a0" opacity="0"><set attributeName="opacity" to=".65" begin="2.3s"/><animateMotion dur="7s" begin="2.3s" repeatCount="indefinite" path="M122 282 H1042"/></circle>
+      <circle r="3" fill="#40e0a0" opacity="0"><set attributeName="opacity" to=".4" begin="4.6s"/><animateMotion dur="7s" begin="4.6s" repeatCount="indefinite" path="M122 282 H1042"/></circle>
+
+      <!-- ══ OVERHEAD DATA LINK ══ -->
+      <path class="bp bp-2 hair draw d6" pathLength="1" opacity=".45" d="M1042 110 C860 22 320 22 122 110"/>
+      <circle r="2.6" fill="#4dd8ff"><animateMotion dur="6.5s" repeatCount="indefinite" path="M1042 110 C860 22 320 22 122 110"/></circle>
+      <circle r="2.6" fill="#4dd8ff" opacity="0"><set attributeName="opacity" to=".5" begin="3.2s"/><animateMotion dur="6.5s" begin="3.2s" repeatCount="indefinite" path="M1042 110 C860 22 320 22 122 110"/></circle>
+
+      <!-- ══ DIMENSION LINE ══ -->
+      <g class="fade d6" opacity=".85">
+        <path class="bp hair" d="M14 310 H1186 M14 304 v12 M1186 304 v12"/>
+        <path class="bp hair" d="M14 310 l14 -4 v8 z M1186 310 l-14 -4 v8 z" fill="rgba(143,169,160,.42)"/>
+        <rect x="466" y="300" width="270" height="20" fill="#050d0b"/>
+        <text class="lbl" x="601" y="314" text-anchor="middle">Integrated Operations · RDECO</text>
+      </g>
+    </svg>
+  </div></div>
+
+  <div class="wrap">
+    <div class="divs" id="divs">
+      <div class="div" data-zone="a">
+        <span class="num">01</span>
+        <h2>Waste Management</h2>
+        <p>Collection, segregation, processing and disposal systems built for municipal and industrial scale.</p>
+      </div>
+      <div class="div" data-zone="b">
+        <span class="num">02</span>
+        <h2>Civil &amp; Government Projects</h2>
+        <p>Tender-backed civil infrastructure execution with the compliance record public works demand.</p>
+      </div>
+      <div class="div" data-zone="c">
+        <span class="num">03</span>
+        <h2>IT Services</h2>
+        <p>Software, systems and digital infrastructure — our newest division, held to the same standard.</p>
+        <span class="new">New Division</span>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a class="btn b1" href="mailto:info@rdecosolutions.org">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        info@rdecosolutions.org
+      </a>
+      <a class="btn b2" href="tel:+910000000000">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        Call us
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>&copy; <span id="yr">2026</span> RDECO Solutions</span>
+    <span>rdecosolutions.org</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* ═══ Launch date — change this one line ═══ */
+  var LAUNCH = new Date("2026-09-01T10:00:00+05:30");
+  var START  = new Date("2026-08-22T00:00:00+05:30"); // progress-bar origin
+
+  var d=document.getElementById("d"), h=document.getElementById("h"),
+      m=document.getElementById("m"), s=document.getElementById("s"),
+      bar=document.getElementById("bar"), timer;
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+  document.getElementById("launch-date").textContent =
+    LAUNCH.toLocaleDateString("en-IN",{day:"2-digit",month:"short",year:"numeric"});
+
+  function pad(n){ return n<10 ? "0"+n : String(n); }
+
+  function tick(){
+    var diff = LAUNCH - Date.now();
+    if (diff <= 0) {
+      clearInterval(timer);
+      d.textContent=h.textContent=m.textContent=s.textContent="00";
+      bar.style.width="100%";
+      return;
+    }
+    var sec = Math.floor(diff/1000);
+    d.textContent = pad(Math.floor(sec/86400));
+    h.textContent = pad(Math.floor(sec/3600)%24);
+    m.textContent = pad(Math.floor(sec/60)%60);
+    s.textContent = pad(sec%60);
+
+    var span = LAUNCH - START;
+    var pct  = span > 0 ? Math.min(100, Math.max(0, ((Date.now()-START)/span)*100)) : 0;
+    bar.style.width = pct.toFixed(2) + "%";
+  }
+  tick();
+  timer = setInterval(tick, 1000);
+
+  /* ═══ Blueprint zone focus ═══ */
+  var svg   = document.getElementById("bp"),
+      scene = svg.parentNode,
+      cards = Array.prototype.slice.call(document.querySelectorAll(".div")),
+      zones = ["a","b","c"], centre = {a:.12,b:.48,c:.86}, i = 0, auto;
+
+  function pan(z){
+    var over = scene.scrollWidth - scene.clientWidth;
+    if (over < 24) return;                       // not scrollable — nothing to pan
+    var x = centre[z] * scene.scrollWidth - scene.clientWidth / 2;
+    scene.scrollTo({ left: Math.max(0, Math.min(over, x)), behavior: "smooth" });
+  }
+
+  function focus(z){
+    svg.setAttribute("data-focus", z || "");
+    cards.forEach(function(c){
+      if (z && c.dataset.zone === z) c.setAttribute("data-on","");
+      else c.removeAttribute("data-on");
+    });
+    if (z) pan(z);
+  }
+  function cycle(){ focus(zones[i % 3]); i++; }
+
+  function startAuto(){ clearInterval(auto); auto = setInterval(cycle, 3600); }
+  function stopAuto(){ clearInterval(auto); }
+
+  cards.forEach(function(c){
+    c.addEventListener("mouseenter", function(){ stopAuto(); focus(c.dataset.zone); });
+    c.addEventListener("mouseleave", function(){ startAuto(); });
+  });
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    setTimeout(function(){ cycle(); startAuto(); }, 2600);
+  }
+})();
+</script>
+
+</body>
+</html>

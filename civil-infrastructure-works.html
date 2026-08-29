@@ -126,7 +126,8 @@ p + p{margin-top:1.1em}
   display:block;overflow:hidden;max-width:280px;opacity:1;
   transition:max-width .45s var(--ease),opacity .25s var(--ease);
 }
-.hdr{transition:height .35s var(--ease)}
+.hdr{transition:transform .42s var(--ease)}
+.hdr.hdr-off{transform:translateY(-100%)}
 .hdr.compact .hdr-in{height:62px}
 .hdr.compact .logo-hdr{gap:0}
 .hdr.compact .logo-hdr svg{width:34px;height:34px}
@@ -138,7 +139,7 @@ p + p{margin-top:1.1em}
   .hdr.compact .logo-hdr svg{width:30px;height:30px}
 }
 @media(prefers-reduced-motion:reduce){
-  .logo-w,.logo-hdr svg,.hdr-in{transition:none}
+  .logo-w,.logo-hdr svg,.hdr-in,.hdr{transition:none}
 }
 
 .nav{display:flex;align-items:center;gap:2px}
@@ -1602,22 +1603,49 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
   });
 })();
 
-/* Past the first fold the header condenses to the mark alone. */
+/* Header behaviour, three states:
+     at the top      full lockup, mark + wordmark
+     scrolling down  the whole bar leaves, so nothing sits over the page
+     scrolling up    it returns condensed to the mark alone
+   The read progress line is fixed to the body, not the header, so it survives. */
 (function () {
   var hdr = document.querySelector(".hdr");
   if (!hdr) return;
-  var on = false, ticking = false;
-  function threshold() { return Math.min(window.innerHeight * 0.65, 560); }
+  var nav = document.getElementById("nav");
+  var TOP = 80, DELTA = 6;
+  var lastY = window.scrollY, ticking = false;
+
   function apply() {
-    var want = window.scrollY > threshold();
-    if (want !== on) { on = want; hdr.classList.toggle("compact", on); }
     ticking = false;
+    var y = window.scrollY;
+    var navOpen = nav && nav.classList.contains("open");
+
+    if (y <= TOP) {
+      hdr.classList.remove("hdr-off", "compact");
+      lastY = y;
+      return;
+    }
+    if (navOpen) { hdr.classList.remove("hdr-off"); lastY = y; return; }
+
+    var d = y - lastY;
+    if (Math.abs(d) < DELTA) return;
+    if (d > 0) {
+      hdr.classList.add("hdr-off");
+    } else {
+      hdr.classList.remove("hdr-off");
+      hdr.classList.add("compact");
+    }
+    lastY = y;
   }
+
   function onScroll() {
     if (!ticking) { ticking = true; window.requestAnimationFrame(apply); }
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll, { passive: true });
+  if (nav) {
+    nav.addEventListener("click", function () { hdr.classList.remove("hdr-off"); });
+  }
   apply();
 })();
 </script>

@@ -25,28 +25,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&amp;family=Inter:wght@400;450;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>/* ═══════════════════════════════════════════════════════════════
    RD Eco Solutions — design system v3
-   Confident, high-contrast, sectioned. Dark ground, sap accent.
+   Palette derived from the RD Eco Solutions logo: globe green + periwinkle.
    ═══════════════════════════════════════════════════════════════ */
 
 :root{
-  --void:#0E1418;        /* near-black green */
-  --deep:#161E24;
-  --deep-2:#1D272E;
-  --bone:#F3F1EB;
+  --void:#0B1A0E;        /* near-black green */
+  --deep:#112417;
+  --deep-2:#19331F;
+  --bone:#F2F4EE;
   --paper:#FFFFFF;
-  --sand:#E7E3D9;
+  --sand:#E4EADE;
 
-  --ink:#141A1E;
-  --ink-2:#4A555C;
-  --ink-3:#78848B;
+  --ink:#0F1A12;
+  --ink-2:#455049;
+  --ink-3:#76837A;
 
-  --lime:#E2622C;        /* the signature */
-  --lime-2:#F0784A;
-  --green:#2E7D53;
-  --green-2:#3E9A69;
+  --lime:#3EAD2D;        /* the signature */
+  --lime-2:#4AC636;
+  --lime-d:#5FD349;    /* accent legible on dark grounds */
+  --lime-l:#2C7D22;    /* accent legible on light grounds */
+  --green:#3B54A8;
+  --green-2:#8FA6EE;
 
-  --line:#DCD8CC;
-  --line-d:rgba(226,98,44,.18);
+  --line:#D6DED0;
+  --line-d:rgba(62,173,45,.20);
   --line-dd:rgba(255,255,255,.09);
 
   --display:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
@@ -76,8 +78,8 @@ h1,h2,h3,.dsp{font-family:var(--display);font-weight:700;letter-spacing:-.035em;
 h1{font-size:clamp(2.9rem,7.2vw,6.2rem)}
 h2{font-size:clamp(2.2rem,5vw,4.1rem)}
 h3{font-size:1.18rem;font-weight:600;letter-spacing:-.02em;line-height:1.28}
-h1 em,h2 em{font-style:normal;color:var(--lime)}
-.on-light h1 em,.on-light h2 em{color:var(--green)}
+h1 em,h2 em{font-style:normal;color:var(--lime-d)}
+.on-light h1 em,.on-light h2 em{color:var(--lime-l)}
 
 .lede{font-size:clamp(1.06rem,1.5vw,1.24rem);line-height:1.62;color:var(--ink-2)}
 .small{font-size:14px}
@@ -88,7 +90,7 @@ p + p{margin-top:1.1em}
   font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.22em;
   text-transform:uppercase;display:inline-flex;align-items:center;gap:11px;
 }
-.tagline::before{content:"";width:7px;height:7px;background:var(--lime);border-radius:50%;flex:0 0 auto}
+.tagline::before{content:"";width:7px;height:7px;background:var(--lime-d);border-radius:50%;flex:0 0 auto}
 .on-light .tagline{color:var(--green)}
 .on-light .tagline::before{background:var(--green)}
 
@@ -109,7 +111,7 @@ p + p{margin-top:1.1em}
 .hdr{position:sticky;top:0;z-index:70;background:var(--void);border-bottom:1px solid var(--line-dd)}
 .hdr-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:74px}
 .logo{display:flex;align-items:center;gap:12px}
-.logo svg{width:36px;height:36px;flex:0 0 auto}
+.logo svg{width:42px;height:42px;flex:0 0 auto}
 .logo-n{font-family:var(--display);font-size:17px;font-weight:700;letter-spacing:-.025em;color:#F7F6F1;line-height:1.1}
 .logo-s{font-family:var(--mono);font-size:8.4px;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,246,241,.42)}
 
@@ -138,7 +140,7 @@ p + p{margin-top:1.1em}
 }
 .btn svg{transition:transform .3s var(--ease)}
 .btn:hover svg{transform:translateX(4px)}
-.btn-p{background:var(--lime);color:#1A0C05}
+.btn-p{background:var(--lime);color:#07210B}
 .btn-p:hover{background:var(--lime-2);transform:translateY(-2px)}
 .btn-s{border-color:rgba(239,238,231,.26);color:#F7F6F1}
 .btn-s:hover{border-color:var(--lime);color:var(--lime)}
@@ -157,7 +159,7 @@ p + p{margin-top:1.1em}
 .hero{position:relative;overflow:hidden;background:var(--void);color:#EFEEE7}
 .hero::after{
   content:"";position:absolute;right:-8%;top:-18%;width:70%;height:130%;
-  background:radial-gradient(closest-side,rgba(226,98,44,.10),transparent 72%);
+  background:radial-gradient(closest-side,rgba(62,173,45,.10),transparent 72%);
   pointer-events:none;
 }
 .hero-in{position:relative;z-index:2;padding-top:96px}
@@ -175,17 +177,17 @@ p + p{margin-top:1.1em}
 .hero-sub .lede{max-width:46ch}
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 .hero-art{width:100%;height:auto;display:block;margin-bottom:-4px}
-.hero-art-hold{position:relative;z-index:1;border-top:1px solid var(--line-d);background:linear-gradient(180deg,transparent,rgba(226,98,44,.05))}
+.hero-art-hold{position:relative;z-index:1;border-top:1px solid var(--line-d);background:linear-gradient(180deg,transparent,rgba(62,173,45,.05))}
 
 /* marquee capability strip */
-.marq{background:var(--lime);color:#1A0C05;overflow:hidden;padding:17px 0;border-bottom:1px solid rgba(10,26,8,.14)}
+.marq{background:var(--lime);color:#07210B;overflow:hidden;padding:17px 0;border-bottom:1px solid rgba(10,26,8,.14)}
 .marq-in{display:flex;gap:0;width:max-content;animation:slide 46s linear infinite}
 .marq span{
   font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.2em;
   text-transform:uppercase;padding:0 26px;white-space:nowrap;
   display:inline-flex;align-items:center;gap:26px;
 }
-.marq span::after{content:"";width:5px;height:5px;background:#1A0C05;border-radius:50%}
+.marq span::after{content:"";width:5px;height:5px;background:#07210B;border-radius:50%}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .marq:hover .marq-in{animation-play-state:paused}
 
@@ -193,7 +195,7 @@ p + p{margin-top:1.1em}
 .page-hero{background:var(--void);color:#EFEEE7;padding:76px 0 84px;position:relative;overflow:hidden}
 .page-hero::after{
   content:"";position:absolute;right:-10%;top:-40%;width:60%;height:180%;
-  background:radial-gradient(closest-side,rgba(226,98,44,.09),transparent 70%);
+  background:radial-gradient(closest-side,rgba(62,173,45,.09),transparent 70%);
 }
 .page-hero .wrap{position:relative;z-index:1}
 .page-hero h1{max-width:18ch;margin-bottom:24px}
@@ -235,7 +237,7 @@ p + p{margin-top:1.1em}
 }
 .on-dark .row-k{color:rgba(255,255,255,.18)}
 .row:hover .row-k{color:var(--green)}
-.on-dark .row:hover .row-k{color:var(--lime)}
+.on-dark .row:hover .row-k{color:var(--lime-d)}
 .row-t{font-family:var(--display);font-size:1.62rem;font-weight:700;letter-spacing:-.03em;line-height:1.08}
 .row-d{font-size:14.6px;color:var(--ink-2);line-height:1.58;max-width:56ch}
 .on-dark .row-d{color:rgba(239,238,231,.6)}
@@ -244,21 +246,21 @@ p + p{margin-top:1.1em}
   display:grid;place-items:center;transition:all .38s var(--ease);
 }
 .on-dark .row-a{border-color:var(--line-dd)}
-.row:hover .row-a{background:var(--lime);border-color:var(--lime);color:#1A0C05;transform:rotate(-45deg)}
+.row:hover .row-a{background:var(--lime);border-color:var(--lime);color:#07210B;transform:rotate(-45deg)}
 
 /* ── statement block ────────────────────────────────────────── */
 .stmt{background:var(--void);color:#F7F6F1;padding:150px 0;position:relative;overflow:hidden}
 .stmt::after{
   content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
   width:120%;height:200%;
-  background:radial-gradient(closest-side,rgba(226,98,44,.09),transparent 70%);
+  background:radial-gradient(closest-side,rgba(62,173,45,.09),transparent 70%);
 }
 .stmt .wrap{position:relative;z-index:1}
 .stmt p{
   font-family:var(--display);font-weight:700;letter-spacing:-.035em;line-height:1.04;
   font-size:clamp(1.9rem,4.4vw,3.6rem);max-width:20ch;
 }
-.stmt p b{color:var(--lime);font-weight:700}
+.stmt p b{color:var(--lime-d);font-weight:700}
 .stmt .attrib{
   font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
   color:rgba(247,246,241,.42);margin-top:44px;
@@ -276,7 +278,7 @@ p + p{margin-top:1.1em}
   font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--green);
   margin-bottom:26px;display:block;
 }
-.on-dark .flow-n{color:var(--lime)}
+.on-dark .flow-n{color:var(--lime-d)}
 .flow-i h3{margin-bottom:10px;font-size:1.06rem}
 .flow-i p{font-size:13.8px;color:var(--ink-2);line-height:1.56}
 .on-dark .flow-i p{color:rgba(239,238,231,.58)}
@@ -291,7 +293,7 @@ p + p{margin-top:1.1em}
 }
 .on-dark .tag{border-color:var(--line-dd)}
 .tag:hover{background:var(--void);color:var(--lime);border-color:var(--void)}
-.on-dark .tag:hover{background:var(--lime);color:#1A0C05;border-color:var(--lime)}
+.on-dark .tag:hover{background:var(--lime);color:#07210B;border-color:var(--lime)}
 
 /* ── list blocks ────────────────────────────────────────────── */
 .pts{list-style:none;display:grid;gap:0;border-top:1px solid var(--line)}
@@ -306,7 +308,7 @@ p + p{margin-top:1.1em}
 .pts li::before{
   content:"";position:absolute;left:0;top:31px;width:22px;height:1px;background:var(--green);
 }
-.on-dark .pts li::before{background:var(--lime)}
+.on-dark .pts li::before{background:var(--lime-d)}
 
 .cols2{columns:2;column-gap:56px}
 .cols2 > li{break-inside:avoid}
@@ -321,7 +323,7 @@ p + p{margin-top:1.1em}
 .scope li::before{
   content:"";position:absolute;left:0;top:26px;width:14px;height:1px;background:var(--green);
 }
-.on-dark .scope li::before{background:var(--lime)}
+.on-dark .scope li::before{background:var(--lime-d)}
 
 /* ── FAQ ────────────────────────────────────────────────────── */
 .faq{border-top:1px solid var(--line)}
@@ -335,14 +337,14 @@ p + p{margin-top:1.1em}
 }
 .faq summary::-webkit-details-marker{display:none}
 .faq summary:hover{color:var(--green)}
-.on-dark .faq summary:hover{color:var(--lime)}
+.on-dark .faq summary:hover{color:var(--lime-d)}
 .faq summary::after{
   content:"";position:absolute;right:8px;top:calc(50% - 8px);
   width:15px;height:15px;
   border-right:2px solid var(--green);border-bottom:2px solid var(--green);
   transform:rotate(45deg);transition:transform .3s var(--ease);
 }
-.on-dark .faq summary::after{border-color:var(--lime)}
+.on-dark .faq summary::after{border-color:var(--lime-d)}
 .faq details[open] summary::after{transform:rotate(-135deg)}
 .faq .a{padding:0 70px 32px 0;color:var(--ink-2);font-size:15.6px;line-height:1.68;max-width:80ch}
 .on-dark .faq .a{color:rgba(239,238,231,.62)}
@@ -397,21 +399,21 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
 .f-note{font-size:13px;color:rgba(239,238,231,.5);margin-top:18px;line-height:1.6}
 .f-note a{color:var(--lime)}
 .f-msg{display:none;margin-top:16px;padding:14px 16px;font-size:14px}
-.f-msg.ok{display:block;background:rgba(226,98,44,.13);color:var(--lime);border-left:2px solid var(--lime)}
+.f-msg.ok{display:block;background:rgba(62,173,45,.13);color:var(--lime);border-left:2px solid var(--lime)}
 .f-msg.err{display:block;background:rgba(255,120,90,.12);color:#FFAE9B;border-left:2px solid #FF785A}
 
 /* ── CTA ────────────────────────────────────────────────────── */
-.cta-band{background:var(--lime);color:#1A0C05;padding:110px 0}
-.cta-band h2{color:#1A0C05;max-width:16ch;margin-bottom:20px}
+.cta-band{background:var(--lime);color:#07210B;padding:110px 0}
+.cta-band h2{color:#07210B;max-width:16ch;margin-bottom:20px}
 .cta-band p{color:rgba(10,26,8,.72);max-width:52ch;margin-bottom:36px;font-size:1.08rem}
 .cta-band .btn-p{background:var(--void);color:#F7F6F1}
 .cta-band .btn-p:hover{background:var(--deep-2)}
-.cta-band .btn-s{border-color:rgba(10,26,8,.3);color:#1A0C05}
-.cta-band .btn-s:hover{background:#1A0C05;color:var(--lime);border-color:#1A0C05}
+.cta-band .btn-s{border-color:rgba(10,26,8,.3);color:#07210B}
+.cta-band .btn-s:hover{background:#07210B;color:var(--lime);border-color:#07210B}
 
 /* ── footer ─────────────────────────────────────────────────── */
 .ftr{background:var(--void);color:rgba(239,238,231,.55);padding:88px 0 0;font-size:14.4px}
-.ftr a:hover{color:var(--lime)}
+.ftr a:hover{color:var(--lime-d)}
 .ftr-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1.2fr;gap:48px;padding-bottom:66px}
 .ftr h4{
   color:#F7F6F1;font-family:var(--mono);font-size:10px;font-weight:500;
@@ -663,8 +665,8 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
   border-bottom:1px solid var(--line-d);padding:15px 0;
 }
 .marq.band-k .marq-in{animation-duration:58s}
-.marq.band-k span{color:rgba(226,98,44,.75);font-size:11px}
-.marq.band-k span::after{background:rgba(226,98,44,.45)}
+.marq.band-k span{color:rgba(62,173,45,.75);font-size:11px}
+.marq.band-k span::after{background:rgba(62,173,45,.45)}
 
 @media (prefers-reduced-motion:reduce){
   .readbar{display:none}
@@ -890,9 +892,9 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
 .on-dark .fleet-i:hover{background:var(--deep)}
 .fleet-k{
   font-family:var(--display);font-size:1.6rem;font-weight:700;letter-spacing:-.04em;
-  color:var(--green);display:block;margin-bottom:20px;line-height:1;
+  color:var(--lime-l);display:block;margin-bottom:20px;line-height:1;
 }
-.on-dark .fleet-k{color:var(--lime)}
+.on-dark .fleet-k{color:var(--lime-d)}
 .fleet-i h3{font-size:1.02rem;margin-bottom:9px}
 .fleet-i p{font-size:13.8px;color:var(--ink-2);line-height:1.55}
 .on-dark .fleet-i p{color:rgba(239,238,231,.58)}
@@ -936,7 +938,7 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
 .tint .brand-w{background:var(--sand)}
 .brand-t{
   font-family:var(--display);font-size:2.1rem;font-weight:700;letter-spacing:-.045em;
-  color:var(--green);display:block;margin-bottom:18px;line-height:1;
+  color:var(--lime-l);display:block;margin-bottom:18px;line-height:1;
 }
 .brand-w p{font-size:15.4px;line-height:1.65;color:var(--ink-2);max-width:46ch}
 .brand-sum{grid-column:1 / -1;border-top:1px solid var(--line)}
@@ -1127,19 +1129,33 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
 <header class="hdr">
   <div class="wrap hdr-in">
     <a class="logo" href="index.html" aria-label="RD Eco Solutions home">
-      <svg viewBox="0 0 46 46" fill="none" aria-hidden="true">
-  <g stroke="#E2622C" stroke-width="1.15" fill="none" opacity=".92">
-    <circle cx="23" cy="27" r="14.2"/>
-    <ellipse cx="23" cy="27" rx="6" ry="14.2"/>
-    <path d="M9.4 22.6 H36.6 M8.8 27 H37.2 M9.4 31.4 H36.6"/>
+      <svg viewBox="0 0 52 52" fill="none" aria-hidden="true">
+  <defs>
+    <radialGradient id="rdg-h" cx="37%" cy="32%" r="74%">
+      <stop offset="0" stop-color="#6FD152"/>
+      <stop offset="46%" stop-color="#40AE2D"/>
+      <stop offset="84%" stop-color="#2A8A1F"/>
+      <stop offset="100%" stop-color="#1C5F16"/>
+    </radialGradient>
+    <clipPath id="rdc-h"><circle cx="26" cy="32" r="15.6"/></clipPath>
+  </defs>
+  <circle cx="26" cy="32" r="15.6" fill="url(#rdg-h)"/>
+  <g clip-path="url(#rdc-h)" fill="#175A12" opacity=".55">
+    <path d="M22.6 25.4c1.7-.5 2.9.3 4 .2 1.1-.2 1.8-1.1 2.8-.9.8.2.7 1.1.1 1.7-.9.8-2.2.5-3.2 1-1 .6-.9 1.7-2 1.9-1.2.2-2.2-.8-2.5-1.9-.2-.8.1-1.7.8-2z"/>
+    <path d="M27.8 32.4c1.2-.5 2.6.1 3.2 1 .7 1 .4 2.2-.3 3-.8.9-1.7 1.7-2 2.8-.2.9-.3 1.9-1.2 2.2-.9.3-1.6-.6-1.7-1.5-.1-1.4.4-2.7.6-4 .1-1.3-.2-2.9 1.4-3.5z"/>
+    <path d="M16.2 31.3c1-.3 1.8.5 1.9 1.4.1 1-.6 1.9-1.5 2.1-.9.3-1.8-.3-2-1.2-.2-1 .4-2.1 1.6-2.3z"/>
+    <path d="M35.4 28.6c.9-.3 1.9.2 2.1 1.1.2 1-.5 2-1.4 2.2-.9.2-1.8-.4-1.9-1.3-.1-.9.4-1.8 1.2-2z"/>
   </g>
-  <g fill="#E2622C" opacity=".3">
-    <path d="M15.4 21.6c1.9-.5 3.6.3 5 .1 1.3-.2 1.9-1.3 3.2-1.1.9.2.8 1.3.1 1.9-1 .9-2.6.6-3.7 1.2-1.2.7-1.1 2-2.4 2.2-1.4.2-2.6-1-2.9-2.2-.2-.9.1-1.8.7-2.1z"/>
-    <path d="M24.6 28.4c1.4-.6 3 .1 3.8 1.2.8 1.1.4 2.6-.4 3.5-.9 1-2 1.9-2.3 3.2-.2 1-.3 2.2-1.3 2.6-1 .3-1.8-.7-1.9-1.7-.2-1.6.4-3.1.6-4.7.2-1.5-.2-3.4 1.5-4.1z"/>
+  <g clip-path="url(#rdc-h)" stroke="#E8FBDD" stroke-width=".5" fill="none" opacity=".38">
+    <ellipse cx="26" cy="32" rx="5.3" ry="15.6"/>
+    <ellipse cx="26" cy="32" rx="10.7" ry="15.6"/>
+    <path d="M10.4 26h31.2M10.4 32h31.2M10.4 38h31.2"/>
   </g>
-  <text x="23" y="18" text-anchor="middle" fill="#F7F6F1"
-        font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700"
-        letter-spacing="-.5">RD</text>
+  <circle cx="26" cy="32" r="15.3" stroke="#8FE471" stroke-width=".6" opacity=".45"/>
+  <text x="26" y="26.6" text-anchor="middle" fill="#FFFFFF"
+        font-family="Georgia,'Times New Roman','Liberation Serif',serif"
+        font-size="20" font-weight="700" letter-spacing="-1.1"
+        style="paint-order:stroke;stroke:rgba(12,32,15,.28);stroke-width:.9px">RD</text>
 </svg>
       <span><span class="logo-n">RD Eco Solutions</span><br><span class="logo-s">Civil &middot; Environmental &middot; O&amp;M</span></span>
     </a>
@@ -1260,19 +1276,33 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
   <div class="wrap">
     <div class="ftr-grid">
       <div>
-        <a class="logo" href="index.html"><svg viewBox="0 0 46 46" fill="none" aria-hidden="true">
-  <g stroke="#E2622C" stroke-width="1.15" fill="none" opacity=".92">
-    <circle cx="23" cy="27" r="14.2"/>
-    <ellipse cx="23" cy="27" rx="6" ry="14.2"/>
-    <path d="M9.4 22.6 H36.6 M8.8 27 H37.2 M9.4 31.4 H36.6"/>
+        <a class="logo" href="index.html"><svg viewBox="0 0 52 52" fill="none" aria-hidden="true">
+  <defs>
+    <radialGradient id="rdg-f" cx="37%" cy="32%" r="74%">
+      <stop offset="0" stop-color="#6FD152"/>
+      <stop offset="46%" stop-color="#40AE2D"/>
+      <stop offset="84%" stop-color="#2A8A1F"/>
+      <stop offset="100%" stop-color="#1C5F16"/>
+    </radialGradient>
+    <clipPath id="rdc-f"><circle cx="26" cy="32" r="15.6"/></clipPath>
+  </defs>
+  <circle cx="26" cy="32" r="15.6" fill="url(#rdg-f)"/>
+  <g clip-path="url(#rdc-f)" fill="#175A12" opacity=".55">
+    <path d="M22.6 25.4c1.7-.5 2.9.3 4 .2 1.1-.2 1.8-1.1 2.8-.9.8.2.7 1.1.1 1.7-.9.8-2.2.5-3.2 1-1 .6-.9 1.7-2 1.9-1.2.2-2.2-.8-2.5-1.9-.2-.8.1-1.7.8-2z"/>
+    <path d="M27.8 32.4c1.2-.5 2.6.1 3.2 1 .7 1 .4 2.2-.3 3-.8.9-1.7 1.7-2 2.8-.2.9-.3 1.9-1.2 2.2-.9.3-1.6-.6-1.7-1.5-.1-1.4.4-2.7.6-4 .1-1.3-.2-2.9 1.4-3.5z"/>
+    <path d="M16.2 31.3c1-.3 1.8.5 1.9 1.4.1 1-.6 1.9-1.5 2.1-.9.3-1.8-.3-2-1.2-.2-1 .4-2.1 1.6-2.3z"/>
+    <path d="M35.4 28.6c.9-.3 1.9.2 2.1 1.1.2 1-.5 2-1.4 2.2-.9.2-1.8-.4-1.9-1.3-.1-.9.4-1.8 1.2-2z"/>
   </g>
-  <g fill="#E2622C" opacity=".3">
-    <path d="M15.4 21.6c1.9-.5 3.6.3 5 .1 1.3-.2 1.9-1.3 3.2-1.1.9.2.8 1.3.1 1.9-1 .9-2.6.6-3.7 1.2-1.2.7-1.1 2-2.4 2.2-1.4.2-2.6-1-2.9-2.2-.2-.9.1-1.8.7-2.1z"/>
-    <path d="M24.6 28.4c1.4-.6 3 .1 3.8 1.2.8 1.1.4 2.6-.4 3.5-.9 1-2 1.9-2.3 3.2-.2 1-.3 2.2-1.3 2.6-1 .3-1.8-.7-1.9-1.7-.2-1.6.4-3.1.6-4.7.2-1.5-.2-3.4 1.5-4.1z"/>
+  <g clip-path="url(#rdc-f)" stroke="#E8FBDD" stroke-width=".5" fill="none" opacity=".38">
+    <ellipse cx="26" cy="32" rx="5.3" ry="15.6"/>
+    <ellipse cx="26" cy="32" rx="10.7" ry="15.6"/>
+    <path d="M10.4 26h31.2M10.4 32h31.2M10.4 38h31.2"/>
   </g>
-  <text x="23" y="18" text-anchor="middle" fill="#F7F6F1"
-        font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700"
-        letter-spacing="-.5">RD</text>
+  <circle cx="26" cy="32" r="15.3" stroke="#8FE471" stroke-width=".6" opacity=".45"/>
+  <text x="26" y="26.6" text-anchor="middle" fill="#FFFFFF"
+        font-family="Georgia,'Times New Roman','Liberation Serif',serif"
+        font-size="20" font-weight="700" letter-spacing="-1.1"
+        style="paint-order:stroke;stroke:rgba(12,32,15,.28);stroke-width:.9px">RD</text>
 </svg>
           <span><span class="logo-n">RD Eco Solutions</span><br><span class="logo-s">Civil &middot; Environmental &middot; O&amp;M</span></span>
         </a>

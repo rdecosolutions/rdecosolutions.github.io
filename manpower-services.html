@@ -15,11 +15,17 @@
 <meta property="og:title" content="Sanitation &amp; Plant Operator Manpower Supply, Tamil Nadu">
 <meta property="og:description" content="Plant and pump operators, supervisors and sanitation staff for Tamil Nadu municipal works, with attendance, EPF and ESI compliance handled.">
 <meta property="og:url" content="https://rdecosolutions.org/manpower-services.html">
+<meta property="og:image" content="https://rdecosolutions.org/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="RD Eco Solutions, sustainable infrastructure reliably operated">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rdecosolutions.org/og-card.png">
 <meta name="twitter:title" content="Sanitation &amp; Plant Operator Manpower Supply, Tamil Nadu">
 <meta name="twitter:description" content="Plant and pump operators, supervisors and sanitation staff for Tamil Nadu municipal works, with attendance, EPF and ESI compliance handled.">
 <meta name="theme-color" content="#06150F">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='3' fill='%2306150F'/%3E%3Cpath d='M12 29V12h7a5.5 5.5 0 0 1 0 11h-3l6 6' fill='none' stroke='%23C4F04C' stroke-width='2.8' stroke-linecap='square'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2040%2040%27%3E%3Crect%20width%3D%2740%27%20height%3D%2740%27%20rx%3D%277%27%20fill%3D%27%230B1A0E%27%2F%3E%3Ccircle%20cx%3D%2720%27%20cy%3D%2721%27%20r%3D%2712.5%27%20fill%3D%27%233EAD2D%27%2F%3E%3Cg%20stroke%3D%27%230B1A0E%27%20stroke-width%3D%271.5%27%20fill%3D%27none%27%20opacity%3D%27.75%27%3E%3Cellipse%20cx%3D%2720%27%20cy%3D%2721%27%20rx%3D%275%27%20ry%3D%2712.5%27%2F%3E%3Cpath%20d%3D%27M8.6%2016.5h22.8M7.5%2021h25M8.6%2025.5h22.8%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&amp;family=Inter:wght@400;450;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
@@ -1149,10 +1155,189 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
   .pgl{padding:5px 9px;font-size:11.5px}
   .pg-a b{font-size:.98rem}
 }
+
+/* ── skip link ─────────────────────────────────────────────── */
+.skip{
+  position:absolute;left:-9999px;top:0;z-index:200;
+  background:var(--lime);color:#07210B;padding:12px 20px;font-weight:600;
+  font-size:14px;text-decoration:none}
+.skip:focus{left:12px;top:12px;outline:2px solid var(--void);outline-offset:2px}
+
+/* ── print: departments print these pages for tender files ─── */
+@media print{
+  @page{margin:16mm 14mm}
+  html{font-size:10.5pt;scroll-behavior:auto}
+  body{background:#fff!important;color:#000!important}
+  .hdr,.burger,.hdr-cta,.readbar,.marq,.pager-sec,.cta,.skip,
+  .hero-art,.rail-cta,.f-msg,form,.drop{display:none!important}
+  .sec,.on-dark,.on-light,.stmt,.tint,.page-hero,.hero{
+    background:#fff!important;color:#000!important;padding:0 0 18pt!important}
+  .stmt p,.stmt p b,h1,h2,h3,h4,.lede,p,li,td,th,.dom-l,.row-d,figcaption,
+  .crumb,.idx,.attrib,.rail-k,.dom-k,.grp-h .n{color:#222!important}
+  h1 em,h2 em,.stmt p b{color:#000!important;font-weight:700}
+  .wrap,.narrow{max-width:none!important;padding:0!important}
+  h1{font-size:22pt;margin-bottom:8pt}
+  h2{font-size:15pt;margin-top:14pt;page-break-after:avoid}
+  h3{font-size:11.5pt;page-break-after:avoid}
+  p,li{orphans:3;widows:3}
+  .rows,.doms,.fleet,.brand-grid,.seq,.spec{display:block!important}
+  .row,.dom,.fleet-i,.brand-w,.flow-i{
+    page-break-inside:avoid;border-bottom:1pt solid #bbb;padding:6pt 0!important;
+    background:#fff!important}
+  .spec-rail{display:none!important}
+  table{border-collapse:collapse;width:100%}
+  th{background:#eee!important;color:#000!important;border:.5pt solid #999}
+  td{border:.5pt solid #999}
+  .tbl-wrap,.route-wrap{overflow:visible!important;border:0!important}
+  details{display:block}
+  details > summary{list-style:none;font-weight:700;page-break-after:avoid}
+  details .a,details[open] .a{display:block!important;max-height:none!important;
+    height:auto!important;opacity:1!important;overflow:visible!important}
+  a{color:#000!important;text-decoration:none}
+  .ftr a[href^="http"]::after,.crumb a::after{content:""}
+  /* the page identity has to survive onto paper */
+  .ftr{border-top:1pt solid #000;padding-top:8pt!important}
+  .ftr-grid > *:not(:first-child){display:none!important}
+  .rv,.stag,.stag > *,.rise > i,.fade-up{opacity:1!important;transform:none!important}
+}
+
+/* ── Tamil Nadu coverage map ───────────────────────────────── */
+.tnmap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
+  gap:56px;align-items:center;margin-top:56px}
+.tnmap-fig{margin:0;min-width:0;display:flex;justify-content:center}
+.tnmap-svg{width:100%;max-width:400px;height:auto;overflow:visible}
+.tnd{fill:rgba(255,255,255,.045);stroke:rgba(255,255,255,.14);stroke-width:.7;
+  transition:fill .3s var(--ease),stroke .3s var(--ease)}
+.tnd-on{fill:rgba(62,173,45,.34);stroke:var(--lime-d);stroke-width:1;cursor:pointer}
+.tnd-on:hover,.tnd-on:focus,.tnd-on.on{fill:var(--lime);stroke:#DFF7D2;outline:none}
+.tn-base{pointer-events:none}
+.tn-base line{stroke:#DFF7D2;stroke-width:.9}
+.tn-base text{fill:#DFF7D2;font-family:var(--mono);font-size:11px;letter-spacing:.16em}
+.tn-dot{fill:#DFF7D2}
+.tn-pulse{fill:var(--lime-d);opacity:.55;transform-origin:center;
+  animation:tnp 2.8s var(--ease) infinite}
+@keyframes tnp{0%{r:5;opacity:.55}70%{r:17;opacity:0}100%{r:17;opacity:0}}
+.tnmap-side{min-width:0}
+.tnmap-read{border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d);
+  padding:20px 0;margin-bottom:30px}
+.tnmap-read-k{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:8px}
+.tnmap-read b{font-family:var(--display);font-size:1.5rem;font-weight:700;
+  letter-spacing:-.025em;color:#F7F6F1;line-height:1.15;display:block;min-height:1.2em}
+.tnmap-list{list-style:none;margin:0 0 26px;padding:0;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:0 26px}
+.tnmap-list li{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.09);
+  font-size:14.5px;color:rgba(239,238,231,.74);display:flex;align-items:center;gap:10px}
+.tnmap-list li::before{content:"";width:6px;height:6px;flex:none;
+  background:var(--lime-d);border-radius:50%}
+.tnmap-note{font-size:14px;line-height:1.6;color:rgba(239,238,231,.55);max-width:46ch}
+@media(max-width:980px){
+  .tnmap{grid-template-columns:1fr;gap:38px;margin-top:40px}
+  .tnmap-svg{max-width:300px}
+  .tnmap-read b{font-size:1.28rem}
+}
+@media(max-width:460px){
+  .tnmap-list{grid-template-columns:1fr;gap:0}
+  .tnmap-svg{max-width:250px}
+}
+@media(prefers-reduced-motion:reduce){.tn-pulse{animation:none;opacity:.4}}
+
+/* ── engineering drawings ──────────────────────────────────── */
+.dwgs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line);border-top:1px solid var(--line);margin-top:52px}
+.on-dark .dwgs{background:var(--line-dd);border-color:var(--line-dd)}
+.dwg-i{background:var(--bone);padding:26px 26px 30px;min-width:0}
+.tint .dwg-i{background:var(--sand)}
+.on-dark .dwg-i{background:var(--void)}
+.dwg-fig{margin:0 0 22px}
+.dwg{width:100%;height:auto;display:block;color:var(--ink-2)}
+.on-dark .dwg{color:rgba(239,238,231,.66)}
+.dwg .d-line{fill:none;stroke:currentColor;stroke-width:1.1;stroke-linecap:square}
+.dwg .d-soil{color:var(--ink-3);fill:currentColor}
+.on-dark .dwg .d-soil{color:rgba(239,238,231,.4)}
+.dwg .d-acc{fill:var(--lime);opacity:.9}
+.dwg .d-acc path[stroke]{fill:none;stroke:var(--lime)}
+.on-dark .dwg .d-acc{fill:var(--lime-d)}
+.dwg .d-flow{fill:none;stroke:var(--lime);stroke-width:1.6;color:var(--lime)}
+.on-dark .dwg .d-flow{stroke:var(--lime-d);color:var(--lime-d)}
+.dwg .d-dim{fill:none;stroke:currentColor;stroke-width:.7;opacity:.65}
+.dwg .d-note{fill:none;stroke:var(--lime);stroke-width:1}
+.on-dark .dwg .d-note{stroke:var(--lime-d)}
+.dwg .d-note text{fill:var(--lime);stroke:none;font-family:var(--mono);font-size:11px}
+.on-dark .dwg .d-note text{fill:var(--lime-d)}
+.dwg .d-t,.dwg text{font-family:var(--mono);font-size:9.6px;letter-spacing:.09em;
+  fill:currentColor;stroke:none}
+.dwg-h{font-size:1.02rem;line-height:1.3;margin-bottom:9px;letter-spacing:-.01em}
+.dwg-i p{font-size:13.8px;line-height:1.58;color:var(--ink-2)}
+.on-dark .dwg-i p{color:rgba(239,238,231,.58)}
+/* the drawing draws itself in on reveal */
+.dwg .d-line,.dwg .d-flow,.dwg .d-dim{
+  stroke-dasharray:1400;stroke-dashoffset:1400;
+  transition:stroke-dashoffset 1.5s var(--ease)}
+.stag.in .dwg .d-line,.stag.in .dwg .d-flow,.stag.in .dwg .d-dim,
+.rv.in .dwg .d-line,.rv.in .dwg .d-flow,.rv.in .dwg .d-dim{stroke-dashoffset:0}
+.dwg .d-flow{transition-delay:.5s}
+@media(max-width:900px){
+  .dwgs{grid-template-columns:1fr}
+  .dwg-i{padding:22px 20px 26px}
+}
+@media(prefers-reduced-motion:reduce){
+  .dwg .d-line,.dwg .d-flow,.dwg .d-dim{stroke-dasharray:none;stroke-dashoffset:0}
+}
+
+/* ── photo slots, ready for real site images ───────────────── */
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line-dd);margin-top:48px}
+.shot{position:relative;aspect-ratio:4/3;background:var(--deep);overflow:hidden;
+  display:flex;align-items:center;justify-content:center}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.shot-ph{display:flex;flex-direction:column;align-items:center;gap:12px;
+  color:rgba(239,238,231,.3);font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.16em;text-transform:uppercase;text-align:center;padding:20px}
+.shot-ph svg{width:30px;height:30px;stroke:currentColor;fill:none;stroke-width:1.2}
+.shot-cap{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;
+  background:linear-gradient(transparent,rgba(11,26,14,.9));
+  font-size:12.5px;color:rgba(239,238,231,.8)}
+@media(max-width:760px){.shots{grid-template-columns:1fr}}
+
+/* ── project records ───────────────────────────────────────── */
+.pjs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:var(--line);border-top:1px solid var(--line);margin-top:48px}
+.pj{background:var(--bone);padding:30px 30px 34px;min-width:0}
+.tint .pj{background:var(--sand)}
+.pj-h{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;
+  margin-bottom:12px}
+.pj-h h3{font-size:1.14rem;line-height:1.3;letter-spacing:-.015em;text-wrap:balance}
+.pj-st{flex:none;font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;padding:5px 10px;border:1px solid var(--line);
+  color:var(--ink-2);white-space:nowrap}
+.pj-ongoing{border-color:var(--lime);color:var(--lime-l)}
+.pj-completed{background:var(--lime);border-color:var(--lime);color:#07210B}
+.pj-div{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--green);margin-bottom:14px}
+.pj-s{font-size:14.6px;line-height:1.6;color:var(--ink-2);margin-bottom:22px}
+.pj-meta{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 20px;
+  border-top:1px solid var(--line);padding-top:18px}
+.pj-m span{display:block;font-family:var(--mono);font-size:9.6px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:5px}
+.pj-m b{font-size:14px;font-weight:600;color:var(--ink);line-height:1.35}
+@media(max-width:820px){.pjs{grid-template-columns:1fr}.pj{padding:24px 22px 28px}}
+
+/* ── registrations strip ───────────────────────────────────── */
+.crs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line-dd);border-top:1px solid var(--line-dd);margin-top:44px}
+.cr{background:var(--void);padding:26px 24px 30px;min-width:0}
+.cr span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.15em;
+  text-transform:uppercase;color:rgba(239,238,231,.42);margin-bottom:10px}
+.cr b{font-size:1.02rem;font-weight:600;color:#F7F6F1;line-height:1.35;
+  word-break:break-word}
+@media(max-width:900px){.crs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.crs{grid-template-columns:1fr}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://rdecosolutions.org/#organization","name":"RD Eco Solutions","url":"https://rdecosolutions.org/","description":"Civil and environmental infrastructure services for Urban Local Bodies and public sector organisations in Tamil Nadu, project consultancy, operation and maintenance, civil works, solid waste management, environmental solutions, equipment and manpower.","email":"rdecosolutionsofficial@gmail.com","telephone":"+919659443759","address":{"@type":"PostalAddress","addressLocality":"Sirkazhi","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Kumbakonam"},{"@type":"AdministrativeArea","name":"Chidambaram"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"knowsAbout":["Project Consultancy","Operation & Maintenance","Civil Infrastructure Works","Solid Waste Management","Environmental Solutions","Equipment & Technical Solutions","Manpower Services"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+919659443759","email":"rdecosolutionsofficial@gmail.com","availableLanguage":["en","ta"]}},{"@type":"WebSite","@id":"https://rdecosolutions.org/#website","url":"https://rdecosolutions.org/","name":"RD Eco Solutions","publisher":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"WebPage","@id":"https://rdecosolutions.org/manpower-services.html#webpage","url":"https://rdecosolutions.org/manpower-services.html","name":"Sanitation & Plant Operator Manpower Supply, Tamil Nadu","description":"Plant and pump operators, supervisors and sanitation staff for Tamil Nadu municipal works, with attendance, EPF and ESI compliance handled.","isPartOf":{"@id":"https://rdecosolutions.org/#website"},"about":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"BreadcrumbList","@id":"https://rdecosolutions.org/manpower-services.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rdecosolutions.org/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://rdecosolutions.org/services.html"},{"@type":"ListItem","position":3,"name":"Manpower Services","item":"https://rdecosolutions.org/manpower-services.html"}]},{"@type":"Service","@id":"https://rdecosolutions.org/manpower-services.html#service","name":"Manpower Services","serviceType":"Manpower Services","description":"Plant and pump operators, supervisors and sanitation staff for Tamil Nadu municipal works, with attendance, EPF and ESI compliance handled.","provider":{"@id":"https://rdecosolutions.org/#organization"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Kumbakonam"},{"@type":"AdministrativeArea","name":"Chidambaram"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"audience":{"@type":"Audience","audienceType":"Urban Local Bodies, Municipal Corporations, Municipalities, Town Panchayats, Government Departments"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Manpower Services, scope","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Skilled and unskilled manpower deployment"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Engineers, supervisors and operators"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pump and machinery operators"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Sanitation and conservancy personnel"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Project based manpower management"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Attendance, performance and statutory compliance support"}}]}},{"@type":"FAQPage","@id":"https://rdecosolutions.org/manpower-services.html#faq","mainEntity":[{"@type":"Question","name":"How do you handle EPF, ESI and wage compliance?","acceptedAnswer":{"@type":"Answer","text":"As part of scope. Personnel are on our rolls, statutory contributions are remitted and the records are available to the department on request and at audit. This is the substance of what a body is buying with a manpower contract, the staffing is the easy half."}},{"@type":"Question","name":"What happens when someone does not turn up?","acceptedAnswer":{"@type":"Answer","text":"Replacement against the agreed manpower schedule, with the gap recorded in the attendance return rather than quietly absorbed. Where a contract sets a minimum deployment, shortfalls should be visible to the department and reflected in billing. Hidden absence is how these contracts lose credibility."}},{"@type":"Question","name":"How many operators does a 5 MLD STP need?","acceptedAnswer":{"@type":"Answer","text":"It depends on the process, the degree of automation and the shift pattern the contract requires, so a single number is misleading. We propose a manpower schedule against the specific plant, shifts, skill categories and supervision, and set it out in the offer so the department can compare bids on the same basis."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"@id":"https://rdecosolutions.org/#organization","name":"RD Eco Solutions","url":"https://rdecosolutions.org/","image":"https://rdecosolutions.org/og-card.png","logo":"https://rdecosolutions.org/apple-touch-icon.png","priceRange":"Quoted per project","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}],"description":"Civil and environmental infrastructure services for Urban Local Bodies and public sector organisations in Tamil Nadu, project consultancy, operation and maintenance, civil works, solid waste management, environmental solutions, equipment and manpower.","email":"rdecosolutionsofficial@gmail.com","telephone":"+919659443759","address":{"@type":"PostalAddress","addressLocality":"Sirkazhi","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Ariyalur"},{"@type":"AdministrativeArea","name":"Perambalur"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"knowsAbout":["Project Consultancy","Operation & Maintenance","Civil Infrastructure Works","Solid Waste Management","Environmental Solutions","Equipment & Technical Solutions","Manpower Services"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+919659443759","email":"rdecosolutionsofficial@gmail.com","availableLanguage":["en","ta"]}},{"@type":"WebSite","@id":"https://rdecosolutions.org/#website","url":"https://rdecosolutions.org/","name":"RD Eco Solutions","publisher":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"WebPage","@id":"https://rdecosolutions.org/manpower-services.html#webpage","url":"https://rdecosolutions.org/manpower-services.html","name":"Sanitation & Plant Operator Manpower Supply, Tamil Nadu","description":"Plant and pump operators, supervisors and sanitation staff for Tamil Nadu municipal works, with attendance, EPF and ESI compliance handled.","isPartOf":{"@id":"https://rdecosolutions.org/#website"},"about":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"BreadcrumbList","@id":"https://rdecosolutions.org/manpower-services.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rdecosolutions.org/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://rdecosolutions.org/services.html"},{"@type":"ListItem","position":3,"name":"Manpower Services","item":"https://rdecosolutions.org/manpower-services.html"}]},{"@type":"Service","@id":"https://rdecosolutions.org/manpower-services.html#service","name":"Manpower Services","serviceType":"Manpower Services","description":"Plant and pump operators, supervisors and sanitation staff for Tamil Nadu municipal works, with attendance, EPF and ESI compliance handled.","provider":{"@id":"https://rdecosolutions.org/#organization"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Ariyalur"},{"@type":"AdministrativeArea","name":"Perambalur"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"audience":{"@type":"Audience","audienceType":"Urban Local Bodies, Municipal Corporations, Municipalities, Town Panchayats, Government Departments"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Manpower Services, scope","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Skilled and unskilled manpower deployment"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Engineers, supervisors and operators"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pump and machinery operators"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Sanitation and conservancy personnel"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Project based manpower management"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Attendance, performance and statutory compliance support"}}]}},{"@type":"FAQPage","@id":"https://rdecosolutions.org/manpower-services.html#faq","mainEntity":[{"@type":"Question","name":"How do you handle EPF, ESI and wage compliance?","acceptedAnswer":{"@type":"Answer","text":"As part of scope. Personnel are on our rolls, statutory contributions are remitted and the records are available to the department on request and at audit. This is the substance of what a body is buying with a manpower contract, the staffing is the easy half."}},{"@type":"Question","name":"What happens when someone does not turn up?","acceptedAnswer":{"@type":"Answer","text":"Replacement against the agreed manpower schedule, with the gap recorded in the attendance return rather than quietly absorbed. Where a contract sets a minimum deployment, shortfalls should be visible to the department and reflected in billing. Hidden absence is how these contracts lose credibility."}},{"@type":"Question","name":"How many operators does a 5 MLD STP need?","acceptedAnswer":{"@type":"Answer","text":"It depends on the process, the degree of automation and the shift pattern the contract requires, so a single number is misleading. We propose a manpower schedule against the specific plant, shifts, skill categories and supervision, and set it out in the offer so the department can compare bids on the same basis."}}]}]}</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="hdr">
   <div class="wrap hdr-in">
     <a class="logo logo-hdr" href="index.html" aria-label="RD Eco Solutions home">
@@ -1198,6 +1383,7 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
     </div>
   </div>
 </header>
+<div id="main" tabindex="-1"></div>
 
 <section class="page-hero svc-hero-split" style="padding:52px 0 0">
   <div class="wrap">
@@ -1660,6 +1846,26 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
     nav.addEventListener("click", function () { hdr.classList.remove("hdr-off"); });
   }
   apply();
+})();
+
+/* coverage map readout */
+(function () {
+  var read = document.getElementById("tnread");
+  if (!read) return;
+  var base = read.textContent;
+  var ds = document.querySelectorAll(".tnd-on");
+  function set(el) {
+    read.innerHTML = el ? el.getAttribute("data-n") : base;
+    Array.prototype.forEach.call(ds, function (d) { d.classList.remove("on"); });
+    if (el) el.classList.add("on");
+  }
+  Array.prototype.forEach.call(ds, function (d) {
+    d.addEventListener("mouseenter", function () { set(d); });
+    d.addEventListener("focus", function () { set(d); });
+    d.addEventListener("click", function () { set(d); });
+  });
+  var fig = document.querySelector(".tnmap-fig");
+  if (fig) fig.addEventListener("mouseleave", function () { set(null); });
 })();
 </script>
 </body>

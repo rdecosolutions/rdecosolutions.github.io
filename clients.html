@@ -15,11 +15,17 @@
 <meta property="og:title" content="Our Clients, Urban Local Bodies, TN | RD Eco Solutions">
 <meta property="og:description" content="We work with municipal corporations, municipalities, town panchayats, water and sewerage boards and government departments across Tamil Nadu.">
 <meta property="og:url" content="https://rdecosolutions.org/clients.html">
+<meta property="og:image" content="https://rdecosolutions.org/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="RD Eco Solutions, sustainable infrastructure reliably operated">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rdecosolutions.org/og-card.png">
 <meta name="twitter:title" content="Our Clients, Urban Local Bodies, TN | RD Eco Solutions">
 <meta name="twitter:description" content="We work with municipal corporations, municipalities, town panchayats, water and sewerage boards and government departments across Tamil Nadu.">
 <meta name="theme-color" content="#06150F">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='3' fill='%2306150F'/%3E%3Cpath d='M12 29V12h7a5.5 5.5 0 0 1 0 11h-3l6 6' fill='none' stroke='%23C4F04C' stroke-width='2.8' stroke-linecap='square'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2040%2040%27%3E%3Crect%20width%3D%2740%27%20height%3D%2740%27%20rx%3D%277%27%20fill%3D%27%230B1A0E%27%2F%3E%3Ccircle%20cx%3D%2720%27%20cy%3D%2721%27%20r%3D%2712.5%27%20fill%3D%27%233EAD2D%27%2F%3E%3Cg%20stroke%3D%27%230B1A0E%27%20stroke-width%3D%271.5%27%20fill%3D%27none%27%20opacity%3D%27.75%27%3E%3Cellipse%20cx%3D%2720%27%20cy%3D%2721%27%20rx%3D%275%27%20ry%3D%2712.5%27%2F%3E%3Cpath%20d%3D%27M8.6%2016.5h22.8M7.5%2021h25M8.6%2025.5h22.8%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&amp;family=Inter:wght@400;450;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
@@ -1149,10 +1155,189 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
   .pgl{padding:5px 9px;font-size:11.5px}
   .pg-a b{font-size:.98rem}
 }
+
+/* ── skip link ─────────────────────────────────────────────── */
+.skip{
+  position:absolute;left:-9999px;top:0;z-index:200;
+  background:var(--lime);color:#07210B;padding:12px 20px;font-weight:600;
+  font-size:14px;text-decoration:none}
+.skip:focus{left:12px;top:12px;outline:2px solid var(--void);outline-offset:2px}
+
+/* ── print: departments print these pages for tender files ─── */
+@media print{
+  @page{margin:16mm 14mm}
+  html{font-size:10.5pt;scroll-behavior:auto}
+  body{background:#fff!important;color:#000!important}
+  .hdr,.burger,.hdr-cta,.readbar,.marq,.pager-sec,.cta,.skip,
+  .hero-art,.rail-cta,.f-msg,form,.drop{display:none!important}
+  .sec,.on-dark,.on-light,.stmt,.tint,.page-hero,.hero{
+    background:#fff!important;color:#000!important;padding:0 0 18pt!important}
+  .stmt p,.stmt p b,h1,h2,h3,h4,.lede,p,li,td,th,.dom-l,.row-d,figcaption,
+  .crumb,.idx,.attrib,.rail-k,.dom-k,.grp-h .n{color:#222!important}
+  h1 em,h2 em,.stmt p b{color:#000!important;font-weight:700}
+  .wrap,.narrow{max-width:none!important;padding:0!important}
+  h1{font-size:22pt;margin-bottom:8pt}
+  h2{font-size:15pt;margin-top:14pt;page-break-after:avoid}
+  h3{font-size:11.5pt;page-break-after:avoid}
+  p,li{orphans:3;widows:3}
+  .rows,.doms,.fleet,.brand-grid,.seq,.spec{display:block!important}
+  .row,.dom,.fleet-i,.brand-w,.flow-i{
+    page-break-inside:avoid;border-bottom:1pt solid #bbb;padding:6pt 0!important;
+    background:#fff!important}
+  .spec-rail{display:none!important}
+  table{border-collapse:collapse;width:100%}
+  th{background:#eee!important;color:#000!important;border:.5pt solid #999}
+  td{border:.5pt solid #999}
+  .tbl-wrap,.route-wrap{overflow:visible!important;border:0!important}
+  details{display:block}
+  details > summary{list-style:none;font-weight:700;page-break-after:avoid}
+  details .a,details[open] .a{display:block!important;max-height:none!important;
+    height:auto!important;opacity:1!important;overflow:visible!important}
+  a{color:#000!important;text-decoration:none}
+  .ftr a[href^="http"]::after,.crumb a::after{content:""}
+  /* the page identity has to survive onto paper */
+  .ftr{border-top:1pt solid #000;padding-top:8pt!important}
+  .ftr-grid > *:not(:first-child){display:none!important}
+  .rv,.stag,.stag > *,.rise > i,.fade-up{opacity:1!important;transform:none!important}
+}
+
+/* ── Tamil Nadu coverage map ───────────────────────────────── */
+.tnmap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
+  gap:56px;align-items:center;margin-top:56px}
+.tnmap-fig{margin:0;min-width:0;display:flex;justify-content:center}
+.tnmap-svg{width:100%;max-width:400px;height:auto;overflow:visible}
+.tnd{fill:rgba(255,255,255,.045);stroke:rgba(255,255,255,.14);stroke-width:.7;
+  transition:fill .3s var(--ease),stroke .3s var(--ease)}
+.tnd-on{fill:rgba(62,173,45,.34);stroke:var(--lime-d);stroke-width:1;cursor:pointer}
+.tnd-on:hover,.tnd-on:focus,.tnd-on.on{fill:var(--lime);stroke:#DFF7D2;outline:none}
+.tn-base{pointer-events:none}
+.tn-base line{stroke:#DFF7D2;stroke-width:.9}
+.tn-base text{fill:#DFF7D2;font-family:var(--mono);font-size:11px;letter-spacing:.16em}
+.tn-dot{fill:#DFF7D2}
+.tn-pulse{fill:var(--lime-d);opacity:.55;transform-origin:center;
+  animation:tnp 2.8s var(--ease) infinite}
+@keyframes tnp{0%{r:5;opacity:.55}70%{r:17;opacity:0}100%{r:17;opacity:0}}
+.tnmap-side{min-width:0}
+.tnmap-read{border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d);
+  padding:20px 0;margin-bottom:30px}
+.tnmap-read-k{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:8px}
+.tnmap-read b{font-family:var(--display);font-size:1.5rem;font-weight:700;
+  letter-spacing:-.025em;color:#F7F6F1;line-height:1.15;display:block;min-height:1.2em}
+.tnmap-list{list-style:none;margin:0 0 26px;padding:0;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:0 26px}
+.tnmap-list li{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.09);
+  font-size:14.5px;color:rgba(239,238,231,.74);display:flex;align-items:center;gap:10px}
+.tnmap-list li::before{content:"";width:6px;height:6px;flex:none;
+  background:var(--lime-d);border-radius:50%}
+.tnmap-note{font-size:14px;line-height:1.6;color:rgba(239,238,231,.55);max-width:46ch}
+@media(max-width:980px){
+  .tnmap{grid-template-columns:1fr;gap:38px;margin-top:40px}
+  .tnmap-svg{max-width:300px}
+  .tnmap-read b{font-size:1.28rem}
+}
+@media(max-width:460px){
+  .tnmap-list{grid-template-columns:1fr;gap:0}
+  .tnmap-svg{max-width:250px}
+}
+@media(prefers-reduced-motion:reduce){.tn-pulse{animation:none;opacity:.4}}
+
+/* ── engineering drawings ──────────────────────────────────── */
+.dwgs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line);border-top:1px solid var(--line);margin-top:52px}
+.on-dark .dwgs{background:var(--line-dd);border-color:var(--line-dd)}
+.dwg-i{background:var(--bone);padding:26px 26px 30px;min-width:0}
+.tint .dwg-i{background:var(--sand)}
+.on-dark .dwg-i{background:var(--void)}
+.dwg-fig{margin:0 0 22px}
+.dwg{width:100%;height:auto;display:block;color:var(--ink-2)}
+.on-dark .dwg{color:rgba(239,238,231,.66)}
+.dwg .d-line{fill:none;stroke:currentColor;stroke-width:1.1;stroke-linecap:square}
+.dwg .d-soil{color:var(--ink-3);fill:currentColor}
+.on-dark .dwg .d-soil{color:rgba(239,238,231,.4)}
+.dwg .d-acc{fill:var(--lime);opacity:.9}
+.dwg .d-acc path[stroke]{fill:none;stroke:var(--lime)}
+.on-dark .dwg .d-acc{fill:var(--lime-d)}
+.dwg .d-flow{fill:none;stroke:var(--lime);stroke-width:1.6;color:var(--lime)}
+.on-dark .dwg .d-flow{stroke:var(--lime-d);color:var(--lime-d)}
+.dwg .d-dim{fill:none;stroke:currentColor;stroke-width:.7;opacity:.65}
+.dwg .d-note{fill:none;stroke:var(--lime);stroke-width:1}
+.on-dark .dwg .d-note{stroke:var(--lime-d)}
+.dwg .d-note text{fill:var(--lime);stroke:none;font-family:var(--mono);font-size:11px}
+.on-dark .dwg .d-note text{fill:var(--lime-d)}
+.dwg .d-t,.dwg text{font-family:var(--mono);font-size:9.6px;letter-spacing:.09em;
+  fill:currentColor;stroke:none}
+.dwg-h{font-size:1.02rem;line-height:1.3;margin-bottom:9px;letter-spacing:-.01em}
+.dwg-i p{font-size:13.8px;line-height:1.58;color:var(--ink-2)}
+.on-dark .dwg-i p{color:rgba(239,238,231,.58)}
+/* the drawing draws itself in on reveal */
+.dwg .d-line,.dwg .d-flow,.dwg .d-dim{
+  stroke-dasharray:1400;stroke-dashoffset:1400;
+  transition:stroke-dashoffset 1.5s var(--ease)}
+.stag.in .dwg .d-line,.stag.in .dwg .d-flow,.stag.in .dwg .d-dim,
+.rv.in .dwg .d-line,.rv.in .dwg .d-flow,.rv.in .dwg .d-dim{stroke-dashoffset:0}
+.dwg .d-flow{transition-delay:.5s}
+@media(max-width:900px){
+  .dwgs{grid-template-columns:1fr}
+  .dwg-i{padding:22px 20px 26px}
+}
+@media(prefers-reduced-motion:reduce){
+  .dwg .d-line,.dwg .d-flow,.dwg .d-dim{stroke-dasharray:none;stroke-dashoffset:0}
+}
+
+/* ── photo slots, ready for real site images ───────────────── */
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line-dd);margin-top:48px}
+.shot{position:relative;aspect-ratio:4/3;background:var(--deep);overflow:hidden;
+  display:flex;align-items:center;justify-content:center}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.shot-ph{display:flex;flex-direction:column;align-items:center;gap:12px;
+  color:rgba(239,238,231,.3);font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.16em;text-transform:uppercase;text-align:center;padding:20px}
+.shot-ph svg{width:30px;height:30px;stroke:currentColor;fill:none;stroke-width:1.2}
+.shot-cap{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;
+  background:linear-gradient(transparent,rgba(11,26,14,.9));
+  font-size:12.5px;color:rgba(239,238,231,.8)}
+@media(max-width:760px){.shots{grid-template-columns:1fr}}
+
+/* ── project records ───────────────────────────────────────── */
+.pjs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:var(--line);border-top:1px solid var(--line);margin-top:48px}
+.pj{background:var(--bone);padding:30px 30px 34px;min-width:0}
+.tint .pj{background:var(--sand)}
+.pj-h{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;
+  margin-bottom:12px}
+.pj-h h3{font-size:1.14rem;line-height:1.3;letter-spacing:-.015em;text-wrap:balance}
+.pj-st{flex:none;font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;padding:5px 10px;border:1px solid var(--line);
+  color:var(--ink-2);white-space:nowrap}
+.pj-ongoing{border-color:var(--lime);color:var(--lime-l)}
+.pj-completed{background:var(--lime);border-color:var(--lime);color:#07210B}
+.pj-div{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--green);margin-bottom:14px}
+.pj-s{font-size:14.6px;line-height:1.6;color:var(--ink-2);margin-bottom:22px}
+.pj-meta{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 20px;
+  border-top:1px solid var(--line);padding-top:18px}
+.pj-m span{display:block;font-family:var(--mono);font-size:9.6px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:5px}
+.pj-m b{font-size:14px;font-weight:600;color:var(--ink);line-height:1.35}
+@media(max-width:820px){.pjs{grid-template-columns:1fr}.pj{padding:24px 22px 28px}}
+
+/* ── registrations strip ───────────────────────────────────── */
+.crs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line-dd);border-top:1px solid var(--line-dd);margin-top:44px}
+.cr{background:var(--void);padding:26px 24px 30px;min-width:0}
+.cr span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.15em;
+  text-transform:uppercase;color:rgba(239,238,231,.42);margin-bottom:10px}
+.cr b{font-size:1.02rem;font-weight:600;color:#F7F6F1;line-height:1.35;
+  word-break:break-word}
+@media(max-width:900px){.crs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.crs{grid-template-columns:1fr}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://rdecosolutions.org/#organization","name":"RD Eco Solutions","url":"https://rdecosolutions.org/","description":"Civil and environmental infrastructure services for Urban Local Bodies and public sector organisations in Tamil Nadu, project consultancy, operation and maintenance, civil works, solid waste management, environmental solutions, equipment and manpower.","email":"rdecosolutionsofficial@gmail.com","telephone":"+919659443759","address":{"@type":"PostalAddress","addressLocality":"Sirkazhi","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Kumbakonam"},{"@type":"AdministrativeArea","name":"Chidambaram"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"knowsAbout":["Project Consultancy","Operation & Maintenance","Civil Infrastructure Works","Solid Waste Management","Environmental Solutions","Equipment & Technical Solutions","Manpower Services"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+919659443759","email":"rdecosolutionsofficial@gmail.com","availableLanguage":["en","ta"]}},{"@type":"WebSite","@id":"https://rdecosolutions.org/#website","url":"https://rdecosolutions.org/","name":"RD Eco Solutions","publisher":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"WebPage","@id":"https://rdecosolutions.org/clients.html#webpage","url":"https://rdecosolutions.org/clients.html","name":"Our Clients, Urban Local Bodies, TN | RD Eco Solutions","description":"We work with municipal corporations, municipalities, town panchayats, water and sewerage boards and government departments across Tamil Nadu.","isPartOf":{"@id":"https://rdecosolutions.org/#website"},"about":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"BreadcrumbList","@id":"https://rdecosolutions.org/clients.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rdecosolutions.org/"},{"@type":"ListItem","position":2,"name":"Clients","item":"https://rdecosolutions.org/clients.html"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"@id":"https://rdecosolutions.org/#organization","name":"RD Eco Solutions","url":"https://rdecosolutions.org/","image":"https://rdecosolutions.org/og-card.png","logo":"https://rdecosolutions.org/apple-touch-icon.png","priceRange":"Quoted per project","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}],"description":"Civil and environmental infrastructure services for Urban Local Bodies and public sector organisations in Tamil Nadu, project consultancy, operation and maintenance, civil works, solid waste management, environmental solutions, equipment and manpower.","email":"rdecosolutionsofficial@gmail.com","telephone":"+919659443759","address":{"@type":"PostalAddress","addressLocality":"Sirkazhi","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Ariyalur"},{"@type":"AdministrativeArea","name":"Perambalur"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"knowsAbout":["Project Consultancy","Operation & Maintenance","Civil Infrastructure Works","Solid Waste Management","Environmental Solutions","Equipment & Technical Solutions","Manpower Services"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+919659443759","email":"rdecosolutionsofficial@gmail.com","availableLanguage":["en","ta"]}},{"@type":"WebSite","@id":"https://rdecosolutions.org/#website","url":"https://rdecosolutions.org/","name":"RD Eco Solutions","publisher":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"WebPage","@id":"https://rdecosolutions.org/clients.html#webpage","url":"https://rdecosolutions.org/clients.html","name":"Our Clients, Urban Local Bodies, TN | RD Eco Solutions","description":"We work with municipal corporations, municipalities, town panchayats, water and sewerage boards and government departments across Tamil Nadu.","isPartOf":{"@id":"https://rdecosolutions.org/#website"},"about":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"BreadcrumbList","@id":"https://rdecosolutions.org/clients.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rdecosolutions.org/"},{"@type":"ListItem","position":2,"name":"Clients","item":"https://rdecosolutions.org/clients.html"}]}]}</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="hdr">
   <div class="wrap hdr-in">
     <a class="logo logo-hdr" href="index.html" aria-label="RD Eco Solutions home">
@@ -1198,6 +1383,7 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
     </div>
   </div>
 </header>
+<div id="main" tabindex="-1"></div>
 <section class="page-hero">
   <div class="wrap">
     <div class="crumb"><a href="index.html">Home</a> &rsaquo; Clients</div>
@@ -1218,13 +1404,38 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
 
     <div class="head-split rv" style="margin-top:104px;margin-bottom:40px">
       <div>
-        <span class="idx">Coverage</span>
-        <h2>Districts we serve.</h2>
+        <span class="idx">Towns</span>
+        <h2>Towns we work in.</h2>
       </div>
-      <p class="lede">Based in Sirkazhi, working across the delta districts and beyond.
-      Mobilisation elsewhere is planned into the contract programme.</p>
+      <p class="lede">Municipal work is town by town rather than district wide. These are the
+      towns our crews and plant reach most often.</p>
     </div>
-    <div class="tags rv"><span class="tag">Mayiladuthurai</span><span class="tag">Nagapattinam</span><span class="tag">Thanjavur</span><span class="tag">Tiruvarur</span><span class="tag">Cuddalore</span><span class="tag">Kumbakonam</span><span class="tag">Chidambaram</span><span class="tag">Tiruchirappalli</span></div>
+    <div class="tags rv"><span class="tag">Sirkazhi</span><span class="tag">Chidambaram</span><span class="tag">Kumbakonam</span><span class="tag">Mayiladuthurai</span><span class="tag">Poompuhar</span><span class="tag">Vaitheeswaran Koil</span><span class="tag">Tharangambadi</span><span class="tag">Mannargudi</span></div>
+  </div>
+</section>
+
+<section class="sec on-dark">
+  <div class="wrap">
+    <div class="head-split rv">
+      <div>
+        <span class="idx">Where we work</span>
+        <h2>Based in Sirkazhi, <em>working across the delta.</em></h2>
+      </div>
+      <p class="lede">The Cauvery delta districts are our home ground. Mobilisation beyond them
+      is planned into the contract programme rather than promised and then renegotiated.</p>
+    </div>
+    <div class="tnmap rv">
+      <figure class="tnmap-fig"><svg class="tnmap-svg" viewBox="0 0 520 702" role="img" aria-label="Districts of Tamil Nadu, with the delta districts we work in marked"><g class="tn-rest"><path class="tnd" d="M500 55L514 53L515 56L509 75L503 75L498 61L500 55Z" data-n="Chennai"/><path class="tnd" d="M110 277L117 287L125 282L126 287L122 289L127 288L132 283L132 290L138 294L138 287L142 287L143 299L147 302L144 311L153 312L160 324L156 333L133 346L131 353L137 367L140 366L149 375L142 386L147 389L145 398L136 400L140 422L129 426L126 411L118 410L94 428L75 417L76 379L73 376L82 374L79 368L84 352L78 351L75 344L53 335L61 322L70 322L72 320L65 320L65 310L58 306L63 299L59 294L78 290L78 284L83 280L110 277Z" data-n="Coimbatore"/><path class="tnd" d="M215 85L213 92L217 88L224 95L226 89L230 89L239 99L252 101L253 106L248 110L257 109L261 114L274 119L275 136L280 144L277 148L284 149L285 146L300 154L299 165L303 163L307 170L302 182L306 186L317 183L311 198L311 213L302 214L297 222L291 225L280 222L273 215L264 228L268 211L261 215L264 209L258 212L259 208L252 210L252 202L219 213L206 210L203 213L182 205L194 183L188 175L159 173L156 166L174 151L177 136L170 137L174 133L170 126L172 113L190 112L199 96L197 90L215 85Z" data-n="Dharmapuri"/><path class="tnd" d="M244 349L240 370L243 377L239 382L247 386L244 391L248 395L262 400L257 407L264 414L263 427L254 435L258 437L255 445L249 448L243 444L240 432L226 433L216 438L212 446L192 449L185 453L184 443L180 440L181 437L188 439L184 428L180 432L174 428L168 433L165 430L154 439L146 435L130 440L133 423L140 420L136 409L137 398L145 398L147 389L142 386L149 375L157 372L164 378L170 368L179 369L183 362L187 375L195 368L201 375L219 374L218 370L223 369L224 364L213 361L214 357L234 358L235 352L244 349Z" data-n="Dindigul"/><path class="tnd" d="M179 205L183 214L178 223L187 225L184 244L194 238L183 274L198 293L205 296L208 317L214 319L205 325L195 319L194 328L191 330L194 344L205 347L208 355L194 354L193 357L200 359L198 369L187 375L183 362L179 369L170 368L164 378L160 378L157 372L149 375L142 372L131 354L133 346L149 338L159 325L153 312L144 311L147 302L143 299L142 287L138 287L138 294L132 290L132 283L127 288L121 288L126 287L125 282L117 287L110 275L98 280L92 278L94 271L98 271L97 257L78 253L76 244L85 225L93 228L98 223L111 234L111 228L128 223L151 230L159 206L179 205Z" data-n="Erode"/><path class="tnd" d="M486 53L493 67L501 68L502 75L509 75L508 94L506 89L508 97L500 123L499 119L497 120L500 124L494 140L483 156L484 153L484 150L478 154L484 152L477 165L478 162L469 169L462 170L449 156L435 159L430 155L435 146L442 144L440 136L444 133L438 126L440 124L430 122L429 116L442 110L439 106L443 104L434 98L431 101L429 94L419 90L419 86L449 67L452 75L461 78L464 74L462 71L467 70L462 69L462 64L468 66L473 63L473 67L476 54L486 53Z" data-n="Kancheepuram"/><path class="tnd" d="M129 638L151 648L156 662L163 663L162 672L168 681L164 681L163 691L170 694L167 701L138 696L109 673L118 671L115 663L124 655L121 648L129 647L129 638Z" data-n="Kanniyakumari"/><path class="tnd" d="M220 316L236 319L247 333L270 332L282 339L281 342L291 344L296 350L291 354L293 362L274 370L270 363L259 366L258 360L254 382L243 385L239 382L243 377L240 370L244 349L235 352L234 358L214 357L213 361L224 364L223 369L218 370L219 374L201 375L200 359L194 355L197 352L205 357L208 355L205 347L193 344L191 331L195 326L194 320L199 319L206 325L220 316Z" data-n="Karur"/><path class="tnd" d="M270 416L271 421L275 422L272 425L273 438L281 441L276 449L279 460L269 461L269 465L262 466L261 473L254 472L254 477L247 472L238 475L238 480L246 481L244 485L240 481L239 487L233 484L235 487L230 489L232 499L227 497L224 502L209 504L193 502L192 496L185 494L180 497L175 493L162 501L158 511L154 510L174 481L184 454L192 449L212 446L216 438L237 432L249 448L255 445L258 437L254 435L263 427L264 417L270 416Z" data-n="Madurai"/><path class="tnd" d="M279 251L282 261L276 267L280 271L276 278L283 276L275 300L263 315L268 319L266 324L252 316L251 321L244 321L247 324L243 326L233 318L209 318L205 296L198 293L183 274L184 268L189 271L193 266L196 270L201 268L200 271L206 275L219 268L220 260L230 262L233 257L242 259L261 252L264 259L269 252L279 251Z" data-n="Namakkal"/><path class="tnd" d="M38 238L44 248L66 248L93 255L98 260L96 266L98 271L94 271L94 276L88 279L90 281L78 283L78 290L68 290L64 296L60 293L50 302L33 300L29 303L28 296L40 288L39 281L28 277L23 270L7 265L2 267L0 253L6 250L9 253L16 251L19 246L25 246L25 241L38 238Z" data-n="Nilgiris"/><path class="tnd" d="M389 541L391 549L406 563L388 551L377 550L378 545L389 541ZM270 572L256 566L259 558L256 558L257 549L269 549L269 544L259 534L252 536L249 527L266 525L263 518L270 518L268 511L277 505L305 518L307 508L325 508L321 501L322 494L313 493L310 489L314 486L311 482L312 470L326 473L326 492L334 486L332 474L338 466L347 463L354 474L362 476L342 505L337 521L356 543L374 547L329 551L329 549L329 552L315 558L307 558L307 563L297 566L285 566L286 564L270 572Z" data-n="Ramanathapuram"/><path class="tnd" d="M252 202L252 210L259 208L258 212L264 209L261 215L268 211L264 228L275 215L280 222L291 225L301 217L310 219L309 225L303 230L304 243L308 245L309 240L324 240L320 250L327 254L325 257L329 261L323 267L326 273L323 278L312 269L304 274L303 284L295 287L283 275L276 278L280 271L276 267L282 261L279 251L269 252L264 259L261 252L242 259L233 257L230 262L220 260L219 268L206 275L200 271L201 268L184 268L194 238L184 244L187 225L178 223L183 215L182 205L203 213L206 210L219 213L252 202Z" data-n="Salem"/><path class="tnd" d="M284 406L287 422L279 425L283 424L283 432L295 419L303 423L308 437L311 434L319 435L319 431L324 429L328 440L335 436L341 443L344 440L346 445L340 447L339 453L350 459L333 471L335 484L326 492L326 473L312 470L311 482L314 486L310 489L313 493L322 494L321 503L325 506L317 510L307 508L305 518L280 505L274 508L271 501L264 499L264 494L258 492L259 487L243 488L240 481L244 485L246 481L238 480L241 472L254 477L254 472L261 473L262 466L269 465L269 461L279 460L276 449L281 441L273 438L272 425L275 422L271 421L270 416L271 411L278 408L278 404L284 406Z" data-n="Sivaganga"/><path class="tnd" d="M174 428L179 431L185 429L188 439L181 437L180 440L184 443L185 453L174 481L154 510L156 513L144 518L141 506L139 511L136 507L130 510L117 506L127 482L123 468L131 459L122 441L146 435L154 439L165 430L168 433L174 428Z" data-n="Theni"/><path class="tnd" d="M486 1L495 8L507 9L516 22L516 14L518 19L517 21L518 19L517 15L517 13L520 32L514 52L500 55L498 67L491 64L489 54L476 54L473 67L473 63L468 66L462 64L462 69L467 71L462 71L464 74L461 78L456 77L448 64L439 64L441 58L437 58L441 56L441 50L437 51L437 47L431 44L424 55L409 53L406 59L401 52L401 60L392 63L387 59L385 54L389 57L395 52L394 48L406 41L402 42L404 33L397 30L416 28L423 38L434 33L437 42L441 41L444 44L449 40L441 34L467 26L471 11L481 7L475 1L486 1Z" data-n="Thiruvallur"/><path class="tnd" d="M243 537L249 545L257 548L256 566L270 573L257 580L247 593L244 612L249 610L253 615L245 616L237 628L236 637L238 637L241 635L237 635L239 635L240 629L241 636L240 648L232 657L232 664L208 671L201 666L201 651L194 638L199 632L198 614L203 610L191 594L183 593L182 588L188 586L182 583L184 575L189 574L189 571L181 571L181 567L184 567L185 560L202 563L204 553L212 558L223 545L228 545L229 538L243 537Z" data-n="Thoothukudi"/><path class="tnd" d="M219 669L199 679L192 689L170 694L163 691L164 681L168 681L162 672L163 663L157 664L151 648L132 639L123 629L117 617L123 614L129 603L114 581L121 578L129 565L131 546L137 541L139 530L150 534L154 542L161 541L163 536L165 536L172 546L185 547L193 554L193 549L202 553L202 563L185 560L184 567L181 567L181 571L189 571L189 574L184 575L182 583L187 584L186 589L181 589L184 594L192 594L192 599L198 601L203 610L198 614L199 632L194 638L201 651L201 666L209 671L219 669Z" data-n="Tirunelveli Kattabo"/><path class="tnd" d="M410 87L429 94L431 101L434 98L443 104L439 106L442 110L430 113L428 118L440 124L438 126L444 133L440 136L443 137L441 144L435 146L430 155L426 151L424 154L415 152L412 155L399 143L380 142L379 155L374 156L385 158L376 172L378 176L375 175L384 183L381 189L364 197L358 195L359 189L355 195L343 191L338 197L311 201L317 183L306 186L302 182L304 173L307 171L305 166L312 160L336 111L346 114L350 109L350 115L358 102L369 100L374 104L381 94L392 110L398 106L398 111L393 114L397 119L407 111L406 91L410 87Z" data-n="Tiruvannamalai"/><path class="tnd" d="M431 44L441 50L441 56L437 58L441 58L439 64L448 64L448 68L421 84L419 90L408 87L405 113L395 118L393 113L398 111L398 106L392 110L381 94L374 104L369 100L358 102L350 115L350 109L346 114L336 111L312 160L305 166L303 163L299 165L297 159L300 155L294 149L277 148L280 144L275 136L274 119L282 118L282 112L288 107L285 103L293 109L293 102L305 79L301 72L306 67L311 68L313 62L334 58L335 67L341 67L337 65L339 60L347 59L359 67L369 68L381 50L392 63L401 60L401 52L406 59L409 53L424 55L431 44Z" data-n="Vellore"/><path class="tnd" d="M378 143L399 143L412 155L415 152L424 154L426 151L435 159L449 156L462 170L471 170L476 165L456 205L451 202L443 209L440 202L445 199L439 200L436 195L432 198L431 201L438 201L436 206L442 211L437 213L436 210L433 213L437 221L433 224L406 216L409 224L404 224L403 228L407 229L402 234L404 242L396 241L387 246L380 244L371 252L357 247L355 252L350 250L348 254L339 255L336 263L328 260L327 254L320 250L324 240L309 240L308 245L304 243L303 230L309 225L310 219L302 214L311 213L313 202L318 198L338 197L343 191L355 195L359 189L358 195L364 197L381 189L384 183L375 175L378 176L376 172L385 158L374 155L379 155L378 143Z" data-n="Villupuram"/><path class="tnd" d="M233 484L240 484L243 488L259 487L259 493L264 494L265 500L274 505L268 511L270 518L263 518L266 525L249 529L252 536L264 537L269 549L263 551L250 546L243 537L229 538L228 545L223 545L223 549L210 559L207 558L207 553L197 553L196 549L193 549L193 554L185 547L172 546L165 536L163 536L161 541L154 542L150 534L139 530L145 525L146 517L156 514L162 501L175 493L180 497L185 494L192 496L193 502L219 503L227 497L232 499L230 489L235 487L233 484Z" data-n="Virudhunagar"/></g><g class="tn-served"><path class="tnd tnd-on" d="M389 274L395 274L398 282L402 281L411 288L412 302L399 318L376 335L349 342L340 333L345 332L350 327L349 320L357 314L357 301L360 302L364 296L365 285L370 279L386 279L389 274Z" data-n="Ariyalur" tabindex="0" role="img" aria-label="Ariyalur"/><path class="tnd tnd-on" d="M435 214L439 218L445 215L445 220L449 218L451 222L446 254L453 272L449 280L445 279L444 283L430 289L430 296L406 309L413 299L411 288L402 281L398 282L395 274L385 275L386 279L379 280L378 277L370 280L344 276L333 263L336 263L339 255L358 251L357 247L371 252L380 244L387 246L396 241L404 242L402 234L407 229L403 228L404 224L409 224L406 216L430 225L437 221L435 214Z" data-n="Cuddalore" tabindex="0" role="img" aria-label="Cuddalore"/><path class="tnd tnd-on" d="M436 338L452 343L453 350L457 350L462 415L456 419L444 419L449 418L440 413L430 414L432 398L441 388L436 375L444 373L440 370L445 368L444 356L451 353L442 349L440 353L440 350L431 349L436 338ZM453 272L457 294L452 296L456 297L457 295L458 329L430 326L428 331L414 333L412 330L417 328L413 323L420 309L414 305L430 296L430 289L444 283L445 279L449 280L453 272Z" data-n="Mayiladuthurai &amp; Nagapattinam" tabindex="0" role="img" aria-label="Mayiladuthurai &amp; Nagapattinam"/><path class="tnd tnd-on" d="M333 263L344 276L370 279L365 285L366 291L363 290L360 302L357 301L357 314L351 320L334 315L324 317L324 313L318 312L312 321L304 306L310 303L317 291L314 286L302 285L309 279L305 279L304 274L312 269L323 278L324 263L333 263Z" data-n="Perambalur" tabindex="0" role="img" aria-label="Perambalur"/><path class="tnd" d="M316 365L316 374L321 373L332 365L344 372L348 363L352 367L350 370L357 370L357 374L361 377L364 375L366 381L372 382L364 393L372 397L364 401L367 405L363 426L372 430L367 431L367 435L380 438L384 450L362 476L354 474L347 463L349 458L339 453L340 447L346 445L344 440L341 443L335 436L328 440L324 429L319 431L319 435L311 434L308 437L303 423L295 419L287 426L287 432L281 430L283 423L279 425L287 422L284 410L288 407L288 401L293 401L296 396L295 389L290 388L289 394L285 394L279 378L283 374L289 375L287 371L292 368L297 372L302 365L306 372L309 362L316 365Z" data-n="Pudukkottai"/><path class="tnd tnd-on" d="M411 411L408 413L415 414L399 414L387 421L379 437L367 435L367 431L372 430L363 426L367 405L364 401L372 397L364 393L372 382L366 381L364 375L361 377L357 374L357 370L350 370L352 367L348 363L344 372L340 368L336 370L331 364L331 350L320 349L375 336L398 320L406 309L416 305L420 309L413 323L417 328L412 330L409 345L390 338L386 343L388 371L393 373L392 381L405 385L401 387L409 394L405 401L408 405L406 408L411 411Z" data-n="Thanjavur" tabindex="0" role="img" aria-label="Thanjavur"/><path class="tnd tnd-on" d="M437 326L444 333L439 332L441 335L431 349L440 350L440 353L442 349L451 353L444 356L445 368L440 370L444 373L436 375L441 388L432 398L430 414L430 408L427 414L420 414L442 419L416 415L425 411L413 413L411 409L406 409L408 405L405 401L409 394L401 387L405 385L392 381L393 373L388 371L386 362L386 341L390 338L407 346L412 341L409 338L413 332L437 326Z" data-n="Tiruvarur" tabindex="0" role="img" aria-label="Tiruvarur"/><path class="tnd tnd-on" d="M281 278L292 282L292 287L309 279L302 285L315 287L317 291L312 300L304 306L312 321L318 312L324 313L324 317L346 317L350 327L340 333L349 342L320 349L331 350L333 356L332 368L325 367L321 373L316 374L316 365L310 362L306 372L302 365L297 372L292 368L287 371L289 375L282 375L279 379L280 386L285 394L290 388L295 389L296 399L288 400L287 408L278 404L278 408L271 411L268 418L257 408L262 400L244 391L254 382L258 360L259 366L270 363L274 370L287 367L293 361L291 354L296 350L272 332L247 333L243 327L247 322L243 322L248 318L251 321L252 316L266 324L268 319L263 315L275 300L281 278Z" data-n="Tiruchirappalli" tabindex="0" role="img" aria-label="Tiruchirappalli"/></g><g class="tn-base" transform="translate(443 295)"><circle class="tn-pulse" r="5"/><circle class="tn-dot" r="3.4"/><line x1="0" y1="-8" x2="0" y2="-30"/><text x="0" y="-38" text-anchor="middle">SIRKAZHI</text></g></svg></figure>
+      <div class="tnmap-side">
+        <div class="tnmap-read">
+          <span class="tnmap-read-k">District</span>
+          <b id="tnread">Hover a marked district</b>
+        </div>
+        <ul class="tnmap-list"><li><span>Mayiladuthurai</span></li><li><span>Nagapattinam</span></li><li><span>Thanjavur</span></li><li><span>Tiruvarur</span></li><li><span>Cuddalore</span></li><li><span>Ariyalur</span></li><li><span>Perambalur</span></li><li><span>Tiruchirappalli</span></li></ul>
+        <p class="tnmap-note">Sirkazhi, in Mayiladuthurai District, is where our plant and crews
+        are based. Everything marked is within a day&rsquo;s mobilisation.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1545,6 +1756,26 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
     nav.addEventListener("click", function () { hdr.classList.remove("hdr-off"); });
   }
   apply();
+})();
+
+/* coverage map readout */
+(function () {
+  var read = document.getElementById("tnread");
+  if (!read) return;
+  var base = read.textContent;
+  var ds = document.querySelectorAll(".tnd-on");
+  function set(el) {
+    read.innerHTML = el ? el.getAttribute("data-n") : base;
+    Array.prototype.forEach.call(ds, function (d) { d.classList.remove("on"); });
+    if (el) el.classList.add("on");
+  }
+  Array.prototype.forEach.call(ds, function (d) {
+    d.addEventListener("mouseenter", function () { set(d); });
+    d.addEventListener("focus", function () { set(d); });
+    d.addEventListener("click", function () { set(d); });
+  });
+  var fig = document.querySelector(".tnmap-fig");
+  if (fig) fig.addEventListener("mouseleave", function () { set(null); });
 })();
 </script>
 </body>

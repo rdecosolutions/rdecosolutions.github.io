@@ -793,6 +793,115 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
   .concept .dia text{font-size:12px}
   .marq span{padding:0 14px;gap:14px}
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   SERVICES DROPDOWN
+   ═══════════════════════════════════════════════════════════════ */
+.has-drop{position:relative;display:inline-flex;align-items:center}
+.drop-t{display:inline-flex;align-items:center;gap:6px}
+.drop-t .chev{transition:transform .26s var(--ease);opacity:.6}
+.has-drop:hover .drop-t .chev,
+.has-drop:focus-within .drop-t .chev{transform:rotate(180deg);opacity:1}
+.drop-b{display:none}
+
+.drop{
+  position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(-8px);
+  width:min(660px,calc(100vw - 48px));
+  background:var(--void);border:1px solid var(--line-d);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .24s var(--ease),transform .24s var(--ease),visibility .24s;
+  box-shadow:0 30px 70px -30px rgba(0,0,0,.85);z-index:80;
+}
+.has-drop:hover .drop,
+.has-drop:focus-within .drop{
+  opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);
+}
+/* keeps the pointer from falling through the gap on the way down */
+.has-drop::after{content:"";position:absolute;top:100%;left:0;right:0;height:16px}
+
+.drop-in{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-dd)}
+.drop-in > a{
+  display:grid;grid-template-columns:2rem 1fr;gap:12px;align-items:start;
+  background:var(--void);padding:16px 18px;transition:background .2s var(--ease);
+}
+.drop-in > a:hover{background:var(--deep)}
+.drop-in > a b{
+  font-family:var(--display);font-size:1.15rem;font-weight:700;letter-spacing:-.03em;
+  color:rgba(255,255,255,.22);line-height:1;padding-top:2px;transition:color .2s var(--ease);
+}
+.drop-in > a:hover b{color:var(--lime)}
+.drop-in > a span{display:block;min-width:0}
+.drop-in > a em{
+  display:block;font-style:normal;font-size:14px;font-weight:550;color:#F7F6F1;
+  line-height:1.3;margin-bottom:4px;
+}
+.drop-in > a span{font-size:12.4px;line-height:1.45;color:rgba(239,238,231,.5)}
+.drop-all{
+  grid-column:1 / -1;background:var(--void);padding:15px 18px;
+  display:flex;align-items:center;gap:9px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--lime);transition:background .2s var(--ease),gap .24s var(--ease);
+}
+.drop-all:hover{background:var(--deep);gap:14px}
+
+@media (max-width:1100px){
+  .has-drop{display:block;position:static;border-bottom:1px solid var(--line-dd)}
+  .has-drop::after{display:none}
+  .drop-t{
+    padding:15px 6px;font-size:16px;color:rgba(239,238,231,.7);
+    border-bottom:0;justify-content:flex-start;
+  }
+  .drop-t .chev{display:none}
+  .drop-b{
+    display:flex;align-items:center;justify-content:center;
+    position:absolute;right:22px;margin-top:-46px;
+    width:44px;height:44px;background:transparent;border:1px solid var(--line-dd);
+    color:rgba(239,238,231,.7);cursor:pointer;
+  }
+  .drop-b .chev{width:14px;height:14px;transition:transform .26s var(--ease)}
+  .drop-b[aria-expanded="true"] .chev{transform:rotate(180deg)}
+  .drop-b[aria-expanded="true"]{border-color:var(--lime);color:var(--lime)}
+
+  .drop{
+    position:static;transform:none;width:auto;border:0;box-shadow:none;
+    opacity:1;visibility:visible;pointer-events:auto;
+    display:none;background:transparent;
+  }
+  .has-drop:hover .drop,.has-drop:focus-within .drop{transform:none}
+  .drop.open{display:block}
+  .drop-in{grid-template-columns:1fr;gap:0;background:transparent;
+           border-left:1px solid var(--line-d);margin:0 0 14px 6px}
+  .drop-in > a{grid-template-columns:1.6rem 1fr;gap:10px;padding:12px 0 12px 14px;background:transparent}
+  .drop-in > a:hover{background:transparent}
+  .drop-in > a b{font-size:1rem;color:var(--lime)}
+  .drop-in > a em{font-size:15px}
+  .drop-in > a span{font-size:12.5px}
+  .drop-all{padding:12px 0 12px 14px;background:transparent;margin-left:6px}
+  .drop-all:hover{background:transparent}
+}
+
+/* ── owned plant ────────────────────────────────────────────── */
+.fleet{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line)}
+.on-dark .fleet{background:var(--line-dd);border-color:var(--line-dd)}
+.fleet-i{background:var(--bone);padding:30px 26px 34px;transition:background .3s var(--ease)}
+.on-dark .fleet-i{background:var(--void)}
+.tint .fleet-i{background:var(--sand)}
+.fleet-i:hover{background:var(--paper)}
+.on-dark .fleet-i:hover{background:var(--deep)}
+.fleet-k{
+  font-family:var(--display);font-size:1.6rem;font-weight:700;letter-spacing:-.04em;
+  color:var(--green);display:block;margin-bottom:20px;line-height:1;
+}
+.on-dark .fleet-k{color:var(--lime)}
+.fleet-i h3{font-size:1.02rem;margin-bottom:9px}
+.fleet-i p{font-size:13.8px;color:var(--ink-2);line-height:1.55}
+.on-dark .fleet-i p{color:rgba(239,238,231,.58)}
+@media (max-width:900px){.fleet{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){
+  .fleet{grid-template-columns:1fr}
+  .fleet-i{padding:24px 20px 26px}
+  .fleet-k{font-size:1.4rem;margin-bottom:14px}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://rdecosolutions.org/#organization","name":"RD Eco Solutions","url":"https://rdecosolutions.org/","description":"Civil and environmental infrastructure services for Urban Local Bodies and public-sector organisations in Tamil Nadu, project consultancy, operation and maintenance, civil works, solid waste management, environmental solutions, equipment and manpower.","email":"rdecosolutionsofficial@gmail.com","telephone":"+919659443759","address":{"@type":"PostalAddress","addressLocality":"Sirkazhi","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Kumbakonam"},{"@type":"AdministrativeArea","name":"Chidambaram"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"knowsAbout":["Project Consultancy","Operation & Maintenance","Civil Infrastructure Works","Solid Waste Management","Environmental Solutions","Equipment & Technical Solutions","Manpower Services"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+919659443759","email":"rdecosolutionsofficial@gmail.com","availableLanguage":["en","ta"]}},{"@type":"WebSite","@id":"https://rdecosolutions.org/#website","url":"https://rdecosolutions.org/","name":"RD Eco Solutions","publisher":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"WebPage","@id":"https://rdecosolutions.org/about.html#webpage","url":"https://rdecosolutions.org/about.html","name":"About Us, Infrastructure Company, TN | RD Eco Solutions","description":"Civil and environmental infrastructure company in Sirkazhi, supporting Tamil Nadu municipal projects from tender consultancy through – O&M.","isPartOf":{"@id":"https://rdecosolutions.org/#website"},"about":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"BreadcrumbList","@id":"https://rdecosolutions.org/about.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rdecosolutions.org/"},{"@type":"ListItem","position":2,"name":"About","item":"https://rdecosolutions.org/about.html"}]}]}</script>
 </head>
@@ -800,10 +909,29 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
 <header class="hdr">
   <div class="wrap hdr-in">
     <a class="logo" href="index.html" aria-label="RD Eco Solutions home">
-      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x=".75" y=".75" width="38.5" height="38.5" rx="2" stroke="rgba(196,240,76,.4)" stroke-width="1.5"/><path d="M11 29V12h7.5a5.5 5.5 0 0 1 0 11H15l6.5 6" stroke="#C4F04C" stroke-width="2.6" stroke-linecap="square" stroke-linejoin="miter"/></svg>
+      <svg viewBox="0 0 46 46" fill="none" aria-hidden="true">
+  <g stroke="#C4F04C" stroke-width="1.15" fill="none" opacity=".92">
+    <circle cx="23" cy="27" r="14.2"/>
+    <ellipse cx="23" cy="27" rx="6" ry="14.2"/>
+    <path d="M9.4 22.6 H36.6 M8.8 27 H37.2 M9.4 31.4 H36.6"/>
+  </g>
+  <g fill="#C4F04C" opacity=".3">
+    <path d="M15.4 21.6c1.9-.5 3.6.3 5 .1 1.3-.2 1.9-1.3 3.2-1.1.9.2.8 1.3.1 1.9-1 .9-2.6.6-3.7 1.2-1.2.7-1.1 2-2.4 2.2-1.4.2-2.6-1-2.9-2.2-.2-.9.1-1.8.7-2.1z"/>
+    <path d="M24.6 28.4c1.4-.6 3 .1 3.8 1.2.8 1.1.4 2.6-.4 3.5-.9 1-2 1.9-2.3 3.2-.2 1-.3 2.2-1.3 2.6-1 .3-1.8-.7-1.9-1.7-.2-1.6.4-3.1.6-4.7.2-1.5-.2-3.4 1.5-4.1z"/>
+  </g>
+  <text x="23" y="18" text-anchor="middle" fill="#F7F6F1"
+        font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700"
+        letter-spacing="-.5">RD</text>
+</svg>
       <span><span class="logo-n">RD Eco Solutions</span><br><span class="logo-s">Civil &middot; Environmental &middot; O&amp;M</span></span>
     </a>
-    <nav class="nav" id="nav" aria-label="Main"><a href="index.html">Home</a><a href="about.html" aria-current="page">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="clients.html">Clients</a><a href="contact.html">Contact</a></nav>
+    <nav class="nav" id="nav" aria-label="Main"><a href="index.html">Home</a><a href="about.html" aria-current="page">About</a><span class="has-drop">
+        <a href="services.html" class="drop-t">Services<svg class="chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+        <button class="drop-b" type="button" aria-expanded="false" aria-label="Show services"><svg class="chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <span class="drop"><span class="drop-in"><a href="project-consultancy.html"><b>A</b><span><em>Project Consultancy</em>DPRs, feasibility studies, BOQ and rate analysis, and the tender documentation that carries a scheme through sanction.</span></a><a href="operation-and-maintenance.html"><b>B</b><span><em>Operation &amp; Maintenance</em>Keeping sewerage networks, pumping stations, treatment plants and water supply assets running to parameter.</span></a><a href="civil-infrastructure-works.html"><b>C</b><span><em>Civil Infrastructure Works</em>Execution of underground drainage, water pipelines, stormwater works and road restoration in live urban areas.</span></a><a href="solid-waste-management.html"><b>D</b><span><em>Solid Waste Management</em>Door-to-door collection through to processing, micro compost centres, MRF operations and legacy waste biomining.</span></a><a href="environmental-solutions.html"><b>E</b><span><em>Environmental Solutions</em>Wastewater, septage, biomethanation and sludge management scoped for compliance and for long-run operating cost.</span></a><a href="equipment-technical-solutions.html"><b>F</b><span><em>Equipment &amp; Technical Solutions</em>Pumps, jetting and desilting machinery, flow meters and collection vehicles, specified, installed and maintained.</span></a><a href="manpower-services.html"><b>G</b><span><em>Manpower Services</em>Operators, supervisors and sanitation staff deployed with attendance, wage records and EPF/ESI compliance handled.</span></a>
+          <a class="drop-all" href="services.html">All seven divisions <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </span></span>
+      </span><a href="projects.html">Projects</a><a href="clients.html">Clients</a><a href="contact.html">Contact</a></nav>
     <div class="hdr-cta">
       <a class="btn btn-p btn-sm" href="contact.html">Enquire <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav">
@@ -887,7 +1015,20 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
   <div class="wrap">
     <div class="ftr-grid">
       <div>
-        <a class="logo" href="index.html"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x=".75" y=".75" width="38.5" height="38.5" rx="2" stroke="rgba(196,240,76,.4)" stroke-width="1.5"/><path d="M11 29V12h7.5a5.5 5.5 0 0 1 0 11H15l6.5 6" stroke="#C4F04C" stroke-width="2.6" stroke-linecap="square" stroke-linejoin="miter"/></svg>
+        <a class="logo" href="index.html"><svg viewBox="0 0 46 46" fill="none" aria-hidden="true">
+  <g stroke="#C4F04C" stroke-width="1.15" fill="none" opacity=".92">
+    <circle cx="23" cy="27" r="14.2"/>
+    <ellipse cx="23" cy="27" rx="6" ry="14.2"/>
+    <path d="M9.4 22.6 H36.6 M8.8 27 H37.2 M9.4 31.4 H36.6"/>
+  </g>
+  <g fill="#C4F04C" opacity=".3">
+    <path d="M15.4 21.6c1.9-.5 3.6.3 5 .1 1.3-.2 1.9-1.3 3.2-1.1.9.2.8 1.3.1 1.9-1 .9-2.6.6-3.7 1.2-1.2.7-1.1 2-2.4 2.2-1.4.2-2.6-1-2.9-2.2-.2-.9.1-1.8.7-2.1z"/>
+    <path d="M24.6 28.4c1.4-.6 3 .1 3.8 1.2.8 1.1.4 2.6-.4 3.5-.9 1-2 1.9-2.3 3.2-.2 1-.3 2.2-1.3 2.6-1 .3-1.8-.7-1.9-1.7-.2-1.6.4-3.1.6-4.7.2-1.5-.2-3.4 1.5-4.1z"/>
+  </g>
+  <text x="23" y="18" text-anchor="middle" fill="#F7F6F1"
+        font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700"
+        letter-spacing="-.5">RD</text>
+</svg>
           <span><span class="logo-n">RD Eco Solutions</span><br><span class="logo-s">Civil &middot; Environmental &middot; O&amp;M</span></span>
         </a>
         <p class="about">Civil and environmental infrastructure services for Urban Local Bodies
@@ -1085,6 +1226,30 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
     if (!tick) { tick = true; requestAnimationFrame(paint); }
   }, { passive: true });
   paint();
+})();
+
+/* services dropdown: hover and focus on desktop, tap to expand on mobile */
+(function () {
+  var wrap = document.querySelector(".has-drop");
+  if (!wrap) return;
+  var btn  = wrap.querySelector(".drop-b");
+  var menu = wrap.querySelector(".drop");
+  if (!btn || !menu) return;
+
+  btn.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  /* Escape closes it and returns focus, for keyboard users */
+  wrap.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      menu.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+      var t = wrap.querySelector(".drop-t");
+      if (t) t.focus();
+    }
+  });
 })();
 </script>
 </body>

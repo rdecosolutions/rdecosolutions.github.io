@@ -1662,7 +1662,7 @@ body::after{
   background-size:180px 180px}
 
 /* the survey light: a soft pool that follows the pointer on dark ground */
-.on-dark,.hero,.stmt,.jn-sticky,.xp-sec,.fd-sec,.glance-band{position:relative}
+.on-dark,.hero,.stmt,.xp-sec,.fd-sec{position:relative}
 .on-dark::before,.hero::before,.stmt::before,.xp-sec::before,.fd-sec::before{
   content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
   opacity:0;transition:opacity .5s var(--ease);
@@ -2114,21 +2114,6 @@ body::after{
       </div></div>
   </div>
 </section>
-<section class="sec on-light">
-  <div class="wrap">
-    <div class="head-split rv">
-      <div>
-        <span class="idx">Who we work with</span>
-        <h2>Built around how public bodies <em>actually procure.</em></h2>
-      </div>
-      <p class="lede">Tender led, audit exposed, operating on a recurring budget. The site
-      conditions matter as much as the specification.</p>
-    </div>
-    <div class="tags rv"><span class="tag">Municipal Corporations</span><span class="tag">Municipalities</span><span class="tag">Town Panchayats</span><span class="tag">Water and Sewerage Boards</span><span class="tag">Government Departments</span><span class="tag">Public sector organisations</span><span class="tag">Infrastructure contractors</span><span class="tag">Industrial and commercial establishments</span></div>
-
-  </div>
-</section>
-
 <section class="sec on-dark">
   <div class="wrap">
     <div class="head-split rv">
@@ -2188,163 +2173,6 @@ body::after{
         <p class="dom-l">We work from actual field conditions rather than from the drawing, because the site is what the work has to survive.</p>
         <div class="dom-w">What we assess</div>
         <div class="dom-a"><span>Structural condition</span><span>Construction quality and workmanship</span><span>Levels and alignment</span><span>Drainage arrangements</span><span>Material performance</span><span>Site specific constraints</span><span>Safety and long term operational needs</span></div>
-      </article></div>
-  </div>
-</section>
-<section class="sec on-light tint">
-  <div class="wrap">
-    <div class="head-split rv">
-      <div>
-        <span class="idx">How the work is detailed</span>
-        <h2>The drawing decides the job, <em>long before the plant arrives.</em></h2>
-      </div>
-      <p class="lede">Three details we get asked about most often. Each one is a place where a
-      scheme is normally either made durable or quietly compromised.</p>
-    </div>
-    <div class="dwgs rv">
-      <article class="dwg-i">
-        <figure class="dwg-fig"><svg viewBox="0 0 560 340" class="dwg" role="img" aria-label="Sectional detail of a manhole and sewer connection" xmlns="http://www.w3.org/2000/svg">
-<defs>
-  <pattern id="soil" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(38)">
-    <line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width=".5" opacity=".38"/>
-  </pattern>
-  <pattern id="conc" width="6" height="6" patternUnits="userSpaceOnUse">
-    <circle cx="1.5" cy="1.5" r=".6" fill="currentColor" opacity=".45"/>
-  </pattern>
-  <marker id="ar" markerWidth="7" markerHeight="7" refX="6" refY="2.4" orient="auto">
-    <path d="M0 0l6 2.4L0 4.8z" fill="currentColor"/>
-  </marker>
-</defs>
-<g class="d-soil"><rect x="40" y="74" width="480" height="220" fill="url(#soil)"/></g>
-<g class="d-line">
-  <path d="M40 74h480" stroke-width="1.4"/>
-  <path d="M40 74h480M40 294h480" opacity=".5"/>
-</g>
-<g class="d-acc">
-  <rect x="228" y="60" width="104" height="14" rx="2"/>
-  <text x="280" y="52" text-anchor="middle" class="d-t">RCC COVER &amp; FRAME</text>
-</g>
-<g class="d-line">
-  <path d="M236 74v70h-14v122h116V144h-14V74" fill="url(#conc)"/>
-  <path d="M236 74v70h-14v122h116V144h-14V74"/>
-  <path d="M222 266h116" stroke-width="1.6"/>
-  <path d="M244 266q36-26 72 0" opacity=".85"/>
-  <path d="M40 226h182M338 226h182" stroke-width="2.4"/>
-  <path d="M40 250h182M338 250h182" stroke-width="2.4"/>
-</g>
-<g class="d-flow">
-  <path d="M96 238h64" marker-end="url(#ar)"/>
-  <path d="M400 238h64" marker-end="url(#ar)"/>
-</g>
-<g class="d-t">
-  <text x="118" y="218">INCOMING 300mm</text>
-  <text x="396" y="218">OUTGOING 300mm</text>
-  <text x="280" y="286" text-anchor="middle">BENCHING &amp; CHANNEL</text>
-  <text x="118" y="264">FALL 1:20</text>
-  <text x="70" y="92">GROUND LEVEL</text>
-</g>
-<g class="d-dim">
-  <path d="M368 74v192M362 74h12M362 266h12"/>
-  <text x="384" y="176" class="d-t">INVERT DEPTH</text>
-</g>
-<g class="d-note">
-  <circle cx="290" cy="200" r="13"/><text x="290" y="205" text-anchor="middle">1</text>
-  <circle cx="150" cy="238" r="13"/><text x="150" y="243" text-anchor="middle">2</text>
-</g>
-</svg></figure>
-        <h3 class="dwg-h">Manhole and sewer connection, sectional detail</h3>
-        <p>Invert depth, benching and channel fall are what decide whether a line self cleanses. Get them wrong and the network silts up whatever the pipe cost.</p>
-      </article>
-      <article class="dwg-i">
-        <figure class="dwg-fig"><svg viewBox="0 0 560 340" class="dwg" role="img" aria-label="Process flow of a sewage treatment plant" xmlns="http://www.w3.org/2000/svg">
-<defs>
-  <marker id="ar2" markerWidth="7" markerHeight="7" refX="6" refY="2.4" orient="auto">
-    <path d="M0 0l6 2.4L0 4.8z" fill="currentColor"/>
-  </marker>
-</defs>
-<g class="d-line">
-  <rect x="34" y="128" width="74" height="76" rx="2"/>
-  <rect x="140" y="128" width="74" height="76" rx="2"/>
-  <rect x="246" y="112" width="96" height="108" rx="2"/>
-  <circle cx="422" cy="166" r="46"/>
-  <rect x="34" y="252" width="180" height="52" rx="2"/>
-</g>
-<g class="d-acc">
-  <path d="M246 112h96v22h-96z"/>
-  <path d="M148 190h58v6h-58zM40 190h58v6H40z"/>
-</g>
-<g class="d-line" opacity=".55">
-  <path d="M258 148h72M258 162h72M258 176h72M258 190h72"/>
-  <path d="M392 166h60M422 136v60"/>
-  <path d="M46 264h156M46 278h156M46 292h120"/>
-</g>
-<g class="d-flow">
-  <path d="M108 166h26" marker-end="url(#ar2)"/>
-  <path d="M214 166h26" marker-end="url(#ar2)"/>
-  <path d="M342 166h30" marker-end="url(#ar2)"/>
-  <path d="M468 166h44" marker-end="url(#ar2)"/>
-  <path d="M294 220v42H222" marker-end="url(#ar2)"/>
-  <path d="M124 252v-40" marker-end="url(#ar2)" opacity=".6"/>
-</g>
-<g class="d-t">
-  <text x="71" y="112" text-anchor="middle">SCREEN + GRIT</text>
-  <text x="177" y="112" text-anchor="middle">PRIMARY SETTLING</text>
-  <text x="294" y="98" text-anchor="middle">AERATION</text>
-  <text x="422" y="98" text-anchor="middle">SECONDARY CLARIFIER</text>
-  <text x="294" y="236" text-anchor="middle">MLSS 3000 to 4000 mg/l</text>
-  <text x="516" y="152" text-anchor="middle">TO</text>
-  <text x="516" y="166" text-anchor="middle">REUSE</text>
-  <text x="124" y="246" text-anchor="middle">SLUDGE DRYING BEDS</text>
-  <text x="252" y="284" text-anchor="start">RETURN ACTIVATED SLUDGE</text>
-</g>
-</svg></figure>
-        <h3 class="dwg-h">Sewage treatment, process line</h3>
-        <p>Aeration is where an underperforming plant usually fails, not at the inlet. We measure MLSS and return sludge before recommending any civil work.</p>
-      </article>
-      <article class="dwg-i">
-        <figure class="dwg-fig"><svg viewBox="0 0 560 340" class="dwg" role="img" aria-label="Sequence of legacy waste biomining and dumpsite reclamation" xmlns="http://www.w3.org/2000/svg">
-<defs>
-  <pattern id="waste" width="8" height="8" patternUnits="userSpaceOnUse">
-    <path d="M0 8L8 0M-2 2L2-2M6 10l4-4" stroke="currentColor" stroke-width=".7" opacity=".5"/>
-  </pattern>
-  <marker id="ar3" markerWidth="7" markerHeight="7" refX="6" refY="2.4" orient="auto">
-    <path d="M0 0l6 2.4L0 4.8z" fill="currentColor"/>
-  </marker>
-</defs>
-<g class="d-line"><path d="M20 268h520" stroke-width="1.4"/></g>
-<g class="d-soil">
-  <path d="M34 268q22-96 84-96t84 96z" fill="url(#waste)"/>
-</g>
-<g class="d-line"><path d="M34 268q22-96 84-96t84 96" /></g>
-<g class="d-line" opacity=".6">
-  <path d="M250 268q16-52 56-52t56 52"/>
-  <path d="M262 268q14-34 44-34t44 34" opacity=".7"/>
-</g>
-<g class="d-acc">
-  <path d="M420 268h112v-14H420z"/>
-  <path d="M436 254v-12h6v12M462 254v-20h6v20M488 254v-9h6v9"/>
-</g>
-<g class="d-flow">
-  <path d="M214 214h24" marker-end="url(#ar3)"/>
-  <path d="M378 214h28" marker-end="url(#ar3)"/>
-</g>
-<g class="d-line" opacity=".85">
-  <path d="M240 130h96v46h-96z"/>
-  <path d="M252 142h72M252 154h72M252 166h48"/>
-</g>
-<g class="d-t">
-  <text x="118" y="300" text-anchor="middle">01 LEGACY DUMPSITE</text>
-  <text x="118" y="316" text-anchor="middle">EXCAVATE AND WINDROW</text>
-  <text x="288" y="120" text-anchor="middle">TROMMEL SCREENING</text>
-  <text x="288" y="300" text-anchor="middle">02 SEGREGATE</text>
-  <text x="288" y="316" text-anchor="middle">SOIL, RDF, INERTS, METAL</text>
-  <text x="476" y="300" text-anchor="middle">03 LAND RECLAIMED</text>
-  <text x="476" y="316" text-anchor="middle">HANDED BACK TO THE ULB</text>
-  <text x="118" y="158" text-anchor="middle">STABILISED MSW</text>
-</g>
-</svg></figure>
-        <h3 class="dwg-h">Legacy waste biomining, three stages</h3>
-        <p>The output that matters to a council is not tonnage moved, it is the reclaimed hectare handed back with a disposal record for every fraction.</p>
       </article></div>
   </div>
 </section>

@@ -1473,6 +1473,163 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
   .xp-t text,.xp-t{font-size:10.5px}
   .dwg .d-t,.dwg text{font-size:10.4px}
 }
+
+/* ══ scroll driven cross section ══════════════════════════════ */
+.jn{position:relative;background:var(--void);color:#F7F6F1}
+.jn-scroll{height:340vh;pointer-events:none}
+.jn-sticky{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;
+  justify-content:center;gap:26px;padding:74px 0 34px;overflow:hidden}
+.jn-head h2{font-size:clamp(1.8rem,3.4vw,2.9rem);line-height:1.08;letter-spacing:-.035em}
+.jn-head .idx{margin-bottom:12px}
+.jn-stage{display:flex;flex-direction:column;gap:22px;min-height:0;flex:1}
+.jn-viewport{position:relative;flex:1;min-height:0;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.jn-track{position:absolute;inset:0;will-change:transform}
+.jn-svg{height:100%;width:auto;display:block;color:rgba(239,238,231,.5)}
+.jn-l{fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:square}
+.jn-ground{color:rgba(239,238,231,.3);fill:currentColor}
+.jn-a{fill:var(--lime);color:var(--lime)}
+.jn-a path[fill="none"]{fill:none;stroke:var(--lime)}
+.jn-f{fill:none;stroke:var(--lime-d);stroke-width:1.8;color:var(--lime-d)}
+.jn-t text{font-family:var(--mono);font-size:14px;letter-spacing:.1em;
+  fill:rgba(239,238,231,.5);stroke:none}
+.jn-pulse{fill:var(--lime-d);animation:xpp 2.6s var(--ease) infinite}
+
+/* the stage you are on lifts, the rest recede */
+.jn-s{opacity:.2;transition:opacity .55s var(--ease)}
+.jn-s.on{opacity:1}
+.jn-s.on .jn-t text{fill:rgba(239,238,231,.82)}
+.jn-flow{stroke-dasharray:9 7;animation:jnf 1.5s linear infinite;animation-play-state:paused}
+.jn-s.on .jn-flow{animation-play-state:running}
+@keyframes jnf{to{stroke-dashoffset:-32}}
+.jn-water{animation:jnw 4s var(--ease) infinite}
+@keyframes jnw{0%,100%{opacity:.34}50%{opacity:.16}}
+
+.jn-lower{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,290px);
+  gap:44px;align-items:end}
+.jn-caps{position:relative;min-height:172px}
+.jn-cap{position:absolute;inset:0;opacity:0;transform:translateY(14px);
+  pointer-events:none;transition:opacity .45s var(--ease),transform .45s var(--ease)}
+.jn-cap.on{opacity:1;transform:none;pointer-events:auto}
+.jn-n{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;color:var(--lime-d)}
+.jn-cap h3{font-size:clamp(1.3rem,2.3vw,1.72rem);letter-spacing:-.025em;line-height:1.16;
+  margin:8px 0 10px}
+.jn-div{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--lime-d);text-decoration:none;
+  border-bottom:1px solid rgba(95,211,73,.4);padding-bottom:3px;margin-bottom:14px}
+.jn-div:hover{color:#F7F6F1;border-color:#F7F6F1}
+.jn-div svg{transition:transform .25s var(--ease)}
+.jn-div:hover svg{transform:translateX(3px)}
+.jn-cap p{font-size:15px;line-height:1.62;color:rgba(239,238,231,.62);max-width:62ch}
+.jn-bar{height:2px;background:rgba(255,255,255,.13);margin-bottom:18px;overflow:hidden}
+.jn-bar i{display:block;height:100%;width:0;background:var(--lime);transition:width .12s linear}
+.jn-ticks{display:flex;flex-direction:column;gap:2px}
+.jn-tick{display:flex;align-items:center;gap:12px;background:none;border:0;cursor:pointer;
+  padding:7px 0;font-family:var(--sans);font-size:13px;color:rgba(239,238,231,.4);
+  text-align:left;transition:color .3s var(--ease)}
+.jn-tick span{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  color:rgba(239,238,231,.28);transition:color .3s var(--ease)}
+.jn-tick:hover{color:rgba(239,238,231,.75)}
+.jn-tick.on{color:#F7F6F1}
+.jn-tick.on span{color:var(--lime-d)}
+
+@media(max-width:1000px){
+  .jn-lower{grid-template-columns:1fr;gap:22px}
+  .jn-rail{display:flex;align-items:center;gap:16px}
+  .jn-bar{flex:1;margin:0}
+  .jn-ticks{flex-direction:row;gap:14px}
+  .jn-tick{padding:0;font-size:0;gap:0}
+  .jn-tick span{font-size:11px}
+  .jn-caps{min-height:200px}
+}
+@media(max-width:640px){
+  .jn-scroll{height:300vh}
+  .jn-sticky{padding:66px 0 26px;gap:16px}
+  .jn-t text{font-size:19px}
+  .jn-cap p{font-size:14.2px}
+}
+/* no JS, or reduced motion: the whole thing becomes a plain readable block */
+.jn-nojs .jn-scroll{display:none}
+.jn-nojs .jn-sticky{position:static;height:auto;padding:96px 0}
+.jn-nojs .jn-viewport{height:44vh;mask-image:none;-webkit-mask-image:none;overflow-x:auto}
+.jn-nojs .jn-s{opacity:1}
+.jn-nojs .jn-caps{min-height:0;display:grid;gap:34px}
+.jn-nojs .jn-cap{position:static;opacity:1;transform:none;pointer-events:auto}
+.jn-nojs .jn-rail{display:none}
+@media(prefers-reduced-motion:reduce){
+  .jn-flow,.jn-water,.jn-pulse{animation:none}
+}
+
+/* ── scope finder ──────────────────────────────────────────── */
+.fd{margin-top:52px;border-top:1px solid var(--line-d);padding-top:40px}
+.fd-q{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(239,238,231,.5);margin-bottom:26px}
+.fd-q b{color:var(--lime-d);font-weight:500;margin-right:10px}
+.fd-os{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:1px}
+.fd-o{
+  background:var(--void);border:0;box-shadow:0 0 0 1px var(--line-dd);cursor:pointer;text-align:left;
+  padding:24px 26px;min-height:96px;font-family:var(--sans);font-size:15.4px;line-height:1.45;
+  color:rgba(239,238,231,.78);position:relative;
+  transition:background .3s var(--ease),color .3s var(--ease)}
+.fd-o::after{content:"";position:absolute;left:0;top:0;height:2px;width:0;
+  background:var(--lime);transition:width .35s var(--ease)}
+.fd-o:hover,.fd-o:focus-visible{background:var(--deep-2);color:#F7F6F1;outline:none}
+.fd-o:hover::after,.fd-o:focus-visible::after{width:100%}
+.fd-back{
+  margin-top:26px;background:none;border:0;cursor:pointer;padding:0;
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(239,238,231,.45);transition:color .25s var(--ease)}
+.fd-back:hover{color:var(--lime-d)}
+.fd-card{border:1px solid var(--line-d);padding:38px 38px 34px;background:var(--deep)}
+.fd-card h3{font-family:var(--display);font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;
+  letter-spacing:-.03em;line-height:1.1;color:#F7F6F1;margin-bottom:14px}
+.fd-card p{font-size:15.4px;line-height:1.6;color:rgba(239,238,231,.66);max-width:64ch}
+.fd-acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.fd-alt{margin-top:22px;padding-top:18px;border-top:1px solid var(--line-dd);
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(239,238,231,.42)}
+.fd-alt span{color:var(--lime-d)}
+.fd-alt a{color:var(--lime-d);text-decoration:none;border-bottom:1px solid rgba(95,211,73,.35)}
+.fd-alt a:hover{color:#F7F6F1;border-color:#F7F6F1}
+.fd-step{animation:fdin .4s var(--ease) both}
+@keyframes fdin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media(max-width:560px){
+  .fd-os{grid-template-columns:1fr}
+  .fd-o{min-height:0;padding:18px 20px;font-size:14.6px}
+  .fd-card{padding:26px 22px 24px}
+  .fd-acts .btn{width:100%;justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){.fd-step{animation:none}}
+
+/* ── facts band ────────────────────────────────────────────── */
+.facts-band{background:var(--sand);border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+.ft{background:var(--sand);padding:38px 30px 40px;min-width:0}
+.ft-n{display:block;font-family:var(--display);font-size:clamp(2.6rem,4.4vw,3.5rem);
+  font-weight:800;letter-spacing:-.05em;line-height:.9;color:var(--lime-l);
+  font-variant-numeric:tabular-nums}
+.ft-k{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--ink-3);margin:12px 0 14px}
+.ft p{font-size:14px;line-height:1.55;color:var(--ink-2);max-width:34ch}
+@media(max-width:860px){.facts{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.facts{grid-template-columns:1fr}.ft{padding:26px 22px 28px}}
+
+/* ── hero art draws itself in on load ──────────────────────── */
+.hero-art path{stroke-dasharray:900;stroke-dashoffset:900;
+  animation:hart 2.2s var(--ease) forwards}
+.hero-art path:nth-child(2){animation-delay:.1s}
+.hero-art g > path:nth-child(1){animation-delay:.15s}
+.hero-art g > path:nth-child(2){animation-delay:.3s}
+.hero-art g > path:nth-child(3){animation-delay:.45s}
+.hero-art g > path:nth-child(4){animation-delay:.6s}
+.hero-art g > path:nth-child(5){animation-delay:.75s}
+.hero-art g > path:nth-child(6){animation-delay:.9s}
+@keyframes hart{to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){
+  .hero-art path{stroke-dasharray:none;stroke-dashoffset:0;animation:none}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"@id":"https://rdecosolutions.org/#organization","name":"RD Eco Solutions","url":"https://rdecosolutions.org/","image":"https://rdecosolutions.org/og-card.png","logo":"https://rdecosolutions.org/apple-touch-icon.png","priceRange":"Quoted per project","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}],"description":"Civil and environmental infrastructure services for Urban Local Bodies and public sector organisations in Tamil Nadu, project consultancy, operation and maintenance, civil works, solid waste management, environmental solutions, equipment and manpower.","email":"rdecosolutionsofficial@gmail.com","telephone":"+919659443759","address":{"@type":"PostalAddress","addressLocality":"Sirkazhi","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Ariyalur"},{"@type":"AdministrativeArea","name":"Perambalur"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"knowsAbout":["Project Consultancy","Operation & Maintenance","Civil Infrastructure Works","Solid Waste Management","Environmental Solutions","Equipment & Technical Solutions","Manpower Services"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+919659443759","email":"rdecosolutionsofficial@gmail.com","availableLanguage":["en","ta"]}},{"@type":"WebSite","@id":"https://rdecosolutions.org/#website","url":"https://rdecosolutions.org/","name":"RD Eco Solutions","publisher":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"WebPage","@id":"https://rdecosolutions.org/#webpage","url":"https://rdecosolutions.org/","name":"Municipal Infrastructure Services, TN | RD Eco Solutions","description":"Project consultancy, sewerage and STP operation and maintenance, civil works, solid waste management and biomining for Urban Local Bodies across Tamil Nadu.","isPartOf":{"@id":"https://rdecosolutions.org/#website"},"about":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"FAQPage","@id":"https://rdecosolutions.org/#faq","mainEntity":[{"@type":"Question","name":"Which districts and Urban Local Bodies do you serve?","acceptedAnswer":{"@type":"Answer","text":"We are based in Sirkazhi, Mayiladuthurai District, and work with municipal corporations, municipalities, town panchayats, water and sewerage boards and government departments across Tamil Nadu. Mobilisation outside our home district is routine and is planned into the contract programme rather than treated as an exception."}},{"@type":"Question","name":"What services can be combined under a single contract?","acceptedAnswer":{"@type":"Answer","text":"Consultancy, civil execution, operation and maintenance, solid waste management, environmental works, equipment supply and manpower deployment. The advantage of that range is accountability, a scheme that is designed, built and then operated by the same organisation has nobody to hand the problem to when performance falls short."}},{"@type":"Question","name":"What registration and statutory details do you provide with a bid?","acceptedAnswer":{"@type":"Answer","text":"The registration, GST, PAN and statutory compliance documents required by the tender are submitted with the technical cover. Please request our current credentials pack and we will send the applicable documents for the work you are tendering."}},{"@type":"Question","name":"How do we start a conversation about a project?","acceptedAnswer":{"@type":"Answer","text":"Send the tender document, or a short description of the site, scope and timeline, by email or phone. We will tell you quickly whether we are the right fit, including when we are not, which saves both sides time at evaluation."}}]}]}</script>
 </head>
@@ -1643,6 +1800,214 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
       </a></div>
   </div>
 </section>
+
+<section class="facts-band">
+  <div class="wrap"><div class="facts stag">
+      <div class="ft">
+        <span class="ft-n" data-to="07">07</span>
+        <span class="ft-k">divisions</span>
+        <p>Consultancy through to manpower, under one contract and one point of contact.</p>
+      </div>
+      <div class="ft">
+        <span class="ft-n" data-to="08">08</span>
+        <span class="ft-k">districts</span>
+        <p>The Cauvery delta and beyond, all within a day&rsquo;s mobilisation from Sirkazhi.</p>
+      </div>
+      <div class="ft">
+        <span class="ft-n" data-to="06">06</span>
+        <span class="ft-k">stage method</span>
+        <p>Inspection to preventive recommendation, the same sequence on every job.</p>
+      </div>
+      <div class="ft">
+        <span class="ft-n" data-to="04">04</span>
+        <span class="ft-k">machine types owned</span>
+        <p>Backhoe, excavator, mixers and site plant. Ours, not hired in.</p>
+      </div></div></div>
+</section>
+<section class="jn" id="journey" aria-label="From the street to the outfall">
+  <div class="jn-sticky">
+    <div class="wrap jn-head">
+      <span class="idx">One town, one section</span>
+      <h2>From the street surface <em>to the outfall.</em></h2>
+    </div>
+    <div class="jn-stage">
+      <div class="jn-viewport"><div class="jn-track"><svg class="jn-svg" viewBox="0 0 2640 620" preserveAspectRatio="xMinYMid meet"
+  role="img" aria-label="Cross section from a street trench through the sewer, pumping station and treatment plant to reuse"
+  xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <pattern id="jn-soil" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(38)">
+    <line x1="0" y1="0" x2="0" y2="9" stroke="currentColor" stroke-width=".6" opacity=".3"/>
+  </pattern>
+  <marker id="jn-a" markerWidth="8" markerHeight="8" refX="6.5" refY="2.6" orient="auto">
+    <path d="M0 0l6.5 2.6L0 5.2z" fill="currentColor"/>
+  </marker>
+ </defs>
+
+ <g class="jn-ground"><rect x="0" y="150" width="2640" height="470" fill="url(#jn-soil)"/></g>
+ <g class="jn-l"><path d="M0 150h2640"/></g>
+
+ <!-- 1. the street and the trench -->
+ <g class="jn-s" data-s="0">
+   <g class="jn-l">
+     <path d="M60 150v-64h56v64M132 150v-96h72v96M220 150v-48h44v48"/>
+     <path d="M300 150v190h190V150"/>
+     <path d="M300 340h190"/>
+     <path d="M292 150v190M498 150v190" opacity=".55"/>
+   </g>
+   <g class="jn-a">
+     <rect class="jn-lay" x="302" y="152" width="186" height="14"/>
+     <rect class="jn-lay jn-d1" x="302" y="168" width="186" height="20" opacity=".62"/>
+     <rect class="jn-lay jn-d2" x="302" y="190" width="186" height="26" opacity=".4"/>
+   </g>
+   <g class="jn-l"><circle cx="395" cy="300" r="26"/><circle cx="395" cy="300" r="19"/></g>
+   <g class="jn-t">
+     <text x="60" y="128">LIVE STREET</text>
+     <text x="512" y="172">WEARING COURSE</text>
+     <text x="512" y="196">BASE COURSE</text>
+     <text x="512" y="222">SUB BASE</text>
+     <text x="512" y="306">SEWER, BEDDED</text>
+   </g>
+ </g>
+
+ <!-- 2. the line and the manhole -->
+ <g class="jn-s" data-s="1">
+   <g class="jn-l">
+     <path d="M414 320h370M846 326h300"/>
+     <path d="M414 280h370M846 286h300" opacity=".55"/>
+     <path d="M790 150v176h56V150"/>
+     <path d="M784 150h68" stroke-width="2"/>
+     <path d="M796 326q22-18 44 0"/>
+   </g>
+   <g class="jn-a"><rect x="782" y="140" width="72" height="10"/></g>
+   <g class="jn-f">
+     <path class="jn-flow" d="M430 300h340" marker-end="url(#jn-a)"/>
+     <path class="jn-flow" d="M862 306h268" marker-end="url(#jn-a)"/>
+   </g>
+   <g class="jn-t">
+     <text x="818" y="126" text-anchor="middle">MANHOLE</text>
+     <text x="600" y="368" text-anchor="middle">GRAVITY, LAID TO FALL</text>
+     <text x="1000" y="368" text-anchor="middle">SELF CLEANSING VELOCITY</text>
+   </g>
+ </g>
+
+ <!-- 3. the pumping station -->
+ <g class="jn-s" data-s="2">
+   <g class="jn-l">
+     <path d="M1180 150v290h230V150"/>
+     <path d="M1180 440h230"/>
+     <path d="M1180 150h230" opacity=".4"/>
+     <path d="M1246 150v-70h100v70" />
+     <circle cx="1296" cy="382" r="30"/>
+     <path d="M1296 352v60M1266 382h60"/>
+     <path d="M1296 352V214h250"/>
+   </g>
+   <g class="jn-a">
+     <path class="jn-water" d="M1182 396h226v42h-226z" opacity=".34"/>
+     <path d="M1182 396q28-14 56 0t56 0 56 0 58 0" fill="none" stroke-width="2"/>
+   </g>
+   <g class="jn-f"><path class="jn-flow" d="M1296 340V220h236" marker-end="url(#jn-a)"/></g>
+   <g class="jn-t">
+     <text x="1296" y="68" text-anchor="middle">PUMPING STATION</text>
+     <text x="1430" y="404">WET WELL</text>
+     <text x="1430" y="238">RISING MAIN</text>
+     <text x="1180" y="484">DUTY AND STANDBY, ALTERNATED</text>
+   </g>
+ </g>
+
+ <!-- 4. the treatment plant -->
+ <g class="jn-s" data-s="3">
+   <g class="jn-l">
+     <rect x="1600" y="196" width="120" height="104" rx="2"/>
+     <rect x="1760" y="196" width="150" height="104" rx="2"/>
+     <circle cx="2010" cy="248" r="54"/>
+     <path d="M1546 214h54"/>
+     <path d="M1612 232h96M1612 252h72M1612 272h96" opacity=".5"/>
+     <path d="M1772 236h126M1772 256h126M1772 276h96" opacity=".5"/>
+     <path d="M1956 248h108M2010 194v108" opacity=".5"/>
+     <rect x="1600" y="392" width="310" height="76" rx="2"/>
+     <path d="M1614 410h282M1614 430h282M1614 450h236" opacity=".45"/>
+   </g>
+   <g class="jn-a"><rect class="jn-lay" x="1760" y="196" width="150" height="11"/></g>
+   <g class="jn-f">
+     <path class="jn-flow" d="M1720 248h34" marker-end="url(#jn-a)"/>
+     <path class="jn-flow" d="M1910 248h40" marker-end="url(#jn-a)"/>
+     <path class="jn-flow" d="M1962 292v100h-52" marker-end="url(#jn-a)" opacity=".7"/>
+   </g>
+   <g class="jn-t">
+     <text x="1660" y="182" text-anchor="middle">SCREEN</text>
+     <text x="1835" y="182" text-anchor="middle">AERATION</text>
+     <text x="2010" y="176" text-anchor="middle">CLARIFIER</text>
+     <text x="1600" y="500">SLUDGE DRYING BEDS</text>
+     <text x="1600" y="524">MLSS AND RETURN SLUDGE MEASURED, NOT ASSUMED</text>
+   </g>
+ </g>
+
+ <!-- 5. what leaves -->
+ <g class="jn-s" data-s="4">
+   <g class="jn-l">
+     <path d="M2064 248h120"/>
+     <rect x="2200" y="200" width="140" height="96" rx="2"/>
+     <path d="M2214 220h112M2214 240h112" opacity=".5"/>
+     <path d="M2400 150v-52h44v52M2460 150v-84h56v84"/>
+     <path d="M2340 248h96v-70"/>
+   </g>
+   <g class="jn-a">
+     <path class="jn-water jn-d1" d="M2202 256h136v38h-136z" opacity=".34"/>
+     <circle class="jn-pulse" cx="2436" cy="166" r="6"/>
+   </g>
+   <g class="jn-f">
+     <path class="jn-flow" d="M2074 248h112" marker-end="url(#jn-a)"/>
+     <path class="jn-flow" d="M2346 248h84v-64" marker-end="url(#jn-a)"/>
+   </g>
+   <g class="jn-t">
+     <text x="2270" y="186" text-anchor="middle">TREATED STORAGE</text>
+     <text x="2400" y="128">REUSE</text>
+     <text x="2200" y="340">PARKS, CONSTRUCTION, FLUSHING, RECHARGE</text>
+   </g>
+ </g>
+</svg></div></div>
+      <div class="wrap jn-lower">
+        <div class="jn-caps">
+        <div class="jn-cap" data-s="0">
+          <span class="jn-n">01</span>
+          <h3>The street</h3>
+          <a class="jn-div" href="civil-infrastructure-works.html">Civil Infrastructure Works <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <p>A trench in a live town is opened, shored, laid and closed in sequence. Three reinstatement layers go back exactly as they came out, before the next length opens.</p>
+        </div>
+        <div class="jn-cap" data-s="1">
+          <span class="jn-n">02</span>
+          <h3>The line</h3>
+          <a class="jn-div" href="civil-infrastructure-works.html">Civil Infrastructure Works <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <p>Gravity does the work, so the fall is the whole design. Laid flat, a sewer silts and surcharges. The manhole is where it is inspected, desilted and measured.</p>
+        </div>
+        <div class="jn-cap" data-s="2">
+          <span class="jn-n">03</span>
+          <h3>The pumping station</h3>
+          <a class="jn-div" href="operation-and-maintenance.html">Operation &amp; Maintenance <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <p>Where the ground runs out of fall, pumps take over. Duty and standby alternated, wet well levels logged, and a failure caught in the trend rather than at two in the morning.</p>
+        </div>
+        <div class="jn-cap" data-s="3">
+          <span class="jn-n">04</span>
+          <h3>The plant</h3>
+          <a class="jn-div" href="operation-and-maintenance.html">Operation &amp; Maintenance <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <p>Screening, aeration, settlement. Almost every plant that misses its consent parameters is failing at aeration or sludge return, which is why we measure those before proposing civil work.</p>
+        </div>
+        <div class="jn-cap" data-s="4">
+          <span class="jn-n">05</span>
+          <h3>What leaves</h3>
+          <a class="jn-div" href="environmental-solutions.html">Environmental Solutions <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <p>Treated water to parks, construction, flushing or recharge, and sludge to the drying beds with a disposal record. The outfall is the number a department is actually judged on.</p>
+        </div></div>
+        <div class="jn-rail">
+          <div class="jn-bar"><i></i></div>
+          <div class="jn-ticks"><button class="jn-tick" data-s="0" type="button" aria-label="Go to stage 1, The street"><span>01</span>The street</button><button class="jn-tick" data-s="1" type="button" aria-label="Go to stage 2, The line"><span>02</span>The line</button><button class="jn-tick" data-s="2" type="button" aria-label="Go to stage 3, The pumping station"><span>03</span>The pumping station</button><button class="jn-tick" data-s="3" type="button" aria-label="Go to stage 4, The plant"><span>04</span>The plant</button><button class="jn-tick" data-s="4" type="button" aria-label="Go to stage 5, What leaves"><span>05</span>What leaves</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="jn-scroll" aria-hidden="true"></div>
+</section>
+
 
 <section class="stmt">
   <div class="wrap rv">
@@ -2270,6 +2635,169 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
   });
   var fig = document.querySelector(".tnmap-fig");
   if (fig) fig.addEventListener("mouseleave", function () { set(null); });
+})();
+
+/* the cross section journey: scroll progress drives the pan and the captions */
+(function () {
+  var sec = document.getElementById("journey");
+  if (!sec) return;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) { sec.classList.add("jn-nojs"); return; }
+
+  var track = sec.querySelector(".jn-track"),
+      view  = sec.querySelector(".jn-viewport"),
+      svg   = sec.querySelector(".jn-svg"),
+      bar   = sec.querySelector(".jn-bar i"),
+      caps  = sec.querySelectorAll(".jn-cap"),
+      ticks = sec.querySelectorAll(".jn-tick"),
+      stages= sec.querySelectorAll(".jn-s");
+  var n = caps.length, cur = -1, span = 0, ticking = false;
+
+  function measure() {
+    var w = svg.getBoundingClientRect().width;
+    span = Math.max(0, w - view.getBoundingClientRect().width);
+  }
+
+  function setStage(i) {
+    if (i === cur) return;
+    cur = i;
+    for (var a = 0; a < n; a++) {
+      caps[a].classList.toggle("on", a === i);
+      ticks[a].classList.toggle("on", a === i);
+      if (stages[a]) stages[a].classList.toggle("on", a === i);
+    }
+  }
+
+  function frame() {
+    ticking = false;
+    var r = sec.getBoundingClientRect();
+    var total = sec.offsetHeight - window.innerHeight;
+    if (total <= 0) return;
+    var p = Math.min(1, Math.max(0, -r.top / total));
+    track.style.transform = "translate3d(" + (-p * span) + "px,0,0)";
+    if (bar) bar.style.width = (p * 100) + "%";
+    setStage(Math.min(n - 1, Math.floor(p * n + 0.0001)));
+  }
+
+  function onScroll() {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(frame); }
+  }
+
+  Array.prototype.forEach.call(ticks, function (t, i) {
+    t.addEventListener("click", function () {
+      var total = sec.offsetHeight - window.innerHeight;
+      var target = sec.offsetTop + total * ((i + 0.5) / n);
+      window.scrollTo({ top: target, behavior: "smooth" });
+    });
+  });
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", function () { measure(); onScroll(); }, { passive: true });
+  if (svg.complete === undefined) { measure(); } else { measure(); }
+  setTimeout(function () { measure(); frame(); }, 60);
+  measure(); frame();
+})();
+
+/* scope finder: two questions, weighted, straight to the right division */
+(function () {
+  var fd = document.getElementById("finder");
+  if (!fd) return;
+  var data;
+  try { data = JSON.parse(fd.getAttribute("data-fd")); } catch (e) { return; }
+
+  var steps = fd.querySelectorAll(".fd-step"),
+      picks = { sit: null, stage: null };
+
+  function show(i) {
+    Array.prototype.forEach.call(steps, function (s, n) { s.hidden = n !== i; });
+    if (i > 0) fd.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
+  function score() {
+    var t = {}, add = function (w) {
+      for (var k in w) { if (w.hasOwnProperty(k)) t[k] = (t[k] || 0) + w[k]; }
+    };
+    if (picks.sit !== null) add(data.sit[picks.sit]);
+    if (picks.stage !== null) add(data.stage[picks.stage]);
+    var order = Object.keys(t).sort(function (a, b) { return t[b] - t[a]; });
+    return order;
+  }
+
+  function result() {
+    var order = score();
+    if (!order.length) { show(0); return; }
+    var top = data.svc[order[0]];
+    document.getElementById("fd-t").textContent = top.t;
+    document.getElementById("fd-b").textContent = top.b;
+    document.getElementById("fd-go").setAttribute("href", top.u);
+    document.getElementById("fd-ask").setAttribute(
+      "href", "contact.html?service=" + encodeURIComponent(top.t));
+    var alt = document.getElementById("fd-alt");
+    var others = order.slice(1, 3).filter(function (k) { return data.svc[k]; });
+    if (others.length) {
+      alt.innerHTML = others.map(function (k) {
+        return '<a href="' + data.svc[k].u + '">' + data.svc[k].t + "</a>";
+      }).join(", ");
+      alt.parentNode.hidden = false;
+    } else { alt.parentNode.hidden = true; }
+    show(2);
+  }
+
+  Array.prototype.forEach.call(fd.querySelectorAll(".fd-o"), function (b) {
+    b.addEventListener("click", function () {
+      var step = +b.closest(".fd-step").getAttribute("data-step");
+      if (step === 0) { picks.sit = +b.getAttribute("data-i"); show(1); }
+      else { picks.stage = +b.getAttribute("data-i"); result(); }
+    });
+  });
+  Array.prototype.forEach.call(fd.querySelectorAll(".fd-back"), function (b) {
+    b.addEventListener("click", function () {
+      var step = +b.closest(".fd-step").getAttribute("data-step");
+      if (step === 1) { picks.sit = null; show(0); }
+      else { picks.sit = null; picks.stage = null; show(0); }
+    });
+  });
+})();
+
+/* the finder hands the chosen service to the enquiry form */
+(function () {
+  var sel = document.getElementById("service");
+  if (!sel) return;
+  var want = new URLSearchParams(window.location.search).get("service");
+  if (!want) return;
+  for (var i = 0; i < sel.options.length; i++) {
+    if (sel.options[i].value === want || sel.options[i].text === want) {
+      sel.selectedIndex = i;
+      sel.setAttribute("data-prefilled", "1");
+      break;
+    }
+  }
+})();
+
+/* facts band: count up once, when it comes into view */
+(function () {
+  var ns = document.querySelectorAll(".ft-n[data-to]");
+  if (!ns.length) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !("IntersectionObserver" in window)) return;
+  Array.prototype.forEach.call(ns, function (el) { el.textContent = "00"; });
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      var el = e.target, to = parseInt(el.getAttribute("data-to"), 10) || 0,
+          t0 = null, dur = 900;
+      function step(t) {
+        if (!t0) t0 = t;
+        var p = Math.min(1, (t - t0) / dur);
+        var v = Math.round(to * (1 - Math.pow(1 - p, 3)));
+        el.textContent = (v < 10 ? "0" : "") + v;
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }, { threshold: 0.4 });
+  Array.prototype.forEach.call(ns, function (el) { io.observe(el); });
 })();
 </script>
 </body>

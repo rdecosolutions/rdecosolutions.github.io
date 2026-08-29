@@ -1473,6 +1473,163 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
   .xp-t text,.xp-t{font-size:10.5px}
   .dwg .d-t,.dwg text{font-size:10.4px}
 }
+
+/* ══ scroll driven cross section ══════════════════════════════ */
+.jn{position:relative;background:var(--void);color:#F7F6F1}
+.jn-scroll{height:340vh;pointer-events:none}
+.jn-sticky{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;
+  justify-content:center;gap:26px;padding:74px 0 34px;overflow:hidden}
+.jn-head h2{font-size:clamp(1.8rem,3.4vw,2.9rem);line-height:1.08;letter-spacing:-.035em}
+.jn-head .idx{margin-bottom:12px}
+.jn-stage{display:flex;flex-direction:column;gap:22px;min-height:0;flex:1}
+.jn-viewport{position:relative;flex:1;min-height:0;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.jn-track{position:absolute;inset:0;will-change:transform}
+.jn-svg{height:100%;width:auto;display:block;color:rgba(239,238,231,.5)}
+.jn-l{fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:square}
+.jn-ground{color:rgba(239,238,231,.3);fill:currentColor}
+.jn-a{fill:var(--lime);color:var(--lime)}
+.jn-a path[fill="none"]{fill:none;stroke:var(--lime)}
+.jn-f{fill:none;stroke:var(--lime-d);stroke-width:1.8;color:var(--lime-d)}
+.jn-t text{font-family:var(--mono);font-size:14px;letter-spacing:.1em;
+  fill:rgba(239,238,231,.5);stroke:none}
+.jn-pulse{fill:var(--lime-d);animation:xpp 2.6s var(--ease) infinite}
+
+/* the stage you are on lifts, the rest recede */
+.jn-s{opacity:.2;transition:opacity .55s var(--ease)}
+.jn-s.on{opacity:1}
+.jn-s.on .jn-t text{fill:rgba(239,238,231,.82)}
+.jn-flow{stroke-dasharray:9 7;animation:jnf 1.5s linear infinite;animation-play-state:paused}
+.jn-s.on .jn-flow{animation-play-state:running}
+@keyframes jnf{to{stroke-dashoffset:-32}}
+.jn-water{animation:jnw 4s var(--ease) infinite}
+@keyframes jnw{0%,100%{opacity:.34}50%{opacity:.16}}
+
+.jn-lower{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,290px);
+  gap:44px;align-items:end}
+.jn-caps{position:relative;min-height:172px}
+.jn-cap{position:absolute;inset:0;opacity:0;transform:translateY(14px);
+  pointer-events:none;transition:opacity .45s var(--ease),transform .45s var(--ease)}
+.jn-cap.on{opacity:1;transform:none;pointer-events:auto}
+.jn-n{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;color:var(--lime-d)}
+.jn-cap h3{font-size:clamp(1.3rem,2.3vw,1.72rem);letter-spacing:-.025em;line-height:1.16;
+  margin:8px 0 10px}
+.jn-div{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--lime-d);text-decoration:none;
+  border-bottom:1px solid rgba(95,211,73,.4);padding-bottom:3px;margin-bottom:14px}
+.jn-div:hover{color:#F7F6F1;border-color:#F7F6F1}
+.jn-div svg{transition:transform .25s var(--ease)}
+.jn-div:hover svg{transform:translateX(3px)}
+.jn-cap p{font-size:15px;line-height:1.62;color:rgba(239,238,231,.62);max-width:62ch}
+.jn-bar{height:2px;background:rgba(255,255,255,.13);margin-bottom:18px;overflow:hidden}
+.jn-bar i{display:block;height:100%;width:0;background:var(--lime);transition:width .12s linear}
+.jn-ticks{display:flex;flex-direction:column;gap:2px}
+.jn-tick{display:flex;align-items:center;gap:12px;background:none;border:0;cursor:pointer;
+  padding:7px 0;font-family:var(--sans);font-size:13px;color:rgba(239,238,231,.4);
+  text-align:left;transition:color .3s var(--ease)}
+.jn-tick span{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  color:rgba(239,238,231,.28);transition:color .3s var(--ease)}
+.jn-tick:hover{color:rgba(239,238,231,.75)}
+.jn-tick.on{color:#F7F6F1}
+.jn-tick.on span{color:var(--lime-d)}
+
+@media(max-width:1000px){
+  .jn-lower{grid-template-columns:1fr;gap:22px}
+  .jn-rail{display:flex;align-items:center;gap:16px}
+  .jn-bar{flex:1;margin:0}
+  .jn-ticks{flex-direction:row;gap:14px}
+  .jn-tick{padding:0;font-size:0;gap:0}
+  .jn-tick span{font-size:11px}
+  .jn-caps{min-height:200px}
+}
+@media(max-width:640px){
+  .jn-scroll{height:300vh}
+  .jn-sticky{padding:66px 0 26px;gap:16px}
+  .jn-t text{font-size:19px}
+  .jn-cap p{font-size:14.2px}
+}
+/* no JS, or reduced motion: the whole thing becomes a plain readable block */
+.jn-nojs .jn-scroll{display:none}
+.jn-nojs .jn-sticky{position:static;height:auto;padding:96px 0}
+.jn-nojs .jn-viewport{height:44vh;mask-image:none;-webkit-mask-image:none;overflow-x:auto}
+.jn-nojs .jn-s{opacity:1}
+.jn-nojs .jn-caps{min-height:0;display:grid;gap:34px}
+.jn-nojs .jn-cap{position:static;opacity:1;transform:none;pointer-events:auto}
+.jn-nojs .jn-rail{display:none}
+@media(prefers-reduced-motion:reduce){
+  .jn-flow,.jn-water,.jn-pulse{animation:none}
+}
+
+/* ── scope finder ──────────────────────────────────────────── */
+.fd{margin-top:52px;border-top:1px solid var(--line-d);padding-top:40px}
+.fd-q{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(239,238,231,.5);margin-bottom:26px}
+.fd-q b{color:var(--lime-d);font-weight:500;margin-right:10px}
+.fd-os{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:1px}
+.fd-o{
+  background:var(--void);border:0;box-shadow:0 0 0 1px var(--line-dd);cursor:pointer;text-align:left;
+  padding:24px 26px;min-height:96px;font-family:var(--sans);font-size:15.4px;line-height:1.45;
+  color:rgba(239,238,231,.78);position:relative;
+  transition:background .3s var(--ease),color .3s var(--ease)}
+.fd-o::after{content:"";position:absolute;left:0;top:0;height:2px;width:0;
+  background:var(--lime);transition:width .35s var(--ease)}
+.fd-o:hover,.fd-o:focus-visible{background:var(--deep-2);color:#F7F6F1;outline:none}
+.fd-o:hover::after,.fd-o:focus-visible::after{width:100%}
+.fd-back{
+  margin-top:26px;background:none;border:0;cursor:pointer;padding:0;
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(239,238,231,.45);transition:color .25s var(--ease)}
+.fd-back:hover{color:var(--lime-d)}
+.fd-card{border:1px solid var(--line-d);padding:38px 38px 34px;background:var(--deep)}
+.fd-card h3{font-family:var(--display);font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;
+  letter-spacing:-.03em;line-height:1.1;color:#F7F6F1;margin-bottom:14px}
+.fd-card p{font-size:15.4px;line-height:1.6;color:rgba(239,238,231,.66);max-width:64ch}
+.fd-acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.fd-alt{margin-top:22px;padding-top:18px;border-top:1px solid var(--line-dd);
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(239,238,231,.42)}
+.fd-alt span{color:var(--lime-d)}
+.fd-alt a{color:var(--lime-d);text-decoration:none;border-bottom:1px solid rgba(95,211,73,.35)}
+.fd-alt a:hover{color:#F7F6F1;border-color:#F7F6F1}
+.fd-step{animation:fdin .4s var(--ease) both}
+@keyframes fdin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media(max-width:560px){
+  .fd-os{grid-template-columns:1fr}
+  .fd-o{min-height:0;padding:18px 20px;font-size:14.6px}
+  .fd-card{padding:26px 22px 24px}
+  .fd-acts .btn{width:100%;justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){.fd-step{animation:none}}
+
+/* ── facts band ────────────────────────────────────────────── */
+.facts-band{background:var(--sand);border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+.ft{background:var(--sand);padding:38px 30px 40px;min-width:0}
+.ft-n{display:block;font-family:var(--display);font-size:clamp(2.6rem,4.4vw,3.5rem);
+  font-weight:800;letter-spacing:-.05em;line-height:.9;color:var(--lime-l);
+  font-variant-numeric:tabular-nums}
+.ft-k{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--ink-3);margin:12px 0 14px}
+.ft p{font-size:14px;line-height:1.55;color:var(--ink-2);max-width:34ch}
+@media(max-width:860px){.facts{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.facts{grid-template-columns:1fr}.ft{padding:26px 22px 28px}}
+
+/* ── hero art draws itself in on load ──────────────────────── */
+.hero-art path{stroke-dasharray:900;stroke-dashoffset:900;
+  animation:hart 2.2s var(--ease) forwards}
+.hero-art path:nth-child(2){animation-delay:.1s}
+.hero-art g > path:nth-child(1){animation-delay:.15s}
+.hero-art g > path:nth-child(2){animation-delay:.3s}
+.hero-art g > path:nth-child(3){animation-delay:.45s}
+.hero-art g > path:nth-child(4){animation-delay:.6s}
+.hero-art g > path:nth-child(5){animation-delay:.75s}
+.hero-art g > path:nth-child(6){animation-delay:.9s}
+@keyframes hart{to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){
+  .hero-art path{stroke-dasharray:none;stroke-dashoffset:0;animation:none}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"@id":"https://rdecosolutions.org/#organization","name":"RD Eco Solutions","url":"https://rdecosolutions.org/","image":"https://rdecosolutions.org/og-card.png","logo":"https://rdecosolutions.org/apple-touch-icon.png","priceRange":"Quoted per project","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}],"description":"Civil and environmental infrastructure services for Urban Local Bodies and public sector organisations in Tamil Nadu, project consultancy, operation and maintenance, civil works, solid waste management, environmental solutions, equipment and manpower.","email":"rdecosolutionsofficial@gmail.com","telephone":"+919659443759","address":{"@type":"PostalAddress","addressLocality":"Sirkazhi","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Ariyalur"},{"@type":"AdministrativeArea","name":"Perambalur"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"knowsAbout":["Project Consultancy","Operation & Maintenance","Civil Infrastructure Works","Solid Waste Management","Environmental Solutions","Equipment & Technical Solutions","Manpower Services"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+919659443759","email":"rdecosolutionsofficial@gmail.com","availableLanguage":["en","ta"]}},{"@type":"WebSite","@id":"https://rdecosolutions.org/#website","url":"https://rdecosolutions.org/","name":"RD Eco Solutions","publisher":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"WebPage","@id":"https://rdecosolutions.org/operation-and-maintenance.html#webpage","url":"https://rdecosolutions.org/operation-and-maintenance.html","name":"Sewerage, STP & Water Supply O&M Contractor, Tamil Nadu","description":"Operation and maintenance of underground sewerage, sewage pumping stations, STPs and water supply networks for Tamil Nadu ULBs. Zero manual entry.","isPartOf":{"@id":"https://rdecosolutions.org/#website"},"about":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"BreadcrumbList","@id":"https://rdecosolutions.org/operation-and-maintenance.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rdecosolutions.org/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://rdecosolutions.org/services.html"},{"@type":"ListItem","position":3,"name":"Operation & Maintenance","item":"https://rdecosolutions.org/operation-and-maintenance.html"}]},{"@type":"Service","@id":"https://rdecosolutions.org/operation-and-maintenance.html#service","name":"Operation & Maintenance","serviceType":"Operation & Maintenance","description":"Operation and maintenance of underground sewerage, sewage pumping stations, STPs and water supply networks for Tamil Nadu ULBs. Zero manual entry.","provider":{"@id":"https://rdecosolutions.org/#organization"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Ariyalur"},{"@type":"AdministrativeArea","name":"Perambalur"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"audience":{"@type":"Audience","audienceType":"Urban Local Bodies, Municipal Corporations, Municipalities, Town Panchayats, Government Departments"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Operation & Maintenance, scope","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Underground Sewerage System (UGSS) O&M"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Sewage pumping station maintenance"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Sewage Treatment Plant operation and support"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Water supply system maintenance"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pump, motor, valve and pipeline maintenance"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Preventive and breakdown maintenance"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Deployment of technical and operational manpower"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Daily monitoring and performance reporting"}}]}},{"@type":"FAQPage","@id":"https://rdecosolutions.org/operation-and-maintenance.html#faq","mainEntity":[{"@type":"Question","name":"What does an STP or sewerage O&M contract with you actually cover?","acceptedAnswer":{"@type":"Answer","text":"Scope is agreed against the tender, but a standard deployment covers manpower on shift, routine and preventive maintenance, minor repairs, consumables, daily logging and monthly reporting against agreed performance parameters. Energy charges, major capital replacement and civil rehabilitation are normally excluded and priced separately, we set that boundary in writing before mobilisation so there is no dispute later."}},{"@type":"Question","name":"What is your mobilisation time after a work order, and can you respond to emergencies?","acceptedAnswer":{"@type":"Answer","text":"Mobilisation timelines are agreed in the contract and depend on manpower and equipment scale. For assets already under our O&M we operate defined emergency response for sewer blockages and pump failures. We quote a specific response time for each contract rather than a generic figure, and we hold ourselves to what is written."}},{"@type":"Question","name":"How do you ensure no manual entry into sewers and manholes?","acceptedAnswer":{"@type":"Answer","text":"Through mechanised cleaning, jetting and suction equipment rather than manual entry, combined with confined space protocol, gas testing and protective equipment where any entry is unavoidable and legally permitted. Manual scavenging is prohibited by law and is a direct liability for the commissioning body as well as the contractor."}},{"@type":"Question","name":"How is sludge and screened waste disposed of?","acceptedAnswer":{"@type":"Answer","text":"To the disposal point agreed with the ULB, in line with TNPCB requirements, with documentation of quantity and destination retained and shared as part of monthly reporting. The paper trail matters as much as the disposal itself when the department is audited."}}]}]}</script>
 </head>
@@ -2056,6 +2213,169 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
   });
   var fig = document.querySelector(".tnmap-fig");
   if (fig) fig.addEventListener("mouseleave", function () { set(null); });
+})();
+
+/* the cross section journey: scroll progress drives the pan and the captions */
+(function () {
+  var sec = document.getElementById("journey");
+  if (!sec) return;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) { sec.classList.add("jn-nojs"); return; }
+
+  var track = sec.querySelector(".jn-track"),
+      view  = sec.querySelector(".jn-viewport"),
+      svg   = sec.querySelector(".jn-svg"),
+      bar   = sec.querySelector(".jn-bar i"),
+      caps  = sec.querySelectorAll(".jn-cap"),
+      ticks = sec.querySelectorAll(".jn-tick"),
+      stages= sec.querySelectorAll(".jn-s");
+  var n = caps.length, cur = -1, span = 0, ticking = false;
+
+  function measure() {
+    var w = svg.getBoundingClientRect().width;
+    span = Math.max(0, w - view.getBoundingClientRect().width);
+  }
+
+  function setStage(i) {
+    if (i === cur) return;
+    cur = i;
+    for (var a = 0; a < n; a++) {
+      caps[a].classList.toggle("on", a === i);
+      ticks[a].classList.toggle("on", a === i);
+      if (stages[a]) stages[a].classList.toggle("on", a === i);
+    }
+  }
+
+  function frame() {
+    ticking = false;
+    var r = sec.getBoundingClientRect();
+    var total = sec.offsetHeight - window.innerHeight;
+    if (total <= 0) return;
+    var p = Math.min(1, Math.max(0, -r.top / total));
+    track.style.transform = "translate3d(" + (-p * span) + "px,0,0)";
+    if (bar) bar.style.width = (p * 100) + "%";
+    setStage(Math.min(n - 1, Math.floor(p * n + 0.0001)));
+  }
+
+  function onScroll() {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(frame); }
+  }
+
+  Array.prototype.forEach.call(ticks, function (t, i) {
+    t.addEventListener("click", function () {
+      var total = sec.offsetHeight - window.innerHeight;
+      var target = sec.offsetTop + total * ((i + 0.5) / n);
+      window.scrollTo({ top: target, behavior: "smooth" });
+    });
+  });
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", function () { measure(); onScroll(); }, { passive: true });
+  if (svg.complete === undefined) { measure(); } else { measure(); }
+  setTimeout(function () { measure(); frame(); }, 60);
+  measure(); frame();
+})();
+
+/* scope finder: two questions, weighted, straight to the right division */
+(function () {
+  var fd = document.getElementById("finder");
+  if (!fd) return;
+  var data;
+  try { data = JSON.parse(fd.getAttribute("data-fd")); } catch (e) { return; }
+
+  var steps = fd.querySelectorAll(".fd-step"),
+      picks = { sit: null, stage: null };
+
+  function show(i) {
+    Array.prototype.forEach.call(steps, function (s, n) { s.hidden = n !== i; });
+    if (i > 0) fd.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
+  function score() {
+    var t = {}, add = function (w) {
+      for (var k in w) { if (w.hasOwnProperty(k)) t[k] = (t[k] || 0) + w[k]; }
+    };
+    if (picks.sit !== null) add(data.sit[picks.sit]);
+    if (picks.stage !== null) add(data.stage[picks.stage]);
+    var order = Object.keys(t).sort(function (a, b) { return t[b] - t[a]; });
+    return order;
+  }
+
+  function result() {
+    var order = score();
+    if (!order.length) { show(0); return; }
+    var top = data.svc[order[0]];
+    document.getElementById("fd-t").textContent = top.t;
+    document.getElementById("fd-b").textContent = top.b;
+    document.getElementById("fd-go").setAttribute("href", top.u);
+    document.getElementById("fd-ask").setAttribute(
+      "href", "contact.html?service=" + encodeURIComponent(top.t));
+    var alt = document.getElementById("fd-alt");
+    var others = order.slice(1, 3).filter(function (k) { return data.svc[k]; });
+    if (others.length) {
+      alt.innerHTML = others.map(function (k) {
+        return '<a href="' + data.svc[k].u + '">' + data.svc[k].t + "</a>";
+      }).join(", ");
+      alt.parentNode.hidden = false;
+    } else { alt.parentNode.hidden = true; }
+    show(2);
+  }
+
+  Array.prototype.forEach.call(fd.querySelectorAll(".fd-o"), function (b) {
+    b.addEventListener("click", function () {
+      var step = +b.closest(".fd-step").getAttribute("data-step");
+      if (step === 0) { picks.sit = +b.getAttribute("data-i"); show(1); }
+      else { picks.stage = +b.getAttribute("data-i"); result(); }
+    });
+  });
+  Array.prototype.forEach.call(fd.querySelectorAll(".fd-back"), function (b) {
+    b.addEventListener("click", function () {
+      var step = +b.closest(".fd-step").getAttribute("data-step");
+      if (step === 1) { picks.sit = null; show(0); }
+      else { picks.sit = null; picks.stage = null; show(0); }
+    });
+  });
+})();
+
+/* the finder hands the chosen service to the enquiry form */
+(function () {
+  var sel = document.getElementById("service");
+  if (!sel) return;
+  var want = new URLSearchParams(window.location.search).get("service");
+  if (!want) return;
+  for (var i = 0; i < sel.options.length; i++) {
+    if (sel.options[i].value === want || sel.options[i].text === want) {
+      sel.selectedIndex = i;
+      sel.setAttribute("data-prefilled", "1");
+      break;
+    }
+  }
+})();
+
+/* facts band: count up once, when it comes into view */
+(function () {
+  var ns = document.querySelectorAll(".ft-n[data-to]");
+  if (!ns.length) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !("IntersectionObserver" in window)) return;
+  Array.prototype.forEach.call(ns, function (el) { el.textContent = "00"; });
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      var el = e.target, to = parseInt(el.getAttribute("data-to"), 10) || 0,
+          t0 = null, dur = 900;
+      function step(t) {
+        if (!t0) t0 = t;
+        var p = Math.min(1, (t - t0) / dur);
+        var v = Math.round(to * (1 - Math.pow(1 - p, 3)));
+        el.textContent = (v < 10 ? "0" : "") + v;
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }, { threshold: 0.4 });
+  Array.prototype.forEach.call(ns, function (el) { io.observe(el); });
 })();
 </script>
 </body>

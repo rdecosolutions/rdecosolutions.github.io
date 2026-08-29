@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DPR &amp; Tender Consultancy, Municipal Projects &mdash; Tamil Nadu</title>
+<title>DPR &amp; Tender Consultancy, Municipal Projects, Tamil Nadu</title>
 <meta name="description" content="DPRs, feasibility studies, BOQ, rate analysis and tender documentation for underground sewerage and water supply schemes across Tamil Nadu.">
 <link rel="canonical" href="https://rdecosolutions.org/project-consultancy.html">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -12,11 +12,11 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_IN">
 <meta property="og:site_name" content="RD Eco Solutions">
-<meta property="og:title" content="DPR &amp; Tender Consultancy, Municipal Projects &mdash; Tamil Nadu">
+<meta property="og:title" content="DPR &amp; Tender Consultancy, Municipal Projects, Tamil Nadu">
 <meta property="og:description" content="DPRs, feasibility studies, BOQ, rate analysis and tender documentation for underground sewerage and water supply schemes across Tamil Nadu.">
 <meta property="og:url" content="https://rdecosolutions.org/project-consultancy.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="DPR &amp; Tender Consultancy, Municipal Projects &mdash; Tamil Nadu">
+<meta name="twitter:title" content="DPR &amp; Tender Consultancy, Municipal Projects, Tamil Nadu">
 <meta name="twitter:description" content="DPRs, feasibility studies, BOQ, rate analysis and tender documentation for underground sewerage and water supply schemes across Tamil Nadu.">
 <meta name="theme-color" content="#06150F">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='3' fill='%2306150F'/%3E%3Cpath d='M12 29V12h7a5.5 5.5 0 0 1 0 11h-3l6 6' fill='none' stroke='%23C4F04C' stroke-width='2.8' stroke-linecap='square'/%3E%3C/svg%3E">
@@ -54,6 +54,7 @@
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
 
   --wrap:1320px;
+  --gut:34px;
   --ease:cubic-bezier(.19,.72,.28,1);
 }
 
@@ -67,7 +68,7 @@ body{
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 
-.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 34px}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
 .narrow{max-width:900px}
 
 /* ── type ───────────────────────────────────────────────────── */
@@ -468,7 +469,7 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
   .cols2{columns:1}
 }
 @media (max-width:640px){
-  .wrap{padding:0 22px}
+  :root{--gut:22px}
   .sec{padding:70px 0}
   .sec-sm{padding:48px 0}
   .stmt{padding:80px 0}
@@ -485,7 +486,7 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
   .row:hover{padding-left:14px}
 }
 @media (max-width:400px){
-  .wrap{padding:0 16px}
+  :root{--gut:16px}
   .btn{white-space:normal;text-align:center}
   .f input,.f select,.f textarea{font-size:16px} /* no iOS zoom */
   .row-k{font-size:1.7rem}
@@ -504,8 +505,296 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
 @media (max-width:900px){
   .hero-sub .side{border-left:0;border-top:1px solid var(--line-d);padding-left:0;padding-top:24px}
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   SERVICE PAGE — specification sheet layout
+   Sticky rail on the left, content flowing right. Nothing else on
+   the site uses this shape, which is the point.
+   ═══════════════════════════════════════════════════════════════ */
+.spec{display:grid;grid-template-columns:19rem minmax(0,1fr);gap:0}
+.spec-rail{
+  position:sticky;top:74px;align-self:start;min-width:0;
+  border-right:1px solid var(--line);padding:64px 44px 64px 0;
+}
+.spec-body{padding:64px 0 64px 56px;min-width:0}
+
+.rail-t{
+  font-family:var(--display);font-size:1.9rem;font-weight:700;
+  letter-spacing:-.035em;line-height:1.02;margin-bottom:18px;
+}
+.rail-k{
+  font-family:var(--mono);font-size:10px;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--ink-3);line-height:1.9;padding-bottom:20px;border-bottom:1px solid var(--line);
+  margin-bottom:20px;
+}
+.rail-nav{list-style:none;display:grid;gap:0;margin-bottom:28px;min-width:0}
+.rail-nav a{
+  display:block;padding:9px 0;font-size:13.8px;color:var(--ink-2);
+  border-bottom:1px solid var(--line);transition:color .2s var(--ease),padding-left .25s var(--ease);
+}
+.rail-nav a:hover{color:var(--green);padding-left:8px}
+.rail-nav a span{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);margin-right:11px}
+.rail-cta{display:grid;gap:9px}
+
+/* grouped scope table */
+.grp{border-top:1px solid var(--ink);margin-bottom:0}
+.grp:last-of-type{border-bottom:1px solid var(--line)}
+.grp-h{
+  display:grid;grid-template-columns:2.4rem minmax(0,1fr);gap:16px;align-items:baseline;
+  padding:22px 0 14px;
+}
+.grp-h .n{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--green)}
+.grp-h h3{
+  font-family:var(--display);font-size:1.28rem;font-weight:700;letter-spacing:-.028em;
+}
+.grp ul{list-style:none;padding-bottom:12px}
+.grp li{
+  display:grid;grid-template-columns:2.4rem minmax(0,1fr);gap:16px;align-items:start;
+  padding:13px 0;border-top:1px solid var(--line);
+}
+.grp li::before{
+  content:"";width:11px;height:1px;background:#CFCBBF;
+  margin-top:11px;justify-self:end;
+}
+.grp li span{font-size:15px;color:var(--ink-2);line-height:1.55;display:block}
+
+/* engagement / deliverable pair, side by side */
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 52px}
+.pair h3{
+  font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--ink-3);padding-bottom:14px;
+  border-bottom:1px solid var(--ink);margin-bottom:4px;
+}
+.pair ul{list-style:none}
+.pair li{
+  padding:14px 0;border-bottom:1px solid var(--line);
+  font-size:14.8px;color:var(--ink-2);line-height:1.55;
+}
+
+/* the argument block, set as a pull quote rather than a paragraph */
+.arg{border-left:3px solid var(--lime);padding:6px 0 6px 30px;margin:0 0 44px}
+.arg h2{
+  font-family:var(--display);font-size:clamp(1.6rem,3vw,2.3rem);font-weight:700;
+  letter-spacing:-.032em;line-height:1.06;margin-bottom:18px;
+}
+.arg p{font-size:1.06rem;line-height:1.66;color:var(--ink-2);max-width:62ch}
+
+.sec-mark{
+  display:flex;align-items:baseline;gap:16px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.19em;text-transform:uppercase;
+  color:var(--ink-3);padding-bottom:34px;
+}
+.sec-mark b{color:var(--ink);font-weight:500;letter-spacing:.14em}
+.spec-body section{padding:56px 0}
+.spec-body section:first-child{padding-top:0}
+.spec-body section + section{border-top:1px solid var(--line)}
+
+@media (max-width:1060px){
+  .spec{grid-template-columns:1fr}
+  .spec-rail{
+    position:static;border-right:0;border-bottom:1px solid var(--line);
+    padding:44px 0 34px;
+  }
+  .spec-body{padding:44px 0 56px}
+  .rail-nav{grid-template-columns:repeat(2,1fr);display:grid}
+  .rail-cta{grid-template-columns:repeat(2,1fr);display:grid}
+}
+@media (max-width:700px){
+  .pair{grid-template-columns:1fr;gap:44px}
+  .rail-nav,.rail-cta{grid-template-columns:1fr}
+  .grp-h,.grp li{grid-template-columns:1.8rem minmax(0,1fr);gap:12px}
+  .arg{padding-left:20px}
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MOTION
+   Four devices, each doing a job: a read position, an entrance,
+   a scroll position in the rail, and staggered list reveals.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* 1. read progress */
+.readbar{
+  position:fixed;top:0;left:0;height:2px;width:0;z-index:100;
+  background:var(--lime);transition:width .12s linear;pointer-events:none;
+}
+
+/* 2. headline entrance, per line */
+.rise{display:block;overflow:hidden}
+.rise > i{
+  display:block;font-style:normal;transform:translateY(105%);
+  animation:rise .95s cubic-bezier(.16,.84,.3,1) forwards;
+}
+.rise:nth-of-type(1) > i{animation-delay:.06s}
+.rise:nth-of-type(2) > i{animation-delay:.14s}
+.rise:nth-of-type(3) > i{animation-delay:.22s}
+@keyframes rise{to{transform:none}}
+
+.fade-up{opacity:0;transform:translateY(14px);animation:fadeUp .8s cubic-bezier(.16,.84,.3,1) .34s forwards}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+
+/* 3. rail scrollspy */
+.rail-nav a{position:relative}
+.rail-nav a::before{
+  content:"";position:absolute;left:-14px;top:50%;width:0;height:1px;
+  background:var(--green);transform:translateY(-50%);transition:width .3s var(--ease);
+}
+.rail-nav a.here{color:var(--green);font-weight:500}
+.rail-nav a.here::before{width:8px}
+.rail-nav a.here span{color:var(--green)}
+
+/* 4. staggered list reveal */
+.stag > *{opacity:0;transform:translateY(16px)}
+.stag.in > *{
+  opacity:1;transform:none;
+  transition:opacity .6s var(--ease),transform .6s var(--ease);
+}
+.stag.in > *:nth-child(1){transition-delay:.02s}
+.stag.in > *:nth-child(2){transition-delay:.07s}
+.stag.in > *:nth-child(3){transition-delay:.12s}
+.stag.in > *:nth-child(4){transition-delay:.17s}
+.stag.in > *:nth-child(5){transition-delay:.22s}
+.stag.in > *:nth-child(6){transition-delay:.27s}
+.stag.in > *:nth-child(7){transition-delay:.32s}
+.stag.in > *:nth-child(n+8){transition-delay:.36s}
+
+/* service page keyword band */
+.marq.band-k{
+  background:var(--void);border-top:1px solid var(--line-d);
+  border-bottom:1px solid var(--line-d);padding:15px 0;
+}
+.marq.band-k .marq-in{animation-duration:58s}
+.marq.band-k span{color:rgba(196,240,76,.75);font-size:11px}
+.marq.band-k span::after{background:rgba(196,240,76,.45)}
+
+@media (prefers-reduced-motion:reduce){
+  .readbar{display:none}
+  .rise > i{transform:none;animation:none}
+  .fade-up{opacity:1;transform:none;animation:none}
+  .stag > *{opacity:1;transform:none}
+}
+
+/* ── service page split hero with concept diagram ───────────── */
+.svc-hero-split .split{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
+  gap:60px;align-items:center;padding-bottom:44px;
+}
+.svc-hero-split h1{font-size:clamp(2.4rem,5vw,4rem);margin-bottom:22px}
+.concept{margin:0}
+.concept .dia{width:100%;height:auto;display:block}
+.concept figcaption{
+  margin-top:18px;padding-top:16px;border-top:1px solid var(--line-d);
+  font-size:14px;line-height:1.6;color:rgba(239,238,231,.6);max-width:52ch;
+}
+/* the drawing traces itself in once, then holds */
+.concept .dia g > *{
+  stroke-dasharray:1200;stroke-dashoffset:1200;
+  animation:trace 2.4s cubic-bezier(.3,.7,.3,1) forwards;
+}
+.concept .dia g > text,
+.concept .dia g > g > text{stroke-dasharray:none;stroke-dashoffset:0;animation:none}
+.concept .dia g > g > *{
+  stroke-dasharray:1200;stroke-dashoffset:1200;
+  animation:trace 2.4s cubic-bezier(.3,.7,.3,1) .25s forwards;
+}
+@keyframes trace{to{stroke-dashoffset:0}}
+
+@media (max-width:960px){
+  .svc-hero-split .split{grid-template-columns:1fr;gap:36px;padding-bottom:34px}
+}
+@media (prefers-reduced-motion:reduce){
+  .concept .dia g > *,.concept .dia g > g > *{stroke-dashoffset:0;animation:none}
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE
+   Most enquiries arrive from a phone. Tightened type, full bleed
+   diagrams, larger touch targets, and a compressed vertical rhythm.
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width:700px){
+  /* type scale drops faster than the desktop clamp allows */
+  h1{font-size:clamp(2.4rem,10vw,3.1rem);line-height:.99}
+  h2{font-size:clamp(1.85rem,7.6vw,2.5rem)}
+  .lede{font-size:16.2px;line-height:1.55}
+  .page-hero .lede,.hero .lede{font-size:16.4px;line-height:1.56}
+  .svc-hero-split h1{font-size:clamp(2.3rem,9.4vw,3rem)}
+
+  /* concept drawing goes edge to edge and gains legible labels */
+  .svc-hero-split .split{gap:26px}
+  .concept{margin:0 calc(var(--gut) * -1)}
+  .concept .dia{padding:0 6px}
+  .concept .dia text{font-size:11px;letter-spacing:.8px}
+  .concept figcaption{margin:16px var(--gut) 0;font-size:14.5px}
+
+  /* rail becomes a horizontal chip strip rather than a stacked list */
+  .spec-rail{padding:30px 0 26px}
+  .rail-t{font-size:1.5rem;margin-bottom:14px}
+  .rail-k{padding-bottom:16px;margin-bottom:16px;line-height:1.85}
+  .rail-nav{
+    display:flex;overflow-x:auto;gap:8px;padding:0 var(--gut) 4px;
+    margin:0 calc(var(--gut) * -1) 22px;scrollbar-width:none;
+  }
+  .rail-nav::-webkit-scrollbar{display:none}
+  .rail-nav li{flex:0 0 auto}
+  .rail-nav a{
+    border:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:11px 15px;white-space:nowrap;font-size:13.5px;
+  }
+  .rail-nav a:hover,.rail-nav a.here{padding-left:15px;border-color:var(--green)}
+  .rail-nav a::before{display:none}
+  .rail-cta{grid-template-columns:1fr 1fr;gap:8px}
+
+  /* denser vertical rhythm so a phone scroll is not endless */
+  .spec-body{padding:34px 0 44px}
+  .spec-body section{padding:40px 0}
+  .sec{padding:58px 0}
+  .stmt{padding:64px 0}
+  .head-split{margin-bottom:30px}
+  .arg{margin-bottom:32px;border-left-width:2px}
+  .arg h2{font-size:1.65rem;margin-bottom:14px}
+  .arg p{font-size:16.2px}
+
+  /* scope groups read as cards rather than a long rule stack */
+  .grp{border-top-width:2px}
+  .grp-h{padding:18px 0 10px}
+  .grp-h h3{font-size:1.12rem}
+  .grp li{padding:11px 0}
+  .grp li span{font-size:14.6px;line-height:1.5}
+
+  /* service rows: title and arrow on one line, description beneath */
+  .row{padding:22px 0;gap:14px}
+  .row-t{font-size:1.22rem}
+  .row-d{font-size:13.8px;line-height:1.5}
+
+  /* statement and CTA carry the page on a phone, so keep them large */
+  .stmt p{font-size:clamp(1.6rem,6.6vw,2.2rem);max-width:none}
+  .cta-band{padding:62px 0}
+  .cta-band h2{max-width:none}
+  .cta-band p{font-size:16.2px}
+
+  /* marquee slows down so it is readable rather than a blur */
+  .marq-in{animation-duration:34s}
+  .marq.band-k .marq-in{animation-duration:40s}
+  .marq span{font-size:11px;padding:0 18px;gap:18px}
+
+  /* tags become a wrapping two column grid, easier to tap */
+  .tags{gap:8px}
+  .tag{font-size:14.5px;padding:11px 16px}
+
+  /* forms and info get real touch height */
+  .info .v{font-size:1.15rem}
+  .btn{padding:16px 22px}
+  .faq summary{font-size:1.02rem;padding:22px 40px 22px 0}
+  .faq summary::after{width:12px;height:12px;right:4px}
+}
+
+/* very small phones */
+@media (max-width:380px){
+  .rail-cta{grid-template-columns:1fr}
+  .concept .dia text{font-size:12px}
+  .marq span{padding:0 14px;gap:14px}
+}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://rdecosolutions.org/#organization","name":"RD Eco Solutions","url":"https://rdecosolutions.org/","description":"Civil and environmental infrastructure services for Urban Local Bodies and public-sector organisations in Tamil Nadu — project consultancy, operation and maintenance, civil works, solid waste management, environmental solutions, equipment and manpower.","email":"rdecosolutionsofficial@gmail.com","telephone":"+919659443759","address":{"@type":"PostalAddress","addressLocality":"Sirkazhi","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Kumbakonam"},{"@type":"AdministrativeArea","name":"Chidambaram"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"knowsAbout":["Project Consultancy","Operation & Maintenance","Civil Infrastructure Works","Solid Waste Management","Environmental Solutions","Equipment & Technical Solutions","Manpower Services"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+919659443759","email":"rdecosolutionsofficial@gmail.com","availableLanguage":["en","ta"]}},{"@type":"WebSite","@id":"https://rdecosolutions.org/#website","url":"https://rdecosolutions.org/","name":"RD Eco Solutions","publisher":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"WebPage","@id":"https://rdecosolutions.org/project-consultancy.html#webpage","url":"https://rdecosolutions.org/project-consultancy.html","name":"DPR & Tender Consultancy, Municipal Projects — Tamil Nadu","description":"DPRs, feasibility studies, BOQ, rate analysis and tender documentation for underground sewerage and water supply schemes across Tamil Nadu.","isPartOf":{"@id":"https://rdecosolutions.org/#website"},"about":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"BreadcrumbList","@id":"https://rdecosolutions.org/project-consultancy.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rdecosolutions.org/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://rdecosolutions.org/services.html"},{"@type":"ListItem","position":3,"name":"Project Consultancy","item":"https://rdecosolutions.org/project-consultancy.html"}]},{"@type":"Service","@id":"https://rdecosolutions.org/project-consultancy.html#service","name":"Project Consultancy","serviceType":"Project Consultancy","description":"DPRs, feasibility studies, BOQ, rate analysis and tender documentation for underground sewerage and water supply schemes across Tamil Nadu.","provider":{"@id":"https://rdecosolutions.org/#organization"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Kumbakonam"},{"@type":"AdministrativeArea","name":"Chidambaram"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"audience":{"@type":"Audience","audienceType":"Urban Local Bodies, Municipal Corporations, Municipalities, Town Panchayats, Government Departments"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Project Consultancy — scope","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Preparation of Detailed Project Reports (DPR)"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Project feasibility studies"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Technical proposal preparation"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Tender and bid-document support"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"BOQ and cost-estimate preparation"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Rate analysis and quantity assessment"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Project planning and implementation support"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Technical documentation and reporting"}}]}},{"@type":"FAQPage","@id":"https://rdecosolutions.org/project-consultancy.html#faq","mainEntity":[{"@type":"Question","name":"Can you prepare the DPR, estimate and BOQ for an underground sewerage or water supply scheme?","acceptedAnswer":{"@type":"Answer","text":"Yes. We prepare the full documentation set — survey and data collection, design basis, quantity take-off, rate analysis against the applicable schedule of rates, BOQ, specifications and the annexures the sanctioning authority requires. Timelines depend on scheme size and the survey data already available; we confirm a firm schedule after a site visit."}},{"@type":"Question","name":"What information do you need from the ULB to begin a DPR?","acceptedAnswer":{"@type":"Answer","text":"Typically the ward or coverage boundary, population and projected growth figures, existing network drawings where they exist, details of current assets such as headworks, OHTs or pumping stations, land availability for treatment units, and the scheme under which funding is being sought. Where records are incomplete we carry out the survey ourselves."}},{"@type":"Question","name":"Do you also prepare bid documents for contractors, not just for departments?","acceptedAnswer":{"@type":"Answer","text":"Yes. We support contractors preparing technical proposals and bid submissions for municipal works — quantity verification, rate analysis, method statements and compilation of the technical cover. This is separate from any consultancy carried out for a department on the same work."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://rdecosolutions.org/#organization","name":"RD Eco Solutions","url":"https://rdecosolutions.org/","description":"Civil and environmental infrastructure services for Urban Local Bodies and public-sector organisations in Tamil Nadu, project consultancy, operation and maintenance, civil works, solid waste management, environmental solutions, equipment and manpower.","email":"rdecosolutionsofficial@gmail.com","telephone":"+919659443759","address":{"@type":"PostalAddress","addressLocality":"Sirkazhi","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Kumbakonam"},{"@type":"AdministrativeArea","name":"Chidambaram"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"knowsAbout":["Project Consultancy","Operation & Maintenance","Civil Infrastructure Works","Solid Waste Management","Environmental Solutions","Equipment & Technical Solutions","Manpower Services"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+919659443759","email":"rdecosolutionsofficial@gmail.com","availableLanguage":["en","ta"]}},{"@type":"WebSite","@id":"https://rdecosolutions.org/#website","url":"https://rdecosolutions.org/","name":"RD Eco Solutions","publisher":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"WebPage","@id":"https://rdecosolutions.org/project-consultancy.html#webpage","url":"https://rdecosolutions.org/project-consultancy.html","name":"DPR & Tender Consultancy, Municipal Projects, Tamil Nadu","description":"DPRs, feasibility studies, BOQ, rate analysis and tender documentation for underground sewerage and water supply schemes across Tamil Nadu.","isPartOf":{"@id":"https://rdecosolutions.org/#website"},"about":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"BreadcrumbList","@id":"https://rdecosolutions.org/project-consultancy.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rdecosolutions.org/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://rdecosolutions.org/services.html"},{"@type":"ListItem","position":3,"name":"Project Consultancy","item":"https://rdecosolutions.org/project-consultancy.html"}]},{"@type":"Service","@id":"https://rdecosolutions.org/project-consultancy.html#service","name":"Project Consultancy","serviceType":"Project Consultancy","description":"DPRs, feasibility studies, BOQ, rate analysis and tender documentation for underground sewerage and water supply schemes across Tamil Nadu.","provider":{"@id":"https://rdecosolutions.org/#organization"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Kumbakonam"},{"@type":"AdministrativeArea","name":"Chidambaram"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"audience":{"@type":"Audience","audienceType":"Urban Local Bodies, Municipal Corporations, Municipalities, Town Panchayats, Government Departments"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Project Consultancy, scope","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Preparation of Detailed Project Reports (DPR)"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Project feasibility studies"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Technical proposal preparation"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Tender and bid-document support"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"BOQ and cost-estimate preparation"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Rate analysis and quantity assessment"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Project planning and implementation support"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Technical documentation and reporting"}}]}},{"@type":"FAQPage","@id":"https://rdecosolutions.org/project-consultancy.html#faq","mainEntity":[{"@type":"Question","name":"Can you prepare the DPR, estimate and BOQ for an underground sewerage or water supply scheme?","acceptedAnswer":{"@type":"Answer","text":"Yes. We prepare the full documentation set, survey and data collection, design basis, quantity take-off, rate analysis against the applicable schedule of rates, BOQ, specifications and the annexures the sanctioning authority requires. Timelines depend on scheme size and the survey data already available; we confirm a firm schedule after a site visit."}},{"@type":"Question","name":"What information do you need from the ULB – begin a DPR?","acceptedAnswer":{"@type":"Answer","text":"Typically the ward or coverage boundary, population and projected growth figures, existing network drawings where they exist, details of current assets such as headworks, OHTs or pumping stations, land availability for treatment units, and the scheme under which funding is being sought. Where records are incomplete we carry out the survey ourselves."}},{"@type":"Question","name":"Do you also prepare bid documents for contrac–rs, not just for departments?","acceptedAnswer":{"@type":"Answer","text":"Yes. We support contrac–rs preparing technical proposals and bid submissions for municipal works, quantity verification, rate analysis, method statements and compilation of the technical cover. This is separate from any consultancy carried out for a department on the same work."}}]}]}</script>
 </head>
 <body>
 <header class="hdr">
@@ -523,75 +812,134 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
     </div>
   </div>
 </header>
-<section class="page-hero">
+
+<section class="page-hero svc-hero-split" style="padding:52px 0 0">
   <div class="wrap">
-    <div class="crumb"><a href="index.html">Home</a> &rsaquo; <a href="services.html">Services</a> &rsaquo; Project Consultancy</div>
-    <div class="svc-key">A</div><div class="kick">DPR &middot; Feasibility &middot; BOQ &middot; Tender documentation</div><h1>Project Consultancy</h1>
-    <p class="lede">Municipal schemes are approved, funded and awarded on the strength of their paperwork. We prepare the Detailed Project Reports, estimates and tender documents that carry an underground sewerage or water supply scheme through technical sanction and procurement &mdash; built from site conditions and the current schedule of rates, not from a template.</p>
+    <div class="crumb"><a href="index.html">Home</a> &rsaquo;
+      <a href="services.html">Services</a> &rsaquo; Project Consultancy</div>
+    <div class="split">
+      <div>
+        <h1 class="rise"><i>Project Consultancy</i></h1>
+        <p class="lede fade-up">Municipal schemes are approved, funded and awarded on the strength of their paperwork. We prepare the Detailed Project Reports, estimates and tender documents that carry an underground sewerage or water supply scheme through technical sanction and procurement, built from site conditions and the current schedule of rates, not from a template.</p>
+      </div>
+      <figure class="concept">
+        <svg class="dia" viewBox="0 0 520 300" role="img" aria-label="A drawing set with dimensioned quantities passing into a technical sanction stamp.">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#C4F04C"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="#C4F04C" stroke-linecap="round" stroke-linejoin="round">
+  <g opacity=".28" stroke-width="1">
+    <rect x="46" y="52" width="180" height="220"/>
+    <rect x="60" y="40" width="180" height="220"/>
+  </g>
+  <rect x="74" y="28" width="180" height="220" stroke-width="1.6"/>
+  <g stroke-width="1" opacity=".62">
+    <path d="M92 60 H196 M92 78 H236 M92 96 H168"/>
+    <path d="M92 130 H236 M92 148 H210 M92 166 H236 M92 184 H150"/>
+    <path d="M74 112 H254"/>
+  </g>
+  <g stroke-width="1" opacity=".5">
+    <path d="M92 212 H236" marker-end="url(#ar)" marker-start="url(#ar)"/>
+    <path d="M92 206 v12 M236 206 v12"/>
+  </g>
+  <text x="164" y="230" fill="#C4F04C" opacity=".55" font-family="IBM Plex Mono, monospace"
+        font-size="9" letter-spacing="1.6" text-anchor="middle" stroke="none">BOQ / QTY</text>
+
+  <path d="M270 138 H320" stroke-width="1.4" marker-end="url(#ar)"/>
+
+  <circle cx="404" cy="138" r="66" stroke-width="1.6"/>
+  <circle cx="404" cy="138" r="56" stroke-width="1" opacity=".45"/>
+  <text x="404" y="130" fill="#C4F04C" font-family="IBM Plex Mono, monospace" font-size="11"
+        letter-spacing="2.4" text-anchor="middle" stroke="none">TECHNICAL</text>
+  <text x="404" y="150" fill="#C4F04C" font-family="IBM Plex Mono, monospace" font-size="11"
+        letter-spacing="2.4" text-anchor="middle" stroke="none">SANCTION</text>
+  <path d="M368 168 L440 108" stroke-width="1" opacity=".35"/>
+</g>
+</svg>
+        <figcaption>Quantities taken from the site, not from a template. The estimate is what the project is judged on two years later.</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
-<section class="sec on-light">
-  <div class="wrap">
-    <div class="head-split rv">
-      <div>
-        <span class="idx">01 &mdash; Why it matters</span>
+<div class="marq band-k" aria-hidden="true"><div class="marq-in"><span>Reports and studies</span><span>Costing and quantities</span><span>Tender and approval</span><span>Preparation of Detailed Project Re</span><span>Project feasibility studies</span><span>Technical proposal preparation</span><span>Tender and bid-document support</span><span>BOQ and cost-estimate preparation</span><span>Reports and studies</span><span>Costing and quantities</span><span>Tender and approval</span><span>Preparation of Detailed Project Re</span><span>Project feasibility studies</span><span>Technical proposal preparation</span><span>Tender and bid-document support</span><span>BOQ and cost-estimate preparation</span></div></div>
+
+<div class="wrap">
+ <div class="spec">
+
+  <aside class="spec-rail">
+    <div class="rail-t">Project Consultancy</div>
+    <div class="rail-k">
+      Division A<br>DPR &middot; Feasibility &middot; BOQ &middot; Tender documentation<br>Tamil Nadu
+    </div>
+    <ul class="rail-nav">
+      <li><a href="#argument"><span>01</span>The argument</a></li>
+      <li><a href="#scope"><span>02</span>Full scope</a></li>
+      <li><a href="#engagement"><span>03</span>How it runs</a></li>
+      <li><a href="#clients"><span>04</span>Who it is for</a></li>
+      <li><a href="#questions"><span>05</span>Questions</a></li>
+    </ul>
+    <div class="rail-cta">
+      <a class="btn btn-d btn-sm" href="contact.html">Enquire <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-s btn-sm" href="services.html">All divisions</a>
+    </div>
+  </aside>
+
+  <div class="spec-body">
+
+    <section id="argument">
+      <div class="arg">
         <h2>The documentation stage decides the project</h2>
+        <p>A DPR that under-states quantities becomes a cost overrun two years into execution, and a bid document with gaps is rejected at technical evaluation before anyone opens the price cover. Getting the estimate, the specification and the annexures right is the cheapest work on the whole project and the most expensive to get wrong. With AMRUT 2.0 and Swachh Bharat Mission funds flowing into Tamil Nadu sewerage and water supply schemes, the volume of documentation a ULB has to produce has risen sharply, and the scrutiny with it.</p>
       </div>
-      <p class="lede">A DPR that under-states quantities becomes a cost overrun two years into execution, and a bid document with gaps is rejected at technical evaluation before anyone opens the price cover. Getting the estimate, the specification and the annexures right is the cheapest work on the whole project and the most expensive to get wrong. With AMRUT 2.0 and Swachh Bharat Mission funds flowing into Tamil Nadu sewerage and water supply schemes, the volume of documentation a ULB has to produce has risen sharply &mdash; and the scrutiny with it.</p>
-    </div>
-    <div class="head-split rv" style="margin-bottom:32px">
-      <div><span class="idx">02 &mdash; Typical engagements</span></div>
-    </div>
-    <ul class="pts cols2 rv"><li>Detailed Project Report for an underground sewerage scheme (UGSS) or water supply scheme going for sanction</li><li>Feasibility study before a budget is committed</li><li>Tender and bid-document preparation for a work about to be floated on the e-procurement portal</li><li>Independent review of an existing estimate, BOQ or rate analysis</li><li>Technical proposal support for a contractor bidding a municipal work</li></ul>
-  </div>
-</section>
+    </section>
 
-<section class="sec on-dark">
-  <div class="wrap">
-    <div class="head-split rv">
-      <div>
-        <span class="idx">03 &mdash; Full scope</span>
-        <h2>What this covers.</h2>
+    <section id="scope">
+      <div class="sec-mark"><span>02</span><b>Full scope</b></div>
+      
+        <div class="grp">
+          <div class="grp-h"><span class="n">01</span><h3>Reports and studies</h3></div>
+          <ul class="stag"><li><span>Detailed Project Reports for sewerage, water supply and municipal schemes</span></li><li><span>Feasibility studies before budget commitment</span></li><li><span>Survey and site data collection where records are incomplete</span></li><li><span>Independent review of an existing estimate or DPR</span></li></ul>
+        </div>
+        <div class="grp">
+          <div class="grp-h"><span class="n">02</span><h3>Costing and quantities</h3></div>
+          <ul class="stag"><li><span>Quantity take off from drawings and site measurement</span></li><li><span>BOQ preparation in the department format</span></li><li><span>Rate analysis against the applicable schedule of rates</span></li><li><span>Cost estimates with phasing and escalation</span></li></ul>
+        </div>
+        <div class="grp">
+          <div class="grp-h"><span class="n">03</span><h3>Tender and approval</h3></div>
+          <ul class="stag"><li><span>Tender and bid document preparation</span></li><li><span>Technical specifications and drawings schedule</span></li><li><span>Annexures and compliance documentation for sanction</span></li><li><span>Technical proposal support for contractors bidding municipal works</span></li></ul>
+        </div>
+    </section>
+
+    <section id="engagement">
+      <div class="sec-mark"><span>03</span><b>How an engagement runs</b></div>
+      <div class="pair">
+        <div><h3>What we are usually asked for</h3><ul class="stag"><li>Detailed Project Report for an underground sewerage scheme (UGSS) or water supply scheme going for sanction</li><li>Feasibility study before a budget is committed</li><li>Tender and bid-document preparation for a work about to be floated on the e-procurement portal</li><li>Independent review of an existing estimate, BOQ or rate analysis</li><li>Technical proposal support for a contractor bidding a municipal work</li></ul></div>
+        <div><h3>What the department receives</h3><ul class="stag"><li>Detailed Project Report in the format the sanctioning authority expects</li><li>BOQ with quantity take-off and supporting rate analysis against the current SoR</li><li>Technical specifications and drawings schedule</li><li>Complete tender document set with annexures</li><li>Implementation plan with phasing, milestones and manpower deployment</li></ul></div>
       </div>
-    </div>
-    <ul class="scope rv"><li>Preparation of Detailed Project Reports (DPR)</li><li>Project feasibility studies</li><li>Technical proposal preparation</li><li>Tender and bid-document support</li><li>BOQ and cost-estimate preparation</li><li>Rate analysis and quantity assessment</li><li>Project planning and implementation support</li><li>Technical documentation and reporting</li></ul>
+    </section>
+
+    <section id="clients">
+      <div class="sec-mark"><span>04</span><b>Who this is for</b></div>
+      <div class="tags stag"><span class="tag">Municipal Corporations</span><span class="tag">Municipalities</span><span class="tag">Town Panchayats</span><span class="tag">Water and Sewerage Boards</span><span class="tag">Government Departments</span><span class="tag">Infrastructure contractors</span></div>
+    </section>
+
+    <section id="questions">
+      <div class="sec-mark"><span>05</span><b>Questions we are asked</b></div>
+      <div class="faq stag"><details><summary>Can you prepare the DPR, estimate and BOQ for an underground sewerage or water supply scheme?</summary><div class="a">Yes. We prepare the full documentation set, survey and data collection, design basis, quantity take-off, rate analysis against the applicable schedule of rates, BOQ, specifications and the annexures the sanctioning authority requires. Timelines depend on scheme size and the survey data already available; we confirm a firm schedule after a site visit.</div></details><details><summary>What information do you need from the ULB to begin a DPR?</summary><div class="a">Typically the ward or coverage boundary, population and projected growth figures, existing network drawings where they exist, details of current assets such as headworks, OHTs or pumping stations, land availability for treatment units, and the scheme under which funding is being sought. Where records are incomplete we carry out the survey ourselves.</div></details><details><summary>Do you also prepare bid documents for contractors, not just for departments?</summary><div class="a">Yes. We support contractors preparing technical proposals and bid submissions for municipal works, quantity verification, rate analysis, method statements and compilation of the technical cover. This is separate from any consultancy carried out for a department on the same work.</div></details></div>
+    </section>
+
   </div>
-</section>
+ </div>
+</div>
 
 <section class="sec on-light tint">
   <div class="wrap">
     <div class="head-split rv">
       <div>
-        <span class="idx">04 &mdash; Deliverables</span>
-        <h2>What you receive.</h2>
-      </div>
-    </div>
-    <ul class="pts cols2 rv"><li>Detailed Project Report in the format the sanctioning authority expects</li><li>BOQ with quantity take-off and supporting rate analysis against the current SoR</li><li>Technical specifications and drawings schedule</li><li>Complete tender document set with annexures</li><li>Implementation plan with phasing, milestones and manpower deployment</li></ul>
-
-    <div class="head-split rv" style="margin-top:96px;margin-bottom:36px">
-      <div>
-        <span class="idx">05 &mdash; Who this is for</span>
-        <h2>Bodies we deliver this for.</h2>
-      </div>
-    </div>
-    <div class="tags rv"><span class="tag">Municipal Corporations</span><span class="tag">Municipalities</span><span class="tag">Town Panchayats</span><span class="tag">Water and Sewerage Boards</span><span class="tag">Government Departments</span><span class="tag">Infrastructure contractors</span></div>
-  </div>
-</section>
-
-<section class="sec on-dark">
-  <div class="wrap narrow rv">
-    <span class="idx">06 &mdash; Questions</span>
-    <h2 style="margin-bottom:52px">Project Consultancy &mdash; what we get asked</h2>
-    <div class="faq"><details><summary>Can you prepare the DPR, estimate and BOQ for an underground sewerage or water supply scheme?</summary><div class="a">Yes. We prepare the full documentation set &mdash; survey and data collection, design basis, quantity take-off, rate analysis against the applicable schedule of rates, BOQ, specifications and the annexures the sanctioning authority requires. Timelines depend on scheme size and the survey data already available; we confirm a firm schedule after a site visit.</div></details><details><summary>What information do you need from the ULB to begin a DPR?</summary><div class="a">Typically the ward or coverage boundary, population and projected growth figures, existing network drawings where they exist, details of current assets such as headworks, OHTs or pumping stations, land availability for treatment units, and the scheme under which funding is being sought. Where records are incomplete we carry out the survey ourselves.</div></details><details><summary>Do you also prepare bid documents for contractors, not just for departments?</summary><div class="a">Yes. We support contractors preparing technical proposals and bid submissions for municipal works &mdash; quantity verification, rate analysis, method statements and compilation of the technical cover. This is separate from any consultancy carried out for a department on the same work.</div></details></div>
-  </div>
-</section>
-
-<section class="sec on-light">
-  <div class="wrap">
-    <div class="head-split rv">
-      <div>
-        <span class="idx">07 &mdash; Other divisions</span>
+        <span class="idx">Other divisions</span>
         <h2>The rest of what we do.</h2>
       </div>
     </div>
@@ -623,7 +971,7 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
       <a class="row" href="equipment-technical-solutions.html">
         <span class="row-k">F</span>
         <span class="row-t">Equipment &amp; Technical Solutions</span>
-        <span class="row-d">Pumps, jetting and desilting machinery, flow meters and collection vehicles &mdash; specified, installed and maintained.</span>
+        <span class="row-d">Pumps, jetting and desilting machinery, flow meters and collection vehicles, specified, installed and maintained.</span>
         <span class="row-a"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
       <a class="row" href="manpower-services.html">
@@ -670,7 +1018,7 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
     </div>
   </div>
 </footer>
-<script>/* RD Eco Solutions — site behaviour */
+<script>/* RD Eco Solutions site behaviour */
 (function () {
   "use strict";
 
@@ -718,7 +1066,7 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
   function sendByEmail() {
     var to      = form.getAttribute("data-email"),
         service = val("service") || "General enquiry",
-        subject = "Website enquiry — " + service,
+        subject = "Website enquiry: " + service,
         body =
           "Name: "               + val("name")         + "\n" +
           "Company / Department: " + val("organisation") + "\n" +
@@ -756,13 +1104,13 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
       .then(function (res) {
         if (res.ok) {
           form.reset();
-          show("ok", "Thank you — your enquiry has been received. Our team will get back to you shortly.");
+          show("ok", "Thank you. Your enquiry has been received and our team will get back to you shortly.");
         } else {
           show("err", "Something went wrong. Please call or email us directly and we'll pick it up right away.");
         }
       })
       .catch(function () {
-        show("err", "Network problem — your enquiry didn't send. Please call or email us directly.");
+        show("err", "Network problem. Your enquiry did not send, so please call or email us directly.");
       })
       .finally(function () {
         if (btn) { btn.disabled = false; btn.textContent = original; }
@@ -787,6 +1135,66 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
     });
   }, { rootMargin: "0px 0px -8% 0px", threshold: 0.06 });
   Array.prototype.forEach.call(els, function (el) { io.observe(el); });
+})();
+
+/* read progress */
+(function () {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var bar = document.createElement("div");
+  bar.className = "readbar";
+  document.body.appendChild(bar);
+  var tick = false;
+  function paint() {
+    var de = document.documentElement;
+    var max = de.scrollHeight - de.clientHeight;
+    bar.style.width = max > 0 ? ((de.scrollTop / max) * 100) + "%" : "0%";
+    tick = false;
+  }
+  window.addEventListener("scroll", function () {
+    if (!tick) { tick = true; requestAnimationFrame(paint); }
+  }, { passive: true });
+  paint();
+})();
+
+/* staggered list reveal */
+(function () {
+  var groups = document.querySelectorAll(".stag");
+  if (!groups.length) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !("IntersectionObserver" in window)) {
+    Array.prototype.forEach.call(groups, function (g) { g.classList.add("in"); });
+    return;
+  }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    });
+  }, { rootMargin: "0px 0px -10% 0px", threshold: 0.08 });
+  Array.prototype.forEach.call(groups, function (g) { io.observe(g); });
+})();
+
+/* rail scrollspy on the service pages */
+(function () {
+  var links = document.querySelectorAll(".rail-nav a[href^='#']");
+  if (!links.length) return;
+  var map = [];
+  Array.prototype.forEach.call(links, function (a) {
+    var el = document.getElementById(a.getAttribute("href").slice(1));
+    if (el) map.push({ a: a, el: el });
+  });
+  if (!map.length) return;
+
+  var tick = false;
+  function paint() {
+    var y = window.scrollY + 160, cur = map[0];
+    map.forEach(function (m) { if (m.el.offsetTop <= y) cur = m; });
+    map.forEach(function (m) { m.a.classList.toggle("here", m === cur); });
+    tick = false;
+  }
+  window.addEventListener("scroll", function () {
+    if (!tick) { tick = true; requestAnimationFrame(paint); }
+  }, { passive: true });
+  paint();
 })();
 </script>
 </body>

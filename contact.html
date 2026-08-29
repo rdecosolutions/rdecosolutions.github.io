@@ -1333,6 +1333,146 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
   word-break:break-word}
 @media(max-width:900px){.crs{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:460px){.crs{grid-template-columns:1fr}}
+
+/* ── service page: at a glance strip ───────────────────────── */
+.glance-band{background:var(--deep);border-bottom:1px solid var(--line-dd)}
+.glance{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin:0;
+  background:var(--line-dd)}
+.gl{background:var(--deep);padding:24px 26px 28px;min-width:0}
+.gl dt{font-family:var(--mono);font-size:9.8px;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(239,238,231,.4);margin-bottom:9px}
+.gl dd{margin:0;font-size:15px;font-weight:500;color:#F7F6F1;line-height:1.4}
+@media(max-width:820px){.glance{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.gl{padding:18px 20px 20px}.gl dd{font-size:14px}}
+
+/* ── service page: the claim, mid column ───────────────────── */
+.stmt-card{
+  background:var(--void);color:#F7F6F1;padding:44px 44px 40px;margin:0 0 92px;
+  position:relative;overflow:hidden}
+.stmt-card::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--lime)}
+.stmt-card::after{
+  content:"";position:absolute;right:-70px;top:-70px;width:210px;height:210px;
+  border:1px solid rgba(95,211,73,.16);border-radius:50%}
+.stmt-card p{
+  font-family:var(--display);font-size:clamp(1.42rem,2.5vw,1.86rem);font-weight:700;
+  letter-spacing:-.028em;line-height:1.24;text-wrap:balance;position:relative;z-index:1}
+.stmt-card p b{color:var(--lime-d);font-weight:700}
+.stmt-card-k{
+  display:block;margin-top:22px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(239,238,231,.45);position:relative;z-index:1}
+@media(max-width:640px){.stmt-card{padding:30px 26px 28px;margin-bottom:66px}}
+
+/* ── service page: failure modes ───────────────────────────── */
+.fails{list-style:none;margin:52px 0 0;padding:0;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:var(--line-dd);border-top:1px solid var(--line-dd)}
+.fails li{background:var(--void);padding:30px 30px 34px;min-width:0;
+  display:flex;gap:20px;align-items:flex-start}
+.fl-n{flex:none;font-family:var(--mono);font-size:12px;letter-spacing:.06em;
+  color:var(--lime-d);padding-top:3px}
+.fails h3{font-size:1.06rem;line-height:1.32;margin-bottom:10px;letter-spacing:-.012em;
+  color:#F7F6F1;text-wrap:balance}
+.fails p{font-size:14.4px;line-height:1.6;color:rgba(239,238,231,.62)}
+.fails li{position:relative}
+.fails li::after{content:"";position:absolute;left:0;top:0;width:0;height:2px;
+  background:var(--lime);transition:width .7s var(--ease)}
+.stag.in li::after{width:44px}
+.fails li:nth-child(2)::after{transition-delay:.09s}
+.fails li:nth-child(3)::after{transition-delay:.18s}
+.fails li:nth-child(4)::after{transition-delay:.27s}
+@media(max-width:820px){
+  .fails{grid-template-columns:1fr;margin-top:36px}
+  .fails li{padding:24px 22px 26px;gap:16px}
+}
+@media(prefers-reduced-motion:reduce){.fails li::after{transition:none;width:44px}}
+
+/* ── service page: sector chips, denser than the full page tag cloud ── */
+.spec-body .tags{gap:8px}
+.spec-body .tag{
+  padding:8px 14px;font-size:12.6px;font-family:var(--mono);letter-spacing:.05em;
+  border-radius:100px;background:transparent;color:var(--ink-2);
+  border:1px solid var(--line);transition:border-color .25s var(--ease),color .25s var(--ease)}
+.spec-body .tag:hover{border-color:var(--lime);color:var(--ink)}
+.spec-body #clients .lede-s{
+  margin-top:18px;font-size:14.2px;line-height:1.6;color:var(--ink-3);max-width:56ch}
+
+/* ── service explainers ────────────────────────────────────── */
+.xp-sec{background:var(--void);color:#F7F6F1}
+.xp-wrap{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);
+  gap:56px;align-items:center}
+.xp-fig{margin:0;min-width:0}
+.xp{width:100%;height:auto;display:block;color:rgba(239,238,231,.6);overflow:visible}
+.xp-l{fill:none;stroke:currentColor;stroke-width:1.1;stroke-linecap:square}
+.xp-soil{color:rgba(239,238,231,.36);fill:currentColor}
+.xp-a{fill:var(--lime);color:var(--lime)}
+.xp-a path[fill="none"],.xp-a [stroke-dasharray]{fill:none;stroke:var(--lime)}
+.xp-f{fill:none;stroke:var(--lime-d);stroke-width:1.5;color:var(--lime-d)}
+.xp-dot{fill:var(--lime-d)}
+.xp-t text,.xp-t{font-family:var(--mono);font-size:9.4px;letter-spacing:.1em;
+  fill:rgba(239,238,231,.55);stroke:none}
+.xp-side h3{font-size:1.34rem;line-height:1.24;letter-spacing:-.022em;margin-bottom:14px;
+  text-wrap:balance}
+.xp-side p{font-size:15px;line-height:1.65;color:rgba(239,238,231,.62)}
+.xp-k{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--lime-d);margin-bottom:16px}
+
+/* the drawing builds itself once it is in view */
+.xp-l,.xp-f{stroke-dasharray:1600;stroke-dashoffset:1600;
+  transition:stroke-dashoffset 1.6s var(--ease)}
+.rv.in .xp-l,.rv.in .xp-f{stroke-dashoffset:0}
+.rv.in .xp-f{transition-delay:.45s}
+.xp-grow{transform:scaleX(0);transform-origin:left center;
+  transition:transform 1.3s var(--ease) .5s}
+.rv.in .xp-grow{transform:scaleX(1)}
+.xp-lay,.xp-bar,.xp-cell{transform:scaleX(0);transform-origin:left center;
+  transition:transform .8s var(--ease)}
+.rv.in .xp-lay,.rv.in .xp-bar,.rv.in .xp-cell{transform:scaleX(1)}
+.xp-lay2{transition-delay:.22s}.xp-lay3{transition-delay:.44s}
+.xp-b2{transition-delay:.16s}.xp-b3{transition-delay:.32s}.xp-b4{transition-delay:.48s}
+.xp-c2{transition-delay:.1s}.xp-c3{transition-delay:.2s}
+.xp-c4{transition-delay:.3s}.xp-c5{transition-delay:.4s}
+.xp-curve{stroke-dasharray:700;stroke-dashoffset:700;
+  transition:stroke-dashoffset 1.9s var(--ease) .3s}
+.rv.in .xp-curve{stroke-dashoffset:0}
+.xp-curve2{transition-delay:.7s}
+.xp-trace{stroke:var(--lime-d);stroke-width:1.7;stroke-dasharray:420;stroke-dashoffset:420;
+  transition:stroke-dashoffset 2s var(--ease) .6s}
+.rv.in .xp-trace{stroke-dashoffset:0}
+.xp-fill{transform:scaleY(0);transform-origin:bottom;transition:transform 1s var(--ease) .6s}
+.rv.in .xp-fill{transform:scaleY(1)}
+.xp-pulse{fill:var(--lime-d);animation:xpp 2.6s var(--ease) infinite}
+@keyframes xpp{0%{opacity:1}55%{opacity:.2}100%{opacity:1}}
+.xp-spin{transform-origin:79px 145px;animation:xps 6s linear infinite}
+@keyframes xps{to{transform:rotate(360deg)}}
+@media(max-width:900px){
+  .xp-wrap{grid-template-columns:1fr;gap:32px}
+  .xp-side h3{font-size:1.18rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .xp-l,.xp-f,.xp-curve,.xp-trace{stroke-dasharray:none;stroke-dashoffset:0}
+  .xp-grow,.xp-lay,.xp-bar,.xp-cell{transform:none}
+  .xp-fill{transform:scaleY(1)}
+  .xp-pulse,.xp-spin{animation:none}
+}
+
+/* ── small screens: keep drawing labels legible by letting the figure scroll ── */
+@media(max-width:760px){
+  .xp-fig,.dwg-fig{
+    overflow-x:auto;-webkit-overflow-scrolling:touch;
+    margin-left:calc(var(--gut) * -1);margin-right:calc(var(--gut) * -1);
+    padding:0 var(--gut) 10px;
+    scrollbar-width:thin}
+  .xp-fig .xp{min-width:520px}
+  .dwg-fig .dwg{min-width:440px}
+  .xp-fig::after,.dwg-fig::after{
+    content:"Swipe to see the full drawing";display:block;padding-top:10px;
+    font-family:var(--mono);font-size:9.6px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-3)}
+  .xp-fig::after{color:rgba(239,238,231,.38)}
+  .xp-t text,.xp-t{font-size:10.5px}
+  .dwg .d-t,.dwg text{font-size:10.4px}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"@id":"https://rdecosolutions.org/#organization","name":"RD Eco Solutions","url":"https://rdecosolutions.org/","image":"https://rdecosolutions.org/og-card.png","logo":"https://rdecosolutions.org/apple-touch-icon.png","priceRange":"Quoted per project","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}],"description":"Civil and environmental infrastructure services for Urban Local Bodies and public sector organisations in Tamil Nadu, project consultancy, operation and maintenance, civil works, solid waste management, environmental solutions, equipment and manpower.","email":"rdecosolutionsofficial@gmail.com","telephone":"+919659443759","address":{"@type":"PostalAddress","addressLocality":"Sirkazhi","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Ariyalur"},{"@type":"AdministrativeArea","name":"Perambalur"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"knowsAbout":["Project Consultancy","Operation & Maintenance","Civil Infrastructure Works","Solid Waste Management","Environmental Solutions","Equipment & Technical Solutions","Manpower Services"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+919659443759","email":"rdecosolutionsofficial@gmail.com","availableLanguage":["en","ta"]}},{"@type":"WebSite","@id":"https://rdecosolutions.org/#website","url":"https://rdecosolutions.org/","name":"RD Eco Solutions","publisher":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"WebPage","@id":"https://rdecosolutions.org/contact.html#webpage","url":"https://rdecosolutions.org/contact.html","name":"Contact Us, Sirkazhi, Tamil Nadu | RD Eco Solutions","description":"Contact RD Eco Solutions in Sirkazhi, Mayiladuthurai District for municipal infrastructure consultancy, civil works, O&M and waste management enquiries.","isPartOf":{"@id":"https://rdecosolutions.org/#website"},"about":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"BreadcrumbList","@id":"https://rdecosolutions.org/contact.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rdecosolutions.org/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://rdecosolutions.org/contact.html"}]},{"@type":"FAQPage","@id":"https://rdecosolutions.org/contact.html#faq","mainEntity":[{"@type":"Question","name":"How quickly will we hear back after sending an enquiry?","acceptedAnswer":{"@type":"Answer","text":"Within one working day for an initial response. If the enquiry concerns a tender with a closing date, mention the date in your message and we will treat it as time critical."}},{"@type":"Question","name":"Do you visit the site before giving a price?","acceptedAnswer":{"@type":"Answer","text":"For anything beyond a straightforward supply item, yes. A price given without seeing the condition of the network, the plant or the ground is a price that changes later, which helps nobody. Site visits within the delta districts are usually arranged within a week."}},{"@type":"Question","name":"What should we send with the first enquiry?","acceptedAnswer":{"@type":"Answer","text":"The location and the Urban Local Body, a short description of the problem or the scope, the stage the work has reached, and any tender document, drawing or inspection report you already hold. That is enough for us to say whether we are the right fit."}},{"@type":"Question","name":"Can you take part in a tender at short notice?","acceptedAnswer":{"@type":"Answer","text":"Usually, provided the statutory documents required by the tender are ones we already hold. Send the tender notice and we will confirm the same day whether we can bid."}},{"@type":"Question","name":"Is there a cost for the first assessment?","acceptedAnswer":{"@type":"Answer","text":"The first conversation and a preliminary view on the problem carry no charge. A detailed site investigation, testing or a written technical report is quoted separately before any work starts."}}]}]}</script>
 </head>

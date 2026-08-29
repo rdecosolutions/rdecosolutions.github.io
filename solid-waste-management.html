@@ -1333,6 +1333,146 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
   word-break:break-word}
 @media(max-width:900px){.crs{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:460px){.crs{grid-template-columns:1fr}}
+
+/* ── service page: at a glance strip ───────────────────────── */
+.glance-band{background:var(--deep);border-bottom:1px solid var(--line-dd)}
+.glance{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin:0;
+  background:var(--line-dd)}
+.gl{background:var(--deep);padding:24px 26px 28px;min-width:0}
+.gl dt{font-family:var(--mono);font-size:9.8px;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(239,238,231,.4);margin-bottom:9px}
+.gl dd{margin:0;font-size:15px;font-weight:500;color:#F7F6F1;line-height:1.4}
+@media(max-width:820px){.glance{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.gl{padding:18px 20px 20px}.gl dd{font-size:14px}}
+
+/* ── service page: the claim, mid column ───────────────────── */
+.stmt-card{
+  background:var(--void);color:#F7F6F1;padding:44px 44px 40px;margin:0 0 92px;
+  position:relative;overflow:hidden}
+.stmt-card::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--lime)}
+.stmt-card::after{
+  content:"";position:absolute;right:-70px;top:-70px;width:210px;height:210px;
+  border:1px solid rgba(95,211,73,.16);border-radius:50%}
+.stmt-card p{
+  font-family:var(--display);font-size:clamp(1.42rem,2.5vw,1.86rem);font-weight:700;
+  letter-spacing:-.028em;line-height:1.24;text-wrap:balance;position:relative;z-index:1}
+.stmt-card p b{color:var(--lime-d);font-weight:700}
+.stmt-card-k{
+  display:block;margin-top:22px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(239,238,231,.45);position:relative;z-index:1}
+@media(max-width:640px){.stmt-card{padding:30px 26px 28px;margin-bottom:66px}}
+
+/* ── service page: failure modes ───────────────────────────── */
+.fails{list-style:none;margin:52px 0 0;padding:0;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:var(--line-dd);border-top:1px solid var(--line-dd)}
+.fails li{background:var(--void);padding:30px 30px 34px;min-width:0;
+  display:flex;gap:20px;align-items:flex-start}
+.fl-n{flex:none;font-family:var(--mono);font-size:12px;letter-spacing:.06em;
+  color:var(--lime-d);padding-top:3px}
+.fails h3{font-size:1.06rem;line-height:1.32;margin-bottom:10px;letter-spacing:-.012em;
+  color:#F7F6F1;text-wrap:balance}
+.fails p{font-size:14.4px;line-height:1.6;color:rgba(239,238,231,.62)}
+.fails li{position:relative}
+.fails li::after{content:"";position:absolute;left:0;top:0;width:0;height:2px;
+  background:var(--lime);transition:width .7s var(--ease)}
+.stag.in li::after{width:44px}
+.fails li:nth-child(2)::after{transition-delay:.09s}
+.fails li:nth-child(3)::after{transition-delay:.18s}
+.fails li:nth-child(4)::after{transition-delay:.27s}
+@media(max-width:820px){
+  .fails{grid-template-columns:1fr;margin-top:36px}
+  .fails li{padding:24px 22px 26px;gap:16px}
+}
+@media(prefers-reduced-motion:reduce){.fails li::after{transition:none;width:44px}}
+
+/* ── service page: sector chips, denser than the full page tag cloud ── */
+.spec-body .tags{gap:8px}
+.spec-body .tag{
+  padding:8px 14px;font-size:12.6px;font-family:var(--mono);letter-spacing:.05em;
+  border-radius:100px;background:transparent;color:var(--ink-2);
+  border:1px solid var(--line);transition:border-color .25s var(--ease),color .25s var(--ease)}
+.spec-body .tag:hover{border-color:var(--lime);color:var(--ink)}
+.spec-body #clients .lede-s{
+  margin-top:18px;font-size:14.2px;line-height:1.6;color:var(--ink-3);max-width:56ch}
+
+/* ── service explainers ────────────────────────────────────── */
+.xp-sec{background:var(--void);color:#F7F6F1}
+.xp-wrap{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);
+  gap:56px;align-items:center}
+.xp-fig{margin:0;min-width:0}
+.xp{width:100%;height:auto;display:block;color:rgba(239,238,231,.6);overflow:visible}
+.xp-l{fill:none;stroke:currentColor;stroke-width:1.1;stroke-linecap:square}
+.xp-soil{color:rgba(239,238,231,.36);fill:currentColor}
+.xp-a{fill:var(--lime);color:var(--lime)}
+.xp-a path[fill="none"],.xp-a [stroke-dasharray]{fill:none;stroke:var(--lime)}
+.xp-f{fill:none;stroke:var(--lime-d);stroke-width:1.5;color:var(--lime-d)}
+.xp-dot{fill:var(--lime-d)}
+.xp-t text,.xp-t{font-family:var(--mono);font-size:9.4px;letter-spacing:.1em;
+  fill:rgba(239,238,231,.55);stroke:none}
+.xp-side h3{font-size:1.34rem;line-height:1.24;letter-spacing:-.022em;margin-bottom:14px;
+  text-wrap:balance}
+.xp-side p{font-size:15px;line-height:1.65;color:rgba(239,238,231,.62)}
+.xp-k{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--lime-d);margin-bottom:16px}
+
+/* the drawing builds itself once it is in view */
+.xp-l,.xp-f{stroke-dasharray:1600;stroke-dashoffset:1600;
+  transition:stroke-dashoffset 1.6s var(--ease)}
+.rv.in .xp-l,.rv.in .xp-f{stroke-dashoffset:0}
+.rv.in .xp-f{transition-delay:.45s}
+.xp-grow{transform:scaleX(0);transform-origin:left center;
+  transition:transform 1.3s var(--ease) .5s}
+.rv.in .xp-grow{transform:scaleX(1)}
+.xp-lay,.xp-bar,.xp-cell{transform:scaleX(0);transform-origin:left center;
+  transition:transform .8s var(--ease)}
+.rv.in .xp-lay,.rv.in .xp-bar,.rv.in .xp-cell{transform:scaleX(1)}
+.xp-lay2{transition-delay:.22s}.xp-lay3{transition-delay:.44s}
+.xp-b2{transition-delay:.16s}.xp-b3{transition-delay:.32s}.xp-b4{transition-delay:.48s}
+.xp-c2{transition-delay:.1s}.xp-c3{transition-delay:.2s}
+.xp-c4{transition-delay:.3s}.xp-c5{transition-delay:.4s}
+.xp-curve{stroke-dasharray:700;stroke-dashoffset:700;
+  transition:stroke-dashoffset 1.9s var(--ease) .3s}
+.rv.in .xp-curve{stroke-dashoffset:0}
+.xp-curve2{transition-delay:.7s}
+.xp-trace{stroke:var(--lime-d);stroke-width:1.7;stroke-dasharray:420;stroke-dashoffset:420;
+  transition:stroke-dashoffset 2s var(--ease) .6s}
+.rv.in .xp-trace{stroke-dashoffset:0}
+.xp-fill{transform:scaleY(0);transform-origin:bottom;transition:transform 1s var(--ease) .6s}
+.rv.in .xp-fill{transform:scaleY(1)}
+.xp-pulse{fill:var(--lime-d);animation:xpp 2.6s var(--ease) infinite}
+@keyframes xpp{0%{opacity:1}55%{opacity:.2}100%{opacity:1}}
+.xp-spin{transform-origin:79px 145px;animation:xps 6s linear infinite}
+@keyframes xps{to{transform:rotate(360deg)}}
+@media(max-width:900px){
+  .xp-wrap{grid-template-columns:1fr;gap:32px}
+  .xp-side h3{font-size:1.18rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .xp-l,.xp-f,.xp-curve,.xp-trace{stroke-dasharray:none;stroke-dashoffset:0}
+  .xp-grow,.xp-lay,.xp-bar,.xp-cell{transform:none}
+  .xp-fill{transform:scaleY(1)}
+  .xp-pulse,.xp-spin{animation:none}
+}
+
+/* ── small screens: keep drawing labels legible by letting the figure scroll ── */
+@media(max-width:760px){
+  .xp-fig,.dwg-fig{
+    overflow-x:auto;-webkit-overflow-scrolling:touch;
+    margin-left:calc(var(--gut) * -1);margin-right:calc(var(--gut) * -1);
+    padding:0 var(--gut) 10px;
+    scrollbar-width:thin}
+  .xp-fig .xp{min-width:520px}
+  .dwg-fig .dwg{min-width:440px}
+  .xp-fig::after,.dwg-fig::after{
+    content:"Swipe to see the full drawing";display:block;padding-top:10px;
+    font-family:var(--mono);font-size:9.6px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-3)}
+  .xp-fig::after{color:rgba(239,238,231,.38)}
+  .xp-t text,.xp-t{font-size:10.5px}
+  .dwg .d-t,.dwg text{font-size:10.4px}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"@id":"https://rdecosolutions.org/#organization","name":"RD Eco Solutions","url":"https://rdecosolutions.org/","image":"https://rdecosolutions.org/og-card.png","logo":"https://rdecosolutions.org/apple-touch-icon.png","priceRange":"Quoted per project","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}],"description":"Civil and environmental infrastructure services for Urban Local Bodies and public sector organisations in Tamil Nadu, project consultancy, operation and maintenance, civil works, solid waste management, environmental solutions, equipment and manpower.","email":"rdecosolutionsofficial@gmail.com","telephone":"+919659443759","address":{"@type":"PostalAddress","addressLocality":"Sirkazhi","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Ariyalur"},{"@type":"AdministrativeArea","name":"Perambalur"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"knowsAbout":["Project Consultancy","Operation & Maintenance","Civil Infrastructure Works","Solid Waste Management","Environmental Solutions","Equipment & Technical Solutions","Manpower Services"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+919659443759","email":"rdecosolutionsofficial@gmail.com","availableLanguage":["en","ta"]}},{"@type":"WebSite","@id":"https://rdecosolutions.org/#website","url":"https://rdecosolutions.org/","name":"RD Eco Solutions","publisher":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"WebPage","@id":"https://rdecosolutions.org/solid-waste-management.html#webpage","url":"https://rdecosolutions.org/solid-waste-management.html","name":"Solid Waste Management & Legacy Biomining, Tamil Nadu","description":"Door to door collection, source segregation, micro compost centre and MRF operations, and legacy waste biomining for Tamil Nadu urban local bodies.","isPartOf":{"@id":"https://rdecosolutions.org/#website"},"about":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"BreadcrumbList","@id":"https://rdecosolutions.org/solid-waste-management.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rdecosolutions.org/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://rdecosolutions.org/services.html"},{"@type":"ListItem","position":3,"name":"Solid Waste Management","item":"https://rdecosolutions.org/solid-waste-management.html"}]},{"@type":"Service","@id":"https://rdecosolutions.org/solid-waste-management.html#service","name":"Solid Waste Management","serviceType":"Solid Waste Management","description":"Door to door collection, source segregation, micro compost centre and MRF operations, and legacy waste biomining for Tamil Nadu urban local bodies.","provider":{"@id":"https://rdecosolutions.org/#organization"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Ariyalur"},{"@type":"AdministrativeArea","name":"Perambalur"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"audience":{"@type":"Audience","audienceType":"Urban Local Bodies, Municipal Corporations, Municipalities, Town Panchayats, Government Departments"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Solid Waste Management, scope","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Primary collection and transportation of municipal solid waste"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Wet and dry waste segregation support"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Micro compost centre operation"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Fresh waste processing"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Legacy waste biomining and dumpsite reclamation"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Material Recovery Facility operations"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Deployment of vehicles, machinery and manpower"}}]}},{"@type":"FAQPage","@id":"https://rdecosolutions.org/solid-waste-management.html#faq","mainEntity":[{"@type":"Question","name":"How is biomining of a legacy dumpsite priced and scheduled?","acceptedAnswer":{"@type":"Answer","text":"Pricing is normally per cubic metre or per tonne of legacy waste processed, so the first step is quantifying the dump, area, depth and density, established by survey rather than estimate, because volume assumptions are where these contracts go wrong. Duration depends on volume, screening capacity deployed and monsoon interruption. We quote against a measured volume, not a guessed one."}},{"@type":"Question","name":"What fractions are recovered from legacy waste, and where do they go?","acceptedAnswer":{"@type":"Answer","text":"Typically soil like fine fraction, combustible RDF fraction, inert construction material and recoverable recyclables, with proportions varying considerably by dumpsite age and composition. Each fraction needs a confirmed destination before work starts, RDF offtake in particular, and that destination should be written into the contract, not assumed."}},{"@type":"Question","name":"Do you supply the vehicles and manpower, or does the ULB provide them?","acceptedAnswer":{"@type":"Answer","text":"Either arrangement works and it is set by the tender. We can deploy vehicles, equipment and sanitation manpower as part of scope, or operate assets the ULB already owns. Where we operate ULB vehicles we agree the maintenance and breakdown boundary in writing before mobilisation."}},{"@type":"Question","name":"Can you help a town panchayat meet SWM Rules 2016 compliance?","acceptedAnswer":{"@type":"Answer","text":"Yes. The practical gaps are usually segregation at source, functioning processing capacity for wet waste, a route for dry recoverables and closure of the legacy dump. We scope work against those gaps and against what a body of that size can realistically sustain in operating cost after the contract ends."}}]}]}</script>
 </head>
@@ -1456,6 +1596,56 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
 
 <div class="marq band-k" aria-hidden="true"><div class="marq-in"><span>Collection and transport</span><span>Segregation and processing</span><span>Legacy waste</span><span>Primary collection and transportat</span><span>Wet and dry waste segregation supp</span><span>Micro compost centre operation</span><span>Fresh waste processing</span><span>Legacy waste biomining and dumpsit</span><span>Collection and transport</span><span>Segregation and processing</span><span>Legacy waste</span><span>Primary collection and transportat</span><span>Wet and dry waste segregation supp</span><span>Micro compost centre operation</span><span>Fresh waste processing</span><span>Legacy waste biomining and dumpsit</span></div></div>
 
+<section class="glance-band">
+  <div class="wrap"><dl class="glance rv"><div class="gl"><dt>Chain</dt><dd>Household to processing to disposal</dd></div><div class="gl"><dt>Facilities</dt><dd>MCC, MRF, biomining</dd></div><div class="gl"><dt>Deployed</dt><dd>Vehicles, machinery, conservancy staff</dd></div><div class="gl"><dt>Evidence</dt><dd>Weighbridge and disposal records</dd></div></dl></div>
+</section>
+
+<section class="sec xp-sec">
+  <div class="wrap">
+    <div class="xp-wrap rv">
+      <figure class="xp-fig"><svg class="xp" viewBox="0 0 640 300" role="img" aria-label="Where each fraction of collected waste ends up" xmlns="http://www.w3.org/2000/svg"><defs><marker id="xa-waste" markerWidth="8" markerHeight="8" refX="6.5" refY="2.6" orient="auto"><path d="M0 0l6.5 2.6L0 5.2z" fill="currentColor"/></marker></defs>
+<g class="xp-l">
+  <rect x="36" y="118" width="96" height="66" rx="2"/>
+  <rect x="196" y="118" width="96" height="66" rx="2"/>
+  <rect x="380" y="52" width="224" height="34" rx="2"/>
+  <rect x="380" y="100" width="224" height="34" rx="2"/>
+  <rect x="380" y="148" width="224" height="34" rx="2"/>
+  <rect x="380" y="196" width="224" height="34" rx="2"/>
+</g>
+<g class="xp-a">
+  <rect class="xp-bar" x="380" y="52" width="126" height="34" opacity=".9"/>
+  <rect class="xp-bar xp-b2" x="380" y="100" width="84" height="34" opacity=".72"/>
+  <rect class="xp-bar xp-b3" x="380" y="148" width="52" height="34" opacity=".55"/>
+  <rect class="xp-bar xp-b4" x="380" y="196" width="30" height="34" opacity=".4"/>
+</g>
+<g class="xp-f">
+  <path d="M132 151h56" marker-end="url(#xa-waste)"/>
+  <path d="M292 151h30v-82h50" marker-end="url(#xa-waste)"/>
+  <path d="M292 151h30v-34h50" marker-end="url(#xa-waste)"/>
+  <path d="M292 151h30v14h50" marker-end="url(#xa-waste)"/>
+  <path d="M292 151h30v62h50" marker-end="url(#xa-waste)"/>
+</g>
+<g class="xp-l" opacity=".5"><path d="M48 134h72M48 150h56M48 166h72"/></g>
+<circle class="xp-dot" r="3.6" opacity="0"><animate attributeName="opacity" to="1" begin="0s" dur="0.01s" fill="freeze"/><animateMotion dur="1.5s" begin="0s" repeatCount="indefinite" path="M132 151H196"/></circle>
+<g class="xp-t">
+  <text x="84" y="106" text-anchor="middle">COLLECTED</text>
+  <text x="244" y="106" text-anchor="middle">SCREENED</text>
+  <text x="516" y="74">SOIL, BACK TO SITE</text>
+  <text x="516" y="122">RDF TO OFFTAKE</text>
+  <text x="516" y="170">RECYCLABLE AND INERTS</text>
+  <text x="516" y="218">REJECT TO LANDFILL</text>
+  <text x="36" y="266">EVERY FRACTION LEAVES WITH A DOCUMENTED DESTINATION</text>
+</g>
+</svg></figure>
+      <div class="xp-side">
+        <span class="xp-k">How the work runs</span>
+        <h3>Every fraction, and where it goes</h3>
+        <p>Segregation only counts if it survives the vehicle and the yard. Soil back to the site, RDF and recyclables to offtake, reject to landfill, each with a weighbridge record.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="wrap">
  <div class="spec">
 
@@ -1497,6 +1687,11 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
         </table></div>
     </section>
 
+    <aside class="stmt-card rv">
+      <p>What a council is judged on is not tonnage moved. It is <b>the hectare handed back, with a record for every fraction.</b></p>
+      <span class="stmt-card-k">Segregation at source &middot; Processing &middot; Disposal record</span>
+    </aside>
+
     <section id="engagement">
       <div class="sec-mark"><span>03</span><b>How an engagement runs</b></div>
       <div class="pair">
@@ -1508,6 +1703,8 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
     <section id="clients">
       <div class="sec-mark"><span>04</span><b>Who this is for</b></div>
       <div class="tags stag"><span class="tag">Municipal Corporations</span><span class="tag">Municipalities</span><span class="tag">Town Panchayats</span><span class="tag">Government Departments</span><span class="tag">Industrial and commercial establishments</span></div>
+      <p class="lede-s">Scope, documentation and billing are set up to match how each of these
+      bodies actually procures and audits, rather than one format applied to all of them.</p>
     </section>
 
     <section id="questions">
@@ -1518,6 +1715,20 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
   </div>
  </div>
 </div>
+
+<section class="sec on-dark fails-sec">
+  <div class="wrap">
+    <div class="head-split rv">
+      <div>
+        <span class="idx">Where it goes wrong</span>
+        <h2>Four ways solid waste management <em>quietly fails.</em></h2>
+      </div>
+      <p class="lede">Not a list of risks in the abstract. These are the specific things we are
+      called in to correct, and what we check for before quoting anything.</p>
+    </div>
+    <ol class="fails stag"><li><span class="fl-n">01</span><div><h3>Collection routed by habit, not by generation</h3><p>Most collection shortfalls are routing and vehicle utilisation problems, not headcount problems. We measure before adding staff.</p></div></li><li><span class="fl-n">02</span><div><h3>Segregation lost between the bin and the yard</h3><p>Wet and dry separated at the household and then tipped together achieves nothing. The vehicle and the yard have to hold the separation.</p></div></li><li><span class="fl-n">03</span><div><h3>Compost that never leaves the centre</h3><p>A micro compost centre with no offtake becomes a second dumpsite. Offtake is planned with the operation, not after it.</p></div></li><li><span class="fl-n">04</span><div><h3>Biomining without a disposal record</h3><p>Soil, RDF, inerts and metal each need a documented destination. Without it the reclamation cannot be certified.</p></div></li></ol>
+  </div>
+</section>
 
 <section class="sec on-light tint pager-sec">
   <div class="wrap">

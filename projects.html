@@ -389,6 +389,36 @@ form{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28p
   *{animation:none!important;transition:none!important}
   html{scroll-behavior:auto}
 }
+
+/* ── service page hero ────────────────────────────── */
+.svc-hero{display:flex;align-items:center;gap:18px}
+.svc-hero .ico-lg{
+  width:60px;height:60px;flex:0 0 auto;border-radius:13px;
+  background:#fff;border:1px solid var(--line);color:var(--brand);
+  display:grid;place-items:center;box-shadow:var(--shadow);
+}
+.svc-hero .ico-lg svg{width:28px;height:28px}
+.svc-hero .k-lg{
+  font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--brand-2);margin-bottom:4px;
+}
+.svc h3 a{color:var(--ink)}
+.svc h3 a:hover{color:var(--brand);text-decoration:none}
+.svc li.more-n{color:var(--ink-3);font-style:italic}
+.svc li.more-n::before{display:none}
+@media (max-width:600px){
+  .svc-hero{gap:14px}
+  .svc-hero .ico-lg{width:48px;height:48px;border-radius:11px}
+  .svc-hero .ico-lg svg{width:23px;height:23px}
+}
+
+/* ── very small screens (320px) ────────────────────── */
+@media (max-width:400px){
+  .btn{white-space:normal;text-align:center}
+  .chip{font-size:13.5px;padding:10px 14px}
+  .info-list .v{font-size:14.5px;word-break:break-word}
+  .f input,.f select,.f textarea{font-size:16px} /* prevents iOS zoom-on-focus */
+}
 </style>
 </head>
 <body>
@@ -479,7 +509,7 @@ form{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28p
       </div>
       <div>
         <h4>Services</h4>
-        <ul><li><a href="services.html#consultancy">Project Consultancy</a></li><li><a href="services.html#om">Operation &amp; Maintenance</a></li><li><a href="services.html#civil">Civil Infrastructure Works</a></li><li><a href="services.html#waste">Solid Waste Management</a></li><li><a href="services.html#environment">Environmental Solutions</a></li><li><a href="services.html">All services</a></li></ul>
+        <ul><li><a href="project-consultancy.html">Project Consultancy</a></li><li><a href="operation-and-maintenance.html">Operation &amp; Maintenance</a></li><li><a href="civil-infrastructure-works.html">Civil Infrastructure Works</a></li><li><a href="solid-waste-management.html">Solid Waste Management</a></li><li><a href="environmental-solutions.html">Environmental Solutions</a></li><li><a href="services.html">All services</a></li></ul>
       </div>
       <div>
         <h4>Company</h4>

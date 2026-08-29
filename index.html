@@ -389,6 +389,36 @@ form{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28p
   *{animation:none!important;transition:none!important}
   html{scroll-behavior:auto}
 }
+
+/* ── service page hero ────────────────────────────── */
+.svc-hero{display:flex;align-items:center;gap:18px}
+.svc-hero .ico-lg{
+  width:60px;height:60px;flex:0 0 auto;border-radius:13px;
+  background:#fff;border:1px solid var(--line);color:var(--brand);
+  display:grid;place-items:center;box-shadow:var(--shadow);
+}
+.svc-hero .ico-lg svg{width:28px;height:28px}
+.svc-hero .k-lg{
+  font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--brand-2);margin-bottom:4px;
+}
+.svc h3 a{color:var(--ink)}
+.svc h3 a:hover{color:var(--brand);text-decoration:none}
+.svc li.more-n{color:var(--ink-3);font-style:italic}
+.svc li.more-n::before{display:none}
+@media (max-width:600px){
+  .svc-hero{gap:14px}
+  .svc-hero .ico-lg{width:48px;height:48px;border-radius:11px}
+  .svc-hero .ico-lg svg{width:23px;height:23px}
+}
+
+/* ── very small screens (320px) ────────────────────── */
+@media (max-width:400px){
+  .btn{white-space:normal;text-align:center}
+  .chip{font-size:13.5px;padding:10px 14px}
+  .info-list .v{font-size:14.5px;word-break:break-word}
+  .f input,.f select,.f textarea{font-size:16px} /* prevents iOS zoom-on-focus */
+}
 </style>
 </head>
 <body>
@@ -480,43 +510,43 @@ form{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28p
       so a single department can work with one accountable partner rather than five.</p>
     </div>
     <div class="grid g3">
-      <a class="card card-link" href="services.html#consultancy">
+      <a class="card card-link" href="project-consultancy.html">
         <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6z"/><path d="M15 2v4a2 2 0 0 0 2 2h4"/><path d="M9 12h6M9 16h4"/></svg></span>
         <h3>Project Consultancy</h3>
         <p>Documentation and technical groundwork that gets projects approved and tendered cleanly.</p>
         <span class="more">View scope <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="card card-link" href="services.html#om">
+      <a class="card card-link" href="operation-and-maintenance.html">
         <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 1.55V21a2 2 0 1 1-4 0v-.09A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.87.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.55-1H3a2 2 0 1 1 0-4h.09A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.33-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-1.55V3a2 2 0 1 1 4 0v.09A1.7 1.7 0 0 0 15 4.6a1.7 1.7 0 0 0 1.87-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9v0a1.7 1.7 0 0 0 1.55 1H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1z"/></svg></span>
         <h3>Operation &amp; Maintenance</h3>
         <p>Keeping sewerage, treatment and water-supply assets running day after day.</p>
         <span class="more">View scope <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="card card-link" href="services.html#civil">
+      <a class="card card-link" href="civil-infrastructure-works.html">
         <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/><path d="M9 10h.01M15 10h.01"/></svg></span>
         <h3>Civil Infrastructure Works</h3>
         <p>Execution of municipal civil works, from underground networks to road restoration.</p>
         <span class="more">View scope <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="card card-link" href="services.html#waste">
+      <a class="card card-link" href="solid-waste-management.html">
         <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 19H5a2 2 0 0 1-1.7-3L5 13"/><path d="M9.6 5.5 11 3.2a2 2 0 0 1 3.4 0l1.7 2.9"/><path d="M17.6 10.6 19 13l1.7 3a2 2 0 0 1-1.7 3h-3"/><path d="m4.9 12.6 2.6-1.5M14 19l2-2-2-2M13.4 4.9l1.5 2.6"/></svg></span>
         <h3>Solid Waste Management</h3>
         <p>Collection through to processing, including legacy-waste remediation.</p>
         <span class="more">View scope <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="card card-link" href="services.html#environment">
+      <a class="card card-link" href="environmental-solutions.html">
         <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-4-7-12-7-12S5 11 5 15a7 7 0 0 0 7 7Z"/><path d="M12 18a3 3 0 0 1-3-3"/></svg></span>
         <h3>Environmental Solutions</h3>
         <p>Treatment, recovery and reuse — designed around compliance and long-term viability.</p>
         <span class="more">View scope <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="card card-link" href="services.html#equipment">
+      <a class="card card-link" href="equipment-technical-solutions.html">
         <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5l-9.6 9.6a2.1 2.1 0 0 1-3-3z"/><path d="m16 8 2-2"/><circle cx="18.5" cy="5.5" r="2.5"/></svg></span>
         <h3>Equipment &amp; Technical Solutions</h3>
         <p>Supply, installation and upkeep of the plant and instrumentation these systems depend on.</p>
         <span class="more">View scope <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="card card-link" href="services.html#manpower">
+      <a class="card card-link" href="manpower-services.html">
         <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
         <h3>Manpower Services</h3>
         <p>Trained teams deployed on site, with compliance and reporting handled.</p>
@@ -583,7 +613,7 @@ form{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28p
       </div>
       <div>
         <h4>Services</h4>
-        <ul><li><a href="services.html#consultancy">Project Consultancy</a></li><li><a href="services.html#om">Operation &amp; Maintenance</a></li><li><a href="services.html#civil">Civil Infrastructure Works</a></li><li><a href="services.html#waste">Solid Waste Management</a></li><li><a href="services.html#environment">Environmental Solutions</a></li><li><a href="services.html">All services</a></li></ul>
+        <ul><li><a href="project-consultancy.html">Project Consultancy</a></li><li><a href="operation-and-maintenance.html">Operation &amp; Maintenance</a></li><li><a href="civil-infrastructure-works.html">Civil Infrastructure Works</a></li><li><a href="solid-waste-management.html">Solid Waste Management</a></li><li><a href="environmental-solutions.html">Environmental Solutions</a></li><li><a href="services.html">All services</a></li></ul>
       </div>
       <div>
         <h4>Company</h4>

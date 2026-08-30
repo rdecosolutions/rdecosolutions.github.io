@@ -1753,6 +1753,45 @@ body::after{
   transition:background-size .35s var(--ease),color .25s var(--ease)}
 .gp-h:hover{color:var(--lime-d);background-size:100% 1px}
 .tint .gp-h:hover{color:var(--lime-l)}
+
+/* ── evidence / shared standard cards ──────────────────────── */
+.evs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:var(--line-dd);border-top:1px solid var(--line-dd);margin-top:52px}
+.ev{background:var(--void);padding:32px 32px 36px;min-width:0;position:relative}
+.ev::after{content:"";position:absolute;left:0;top:0;height:2px;width:0;
+  background:var(--lime);transition:width .7s var(--ease)}
+.stag.in .ev::after{width:44px}
+.ev:nth-child(2)::after{transition-delay:.09s}
+.ev:nth-child(3)::after{transition-delay:.18s}
+.ev:nth-child(4)::after{transition-delay:.27s}
+.ev-n{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;
+  color:var(--lime-d);margin-bottom:14px}
+.ev h3{font-size:1.14rem;line-height:1.3;margin-bottom:11px;letter-spacing:-.015em;
+  color:#F7F6F1;text-wrap:balance}
+.ev p{font-size:14.6px;line-height:1.6;color:rgba(239,238,231,.62)}
+.ev-a{display:inline-flex;align-items:center;gap:8px;margin-top:18px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--lime-d);text-decoration:none;border-bottom:1px solid rgba(95,211,73,.35);
+  padding-bottom:3px;transition:color .25s var(--ease),border-color .25s var(--ease)}
+.ev-a:hover{color:#F7F6F1;border-color:#F7F6F1}
+.ev-a svg{transition:transform .25s var(--ease)}
+.ev-a:hover svg{transform:translateX(3px)}
+@media(max-width:820px){.evs{grid-template-columns:1fr;margin-top:36px}
+  .ev{padding:24px 22px 28px}}
+
+/* ── how a contract runs ───────────────────────────────────── */
+.cstages{list-style:none;margin:48px 0 0;padding:0;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line);border-top:1px solid var(--line)}
+.cstages li{background:var(--sand);padding:28px 28px 32px;min-width:0;
+  display:flex;gap:18px;align-items:flex-start}
+.cs-n{flex:none;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;
+  color:var(--lime-l);padding-top:3px}
+.cstages h3{font-size:1.04rem;line-height:1.3;margin-bottom:9px;letter-spacing:-.012em}
+.cstages p{font-size:14px;line-height:1.58;color:var(--ink-2)}
+@media(max-width:980px){.cstages{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.cstages{grid-template-columns:1fr;margin-top:34px}
+  .cstages li{padding:22px 20px 24px;gap:14px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"@id":"https://rdecosolutions.org/#organization","name":"RD Eco Solutions","url":"https://rdecosolutions.org/","image":"https://rdecosolutions.org/og-card.png","logo":"https://rdecosolutions.org/apple-touch-icon.png","priceRange":"Quoted per project","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}],"description":"Civil and environmental infrastructure services for Urban Local Bodies and public sector organisations in Tamil Nadu, project consultancy, operation and maintenance, civil works, solid waste management, environmental solutions, equipment and manpower.","email":"rdecosolutionsofficial@gmail.com","telephone":"+919659443759","address":{"@type":"PostalAddress","addressLocality":"Sirkazhi","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Ariyalur"},{"@type":"AdministrativeArea","name":"Perambalur"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"knowsAbout":["Project Consultancy","Operation & Maintenance","Civil Infrastructure Works","Solid Waste Management","Environmental Solutions","Equipment & Technical Solutions","Manpower Services","Survey & Investigation"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+919659443759","email":"rdecosolutionsofficial@gmail.com","availableLanguage":["en","ta"]},"subOrganization":[{"@type":"Organization","name":"Sabareesan Civil Constructions","description":"Roads, drainage and stormwater works, structures, and technical and topographic survey.","url":"https://rdecosolutions.org/sabareesan-civil-constructions.html"},{"@type":"Organization","name":"Sabareesan IT Services","description":"IT services and solutions, run as a separate business with its own clients.","url":"https://rdecosolutions.org/sabareesan-it-services.html"}]},{"@type":"WebSite","@id":"https://rdecosolutions.org/#website","url":"https://rdecosolutions.org/","name":"RD Eco Solutions","publisher":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"WebPage","@id":"https://rdecosolutions.org/projects.html#webpage","url":"https://rdecosolutions.org/projects.html","name":"Projects & Experience, Municipal Works | RD Eco Solutions","description":"Completed and ongoing municipal infrastructure projects across Tamil Nadu, with scope, client department, contract period, value and current status for each.","isPartOf":{"@id":"https://rdecosolutions.org/#website"},"about":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"BreadcrumbList","@id":"https://rdecosolutions.org/projects.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rdecosolutions.org/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://rdecosolutions.org/projects.html"}]}]}</script>
 </head>
@@ -1857,6 +1896,44 @@ body::after{
   </div>
 </section>
 
+<section class="sec on-dark">
+  <div class="wrap">
+    <div class="head-split rv">
+      <div>
+        <span class="idx">Evidence today</span>
+        <h2>What we can show you <em>before the project list exists.</em></h2>
+      </div>
+      <p class="lede">Completed work records are being compiled. In the meantime these are the
+      things a department can verify now, which is usually what the question behind the
+      question actually is.</p>
+    </div>
+    <div class="evs stag">
+      <article class="ev">
+        <span class="ev-n">01</span>
+        <h3>Plant on our own books</h3>
+        <p>Backhoe loaders, excavators, concrete mixers and site plant, owned rather than hired. Ownership can be evidenced from the asset register, and it is why mobilisation does not wait on a third party.</p>
+        <a class="ev-a" href="about.html">See the plant <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="ev">
+        <span class="ev-n">02</span>
+        <h3>A written method, not a promise</h3>
+        <p>Inspection, root cause analysis, technical diagnosis, corrective action, performance verification, preventive recommendation. The same six stages on every job, which is what makes the work auditable rather than anecdotal.</p>
+        <a class="ev-a" href="about.html">Read the method <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="ev">
+        <span class="ev-n">03</span>
+        <h3>Statutory compliance handled in house</h3>
+        <p>Attendance, wage records, EPF and ESI for every person deployed, produced monthly. This is the exposure that sits with the department when a contractor is casual about it.</p>
+        <a class="ev-a" href="manpower-services.html">Manpower division <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="ev">
+        <span class="ev-n">04</span>
+        <h3>Survey and civil under one roof</h3>
+        <p>Levels, alignment and execution come from the same group rather than from a partner found scheme by scheme, so nobody inherits somebody else's survey.</p>
+        <a class="ev-a" href="group.html">The group <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article></div>
+  </div>
+</section>
 <section class="sec on-dark">
   <div class="wrap">
     <div class="head-split rv">

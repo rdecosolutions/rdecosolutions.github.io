@@ -66,6 +66,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://rdecosolutions.org/survey-and-investigation.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://rdecosolutions.org/municipal-corporations.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

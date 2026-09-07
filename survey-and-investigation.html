@@ -28,41 +28,42 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&amp;family=Inter:wght@400;450;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;450;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>/* ═══════════════════════════════════════════════════════════════
    RD Eco Solutions — design system v3
    Palette derived from the RD Eco Solutions logo: globe green + periwinkle.
    ═══════════════════════════════════════════════════════════════ */
 
 :root{
-  --void:#0B1A0E;        /* near-black green */
-  --deep:#112417;
-  --deep-2:#19331F;
-  --bone:#F2F4EE;
+  --void:#0D0D0D;        /* PipeRocket near black */
+  --deep:#171717;
+  --deep-2:#232323;
+  --bone:#F6F6F1;        /* PipeRocket warm cream */
   --paper:#FFFFFF;
-  --sand:#E4EADE;
+  --sand:#E8E4DA;        /* PipeRocket sand */
 
-  --ink:#0F1A12;
-  --ink-2:#455049;
-  --ink-3:#76837A;
+  --ink:#0D0D0D;
+  --ink-2:#4A4A47;
+  --ink-3:#7C7C77;
 
-  --lime:#3EAD2D;        /* the signature */
-  --lime-2:#4AC636;
-  --lime-d:#5FD349;    /* accent legible on dark grounds */
-  --lime-l:#2C7D22;    /* accent legible on light grounds */
-  --green:#3B54A8;
-  --green-2:#8FA6EE;
+  --lime:#0BA6E2;        /* the signature */
+  --lime-2:#0CC6F1;
+  --lime-d:#0CC6F1;    /* accent legible on dark grounds */
+  --lime-l:#07698F;    /* accent legible on cream, 5.65:1 */
+  --green:#C42834;     /* red accent, darkened to read on cream */
+  --green-2:#F26671;   /* red accent on dark */
 
-  --line:#D6DED0;
-  --line-d:rgba(62,173,45,.20);
-  --line-dd:rgba(255,255,255,.09);
+  --line:#DDD9CE;
+  --line-d:rgba(11,166,226,.24);
+  --line-dd:rgba(255,255,255,.10);
 
-  --display:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
   --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
 
   --wrap:1320px;
   --gut:34px;
+  --r:5px;
   --ease:cubic-bezier(.19,.72,.28,1);
 }
 
@@ -192,7 +193,7 @@ p + p{margin-top:1.1em}
 .hero{position:relative;overflow:hidden;background:var(--void);color:#EFEEE7}
 .hero::after{
   content:"";position:absolute;right:-8%;top:-18%;width:70%;height:130%;
-  background:radial-gradient(closest-side,rgba(62,173,45,.10),transparent 72%);
+  background:radial-gradient(closest-side,rgba(11,166,226,.10),transparent 72%);
   pointer-events:none;
 }
 .hero-in{position:relative;z-index:2;padding-top:96px}
@@ -210,7 +211,7 @@ p + p{margin-top:1.1em}
 .hero-sub .lede{max-width:46ch}
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 .hero-art{width:100%;height:auto;display:block;margin-bottom:-4px}
-.hero-art-hold{position:relative;z-index:1;border-top:1px solid var(--line-d);background:linear-gradient(180deg,transparent,rgba(62,173,45,.05))}
+.hero-art-hold{position:relative;z-index:1;border-top:1px solid var(--line-d);background:linear-gradient(180deg,transparent,rgba(11,166,226,.05))}
 
 /* marquee capability strip */
 .marq{background:var(--lime);color:#07210B;overflow:hidden;padding:17px 0;border-bottom:1px solid rgba(10,26,8,.14)}
@@ -228,7 +229,7 @@ p + p{margin-top:1.1em}
 .page-hero{background:var(--void);color:#EFEEE7;padding:76px 0 84px;position:relative;overflow:hidden}
 .page-hero::after{
   content:"";position:absolute;right:-10%;top:-40%;width:60%;height:180%;
-  background:radial-gradient(closest-side,rgba(62,173,45,.09),transparent 70%);
+  background:radial-gradient(closest-side,rgba(11,166,226,.09),transparent 70%);
 }
 .page-hero .wrap{position:relative;z-index:1}
 .page-hero h1{max-width:18ch;margin-bottom:24px}
@@ -286,7 +287,7 @@ p + p{margin-top:1.1em}
 .stmt::after{
   content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
   width:120%;height:200%;
-  background:radial-gradient(closest-side,rgba(62,173,45,.09),transparent 70%);
+  background:radial-gradient(closest-side,rgba(11,166,226,.09),transparent 70%);
 }
 .stmt .wrap{position:relative;z-index:1}
 .stmt p{
@@ -300,7 +301,7 @@ p + p{margin-top:1.1em}
 }
 
 /* ── numbered process, horizontal ───────────────────────────── */
-.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line)}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line)}
 .on-dark .flow{background:var(--line-dd);border-color:var(--line-dd)}
 .flow-i{background:var(--bone);padding:34px 26px 40px;transition:background .3s var(--ease)}
 .on-dark .flow-i{background:var(--void)}
@@ -432,7 +433,7 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
 .f-note{font-size:13px;color:rgba(239,238,231,.5);margin-top:18px;line-height:1.6}
 .f-note a{color:var(--lime)}
 .f-msg{display:none;margin-top:16px;padding:14px 16px;font-size:14px}
-.f-msg.ok{display:block;background:rgba(62,173,45,.13);color:var(--lime);border-left:2px solid var(--lime)}
+.f-msg.ok{display:block;background:rgba(11,166,226,.13);color:var(--lime);border-left:2px solid var(--lime)}
 .f-msg.err{display:block;background:rgba(255,120,90,.12);color:#FFAE9B;border-left:2px solid #FF785A}
 
 /* ── CTA ────────────────────────────────────────────────────── */
@@ -698,8 +699,8 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
   border-bottom:1px solid var(--line-d);padding:15px 0;
 }
 .marq.band-k .marq-in{animation-duration:58s}
-.marq.band-k span{color:rgba(62,173,45,.75);font-size:11px}
-.marq.band-k span::after{background:rgba(62,173,45,.45)}
+.marq.band-k span{color:rgba(11,166,226,.75);font-size:11px}
+.marq.band-k span::after{background:rgba(11,166,226,.45)}
 
 @media (prefers-reduced-motion:reduce){
   .readbar{display:none}
@@ -1208,12 +1209,12 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
 .tnmap-svg{width:100%;max-width:400px;height:auto;overflow:visible}
 .tnd{fill:rgba(255,255,255,.045);stroke:rgba(255,255,255,.14);stroke-width:.7;
   transition:fill .3s var(--ease),stroke .3s var(--ease)}
-.tnd-on{fill:rgba(62,173,45,.34);stroke:var(--lime-d);stroke-width:1;cursor:pointer}
-.tnd-on:hover,.tnd-on:focus,.tnd-on.on{fill:var(--lime);stroke:#DFF7D2;outline:none}
+.tnd-on{fill:rgba(11,166,226,.34);stroke:var(--lime-d);stroke-width:1;cursor:pointer}
+.tnd-on:hover,.tnd-on:focus,.tnd-on.on{fill:var(--lime);stroke:#DDF4FD;outline:none}
 .tn-base{pointer-events:none}
-.tn-base line{stroke:#DFF7D2;stroke-width:.9}
-.tn-base text{fill:#DFF7D2;font-family:var(--mono);font-size:11px;letter-spacing:.16em}
-.tn-dot{fill:#DFF7D2}
+.tn-base line{stroke:#DDF4FD;stroke-width:.9}
+.tn-base text{fill:#DDF4FD;font-family:var(--mono);font-size:11px;letter-spacing:.16em}
+.tn-dot{fill:#DDF4FD}
 .tn-pulse{fill:var(--lime-d);opacity:.55;transform-origin:center;
   animation:tnp 2.8s var(--ease) infinite}
 @keyframes tnp{0%{r:5;opacity:.55}70%{r:17;opacity:0}100%{r:17;opacity:0}}
@@ -1353,7 +1354,7 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
   content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--lime)}
 .stmt-card::after{
   content:"";position:absolute;right:-70px;top:-70px;width:210px;height:210px;
-  border:1px solid rgba(95,211,73,.16);border-radius:50%}
+  border:1px solid rgba(12,198,241,.16);border-radius:50%}
 .stmt-card p{
   font-family:var(--display);font-size:clamp(1.42rem,2.5vw,1.86rem);font-weight:700;
   letter-spacing:-.028em;line-height:1.24;text-wrap:balance;position:relative;z-index:1}
@@ -1517,7 +1518,7 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
   margin:8px 0 10px}
 .jn-div{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;
   letter-spacing:.14em;text-transform:uppercase;color:var(--lime-d);text-decoration:none;
-  border-bottom:1px solid rgba(95,211,73,.4);padding-bottom:3px;margin-bottom:14px}
+  border-bottom:1px solid rgba(12,198,241,.4);padding-bottom:3px;margin-bottom:14px}
 .jn-div:hover{color:#F7F6F1;border-color:#F7F6F1}
 .jn-div svg{transition:transform .25s var(--ease)}
 .jn-div:hover svg{transform:translateX(3px)}
@@ -1590,7 +1591,7 @@ table.route-tbl{width:100%;min-width:0;border-collapse:collapse}
   font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
   color:rgba(239,238,231,.42)}
 .fd-alt span{color:var(--lime-d)}
-.fd-alt a{color:var(--lime-d);text-decoration:none;border-bottom:1px solid rgba(95,211,73,.35)}
+.fd-alt a{color:var(--lime-d);text-decoration:none;border-bottom:1px solid rgba(12,198,241,.35)}
 .fd-alt a:hover{color:#F7F6F1;border-color:#F7F6F1}
 .fd-step{animation:fdin .4s var(--ease) both}
 @keyframes fdin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
@@ -1667,7 +1668,7 @@ body::after{
   content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
   opacity:0;transition:opacity .5s var(--ease);
   background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),
-    rgba(95,211,73,.09),transparent 68%)}
+    rgba(12,198,241,.09),transparent 68%)}
 .lit.on-dark::before,.lit.hero::before,.lit.stmt::before,
 .lit.xp-sec::before,.lit.fd-sec::before{opacity:1}
 .on-dark > *,.hero > *,.stmt > *,.xp-sec > *,.fd-sec > *{position:relative;z-index:1}
@@ -1723,7 +1724,7 @@ body::after{
 .gp-c p{font-size:14.8px;line-height:1.62;color:rgba(239,238,231,.64)}
 .gp-d{margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);
   font-family:var(--mono);font-size:11px;letter-spacing:.09em;color:rgba(239,238,231,.46)}
-.gp-d a{color:var(--lime-d);text-decoration:none;border-bottom:1px solid rgba(95,211,73,.35)}
+.gp-d a{color:var(--lime-d);text-decoration:none;border-bottom:1px solid rgba(12,198,241,.35)}
 .gp-d a:hover{color:#F7F6F1;border-color:#F7F6F1}
 .gp-p{position:relative}
 .gp-p::before{content:"";position:absolute;left:0;top:0;width:100%;height:2px;
@@ -1753,6 +1754,149 @@ body::after{
   transition:background-size .35s var(--ease),color .25s var(--ease)}
 .gp-h:hover{color:var(--lime-d);background-size:100% 1px}
 .tint .gp-h:hover{color:var(--lime-l)}
+
+/* ── evidence / shared standard cards ──────────────────────── */
+.evs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:var(--line-dd);border-top:1px solid var(--line-dd);margin-top:52px}
+.ev{background:var(--void);padding:32px 32px 36px;min-width:0;position:relative}
+.ev::after{content:"";position:absolute;left:0;top:0;height:2px;width:0;
+  background:var(--lime);transition:width .7s var(--ease)}
+.stag.in .ev::after{width:44px}
+.ev:nth-child(2)::after{transition-delay:.09s}
+.ev:nth-child(3)::after{transition-delay:.18s}
+.ev:nth-child(4)::after{transition-delay:.27s}
+.ev-n{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;
+  color:var(--lime-d);margin-bottom:14px}
+.ev h3{font-size:1.14rem;line-height:1.3;margin-bottom:11px;letter-spacing:-.015em;
+  color:#F7F6F1;text-wrap:balance}
+.ev p{font-size:14.6px;line-height:1.6;color:rgba(239,238,231,.62)}
+.ev-a{display:inline-flex;align-items:center;gap:8px;margin-top:18px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--lime-d);text-decoration:none;border-bottom:1px solid rgba(12,198,241,.35);
+  padding-bottom:3px;transition:color .25s var(--ease),border-color .25s var(--ease)}
+.ev-a:hover{color:#F7F6F1;border-color:#F7F6F1}
+.ev-a svg{transition:transform .25s var(--ease)}
+.ev-a:hover svg{transform:translateX(3px)}
+@media(max-width:820px){.evs{grid-template-columns:1fr;margin-top:36px}
+  .ev{padding:24px 22px 28px}}
+
+/* ── how a contract runs ───────────────────────────────────── */
+.cstages{list-style:none;margin:48px 0 0;padding:0;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line);border-top:1px solid var(--line)}
+.cstages li{background:var(--sand);padding:28px 28px 32px;min-width:0;
+  display:flex;gap:18px;align-items:flex-start}
+.cs-n{flex:none;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;
+  color:var(--lime-l);padding-top:3px}
+.cstages h3{font-size:1.04rem;line-height:1.3;margin-bottom:9px;letter-spacing:-.012em}
+.cstages p{font-size:14px;line-height:1.58;color:var(--ink-2)}
+@media(max-width:980px){.cstages{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.cstages{grid-template-columns:1fr;margin-top:34px}
+  .cstages li{padding:22px 20px 24px;gap:14px}}
+
+/* ══ group structure diagram ══════════════════════════════════ */
+.gdg{width:100%;height:auto;display:block;color:rgba(239,238,231,.55);margin-top:48px}
+.gdg-l{fill:none;stroke:currentColor;stroke-width:1.2}
+.gdg-box{fill:rgba(255,255,255,.02)}
+.gdg-p{stroke:var(--lime-d);stroke-width:1.5}
+.gdg-a{fill:var(--lime)}
+.gdg-a .gdg-d2{fill:var(--lime-d);opacity:.6}
+.gdg-chip{fill:none;stroke:var(--lime-d);stroke-width:1;opacity:.5}
+.gdg-t text{font-family:var(--mono);font-size:9.6px;letter-spacing:.12em;
+  fill:rgba(239,238,231,.5);stroke:none}
+.gdg-t .gdg-h{font-size:11.5px;letter-spacing:.1em;fill:#F7F6F1}
+.gdg-t .gdg-c{font-size:9px;fill:var(--lime-d)}
+/* the chart assembles itself: boxes, then the wires, then the chips */
+.gdg-box,.gdg-chip rect{opacity:0;transform:translateY(10px);transform-origin:center;
+  transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rv.in .gdg-box,.rv.in .gdg-chip rect{opacity:1;transform:none}
+.gdg-box.gdg-d2{transition-delay:.42s}
+.gdg-chip rect{transition-delay:.78s}
+.gdg-w{stroke-dasharray:460;stroke-dashoffset:460;
+  transition:stroke-dashoffset .8s var(--ease) .22s}
+.rv.in .gdg-w{stroke-dashoffset:0}
+.gdg-w.gdg-d1{transition-delay:.34s}
+.gdg-l.gdg-d3,.gdg-t{opacity:0;transition:opacity .5s var(--ease) .68s}
+.rv.in .gdg-l.gdg-d3{opacity:.55}
+.rv.in .gdg-t{opacity:1}
+@media(max-width:700px){
+  .gdg-t text{font-size:13px}.gdg-t .gdg-h{font-size:15px}.gdg-t .gdg-c{font-size:12px}
+}
+
+/* ══ mobilisation reach ═══════════════════════════════════════ */
+.rch{width:100%;max-width:440px;height:auto;display:block;color:rgba(239,238,231,.5)}
+.rch-r{fill:none;stroke:var(--lime-d);stroke-width:1.1}
+.rch-ring{opacity:0;transform:scale(.4);transform-origin:260px 210px;
+  transition:opacity .7s var(--ease),transform .9s var(--ease)}
+.rv.in .rch-ring{opacity:.42;transform:scale(1)}
+.rch-ring.rch-d1{transition-delay:.2s}
+.rch-ring.rch-d2{transition-delay:.4s}
+.rch-l{fill:none;stroke:currentColor;stroke-width:1;stroke-dasharray:5 5;opacity:.4}
+.rch-dot{fill:#DDF4FD}
+.rch-pulse{fill:var(--lime-d);opacity:.5;transform-origin:260px 210px;
+  animation:rchp 3s var(--ease) infinite}
+@keyframes rchp{0%{transform:scale(1);opacity:.5}70%{transform:scale(3.4);opacity:0}
+  100%{transform:scale(3.4);opacity:0}}
+.rch-t text{font-family:var(--mono);font-size:10px;letter-spacing:.11em;
+  fill:rgba(239,238,231,.55);stroke:none}
+.rch-t .rch-h{font-size:12px;letter-spacing:.16em;fill:#F7F6F1}
+.rch-t .rch-k{font-size:9.4px;fill:var(--lime-d);letter-spacing:.16em}
+.rch-wrap{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);
+  gap:56px;align-items:center;margin-top:48px}
+@media(max-width:900px){.rch-wrap{grid-template-columns:1fr;gap:32px}
+  .rch{max-width:360px;margin:0 auto}}
+@media(prefers-reduced-motion:reduce){
+  .rch-pulse{animation:none}
+  .gdg-box,.gdg-chip rect,.rch-ring{opacity:1;transform:none}
+  .gdg-w{stroke-dasharray:none;stroke-dashoffset:0}
+  .gdg-l.gdg-d3{opacity:.55}.gdg-t{opacity:1}
+}
+
+/* ── the method flow builds itself, stage by stage ─────────── */
+.flow{position:relative}
+.flow::before{
+  content:"";position:absolute;left:0;top:0;height:2px;width:0;background:var(--lime);
+  transition:width 1.6s var(--ease) .15s;z-index:2}
+.rv.in .flow::before,.flow.in::before{width:100%}
+.flow-i{position:relative;overflow:hidden}
+.flow-i::after{
+  content:"";position:absolute;left:26px;bottom:22px;width:0;height:1px;
+  background:var(--lime);opacity:.45;transition:width .6s var(--ease)}
+.rv.in .flow-i::after{width:28px}
+.rv.in .flow-i:nth-child(2)::after{transition-delay:.14s}
+.rv.in .flow-i:nth-child(3)::after{transition-delay:.28s}
+.rv.in .flow-i:nth-child(4)::after{transition-delay:.42s}
+.rv.in .flow-i:nth-child(5)::after{transition-delay:.56s}
+.rv.in .flow-i:nth-child(6)::after{transition-delay:.70s}
+.flow-n{transition:color .3s var(--ease)}
+.flow-i:hover .flow-n{color:var(--lime-l)}
+@media(max-width:1100px){.flow{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:680px){.flow{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.flow{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){
+  .flow::before{width:100%;transition:none}
+  .flow-i::after{width:28px;transition:none}
+}
+
+
+/* ══ PipeRocket restyle ═══════════════════════════════════════
+   Serif display, cream ground, 5px radii, no shadows.
+   ═══════════════════════════════════════════════════════════ */
+h1,h2,h3,.gp-c h3,.fd-card h3,.brand-t,.ft-n,.fleet-k,.pg-a b,.jn-cap h3{
+  font-family:var(--display);
+  font-optical-sizing:auto;
+  letter-spacing:-.005em;
+  font-weight:600;
+}
+h1{font-weight:600;letter-spacing:-.012em}
+h2{font-weight:600;letter-spacing:-.008em}
+.ft-n{font-weight:700;letter-spacing:-.02em}
+/* small radii on the things PipeRocket rounds */
+.btn,.tag,.pgl,.fd-o,.dwg-i,.ev,.tr,.gp-c,.pj,.cr,.gl,.shot,.notice,.fd-card,
+.stmt-card,.dlv,.tbl-wrap,.route-wrap,.fails li,.cstages li,.flow-i,.dom,.fleet-i{
+  border-radius:var(--r)}
+.tag,.pgl{border-radius:100px}
+input,select,textarea{border-radius:var(--r)}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"@id":"https://rdecosolutions.org/#organization","name":"RD Eco Solutions","url":"https://rdecosolutions.org/","image":"https://rdecosolutions.org/og-card.png","logo":"https://rdecosolutions.org/apple-touch-icon.png","priceRange":"Quoted per project","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}],"description":"Civil and environmental infrastructure services for Urban Local Bodies and public sector organisations in Tamil Nadu, project consultancy, operation and maintenance, civil works, solid waste management, environmental solutions, equipment and manpower.","email":"rdecosolutionsofficial@gmail.com","telephone":"+919659443759","address":{"@type":"PostalAddress","addressLocality":"Sirkazhi","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Ariyalur"},{"@type":"AdministrativeArea","name":"Perambalur"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"knowsAbout":["Project Consultancy","Operation & Maintenance","Civil Infrastructure Works","Solid Waste Management","Environmental Solutions","Equipment & Technical Solutions","Manpower Services","Survey & Investigation"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+919659443759","email":"rdecosolutionsofficial@gmail.com","availableLanguage":["en","ta"]},"subOrganization":[{"@type":"Organization","name":"Sabareesan Civil Constructions","description":"Roads, drainage and stormwater works, structures, and technical and topographic survey.","url":"https://rdecosolutions.org/sabareesan-civil-constructions.html"},{"@type":"Organization","name":"Sabareesan IT Services","description":"IT services and solutions, run as a separate business with its own clients.","url":"https://rdecosolutions.org/sabareesan-it-services.html"}]},{"@type":"WebSite","@id":"https://rdecosolutions.org/#website","url":"https://rdecosolutions.org/","name":"RD Eco Solutions","publisher":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"WebPage","@id":"https://rdecosolutions.org/survey-and-investigation.html#webpage","url":"https://rdecosolutions.org/survey-and-investigation.html","name":"Topographic & Technical Survey, Tamil Nadu","description":"Topographic survey, levels, alignment and existing service location for sewerage, water supply and road schemes across Tamil Nadu urban local bodies.","isPartOf":{"@id":"https://rdecosolutions.org/#website"},"about":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"BreadcrumbList","@id":"https://rdecosolutions.org/survey-and-investigation.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rdecosolutions.org/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://rdecosolutions.org/services.html"},{"@type":"ListItem","position":3,"name":"Survey & Investigation","item":"https://rdecosolutions.org/survey-and-investigation.html"}]},{"@type":"Service","@id":"https://rdecosolutions.org/survey-and-investigation.html#service","name":"Survey and investigation.","serviceType":"Survey and investigation.","description":"Topographic survey, levels, alignment and existing service location for sewerage, water supply and road schemes across Tamil Nadu urban local bodies.","provider":{"@id":"https://rdecosolutions.org/#organization"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Ariyalur"},{"@type":"AdministrativeArea","name":"Perambalur"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"audience":{"@type":"Audience","audienceType":"Urban Local Bodies, Municipal Corporations, Municipalities, Town Panchayats, Government Departments"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Survey and investigation., scope","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Topographic and contour survey"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Longitudinal and cross section levels"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Existing utility and service location"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Benchmark establishment and level register"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Verification of an existing survey"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Setting out and level control during execution"}}]}},{"@type":"FAQPage","@id":"https://rdecosolutions.org/survey-and-investigation.html#faq","mainEntity":[{"@type":"Question","name":"What does a topographic survey for a sewerage scheme actually include?","acceptedAnswer":{"@type":"Answer","text":"Spot levels along and across the proposed alignment, contours where the design needs them, the position and level of existing manholes and services, road edges and structures, and a benchmark register so anyone can pick the work up later and tie into the same datum."}},{"@type":"Question","name":"Can you verify a survey that was done by someone else?","acceptedAnswer":{"@type":"Answer","text":"Yes, and it is worth doing before a budget is committed. We re run a sample of the levels against the submitted drawing and report the differences. Where the difference changes the hydraulics, we say so plainly."}},{"@type":"Question","name":"Do you locate existing services before excavation?","acceptedAnswer":{"@type":"Answer","text":"Yes. Water, cable and telecom crossings found by a machine rather than by a survey are the commonest cause of a stopped programme and a damaged asset in urban work."}},{"@type":"Question","name":"Who carries out the survey work?","acceptedAnswer":{"@type":"Answer","text":"Survey and civil execution are delivered through Sabareesan Civil Constructions, the civil works company within the RD Eco Solutions group."}}]}]}</script>
 </head>
@@ -1765,7 +1909,7 @@ body::after{
   <defs>
     <radialGradient id="rdg-h" cx="37%" cy="31%" r="75%">
       <stop offset="0" stop-color="#6FD152"/>
-      <stop offset="46%" stop-color="#40AE2D"/>
+      <stop offset="46%" stop-color="#3EAD2D"/>
       <stop offset="84%" stop-color="#2A8A1F"/>
       <stop offset="100%" stop-color="#1C5F16"/>
     </radialGradient>
@@ -1824,10 +1968,10 @@ body::after{
         <svg class="dia" viewBox="0 0 520 300" role="img" aria-label="A levelling instrument sighting to staves along a proposed alignment, with the actual ground profile below the line of sight.">
   <defs>
     <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M0 0 L10 5 L0 10 z" fill="#3EAD2D"/>
+      <path d="M0 0 L10 5 L0 10 z" fill="#0BA6E2"/>
     </marker>
   </defs>
-  <g fill="none" stroke="#3EAD2D" stroke-linecap="round" stroke-linejoin="round">
+  <g fill="none" stroke="#0BA6E2" stroke-linecap="round" stroke-linejoin="round">
   <path d="M30 236 H500" stroke-width="1.4"/>
   <g stroke-width="1" opacity=".3">
     <path d="M30 244 l10 8 M90 244 l10 8 M150 244 l10 8 M210 244 l10 8
@@ -1837,7 +1981,7 @@ body::after{
   <!-- the instrument on its tripod -->
   <path d="M92 200 l-16 36 M92 200 l16 36 M92 200 v36" stroke-width="1.2"/>
   <rect x="74" y="178" width="36" height="20" rx="2" stroke-width="1.4"/>
-  <rect x="74" y="178" width="36" height="6" fill="#3EAD2D" stroke="none" opacity=".85"/>
+  <rect x="74" y="178" width="36" height="6" fill="#0BA6E2" stroke="none" opacity=".85"/>
   <circle cx="92" cy="191" r="3.2" stroke-width="1.1"/>
   <path d="M110 188 H140" stroke-width="1.2"/>
 
@@ -1858,11 +2002,11 @@ body::after{
   <!-- the actual ground, which is not the flat line -->
   <path d="M170 232 q60 -18 120 -6 t120 4" stroke-width="1.4" opacity=".8"/>
 
-  <text x="30" y="164" fill="#3EAD2D" opacity=".5" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.6" stroke="none">LINE OF SIGHT</text>
-  <text x="220" y="262" text-anchor="middle" fill="#3EAD2D" opacity=".5" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.6" stroke="none">CH 0+000</text>
-  <text x="320" y="262" text-anchor="middle" fill="#3EAD2D" opacity=".5" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.6" stroke="none">0+030</text>
-  <text x="420" y="262" text-anchor="middle" fill="#3EAD2D" opacity=".5" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.6" stroke="none">0+060</text>
-  <text x="30" y="284" fill="#3EAD2D" opacity=".5" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.6" stroke="none">GROUND TAKEN AS IT IS, NOT AS DRAWN</text>
+  <text x="30" y="164" fill="#0BA6E2" opacity=".5" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.6" stroke="none">LINE OF SIGHT</text>
+  <text x="220" y="262" text-anchor="middle" fill="#0BA6E2" opacity=".5" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.6" stroke="none">CH 0+000</text>
+  <text x="320" y="262" text-anchor="middle" fill="#0BA6E2" opacity=".5" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.6" stroke="none">0+030</text>
+  <text x="420" y="262" text-anchor="middle" fill="#0BA6E2" opacity=".5" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.6" stroke="none">0+060</text>
+  <text x="30" y="284" fill="#0BA6E2" opacity=".5" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.6" stroke="none">GROUND TAKEN AS IT IS, NOT AS DRAWN</text>
 </g>
 </svg>
         <figcaption>The level, not the drawing, is what the estimate is built on.</figcaption>
@@ -2047,7 +2191,7 @@ body::after{
   <defs>
     <radialGradient id="rdg-f" cx="37%" cy="31%" r="75%">
       <stop offset="0" stop-color="#6FD152"/>
-      <stop offset="46%" stop-color="#40AE2D"/>
+      <stop offset="46%" stop-color="#3EAD2D"/>
       <stop offset="84%" stop-color="#2A8A1F"/>
       <stop offset="100%" stop-color="#1C5F16"/>
     </radialGradient>

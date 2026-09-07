@@ -28,7 +28,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&amp;family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;450;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;450;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>/* ═══════════════════════════════════════════════════════════════
    RD Eco Solutions — design system v3
    Palette derived from the RD Eco Solutions logo: globe green + periwinkle.
@@ -1916,7 +1916,7 @@ input,select,textarea{border-radius:var(--r)}
   --p-acc-btn:#0A72A0;
   --p-acc-btn-h:#08587A;
   --p-red:#C42834;
-  --p-serif:"Bodoni Moda",Georgia,"Times New Roman",serif;
+  --p-serif:"Fraunces",Georgia,"Times New Roman",serif;
   --p-sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --p-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   --p-wrap:1280px;
@@ -1936,19 +1936,19 @@ body.pr{background:var(--p-cream);color:var(--p-ink);font-family:var(--p-sans);
 /* ── type ── */
 .pr-eyebrow{font-family:var(--p-sans);font-weight:600;font-size:.85rem;
   letter-spacing:-.01em;color:var(--p-red);margin:0 0 18px;display:block}
-.pr-h1{font-family:var(--p-serif);font-weight:600;font-size:clamp(2.1rem,4.4vw,2.95rem);
-  line-height:1.13;letter-spacing:-.02em;color:var(--p-ink);margin:0 0 22px;
+.pr-h1{font-family:var(--p-serif);font-weight:700;font-size:clamp(2.1rem,4.4vw,2.95rem);
+  line-height:1.14;letter-spacing:-.015em;color:var(--p-ink);margin:0 0 22px;
   text-wrap:balance}
-.pr-h2{font-family:var(--p-serif);font-weight:600;font-size:clamp(1.85rem,3.7vw,3.05rem);
-  line-height:1.1;letter-spacing:-.012em;color:var(--p-ink);margin:0 0 18px;
+.pr-h2{font-family:var(--p-serif);font-weight:700;font-size:clamp(1.85rem,3.7vw,3.05rem);
+  line-height:1.14;letter-spacing:-.01em;color:var(--p-ink);margin:0 0 18px;
   text-wrap:balance}
 .pr-h3{font-family:var(--p-serif);font-weight:600;font-size:clamp(1.25rem,2vw,1.65rem);
   line-height:1.2;letter-spacing:-.01em;color:var(--p-ink);margin:0 0 12px}
 .pr-sec--dark .pr-h2,.pr-sec--dark .pr-h3{color:var(--p-cream)}
 .pr-lede{font-size:1.02rem;line-height:1.62;color:var(--p-ink-2);margin:0 0 16px;
   max-width:60ch}
-.pr-sec--dark .pr-lede{color:#BFBFBA}
-.pr-em{font-family:var(--p-serif);font-style:italic;font-weight:600;
+.pr-sec--dark .pr-lede{color:#D2D2CC}
+.pr-em{font-family:var(--p-serif);font-style:italic;font-weight:700;
   border-bottom:2px solid var(--p-acc);padding-bottom:2px}
 .pr-label{font-family:var(--p-sans);font-weight:500;font-size:.775rem;
   letter-spacing:.14em;text-transform:uppercase;color:var(--p-ink-3)}
@@ -2116,9 +2116,8 @@ body.pr{background:var(--p-cream);color:var(--p-ink);font-family:var(--p-sans);
 .pr-scene .s-grid{stroke:var(--p-acc);stroke-width:.85;opacity:.42;fill:none}
 
 /* ── reveal ── */
-.pr-rv{opacity:0;transform:translateY(16px);
-  transition:opacity .62s var(--ease,cubic-bezier(.19,.72,.28,1)),
-             transform .62s var(--ease,cubic-bezier(.19,.72,.28,1))}
+.pr-rv{opacity:0;transform:translateY(10px);
+  transition:opacity .34s ease-out, transform .34s ease-out}
 .pr-rv.is-in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   .pr-rv{opacity:1;transform:none;transition:none}
@@ -2675,28 +2674,37 @@ body.pr .pr-row__media svg{max-height:none}
 })();
 
 
-/* scroll reveal, pr layer */
+/* scroll reveal, pr layer.
+   Triggered before a block enters so it is never caught mid fade while the
+   reader is scrolling, with a hard backstop so nothing can be left stranded
+   at partial opacity. */
 (function () {
   var els = document.querySelectorAll(".pr-rv");
   if (!els.length) return;
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
-      !("IntersectionObserver" in window)) {
+
+  function showAll() {
     Array.prototype.forEach.call(els, function (el) { el.classList.add("is-in"); });
-    return;
   }
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !("IntersectionObserver" in window)) { showAll(); return; }
+
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
     });
-  }, { rootMargin: "0px 0px -6% 0px", threshold: 0.04 });
+  }, { rootMargin: "240px 0px 240px 0px", threshold: 0 });
+
   Array.prototype.forEach.call(els, function (el) { io.observe(el); });
-  // safety: anything still hidden after 3s gets revealed
-  setTimeout(function () {
-    Array.prototype.forEach.call(document.querySelectorAll(".pr-rv:not(.is-in)"), function (el) {
-      var r = el.getBoundingClientRect();
-      if (r.top < window.innerHeight) el.classList.add("is-in");
-    });
-  }, 3000);
+
+  // anything already on screen at load reveals straight away
+  Array.prototype.forEach.call(els, function (el) {
+    var r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) el.classList.add("is-in");
+  });
+
+  // backstop: never leave a block half faded
+  setTimeout(showAll, 2500);
 })();
 
 /* scroll reveal */
@@ -3063,7 +3071,10 @@ body.pr .pr-row__media svg{max-height:none}
 })();
 
 
-/* the unit drives in as the band scrolls through, parking beside the manhole */
+/* the unit drives in as the band scrolls through, parking beside the manhole.
+   A rAF loop runs only while the band is on screen. An earlier version gated
+   on a boolean that could strand if a frame never arrived, which froze the
+   unit off the left edge for the rest of the session. */
 (function () {
   var rig  = document.querySelector('.pr-truck__rig');
   var site = document.querySelector('.pr-truck__site');
@@ -3071,27 +3082,18 @@ body.pr .pr-row__media svg{max-height:none}
   if (!rig || !site || !band) return;
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var last = null, ticking = false;
-
-  function park() {
-    // the unit stops with its rear where the manhole drawing begins, so the
-    // hose leaving the reel meets the hose entering the chamber
-    return site.offsetLeft - rig.offsetWidth;
-  }
+  var raf = 0, last = null, stopAt = 0;
 
   function place() {
-    ticking = false;
-    var target = park();
+    var target = site.offsetLeft - rig.offsetWidth;
     if (reduce) { rig.style.transform = 'translateX(' + target + 'px)'; return; }
 
     var r = band.getBoundingClientRect();
     var vh = window.innerHeight;
-    // raw progress: 0 as the band's top edge enters from below,
-    // 1 once its bottom edge has left the top of the viewport
-    var p = (vh - r.top) / (r.height + vh);
-    // the unit has to finish arriving while the band is still on screen,
-    // so the travel is spent over the first part of that range and then held
-    p = p / 0.62;
+    // 0 as the band's top edge enters from below, 1 once its bottom edge has
+    // left the top. The travel is spent over the first part of that range so
+    // the unit finishes arriving while the band is still on screen.
+    var p = ((vh - r.top) / (r.height + vh)) / 0.62;
     p = p < 0 ? 0 : (p > 1 ? 1 : p);
     var e = 1 - Math.pow(1 - p, 2.4);
     var start = -rig.offsetWidth - 40;
@@ -3101,19 +3103,31 @@ body.pr .pr-row__media svg{max-height:none}
 
     if (last !== null && Math.abs(x - last) > 1) {
       rig.classList.add('is-moving');
-      clearTimeout(rig._t);
-      rig._t = setTimeout(function () { rig.classList.remove('is-moving'); }, 200);
+      stopAt = Date.now() + 200;
+    } else if (stopAt && Date.now() > stopAt) {
+      rig.classList.remove('is-moving');
+      stopAt = 0;
     }
     last = x;
   }
 
-  function onScroll() {
-    if (!ticking) { ticking = true; requestAnimationFrame(place); }
+  function loop() { place(); raf = requestAnimationFrame(loop); }
+  function run(on) {
+    if (on && !raf) { raf = requestAnimationFrame(loop); }
+    else if (!on && raf) { cancelAnimationFrame(raf); raf = 0; place(); }
   }
 
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
   place();
+
+  if ('IntersectionObserver' in window && !reduce) {
+    new IntersectionObserver(function (es) {
+      run(es[0].isIntersecting);
+    }, { rootMargin: '120px 0px' }).observe(band);
+  } else {
+    // no observer: fall back to plain scroll handling
+    window.addEventListener('scroll', place, { passive: true });
+  }
+  window.addEventListener('resize', place);
 })();
 </script>
 </body>

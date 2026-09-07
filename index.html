@@ -2005,7 +2005,7 @@ body.pr{background:var(--p-cream);color:var(--p-ink);font-family:var(--p-sans);
 .pr-row__media svg{width:100%;height:auto;display:block}
 .pr-row__list{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:9px}
 .pr-row__list li{position:relative;padding-left:22px;font-size:.95rem;
-  color:var(--p-ink-2);line-height:1.5}
+  color:var(--p-ink-2);line-height:1.5;max-width:60ch}
 .pr-row__list li::before{content:"";position:absolute;left:0;top:.55em;width:9px;
   height:1.5px;background:var(--p-acc)}
 
@@ -2067,7 +2067,7 @@ body.pr{background:var(--p-cream);color:var(--p-ink);font-family:var(--p-sans);
 .pr-vs__col--us .pr-vs__h{color:var(--p-acc-d)}
 .pr-vs ul{list-style:none;margin:0;padding:0;display:grid;gap:15px}
 .pr-vs li{font-size:.94rem;line-height:1.55;color:var(--p-ink-2);
-  padding-left:26px;position:relative}
+  padding-left:26px;position:relative;max-width:64ch}
 .pr-vs__col--them li::before{content:"";position:absolute;left:2px;top:.48em;
   width:11px;height:11px;border:1.5px solid var(--p-ink-3);border-radius:50%}
 .pr-vs__col--us li::before{content:"";position:absolute;left:2px;top:.48em;
@@ -2077,7 +2077,7 @@ body.pr{background:var(--p-cream);color:var(--p-ink);font-family:var(--p-sans);
 /* ── accordion ── */
 .pr-faq{max-width:820px;margin:0 auto}
 .pr-faq details{border-bottom:1px solid var(--p-line);background:transparent}
-.pr-faq summary{cursor:pointer;list-style:none;padding:22px 40px 22px 0;
+.pr-faq summary{cursor:pointer;list-style:none;padding:22px 40px 22px 0;max-width:70ch;
   font-family:var(--p-sans);font-weight:600;font-size:1.02rem;color:var(--p-ink);
   position:relative;line-height:1.42}
 .pr-faq summary::-webkit-details-marker{display:none}
@@ -2087,7 +2087,7 @@ body.pr{background:var(--p-cream);color:var(--p-ink);font-family:var(--p-sans);
   transition:transform .2s ease}
 .pr-faq details[open] summary::after{transform:rotate(-135deg);top:33px}
 .pr-faq .pr-faq__a{padding:0 60px 24px 0;font-size:.96rem;line-height:1.62;
-  color:var(--p-ink-2)}
+  color:var(--p-ink-2);max-width:66ch}
 
 /* ── final cta ── */
 .pr-final{padding:88px 0 96px;text-align:center;background:var(--p-cream);
@@ -2204,6 +2204,51 @@ body.pr .pr-row__media svg{max-height:none}
   .pr-faq summary{padding-right:34px;font-size:.97rem}
   .pr-faq .pr-faq__a{padding-right:20px}
   .pr-intro{margin-bottom:38px}
+}
+
+/* ── the vehicle band ── */
+/* one variable drives the whole scene. Both drawings put their road line at
+   the same fraction of their height, so an equal bottom offset lands the
+   wheels and the manhole on the same line at every width. */
+.pr-truck{position:relative;background:var(--p-dark);color:var(--p-cream);
+  overflow:hidden;padding:88px 0 0;
+  --rigw:min(560px,68vw);
+  --roadh:96px}
+.pr-truck__head{max-width:600px}
+.pr-truck .pr-h2{color:var(--p-cream)}
+.pr-truck__stage{position:relative;margin-top:4px;
+  height:calc(var(--rigw) * 0.446 + var(--roadh) - 14px)}
+.pr-truck__road{position:absolute;left:0;right:0;bottom:0;height:var(--roadh);
+  background:var(--p-acc);
+  background-image:linear-gradient(rgba(255,255,255,.26) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.26) 1px,transparent 1px);
+  background-size:44px 26px}
+.pr-truck__rig,.pr-truck__site{position:absolute;bottom:calc(var(--roadh) - 14px)}
+.pr-truck__rig{left:0;width:var(--rigw);will-change:transform}
+.pr-truck__site{width:calc(var(--rigw) * 0.357);right:7%}
+.pr-truck__art,.pr-truck__site-art{width:100%;height:auto;display:block}
+/* the cab starts 40px into the drawing, so the trail is pulled right to
+   sit against it rather than floating clear of the unit */
+.pr-truck__stroke{position:absolute;right:100%;bottom:20%;width:30%;height:auto;
+  margin-right:-122px;opacity:0;transition:opacity .3s linear}
+.pr-truck__rig.is-moving .pr-truck__stroke{opacity:1}
+
+@media (max-width:1080px){ .pr-truck{--rigw:min(560px,64vw)} }
+@media (max-width:860px){
+  .pr-truck{padding-top:60px;--rigw:min(560px,60vw);--roadh:74px}
+  .pr-truck__site{right:4%}
+}
+@media (max-width:560px){
+  /* the unit and the manhole both have to fit, so the scene scales down
+     rather than parking the cab off the left edge */
+  .pr-truck{--rigw:62vw;--roadh:62px}
+  .pr-truck__site{right:3%}
+  .pr-truck__stroke{margin-right:-64px}
+  /* the annotations are unreadable at this size, so they come off */
+  .pr-truck__art text,.pr-truck__site-art text{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .pr-truck__stroke{display:none}
 }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"@id":"https://rdecosolutions.org/#organization","name":"RD Eco Solutions","url":"https://rdecosolutions.org/","image":"https://rdecosolutions.org/og-card.png","logo":"https://rdecosolutions.org/apple-touch-icon.png","priceRange":"Quoted per project","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}],"description":"Civil and environmental infrastructure services for Urban Local Bodies and public sector organisations in Tamil Nadu, project consultancy, operation and maintenance, civil works, solid waste management, environmental solutions, equipment and manpower.","email":"rdecosolutionsofficial@gmail.com","telephone":"+919659443759","address":{"@type":"PostalAddress","addressLocality":"Sirkazhi","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Ariyalur"},{"@type":"AdministrativeArea","name":"Perambalur"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"knowsAbout":["Project Consultancy","Operation & Maintenance","Civil Infrastructure Works","Solid Waste Management","Environmental Solutions","Equipment & Technical Solutions","Manpower Services","Survey & Investigation"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+919659443759","email":"rdecosolutionsofficial@gmail.com","availableLanguage":["en","ta"]},"subOrganization":[{"@type":"Organization","name":"Sabareesan Civil Constructions","description":"Roads, drainage and stormwater works, structures, and technical and topographic survey.","url":"https://rdecosolutions.org/sabareesan-civil-constructions.html"},{"@type":"Organization","name":"Sabareesan IT Services","description":"IT services and solutions, run as a separate business with its own clients.","url":"https://rdecosolutions.org/sabareesan-it-services.html"}]},{"@type":"WebSite","@id":"https://rdecosolutions.org/#website","url":"https://rdecosolutions.org/","name":"RD Eco Solutions","publisher":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"WebPage","@id":"https://rdecosolutions.org/#webpage","url":"https://rdecosolutions.org/","name":"Municipal Infrastructure Services, TN | RD Eco Solutions","description":"Project consultancy, sewerage and STP operation and maintenance, civil works, solid waste management and biomining for Urban Local Bodies across Tamil Nadu.","isPartOf":{"@id":"https://rdecosolutions.org/#website"},"about":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"FAQPage","@id":"https://rdecosolutions.org/#faq","mainEntity":[{"@type":"Question","name":"Which districts and Urban Local Bodies do you serve?","acceptedAnswer":{"@type":"Answer","text":"We are based in Sirkazhi, Mayiladuthurai District, and work with municipal corporations, municipalities, town panchayats, water and sewerage boards and government departments across Tamil Nadu. Mobilisation outside our home district is routine and is planned into the contract programme rather than treated as an exception."}},{"@type":"Question","name":"What services can be combined under a single contract?","acceptedAnswer":{"@type":"Answer","text":"Consultancy, civil execution, operation and maintenance, solid waste management, environmental works, equipment supply and manpower deployment. The advantage of that range is accountability, a scheme that is designed, built and then operated by the same organisation has nobody to hand the problem to when performance falls short."}},{"@type":"Question","name":"What registration and statutory details do you provide with a bid?","acceptedAnswer":{"@type":"Answer","text":"The registration, GST, PAN and statutory compliance documents required by the tender are submitted with the technical cover. Please request our current credentials pack and we will send the applicable documents for the work you are tendering."}},{"@type":"Question","name":"How do we start a conversation about a project?","acceptedAnswer":{"@type":"Answer","text":"Send the tender document, or a short description of the site, scope and timeline, by email or phone. We will tell you quickly whether we are the right fit, including when we are not, which saves both sides time at evaluation."}}]}]}</script>
@@ -2754,6 +2799,143 @@ body.pr .pr-row__media svg{max-height:none}
       </div></div>
     <p style="margin:40px 0 0;text-align:center">
       <a class="pr-btn" href="services.html">All eight divisions <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+  </div>
+</section>
+
+<section class="pr-sec">
+  <div class="pr-wrap">
+    <div class="pr-intro pr-rv">
+      <h2 class="pr-h2">Everyone quotes fast. We measure first.</h2>
+      <p class="pr-lede">Three points on a job where taking a reading costs an afternoon and
+      not taking one costs the whole contract.</p>
+    </div>
+    <div class="pr-cards pr-cards--3 pr-rv">
+      <div class="pr-card">
+        <span class="pr-card__k">01</span>
+        <h3 class="pr-h3" style="font-family:var(--p-sans);font-size:1.05rem;font-weight:600">Before the estimate</h3>
+        <p>Levels, alignment and existing service positions taken on the ground, not lifted off an old drawing. A quantity that was never measured is a variation waiting to happen.</p>
+        <div class="pr-card__foot">
+          <a class="pr-btn pr-btn--ghost pr-btn--sm" href="survey-and-investigation.html">Where this sits <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="pr-card">
+        <span class="pr-card__k">02</span>
+        <h3 class="pr-h3" style="font-family:var(--p-sans);font-size:1.05rem;font-weight:600">Before the recommendation</h3>
+        <p>Flow, MLSS and return sludge measured against the design figures. An underperforming plant usually fails somewhere other than where the complaint says it does.</p>
+        <div class="pr-card__foot">
+          <a class="pr-btn pr-btn--ghost pr-btn--sm" href="operation-and-maintenance.html">Where this sits <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="pr-card">
+        <span class="pr-card__k">03</span>
+        <h3 class="pr-h3" style="font-family:var(--p-sans);font-size:1.05rem;font-weight:600">Before the handover</h3>
+        <p>Duty point checked against the curve the pump was actually specified on, so the department inherits a machine that matches its head and not just its rating plate.</p>
+        <div class="pr-card__foot">
+          <a class="pr-btn pr-btn--ghost pr-btn--sm" href="equipment-technical-solutions.html">Where this sits <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div></div>
+  </div>
+</section>
+
+<section class="pr-truck">
+  <div class="pr-wrap">
+    <div class="pr-truck__head pr-rv">
+      <span class="pr-label" style="color:#9A9A94">Our standard</span>
+      <h2 class="pr-h2" style="margin-top:14px">Nobody goes down the chamber.</h2>
+      <p class="pr-lede">Mechanised cleaning and confined space protocol on every sewerage
+      deployment. The hose enters the manhole, not a person. We do not price this
+      differently to win an award and never have.</p>
+      <p style="margin-top:22px">
+        <a class="pr-btn pr-btn--ghost" href="operation-and-maintenance.html">
+          How we run a deployment <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+    </div>
+  </div>
+  <div class="pr-truck__stage">
+    <div class="pr-truck__road" aria-hidden="true"></div>
+    <div class="pr-truck__site">
+<svg class="pr-scene pr-truck__site-art" viewBox="0 0 200 250" role="img"
+     xmlns="http://www.w3.org/2000/svg"
+     aria-label="A manhole in the road with cones set out, the jetting hose entering it">
+<g fill="none" stroke="#F6F6F1" stroke-linecap="round" stroke-linejoin="round">
+  <!-- the hose continues in from the unit and drops into the chamber -->
+  <path stroke-width="2" stroke="#0BA6E2" d="M0 234q34 4 52 0"/>
+  <path stroke-width="2" stroke="#0BA6E2" d="M52 234v10"/>
+
+  <!-- open manhole -->
+  <path stroke-width="1.6" d="M24 234h84"/>
+  <path stroke-width="1.2" opacity=".75" d="M32 234v12h68v-12"/>
+  <path stroke-width="1" opacity=".5" d="M44 246v6M88 246v6"/>
+
+  <!-- cover set aside -->
+  <ellipse cx="166" cy="228" rx="17" ry="4.6" stroke-width="1.3" opacity=".8"/>
+  <path stroke-width="1" opacity=".55" d="M149 228v4a17 4.6 0 0 0 34 0v-4"/>
+</g>
+<!-- cones -->
+<g fill="none" stroke="#C42834" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M4 234l8-24 8 24zM112 234l8-24 8 24z"/>
+  <path stroke-width="1.1" opacity=".8" d="M8 224h8M116 224h8"/>
+</g>
+<g font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".08em" fill="#8E8E88">
+  <text x="30" y="196">MANHOLE</text>
+</g>
+</svg>
+</div>
+    <div class="pr-truck__rig">
+<svg class="pr-truck__stroke" viewBox="0 0 300 90" aria-hidden="true"
+     xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#0BA6E2" stroke-width="2.6" stroke-linecap="round" opacity=".5">
+    <path d="M10 26h96M0 50h72M22 74h84"/>
+  </g>
+  <g fill="none" stroke="#C42834" stroke-width="2.2" stroke-linecap="round" opacity=".4">
+    <path d="M124 38h44M112 62h38"/>
+  </g>
+</svg>
+
+<svg class="pr-scene pr-truck__art" viewBox="0 0 560 250" role="img"
+     xmlns="http://www.w3.org/2000/svg"
+     aria-label="Side elevation of a combined sewer jetting and desilting unit with its hose reel paying out">
+<g fill="none" stroke="#F6F6F1" stroke-linecap="round" stroke-linejoin="round">
+  <!-- chassis -->
+  <path stroke-width="2" d="M40 206h452"/>
+  <path stroke-width="1.2" d="M40 206v-16h452v16"/>
+
+  <!-- cab -->
+  <path stroke-width="2" d="M40 190v-58h62l32 38v20"/>
+  <path stroke-width="1.2" d="M49 141h46v28H49zM101 141h13l22 26h-35z"/>
+  <path stroke-width="1.2" d="M40 166h9M40 178h9"/>
+  <circle cx="44" cy="152" r="3.4" stroke-width="1.2"/>
+  <path stroke-width="1.4" d="M62 132v-10h20v10"/>
+
+  <!-- vacuum tank -->
+  <path stroke-width="2" d="M150 190v-78h248a20 20 0 0 1 20 20v58"/>
+  <path stroke-width="1.2" d="M150 112h268"/>
+  <ellipse cx="150" cy="151" rx="14" ry="39" stroke-width="1.6"/>
+  <path stroke-width="1" opacity=".5" d="M212 112v78M274 112v78M336 112v78M392 112v78"/>
+  <path stroke-width="1" opacity=".65" d="M166 127h240M166 176h240"/>
+  <path stroke-width="1.2" d="M162 190h248"/>
+
+  <!-- hose reel -->
+  <circle cx="452" cy="144" r="28" stroke-width="1.8"/>
+  <circle cx="452" cy="144" r="18" stroke-width="1" opacity=".65"/>
+  <circle cx="452" cy="144" r="8" stroke-width="1" opacity=".65"/>
+  <path stroke-width="1.4" d="M424 190v-46M480 190v-46"/>
+
+  <!-- hose paying out to the rear, meeting the manhole beyond -->
+  <path stroke-width="2" stroke="#0BA6E2" d="M480 144q44 6 60 42t20 48"/>
+
+  <!-- wheels sitting on the road line at y 234 -->
+  <circle cx="98" cy="212" r="22" stroke-width="2"/>
+  <circle cx="98" cy="212" r="9" stroke-width="1.2" opacity=".65"/>
+  <circle cx="352" cy="212" r="22" stroke-width="2"/>
+  <circle cx="352" cy="212" r="9" stroke-width="1.2" opacity=".65"/>
+  <circle cx="406" cy="212" r="22" stroke-width="2"/>
+  <circle cx="406" cy="212" r="9" stroke-width="1.2" opacity=".65"/>
+</g>
+<g font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing=".08em" fill="#8E8E88">
+  <text x="152" y="100">COMBINED JETTING AND DESILTING UNIT</text>
+</g>
+</svg>
+</div>
   </div>
 </section>
 
@@ -3367,6 +3549,60 @@ body.pr .pr-row__media svg{max-height:none}
   window.addEventListener("pointerleave", function () {
     Array.prototype.forEach.call(secs, function (s) { s.classList.remove("lit"); });
   }, { passive: true });
+})();
+
+
+/* the unit drives in as the band scrolls through, parking beside the manhole */
+(function () {
+  var rig  = document.querySelector('.pr-truck__rig');
+  var site = document.querySelector('.pr-truck__site');
+  var band = document.querySelector('.pr-truck');
+  if (!rig || !site || !band) return;
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var last = null, ticking = false;
+
+  function park() {
+    // the unit stops with its rear where the manhole drawing begins, so the
+    // hose leaving the reel meets the hose entering the chamber
+    return site.offsetLeft - rig.offsetWidth;
+  }
+
+  function place() {
+    ticking = false;
+    var target = park();
+    if (reduce) { rig.style.transform = 'translateX(' + target + 'px)'; return; }
+
+    var r = band.getBoundingClientRect();
+    var vh = window.innerHeight;
+    // raw progress: 0 as the band's top edge enters from below,
+    // 1 once its bottom edge has left the top of the viewport
+    var p = (vh - r.top) / (r.height + vh);
+    // the unit has to finish arriving while the band is still on screen,
+    // so the travel is spent over the first part of that range and then held
+    p = p / 0.62;
+    p = p < 0 ? 0 : (p > 1 ? 1 : p);
+    var e = 1 - Math.pow(1 - p, 2.4);
+    var start = -rig.offsetWidth - 40;
+    var x = Math.round(start + e * (target - start));
+
+    rig.style.transform = 'translateX(' + x + 'px)';
+
+    if (last !== null && Math.abs(x - last) > 1) {
+      rig.classList.add('is-moving');
+      clearTimeout(rig._t);
+      rig._t = setTimeout(function () { rig.classList.remove('is-moving'); }, 200);
+    }
+    last = x;
+  }
+
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(place); }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  place();
 })();
 </script>
 </body>

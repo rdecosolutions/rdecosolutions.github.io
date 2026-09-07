@@ -28,7 +28,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;450;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&amp;family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;450;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>/* ═══════════════════════════════════════════════════════════════
    RD Eco Solutions — design system v3
    Palette derived from the RD Eco Solutions logo: globe green + periwinkle.
@@ -1897,6 +1897,314 @@ h2{font-weight:600;letter-spacing:-.008em}
   border-radius:var(--r)}
 .tag,.pgl{border-radius:100px}
 input,select,textarea{border-radius:var(--r)}
+
+/* ══ PipeRocket-language layer ══════════════════════════════════════ */
+:root{
+  --p-cream:#F6F6F1;
+  --p-white:#FFFFFF;
+  --p-sand:#E8E4DA;
+  --p-sand-2:#E4E0D8;
+  --p-dark:#282828;
+  --p-ink:#0D0D0D;
+  --p-ink-2:#4A4A47;
+  --p-ink-3:#63635D;
+  --p-line:#DDD9CE;
+  --p-line-2:#D9D5C9;
+  --p-acc:#0BA6E2;
+  --p-acc-2:#0CC6F1;
+  --p-acc-d:#0A6E99;
+  --p-acc-btn:#0A72A0;
+  --p-acc-btn-h:#08587A;
+  --p-red:#C42834;
+  --p-serif:"Bodoni Moda",Georgia,"Times New Roman",serif;
+  --p-sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --p-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --p-wrap:1280px;
+  --p-gut:32px;
+  --p-pad:96px;
+}
+
+/* ── page ground ── */
+body.pr{background:var(--p-cream);color:var(--p-ink);font-family:var(--p-sans);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.pr-wrap{max-width:var(--p-wrap);margin:0 auto;padding:0 var(--p-gut)}
+.pr-sec{padding:var(--p-pad) 0;position:relative}
+.pr-sec--tight{padding:48px 0}
+.pr-sec--sand{background:var(--p-sand-2)}
+.pr-sec--dark{background:var(--p-dark);color:var(--p-cream)}
+
+/* ── type ── */
+.pr-eyebrow{font-family:var(--p-sans);font-weight:600;font-size:.85rem;
+  letter-spacing:-.01em;color:var(--p-red);margin:0 0 18px;display:block}
+.pr-h1{font-family:var(--p-serif);font-weight:600;font-size:clamp(2.1rem,4.4vw,2.95rem);
+  line-height:1.13;letter-spacing:-.02em;color:var(--p-ink);margin:0 0 22px;
+  text-wrap:balance}
+.pr-h2{font-family:var(--p-serif);font-weight:600;font-size:clamp(1.85rem,3.7vw,3.05rem);
+  line-height:1.1;letter-spacing:-.012em;color:var(--p-ink);margin:0 0 18px;
+  text-wrap:balance}
+.pr-h3{font-family:var(--p-serif);font-weight:600;font-size:clamp(1.25rem,2vw,1.65rem);
+  line-height:1.2;letter-spacing:-.01em;color:var(--p-ink);margin:0 0 12px}
+.pr-sec--dark .pr-h2,.pr-sec--dark .pr-h3{color:var(--p-cream)}
+.pr-lede{font-size:1.02rem;line-height:1.62;color:var(--p-ink-2);margin:0 0 16px;
+  max-width:60ch}
+.pr-sec--dark .pr-lede{color:#BFBFBA}
+.pr-em{font-family:var(--p-serif);font-style:italic;font-weight:600;
+  border-bottom:2px solid var(--p-acc);padding-bottom:2px}
+.pr-label{font-family:var(--p-sans);font-weight:500;font-size:.775rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--p-ink-3)}
+
+/* ── section intro ── */
+.pr-intro{max-width:760px;margin:0 auto 56px;text-align:center}
+.pr-intro .pr-lede{margin-inline:auto;text-align:center}
+.pr-intro--left{margin-inline:0;text-align:left}
+.pr-intro--left .pr-lede{margin-inline:0;text-align:left}
+
+/* ── buttons ── */
+.pr-btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--p-sans);
+  font-weight:600;font-size:.97rem;line-height:1;padding:15px 26px;border-radius:2px;
+  background:var(--p-acc-btn);color:#fff;text-decoration:none;border:0;cursor:pointer;
+  transition:background .18s ease}
+.pr-btn:hover{background:var(--p-acc-btn-h)}
+.pr-btn--ghost{background:transparent;color:var(--p-ink);
+  border:1px solid var(--p-line-2);padding:14px 25px}
+.pr-btn--ghost:hover{background:var(--p-white);border-color:var(--p-ink-3)}
+.pr-sec--dark .pr-btn--ghost{color:var(--p-cream);border-color:#575755}
+.pr-sec--dark .pr-btn--ghost:hover{background:#333;border-color:#7a7a78}
+.pr-btn--sm{padding:9px 15px;font-size:.86rem;font-weight:500}
+
+/* ── hero ── */
+.pr-hero{padding:56px 0 8px;background:var(--p-cream)}
+.pr-hero__grid{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,1fr);
+  gap:60px;align-items:center}
+.pr-hero__text{max-width:600px}
+.pr-hero__copy p{font-size:1.005rem;line-height:1.62;color:var(--p-ink-2);
+  margin:0 0 16px;max-width:56ch}
+.pr-hero__cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.pr-hero__scene{width:100%;height:auto;display:block}
+
+/* ── marquee band ── */
+.pr-band{background:var(--p-cream);padding:34px 0 42px;overflow:hidden;
+  border-top:1px solid var(--p-line)}
+.pr-band__label{text-align:center;margin:0 0 22px}
+.pr-band__track{display:flex;gap:0;width:max-content;
+  animation:pr-slide 46s linear infinite}
+.pr-band__row{display:flex;gap:14px;padding-right:14px}
+.pr-band__row span{font-family:var(--p-sans);font-weight:500;font-size:.9rem;
+  color:var(--p-ink-2);white-space:nowrap;padding:9px 18px;background:var(--p-white);
+  border:1px solid var(--p-line);border-radius:2px}
+@keyframes pr-slide{to{transform:translateX(-50%)}}
+.pr-band:hover .pr-band__track{animation-play-state:paused}
+
+/* ── alternating two column rows ── */
+.pr-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:64px;align-items:center;margin-bottom:72px}
+.pr-row:last-child{margin-bottom:0}
+.pr-row--flip .pr-row__text{order:2}
+.pr-row__media{background:var(--p-sand);border:1px solid var(--p-line-2);
+  border-radius:5px;padding:26px;display:flex;align-items:center;justify-content:center}
+.pr-row__media svg{width:100%;height:auto;display:block}
+.pr-row__list{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:9px}
+.pr-row__list li{position:relative;padding-left:22px;font-size:.95rem;
+  color:var(--p-ink-2);line-height:1.5}
+.pr-row__list li::before{content:"";position:absolute;left:0;top:.55em;width:9px;
+  height:1.5px;background:var(--p-acc)}
+
+/* ── flat cards ── */
+.pr-cards{display:grid;gap:20px}
+.pr-cards--4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.pr-cards--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pr-cards--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.pr-card{background:var(--p-white);border:1px solid var(--p-line);border-radius:5px;
+  padding:26px;display:flex;flex-direction:column}
+.pr-card__k{font-family:var(--p-mono);font-size:.72rem;letter-spacing:.1em;
+  color:var(--p-acc-d);margin:0 0 14px;display:block}
+.pr-card p{font-size:.93rem;line-height:1.56;color:var(--p-ink-2);margin:0}
+.pr-card__foot{margin-top:auto;padding-top:20px}
+
+/* rail cards, used on the dark section */
+.pr-rail{background:var(--p-cream);border-left:4px solid var(--p-acc);
+  border-radius:0;padding:24px;display:flex;flex-direction:column;min-height:236px}
+.pr-rail .pr-h3{font-family:var(--p-sans);font-weight:600;font-size:1.06rem;
+  letter-spacing:-.005em;color:var(--p-ink);margin:0 0 10px}
+.pr-rail p{font-size:.9rem;line-height:1.55;color:var(--p-ink-2);margin:0}
+.pr-rail__k{font-family:var(--p-mono);font-size:.74rem;letter-spacing:.12em;
+  color:var(--p-acc-d);display:block;margin:0 0 14px}
+.pr-rail__foot{margin-top:auto;padding-top:20px}
+.pr-rail__link{display:inline-block;font-size:.85rem;font-weight:500;
+  color:var(--p-ink);text-decoration:none;border:1px solid #A5A5A5;
+  border-radius:2px;padding:8px 15px;transition:border-color .16s ease}
+.pr-rail__link:hover{border-color:var(--p-ink)}
+
+/* ── full bleed parallax band ── */
+.pr-plate{position:relative;background:var(--p-dark);color:var(--p-cream);
+  overflow:hidden;padding:88px 0 0}
+.pr-plate__grid{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);
+  gap:48px;align-items:center}
+.pr-plate .pr-h2{color:var(--p-cream)}
+.pr-plate__floor{height:120px;background:var(--p-acc);position:relative;margin-top:34px;
+  background-image:linear-gradient(rgba(255,255,255,.26) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.26) 1px,transparent 1px);
+  background-size:44px 30px}
+.pr-plate__art{position:relative;z-index:2;margin-bottom:-34px}
+.pr-plate__art svg{width:100%;height:auto;display:block}
+
+/* ── stat band ── */
+.pr-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:0;border-top:1px solid var(--p-line);border-bottom:1px solid var(--p-line)}
+.pr-stat{padding:32px 26px;border-right:1px solid var(--p-line)}
+.pr-stat:last-child{border-right:0}
+.pr-stat__n{font-family:var(--p-serif);font-weight:600;font-size:2.7rem;line-height:1;
+  color:var(--p-ink);display:block;margin-bottom:9px;font-variant-numeric:tabular-nums}
+.pr-stat__t{font-size:.88rem;color:var(--p-ink-2);line-height:1.45;display:block}
+
+/* ── comparison ── */
+.pr-vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.pr-vs__col{border-radius:5px;padding:30px;border:1px solid var(--p-line)}
+.pr-vs__col--them{background:var(--p-sand-2)}
+.pr-vs__col--us{background:var(--p-white);border-color:var(--p-acc)}
+.pr-vs__h{font-family:var(--p-sans);font-weight:600;font-size:.8rem;
+  letter-spacing:.13em;text-transform:uppercase;margin:0 0 20px;color:var(--p-ink-3)}
+.pr-vs__col--us .pr-vs__h{color:var(--p-acc-d)}
+.pr-vs ul{list-style:none;margin:0;padding:0;display:grid;gap:15px}
+.pr-vs li{font-size:.94rem;line-height:1.55;color:var(--p-ink-2);
+  padding-left:26px;position:relative}
+.pr-vs__col--them li::before{content:"";position:absolute;left:2px;top:.48em;
+  width:11px;height:11px;border:1.5px solid var(--p-ink-3);border-radius:50%}
+.pr-vs__col--us li::before{content:"";position:absolute;left:2px;top:.48em;
+  width:11px;height:11px;border:1.5px solid var(--p-acc);border-radius:50%;
+  background:var(--p-acc)}
+
+/* ── accordion ── */
+.pr-faq{max-width:820px;margin:0 auto}
+.pr-faq details{border-bottom:1px solid var(--p-line);background:transparent}
+.pr-faq summary{cursor:pointer;list-style:none;padding:22px 40px 22px 0;
+  font-family:var(--p-sans);font-weight:600;font-size:1.02rem;color:var(--p-ink);
+  position:relative;line-height:1.42}
+.pr-faq summary::-webkit-details-marker{display:none}
+.pr-faq summary::after{content:"";position:absolute;right:6px;top:29px;width:11px;
+  height:11px;border-right:1.8px solid var(--p-ink-3);
+  border-bottom:1.8px solid var(--p-ink-3);transform:rotate(45deg);
+  transition:transform .2s ease}
+.pr-faq details[open] summary::after{transform:rotate(-135deg);top:33px}
+.pr-faq .pr-faq__a{padding:0 60px 24px 0;font-size:.96rem;line-height:1.62;
+  color:var(--p-ink-2)}
+
+/* ── final cta ── */
+.pr-final{padding:88px 0 96px;text-align:center;background:var(--p-cream);
+  border-top:1px solid var(--p-line)}
+.pr-final .pr-h2{max-width:19ch;margin-inline:auto}
+.pr-final .pr-lede{margin-inline:auto;text-align:center;max-width:56ch}
+.pr-final__cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+  margin-top:28px}
+
+/* ── drawn scene primitives ── */
+.pr-scene .s-ln{fill:none;stroke:var(--p-ink);stroke-width:1.15;
+  stroke-linecap:round;stroke-linejoin:round}
+.pr-scene .s-th{fill:none;stroke:var(--p-ink);stroke-width:1.9;
+  stroke-linecap:round;stroke-linejoin:round}
+.pr-scene .s-fn{fill:none;stroke:var(--p-ink);stroke-width:.6;opacity:.55}
+.pr-scene .s-fill{fill:var(--p-ink);opacity:.9}
+.pr-scene .s-mid{fill:#B8B8B2}
+.pr-scene .s-pale{fill:#E4E0D8}
+.pr-scene .s-wtr{fill:var(--p-acc);opacity:.17}
+.pr-scene .s-acc{fill:none;stroke:var(--p-acc);stroke-width:1.7;
+  stroke-linecap:round}
+.pr-scene .s-red{fill:none;stroke:var(--p-red);stroke-width:1.7;
+  stroke-linecap:round}
+.pr-scene .s-t{font-family:var(--p-mono);font-size:7.4px;letter-spacing:.07em;
+  fill:var(--p-ink-3)}
+.pr-scene .s-grid{stroke:var(--p-acc);stroke-width:.85;opacity:.42;fill:none}
+
+/* ── reveal ── */
+.pr-rv{opacity:0;transform:translateY(16px);
+  transition:opacity .62s var(--ease,cubic-bezier(.19,.72,.28,1)),
+             transform .62s var(--ease,cubic-bezier(.19,.72,.28,1))}
+.pr-rv.is-in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .pr-rv{opacity:1;transform:none;transition:none}
+  .pr-band__track{animation:none}
+  .pr-scene [class*="s-anim"]{animation:none}
+}
+
+
+/* ══ header and footer on pr pages ═════════════════════════════════ */
+body.pr .hdr{background:var(--p-cream);border-bottom:1px solid var(--p-line)}
+body.pr .hdr-in{height:82px;max-width:var(--p-wrap);padding-inline:var(--p-gut)}
+body.pr .hdr.compact .hdr-in{height:70px}
+body.pr .logo-n{font-family:var(--p-serif);font-weight:600;color:var(--p-ink);
+  font-size:20px;letter-spacing:-.02em}
+body.pr .logo-s{color:var(--p-ink-3)}
+body.pr .nav a{color:var(--p-ink-2);font-family:var(--p-sans);font-weight:500;
+  font-size:.95rem;padding:9px 13px}
+body.pr .nav a:hover{color:var(--p-ink)}
+body.pr .nav a[aria-current="page"]{color:var(--p-ink);font-weight:600}
+body.pr .nav .chev{color:var(--p-ink-3)}
+body.pr .hdr .btn-p{background:var(--p-acc-btn);color:#fff;border-color:var(--p-acc-btn);
+  border-radius:2px;font-weight:600}
+body.pr .hdr .btn-p:hover{background:var(--p-acc-btn-h);border-color:var(--p-acc-btn-h)}
+body.pr .burger{color:var(--p-ink)}
+/* The logo mark is drawn white-on-green and was composed for a dark ground:
+   the top of the RD ligature sits outside the green disc and disappears on
+   cream. The mark itself is untouched. It is given back the dark chip it was
+   designed against, which is the same treatment the favicon already uses. */
+body.pr .logo svg{background:#0B1A0E;border-radius:7px;padding:2px;
+  box-sizing:content-box}
+body.pr .ftr .logo svg{background:transparent;padding:0}
+
+body.pr .drop-in{background:var(--p-white);border:1px solid var(--p-line);
+  border-radius:5px;box-shadow:none}
+body.pr .drop-in a{color:var(--p-ink-2)}
+body.pr .drop-in a:hover{background:var(--p-cream);color:var(--p-ink)}
+body.pr .drop-in em{color:var(--p-ink)}
+body.pr .drop-in b{color:var(--p-acc-d)}
+body.pr .drop-all{color:var(--p-acc-d)}
+
+body.pr .ftr{background:var(--p-sand);color:var(--p-ink-2);
+  border-top:1px solid var(--p-line-2);padding-top:76px}
+body.pr .ftr a{color:var(--p-ink-2)}
+body.pr .ftr a:hover{color:var(--p-acc-d)}
+body.pr .ftr h4{color:var(--p-ink)}
+body.pr .ftr .logo-n{color:var(--p-ink)}
+body.pr .ftr .about{color:var(--p-ink-2)}
+body.pr .ftr-btm{border-top:1px solid var(--p-line-2);color:var(--p-ink-3)}
+body.pr .readbar{background:var(--p-acc)}
+
+/* the plate drawing stands on the grid rather than floating above it */
+body.pr .pr-plate__art{margin-bottom:-56px}
+/* the row drawings fill their panel */
+body.pr .pr-row__media svg{max-height:none}
+
+/* ── responsive ── */
+@media (max-width:1080px){
+  :root{--p-pad:76px}
+  .pr-cards--4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pr-hero__grid{gap:40px}
+  .pr-row{gap:44px}
+}
+@media (max-width:860px){
+  :root{--p-pad:60px;--p-gut:22px}
+  .pr-hero{padding-top:36px}
+  .pr-hero__grid{grid-template-columns:1fr;gap:34px}
+  .pr-row{grid-template-columns:1fr;gap:26px;margin-bottom:52px}
+  .pr-row--flip .pr-row__text{order:0}
+  .pr-plate__grid{grid-template-columns:1fr;gap:26px}
+  .pr-cards--3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pr-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pr-stat{border-bottom:1px solid var(--p-line)}
+  .pr-stat:nth-child(2n){border-right:0}
+  .pr-stat:nth-last-child(-n+2){border-bottom:0}
+  .pr-vs{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  :root{--p-pad:48px;--p-gut:18px}
+  .pr-cards--4,.pr-cards--3,.pr-cards--2{grid-template-columns:1fr}
+  .pr-stats{grid-template-columns:1fr}
+  .pr-stat{border-right:0;border-bottom:1px solid var(--p-line)}
+  .pr-stat:last-child{border-bottom:0}
+  .pr-faq summary{padding-right:34px;font-size:.97rem}
+  .pr-faq .pr-faq__a{padding-right:20px}
+  .pr-intro{margin-bottom:38px}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"@id":"https://rdecosolutions.org/#organization","name":"RD Eco Solutions","url":"https://rdecosolutions.org/","image":"https://rdecosolutions.org/og-card.png","logo":"https://rdecosolutions.org/apple-touch-icon.png","priceRange":"Quoted per project","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}],"description":"Civil and environmental infrastructure services for Urban Local Bodies and public sector organisations in Tamil Nadu, project consultancy, operation and maintenance, civil works, solid waste management, environmental solutions, equipment and manpower.","email":"rdecosolutionsofficial@gmail.com","telephone":"+919659443759","address":{"@type":"PostalAddress","addressLocality":"Sirkazhi","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Ariyalur"},{"@type":"AdministrativeArea","name":"Perambalur"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"knowsAbout":["Project Consultancy","Operation & Maintenance","Civil Infrastructure Works","Solid Waste Management","Environmental Solutions","Equipment & Technical Solutions","Manpower Services","Survey & Investigation"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+919659443759","email":"rdecosolutionsofficial@gmail.com","availableLanguage":["en","ta"]},"subOrganization":[{"@type":"Organization","name":"Sabareesan Civil Constructions","description":"Roads, drainage and stormwater works, structures, and technical and topographic survey.","url":"https://rdecosolutions.org/sabareesan-civil-constructions.html"},{"@type":"Organization","name":"Sabareesan IT Services","description":"IT services and solutions, run as a separate business with its own clients.","url":"https://rdecosolutions.org/sabareesan-it-services.html"}]},{"@type":"WebSite","@id":"https://rdecosolutions.org/#website","url":"https://rdecosolutions.org/","name":"RD Eco Solutions","publisher":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"WebPage","@id":"https://rdecosolutions.org/manpower-services.html#webpage","url":"https://rdecosolutions.org/manpower-services.html","name":"Sanitation & Plant Operator Manpower Supply, Tamil Nadu","description":"Plant and pump operators, supervisors and sanitation staff for Tamil Nadu municipal works, with attendance, EPF and ESI compliance handled.","isPartOf":{"@id":"https://rdecosolutions.org/#website"},"about":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"BreadcrumbList","@id":"https://rdecosolutions.org/manpower-services.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rdecosolutions.org/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://rdecosolutions.org/services.html"},{"@type":"ListItem","position":3,"name":"Manpower Services","item":"https://rdecosolutions.org/manpower-services.html"}]},{"@type":"Service","@id":"https://rdecosolutions.org/manpower-services.html#service","name":"Manpower Services","serviceType":"Manpower Services","description":"Plant and pump operators, supervisors and sanitation staff for Tamil Nadu municipal works, with attendance, EPF and ESI compliance handled.","provider":{"@id":"https://rdecosolutions.org/#organization"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Ariyalur"},{"@type":"AdministrativeArea","name":"Perambalur"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"audience":{"@type":"Audience","audienceType":"Urban Local Bodies, Municipal Corporations, Municipalities, Town Panchayats, Government Departments"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Manpower Services, scope","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Skilled and unskilled manpower deployment"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Engineers, supervisors and operators"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pump and machinery operators"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Sanitation and conservancy personnel"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Project based manpower management"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Attendance, performance and statutory compliance support"}}]}},{"@type":"FAQPage","@id":"https://rdecosolutions.org/manpower-services.html#faq","mainEntity":[{"@type":"Question","name":"How do you handle EPF, ESI and wage compliance?","acceptedAnswer":{"@type":"Answer","text":"As part of scope. Personnel are on our rolls, statutory contributions are remitted and the records are available to the department on request and at audit. This is the substance of what a body is buying with a manpower contract, the staffing is the easy half."}},{"@type":"Question","name":"What happens when someone does not turn up?","acceptedAnswer":{"@type":"Answer","text":"Replacement against the agreed manpower schedule, with the gap recorded in the attendance return rather than quietly absorbed. Where a contract sets a minimum deployment, shortfalls should be visible to the department and reflected in billing. Hidden absence is how these contracts lose credibility."}},{"@type":"Question","name":"How many operators does a 5 MLD STP need?","acceptedAnswer":{"@type":"Answer","text":"It depends on the process, the degree of automation and the shift pattern the contract requires, so a single number is misleading. We propose a manpower schedule against the specific plant, shifts, skill categories and supervision, and set it out in the offer so the department can compare bids on the same basis."}}]}]}</script>
 </head>
@@ -2338,6 +2646,31 @@ input,select,textarea{border-radius:var(--r)}
         if (btn) { btn.disabled = false; btn.textContent = original; }
       });
   });
+})();
+
+
+/* scroll reveal, pr layer */
+(function () {
+  var els = document.querySelectorAll(".pr-rv");
+  if (!els.length) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !("IntersectionObserver" in window)) {
+    Array.prototype.forEach.call(els, function (el) { el.classList.add("is-in"); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+    });
+  }, { rootMargin: "0px 0px -6% 0px", threshold: 0.04 });
+  Array.prototype.forEach.call(els, function (el) { io.observe(el); });
+  // safety: anything still hidden after 3s gets revealed
+  setTimeout(function () {
+    Array.prototype.forEach.call(document.querySelectorAll(".pr-rv:not(.is-in)"), function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight) el.classList.add("is-in");
+    });
+  }, 3000);
 })();
 
 /* scroll reveal */

@@ -28,7 +28,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;450;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&amp;family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;450;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>/* ═══════════════════════════════════════════════════════════════
    RD Eco Solutions — design system v3
    Palette derived from the RD Eco Solutions logo: globe green + periwinkle.
@@ -1897,10 +1897,318 @@ h2{font-weight:600;letter-spacing:-.008em}
   border-radius:var(--r)}
 .tag,.pgl{border-radius:100px}
 input,select,textarea{border-radius:var(--r)}
+
+/* ══ PipeRocket-language layer ══════════════════════════════════════ */
+:root{
+  --p-cream:#F6F6F1;
+  --p-white:#FFFFFF;
+  --p-sand:#E8E4DA;
+  --p-sand-2:#E4E0D8;
+  --p-dark:#282828;
+  --p-ink:#0D0D0D;
+  --p-ink-2:#4A4A47;
+  --p-ink-3:#63635D;
+  --p-line:#DDD9CE;
+  --p-line-2:#D9D5C9;
+  --p-acc:#0BA6E2;
+  --p-acc-2:#0CC6F1;
+  --p-acc-d:#0A6E99;
+  --p-acc-btn:#0A72A0;
+  --p-acc-btn-h:#08587A;
+  --p-red:#C42834;
+  --p-serif:"Bodoni Moda",Georgia,"Times New Roman",serif;
+  --p-sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --p-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --p-wrap:1280px;
+  --p-gut:32px;
+  --p-pad:96px;
+}
+
+/* ── page ground ── */
+body.pr{background:var(--p-cream);color:var(--p-ink);font-family:var(--p-sans);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.pr-wrap{max-width:var(--p-wrap);margin:0 auto;padding:0 var(--p-gut)}
+.pr-sec{padding:var(--p-pad) 0;position:relative}
+.pr-sec--tight{padding:48px 0}
+.pr-sec--sand{background:var(--p-sand-2)}
+.pr-sec--dark{background:var(--p-dark);color:var(--p-cream)}
+
+/* ── type ── */
+.pr-eyebrow{font-family:var(--p-sans);font-weight:600;font-size:.85rem;
+  letter-spacing:-.01em;color:var(--p-red);margin:0 0 18px;display:block}
+.pr-h1{font-family:var(--p-serif);font-weight:600;font-size:clamp(2.1rem,4.4vw,2.95rem);
+  line-height:1.13;letter-spacing:-.02em;color:var(--p-ink);margin:0 0 22px;
+  text-wrap:balance}
+.pr-h2{font-family:var(--p-serif);font-weight:600;font-size:clamp(1.85rem,3.7vw,3.05rem);
+  line-height:1.1;letter-spacing:-.012em;color:var(--p-ink);margin:0 0 18px;
+  text-wrap:balance}
+.pr-h3{font-family:var(--p-serif);font-weight:600;font-size:clamp(1.25rem,2vw,1.65rem);
+  line-height:1.2;letter-spacing:-.01em;color:var(--p-ink);margin:0 0 12px}
+.pr-sec--dark .pr-h2,.pr-sec--dark .pr-h3{color:var(--p-cream)}
+.pr-lede{font-size:1.02rem;line-height:1.62;color:var(--p-ink-2);margin:0 0 16px;
+  max-width:60ch}
+.pr-sec--dark .pr-lede{color:#BFBFBA}
+.pr-em{font-family:var(--p-serif);font-style:italic;font-weight:600;
+  border-bottom:2px solid var(--p-acc);padding-bottom:2px}
+.pr-label{font-family:var(--p-sans);font-weight:500;font-size:.775rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--p-ink-3)}
+
+/* ── section intro ── */
+.pr-intro{max-width:760px;margin:0 auto 56px;text-align:center}
+.pr-intro .pr-lede{margin-inline:auto;text-align:center}
+.pr-intro--left{margin-inline:0;text-align:left}
+.pr-intro--left .pr-lede{margin-inline:0;text-align:left}
+
+/* ── buttons ── */
+.pr-btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--p-sans);
+  font-weight:600;font-size:.97rem;line-height:1;padding:15px 26px;border-radius:2px;
+  background:var(--p-acc-btn);color:#fff;text-decoration:none;border:0;cursor:pointer;
+  transition:background .18s ease}
+.pr-btn:hover{background:var(--p-acc-btn-h)}
+.pr-btn--ghost{background:transparent;color:var(--p-ink);
+  border:1px solid var(--p-line-2);padding:14px 25px}
+.pr-btn--ghost:hover{background:var(--p-white);border-color:var(--p-ink-3)}
+.pr-sec--dark .pr-btn--ghost{color:var(--p-cream);border-color:#575755}
+.pr-sec--dark .pr-btn--ghost:hover{background:#333;border-color:#7a7a78}
+.pr-btn--sm{padding:9px 15px;font-size:.86rem;font-weight:500}
+
+/* ── hero ── */
+.pr-hero{padding:56px 0 8px;background:var(--p-cream)}
+.pr-hero__grid{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,1fr);
+  gap:60px;align-items:center}
+.pr-hero__text{max-width:600px}
+.pr-hero__copy p{font-size:1.005rem;line-height:1.62;color:var(--p-ink-2);
+  margin:0 0 16px;max-width:56ch}
+.pr-hero__cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.pr-hero__scene{width:100%;height:auto;display:block}
+
+/* ── marquee band ── */
+.pr-band{background:var(--p-cream);padding:34px 0 42px;overflow:hidden;
+  border-top:1px solid var(--p-line)}
+.pr-band__label{text-align:center;margin:0 0 22px}
+.pr-band__track{display:flex;gap:0;width:max-content;
+  animation:pr-slide 46s linear infinite}
+.pr-band__row{display:flex;gap:14px;padding-right:14px}
+.pr-band__row span{font-family:var(--p-sans);font-weight:500;font-size:.9rem;
+  color:var(--p-ink-2);white-space:nowrap;padding:9px 18px;background:var(--p-white);
+  border:1px solid var(--p-line);border-radius:2px}
+@keyframes pr-slide{to{transform:translateX(-50%)}}
+.pr-band:hover .pr-band__track{animation-play-state:paused}
+
+/* ── alternating two column rows ── */
+.pr-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:64px;align-items:center;margin-bottom:72px}
+.pr-row:last-child{margin-bottom:0}
+.pr-row--flip .pr-row__text{order:2}
+.pr-row__media{background:var(--p-sand);border:1px solid var(--p-line-2);
+  border-radius:5px;padding:26px;display:flex;align-items:center;justify-content:center}
+.pr-row__media svg{width:100%;height:auto;display:block}
+.pr-row__list{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:9px}
+.pr-row__list li{position:relative;padding-left:22px;font-size:.95rem;
+  color:var(--p-ink-2);line-height:1.5}
+.pr-row__list li::before{content:"";position:absolute;left:0;top:.55em;width:9px;
+  height:1.5px;background:var(--p-acc)}
+
+/* ── flat cards ── */
+.pr-cards{display:grid;gap:20px}
+.pr-cards--4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.pr-cards--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pr-cards--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.pr-card{background:var(--p-white);border:1px solid var(--p-line);border-radius:5px;
+  padding:26px;display:flex;flex-direction:column}
+.pr-card__k{font-family:var(--p-mono);font-size:.72rem;letter-spacing:.1em;
+  color:var(--p-acc-d);margin:0 0 14px;display:block}
+.pr-card p{font-size:.93rem;line-height:1.56;color:var(--p-ink-2);margin:0}
+.pr-card__foot{margin-top:auto;padding-top:20px}
+
+/* rail cards, used on the dark section */
+.pr-rail{background:var(--p-cream);border-left:4px solid var(--p-acc);
+  border-radius:0;padding:24px;display:flex;flex-direction:column;min-height:236px}
+.pr-rail .pr-h3{font-family:var(--p-sans);font-weight:600;font-size:1.06rem;
+  letter-spacing:-.005em;color:var(--p-ink);margin:0 0 10px}
+.pr-rail p{font-size:.9rem;line-height:1.55;color:var(--p-ink-2);margin:0}
+.pr-rail__k{font-family:var(--p-mono);font-size:.74rem;letter-spacing:.12em;
+  color:var(--p-acc-d);display:block;margin:0 0 14px}
+.pr-rail__foot{margin-top:auto;padding-top:20px}
+.pr-rail__link{display:inline-block;font-size:.85rem;font-weight:500;
+  color:var(--p-ink);text-decoration:none;border:1px solid #A5A5A5;
+  border-radius:2px;padding:8px 15px;transition:border-color .16s ease}
+.pr-rail__link:hover{border-color:var(--p-ink)}
+
+/* ── full bleed parallax band ── */
+.pr-plate{position:relative;background:var(--p-dark);color:var(--p-cream);
+  overflow:hidden;padding:88px 0 0}
+.pr-plate__grid{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);
+  gap:48px;align-items:center}
+.pr-plate .pr-h2{color:var(--p-cream)}
+.pr-plate__floor{height:120px;background:var(--p-acc);position:relative;margin-top:34px;
+  background-image:linear-gradient(rgba(255,255,255,.26) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.26) 1px,transparent 1px);
+  background-size:44px 30px}
+.pr-plate__art{position:relative;z-index:2;margin-bottom:-34px}
+.pr-plate__art svg{width:100%;height:auto;display:block}
+
+/* ── stat band ── */
+.pr-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:0;border-top:1px solid var(--p-line);border-bottom:1px solid var(--p-line)}
+.pr-stat{padding:32px 26px;border-right:1px solid var(--p-line)}
+.pr-stat:last-child{border-right:0}
+.pr-stat__n{font-family:var(--p-serif);font-weight:600;font-size:2.7rem;line-height:1;
+  color:var(--p-ink);display:block;margin-bottom:9px;font-variant-numeric:tabular-nums}
+.pr-stat__t{font-size:.88rem;color:var(--p-ink-2);line-height:1.45;display:block}
+
+/* ── comparison ── */
+.pr-vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.pr-vs__col{border-radius:5px;padding:30px;border:1px solid var(--p-line)}
+.pr-vs__col--them{background:var(--p-sand-2)}
+.pr-vs__col--us{background:var(--p-white);border-color:var(--p-acc)}
+.pr-vs__h{font-family:var(--p-sans);font-weight:600;font-size:.8rem;
+  letter-spacing:.13em;text-transform:uppercase;margin:0 0 20px;color:var(--p-ink-3)}
+.pr-vs__col--us .pr-vs__h{color:var(--p-acc-d)}
+.pr-vs ul{list-style:none;margin:0;padding:0;display:grid;gap:15px}
+.pr-vs li{font-size:.94rem;line-height:1.55;color:var(--p-ink-2);
+  padding-left:26px;position:relative}
+.pr-vs__col--them li::before{content:"";position:absolute;left:2px;top:.48em;
+  width:11px;height:11px;border:1.5px solid var(--p-ink-3);border-radius:50%}
+.pr-vs__col--us li::before{content:"";position:absolute;left:2px;top:.48em;
+  width:11px;height:11px;border:1.5px solid var(--p-acc);border-radius:50%;
+  background:var(--p-acc)}
+
+/* ── accordion ── */
+.pr-faq{max-width:820px;margin:0 auto}
+.pr-faq details{border-bottom:1px solid var(--p-line);background:transparent}
+.pr-faq summary{cursor:pointer;list-style:none;padding:22px 40px 22px 0;
+  font-family:var(--p-sans);font-weight:600;font-size:1.02rem;color:var(--p-ink);
+  position:relative;line-height:1.42}
+.pr-faq summary::-webkit-details-marker{display:none}
+.pr-faq summary::after{content:"";position:absolute;right:6px;top:29px;width:11px;
+  height:11px;border-right:1.8px solid var(--p-ink-3);
+  border-bottom:1.8px solid var(--p-ink-3);transform:rotate(45deg);
+  transition:transform .2s ease}
+.pr-faq details[open] summary::after{transform:rotate(-135deg);top:33px}
+.pr-faq .pr-faq__a{padding:0 60px 24px 0;font-size:.96rem;line-height:1.62;
+  color:var(--p-ink-2)}
+
+/* ── final cta ── */
+.pr-final{padding:88px 0 96px;text-align:center;background:var(--p-cream);
+  border-top:1px solid var(--p-line)}
+.pr-final .pr-h2{max-width:19ch;margin-inline:auto}
+.pr-final .pr-lede{margin-inline:auto;text-align:center;max-width:56ch}
+.pr-final__cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+  margin-top:28px}
+
+/* ── drawn scene primitives ── */
+.pr-scene .s-ln{fill:none;stroke:var(--p-ink);stroke-width:1.15;
+  stroke-linecap:round;stroke-linejoin:round}
+.pr-scene .s-th{fill:none;stroke:var(--p-ink);stroke-width:1.9;
+  stroke-linecap:round;stroke-linejoin:round}
+.pr-scene .s-fn{fill:none;stroke:var(--p-ink);stroke-width:.6;opacity:.55}
+.pr-scene .s-fill{fill:var(--p-ink);opacity:.9}
+.pr-scene .s-mid{fill:#B8B8B2}
+.pr-scene .s-pale{fill:#E4E0D8}
+.pr-scene .s-wtr{fill:var(--p-acc);opacity:.17}
+.pr-scene .s-acc{fill:none;stroke:var(--p-acc);stroke-width:1.7;
+  stroke-linecap:round}
+.pr-scene .s-red{fill:none;stroke:var(--p-red);stroke-width:1.7;
+  stroke-linecap:round}
+.pr-scene .s-t{font-family:var(--p-mono);font-size:7.4px;letter-spacing:.07em;
+  fill:var(--p-ink-3)}
+.pr-scene .s-grid{stroke:var(--p-acc);stroke-width:.85;opacity:.42;fill:none}
+
+/* ── reveal ── */
+.pr-rv{opacity:0;transform:translateY(16px);
+  transition:opacity .62s var(--ease,cubic-bezier(.19,.72,.28,1)),
+             transform .62s var(--ease,cubic-bezier(.19,.72,.28,1))}
+.pr-rv.is-in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .pr-rv{opacity:1;transform:none;transition:none}
+  .pr-band__track{animation:none}
+  .pr-scene [class*="s-anim"]{animation:none}
+}
+
+
+/* ══ header and footer on pr pages ═════════════════════════════════ */
+body.pr .hdr{background:var(--p-cream);border-bottom:1px solid var(--p-line)}
+body.pr .hdr-in{height:82px;max-width:var(--p-wrap);padding-inline:var(--p-gut)}
+body.pr .hdr.compact .hdr-in{height:70px}
+body.pr .logo-n{font-family:var(--p-serif);font-weight:600;color:var(--p-ink);
+  font-size:20px;letter-spacing:-.02em}
+body.pr .logo-s{color:var(--p-ink-3)}
+body.pr .nav a{color:var(--p-ink-2);font-family:var(--p-sans);font-weight:500;
+  font-size:.95rem;padding:9px 13px}
+body.pr .nav a:hover{color:var(--p-ink)}
+body.pr .nav a[aria-current="page"]{color:var(--p-ink);font-weight:600}
+body.pr .nav .chev{color:var(--p-ink-3)}
+body.pr .hdr .btn-p{background:var(--p-acc-btn);color:#fff;border-color:var(--p-acc-btn);
+  border-radius:2px;font-weight:600}
+body.pr .hdr .btn-p:hover{background:var(--p-acc-btn-h);border-color:var(--p-acc-btn-h)}
+body.pr .burger{color:var(--p-ink)}
+/* The logo mark is drawn white-on-green and was composed for a dark ground:
+   the top of the RD ligature sits outside the green disc and disappears on
+   cream. The mark itself is untouched. It is given back the dark chip it was
+   designed against, which is the same treatment the favicon already uses. */
+body.pr .logo svg{background:#0B1A0E;border-radius:7px;padding:2px;
+  box-sizing:content-box}
+body.pr .ftr .logo svg{background:transparent;padding:0}
+
+body.pr .drop-in{background:var(--p-white);border:1px solid var(--p-line);
+  border-radius:5px;box-shadow:none}
+body.pr .drop-in a{color:var(--p-ink-2)}
+body.pr .drop-in a:hover{background:var(--p-cream);color:var(--p-ink)}
+body.pr .drop-in em{color:var(--p-ink)}
+body.pr .drop-in b{color:var(--p-acc-d)}
+body.pr .drop-all{color:var(--p-acc-d)}
+
+body.pr .ftr{background:var(--p-sand);color:var(--p-ink-2);
+  border-top:1px solid var(--p-line-2);padding-top:76px}
+body.pr .ftr a{color:var(--p-ink-2)}
+body.pr .ftr a:hover{color:var(--p-acc-d)}
+body.pr .ftr h4{color:var(--p-ink)}
+body.pr .ftr .logo-n{color:var(--p-ink)}
+body.pr .ftr .about{color:var(--p-ink-2)}
+body.pr .ftr-btm{border-top:1px solid var(--p-line-2);color:var(--p-ink-3)}
+body.pr .readbar{background:var(--p-acc)}
+
+/* the plate drawing stands on the grid rather than floating above it */
+body.pr .pr-plate__art{margin-bottom:-56px}
+/* the row drawings fill their panel */
+body.pr .pr-row__media svg{max-height:none}
+
+/* ── responsive ── */
+@media (max-width:1080px){
+  :root{--p-pad:76px}
+  .pr-cards--4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pr-hero__grid{gap:40px}
+  .pr-row{gap:44px}
+}
+@media (max-width:860px){
+  :root{--p-pad:60px;--p-gut:22px}
+  .pr-hero{padding-top:36px}
+  .pr-hero__grid{grid-template-columns:1fr;gap:34px}
+  .pr-row{grid-template-columns:1fr;gap:26px;margin-bottom:52px}
+  .pr-row--flip .pr-row__text{order:0}
+  .pr-plate__grid{grid-template-columns:1fr;gap:26px}
+  .pr-cards--3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pr-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pr-stat{border-bottom:1px solid var(--p-line)}
+  .pr-stat:nth-child(2n){border-right:0}
+  .pr-stat:nth-last-child(-n+2){border-bottom:0}
+  .pr-vs{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  :root{--p-pad:48px;--p-gut:18px}
+  .pr-cards--4,.pr-cards--3,.pr-cards--2{grid-template-columns:1fr}
+  .pr-stats{grid-template-columns:1fr}
+  .pr-stat{border-right:0;border-bottom:1px solid var(--p-line)}
+  .pr-stat:last-child{border-bottom:0}
+  .pr-faq summary{padding-right:34px;font-size:.97rem}
+  .pr-faq .pr-faq__a{padding-right:20px}
+  .pr-intro{margin-bottom:38px}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"@id":"https://rdecosolutions.org/#organization","name":"RD Eco Solutions","url":"https://rdecosolutions.org/","image":"https://rdecosolutions.org/og-card.png","logo":"https://rdecosolutions.org/apple-touch-icon.png","priceRange":"Quoted per project","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}],"description":"Civil and environmental infrastructure services for Urban Local Bodies and public sector organisations in Tamil Nadu, project consultancy, operation and maintenance, civil works, solid waste management, environmental solutions, equipment and manpower.","email":"rdecosolutionsofficial@gmail.com","telephone":"+919659443759","address":{"@type":"PostalAddress","addressLocality":"Sirkazhi","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Ariyalur"},{"@type":"AdministrativeArea","name":"Perambalur"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"knowsAbout":["Project Consultancy","Operation & Maintenance","Civil Infrastructure Works","Solid Waste Management","Environmental Solutions","Equipment & Technical Solutions","Manpower Services","Survey & Investigation"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+919659443759","email":"rdecosolutionsofficial@gmail.com","availableLanguage":["en","ta"]},"subOrganization":[{"@type":"Organization","name":"Sabareesan Civil Constructions","description":"Roads, drainage and stormwater works, structures, and technical and topographic survey.","url":"https://rdecosolutions.org/sabareesan-civil-constructions.html"},{"@type":"Organization","name":"Sabareesan IT Services","description":"IT services and solutions, run as a separate business with its own clients.","url":"https://rdecosolutions.org/sabareesan-it-services.html"}]},{"@type":"WebSite","@id":"https://rdecosolutions.org/#website","url":"https://rdecosolutions.org/","name":"RD Eco Solutions","publisher":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"WebPage","@id":"https://rdecosolutions.org/#webpage","url":"https://rdecosolutions.org/","name":"Municipal Infrastructure Services, TN | RD Eco Solutions","description":"Project consultancy, sewerage and STP operation and maintenance, civil works, solid waste management and biomining for Urban Local Bodies across Tamil Nadu.","isPartOf":{"@id":"https://rdecosolutions.org/#website"},"about":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"FAQPage","@id":"https://rdecosolutions.org/#faq","mainEntity":[{"@type":"Question","name":"Which districts and Urban Local Bodies do you serve?","acceptedAnswer":{"@type":"Answer","text":"We are based in Sirkazhi, Mayiladuthurai District, and work with municipal corporations, municipalities, town panchayats, water and sewerage boards and government departments across Tamil Nadu. Mobilisation outside our home district is routine and is planned into the contract programme rather than treated as an exception."}},{"@type":"Question","name":"What services can be combined under a single contract?","acceptedAnswer":{"@type":"Answer","text":"Consultancy, civil execution, operation and maintenance, solid waste management, environmental works, equipment supply and manpower deployment. The advantage of that range is accountability, a scheme that is designed, built and then operated by the same organisation has nobody to hand the problem to when performance falls short."}},{"@type":"Question","name":"What registration and statutory details do you provide with a bid?","acceptedAnswer":{"@type":"Answer","text":"The registration, GST, PAN and statutory compliance documents required by the tender are submitted with the technical cover. Please request our current credentials pack and we will send the applicable documents for the work you are tendering."}},{"@type":"Question","name":"How do we start a conversation about a project?","acceptedAnswer":{"@type":"Answer","text":"Send the tender document, or a short description of the site, scope and timeline, by email or phone. We will tell you quickly whether we are the right fit, including when we are not, which saves both sides time at evaluation."}}]}]}</script>
 </head>
-<body>
+<body class="pr">
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr">
   <div class="wrap hdr-in">
@@ -1955,474 +2263,572 @@ input,select,textarea{border-radius:var(--r)}
 </header>
 <div id="main" tabindex="-1"></div>
 
-<section class="hero">
-  <div class="wrap hero-in">
-    <span class="tagline">Sirkazhi &middot; Tamil Nadu</span>
-    <h1>Sustainable infrastructure, <em>reliably operated.</em></h1>
-    <div class="hero-sub">
-      <div>
-        <p class="lede">Project consultancy, civil infrastructure execution, operation and
-        maintenance, and environmental management for Urban Local Bodies and public sector
-        organisations across Tamil Nadu.</p>
-        <div class="hero-btns">
-          <a class="btn btn-p" href="services.html">Our services <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn btn-s" href="contact.html">Contact us</a>
+<section class="pr-hero">
+  <div class="pr-wrap">
+    <div class="pr-hero__grid">
+      <div class="pr-hero__text">
+        <span class="pr-eyebrow">Civil and environmental infrastructure for Urban Local Bodies, Tamil Nadu</span>
+        <h1 class="pr-h1">We work where the tender ends and the <span class="pr-em">operating years begin</span></h1>
+        <div class="pr-hero__copy">
+          <p>RD Eco Solutions is built around what happens after handover. A scheme is not finished when the completion certificate is signed. It is finished when the network is still holding its design parameters in year five.</p>
+          <p>Consultancy, civil execution, operation and maintenance and environmental management, scoped so a single department works with one accountable party rather than five.</p>
+        </div>
+        <div class="pr-hero__cta">
+          <a class="pr-btn" href="contact.html">Talk to us <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="pr-btn pr-btn--ghost" href="services.html">The eight divisions</a>
         </div>
       </div>
-      <div class="side">
-        <b>Eight divisions</b><br>
-        DPR &amp; tender &rarr; execution &rarr; O&amp;M<br>
-        Urban Local Bodies &middot; Tamil Nadu
-      </div>
-    </div>
-  </div>
-  <div class="hero-art-hold"><svg class="hero-art" viewBox="0 0 1400 250" preserveAspectRatio="xMidYMax meet"
-  role="img" aria-label="Technical elevation of a treatment plant, construction site and control building linked by a subsurface pipeline.">
-  <g fill="none" stroke="#0BA6E2" stroke-linecap="round" stroke-linejoin="round" opacity=".62">
-    <path d="M0 210 H1400" stroke="rgba(11,166,226,.28)" stroke-width="1"/>
-    <g stroke-width="1.5">
-      <path d="M70 210 V166 A34 34 0 0 1 138 166 V210"/>
-      <path d="M300 210 V104 H392 V210"/>
-      <path d="M470 210 V64 M486 210 V64"/>
-      <path d="M700 210 V150 H790 V210"/>
-      <path d="M980 210 L1004 96 L1028 210"/>
-      <path d="M1180 210 V172 H1268 V210"/>
-    </g>
-    <g stroke-width=".9" opacity=".55">
-      <path d="M70 188 H138 M104 132 V120 M96 120 H112"/>
-      <path d="M170 210 V182 L194 166 L218 182 V210 M170 197 H218"/>
-      <path d="M300 128 H392 M300 152 H392 M300 176 H392 M324 104 V210 M346 104 V210 M368 104 V210"/>
-      <path d="M470 210 L486 192 L470 174 L486 156 L470 138 L486 120 L470 102 L486 84"/>
-      <path d="M436 76 H578 M478 50 L578 76 M478 50 L436 76 M478 64 V50"/>
-      <path d="M700 168 H790 M700 186 H790 M700 204 H790"/>
-      <path d="M986 178 H1022 M992 142 H1016"/>
-      <path d="M1180 190 H1268 M1224 172 V210"/>
-    </g>
-    <path d="M548 76 V118" stroke="#0BA6E2" stroke-width="1.2"/>
-    <rect x="538" y="118" width="20" height="14" stroke="#0BA6E2" stroke-width="1.2"/>
-    <circle cx="778" cy="160" r="1.8" fill="#0BA6E2" stroke="none"/>
-    <circle cx="778" cy="178" r="1.8" fill="#0BA6E2" stroke="none"/>
-    <circle cx="1004" cy="96" r="2.6" fill="#0BA6E2" stroke="none"/>
-  </g>
-  <path d="M104 210 V236 H1224 V210" fill="none" stroke="#0BA6E2" stroke-width="1.2" opacity=".34"/>
-  <circle r="3.4" fill="#0BA6E2">
-    <animateMotion dur="11s" repeatCount="indefinite" path="M104 236 H1224"/>
-  </circle>
-  <circle r="3.4" fill="#0BA6E2" opacity="0">
-    <set attributeName="opacity" to=".5" begin="5.5s"/>
-    <animateMotion dur="11s" begin="5.5s" repeatCount="indefinite" path="M104 236 H1224"/>
-  </circle>
-</svg></div>
-</section>
-
-<div class="marq" aria-hidden="true"><div class="marq-in"><span>Underground sewerage</span><span>STP operation</span><span>Legacy waste biomining</span><span>DPR &amp; tender</span><span>Water supply O&amp;M</span><span>Sewer jetting</span><span>Micro compost centres</span><span>Septage management</span><span>Road restoration</span><span>Manpower deployment</span><span>Underground sewerage</span><span>STP operation</span><span>Legacy waste biomining</span><span>DPR &amp; tender</span><span>Water supply O&amp;M</span><span>Sewer jetting</span><span>Micro compost centres</span><span>Septage management</span><span>Road restoration</span><span>Manpower deployment</span></div></div>
-
-
-<section class="sec on-light">
-  <div class="wrap">
-    <div class="head-split rv">
-      <div>
-        <span class="idx">What we do</span>
-        <h2>Eight divisions. <em>One group.</em></h2>
-      </div>
-      <p class="lede">Consultancy, construction, operations and environmental management,
-      scoped so a single department works with one accountable partner rather than five.</p>
-    </div>
-    <div class="rows rv">
-      <a class="row" href="project-consultancy.html">
-        <span class="row-k">A</span>
-        <span class="row-t">Project Consultancy</span>
-        <span class="row-d">The paperwork that decides whether a scheme gets sanctioned.</span>
-        <span class="row-a"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="row" href="operation-and-maintenance.html">
-        <span class="row-k">B</span>
-        <span class="row-t">Operation &amp; Maintenance</span>
-        <span class="row-d">Keeping what is already built performing to its design figures.</span>
-        <span class="row-a"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="row" href="civil-infrastructure-works.html">
-        <span class="row-k">C</span>
-        <span class="row-t">Civil Infrastructure Works</span>
-        <span class="row-d">Building in a live town, around traffic, services and residents.</span>
-        <span class="row-a"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="row" href="solid-waste-management.html">
-        <span class="row-k">D</span>
-        <span class="row-t">Solid Waste Management</span>
-        <span class="row-d">From the household bin to the processing yard and the old dump.</span>
-        <span class="row-a"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="row" href="environmental-solutions.html">
-        <span class="row-k">E</span>
-        <span class="row-t">Environmental Solutions</span>
-        <span class="row-d">Answering a compliance condition with a process fix, not a promise.</span>
-        <span class="row-a"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="row" href="equipment-technical-solutions.html">
-        <span class="row-k">F</span>
-        <span class="row-t">Equipment &amp; Technical Solutions</span>
-        <span class="row-d">Machinery specified against the duty it actually has to do.</span>
-        <span class="row-a"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="row" href="manpower-services.html">
-        <span class="row-k">G</span>
-        <span class="row-t">Manpower Services</span>
-        <span class="row-d">Crews on site, and the statutory record to prove it.</span>
-        <span class="row-a"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="row" href="survey-and-investigation.html">
-        <span class="row-k">H</span>
-        <span class="row-t">Survey &amp; Investigation</span>
-        <span class="row-d">Levels and alignment taken on the ground, not off an old drawing.</span>
-        <span class="row-a"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a></div>
-  </div>
-</section>
-
-<section class="facts-band">
-  <div class="wrap"><div class="facts stag">
-      <div class="ft">
-        <span class="ft-n" data-to="08">08</span>
-        <span class="ft-k">divisions</span>
-        <p>Consultancy, survey, execution and operation, under one group and one point of contact.</p>
-      </div>
-      <div class="ft">
-        <span class="ft-n" data-to="08">08</span>
-        <span class="ft-k">districts</span>
-        <p>The Cauvery delta and beyond, all within a day&rsquo;s mobilisation from Sirkazhi.</p>
-      </div>
-      <div class="ft">
-        <span class="ft-n" data-to="06">06</span>
-        <span class="ft-k">stage method</span>
-        <p>Inspection to preventive recommendation, the same sequence on every job.</p>
-      </div>
-      <div class="ft">
-        <span class="ft-n" data-to="04">04</span>
-        <span class="ft-k">machine types owned</span>
-        <p>Backhoe, excavator, mixers and site plant. Ours, not hired in.</p>
-      </div></div></div>
-</section>
-<section class="jn" id="journey" aria-label="From the street to the outfall">
-  <div class="jn-sticky">
-    <div class="wrap jn-head">
-      <span class="idx">One town, one section</span>
-      <h2>From the street surface <em>to the outfall.</em></h2>
-    </div>
-    <div class="jn-stage">
-      <div class="jn-viewport"><div class="jn-track"><svg class="jn-svg" viewBox="0 0 2640 620" preserveAspectRatio="xMinYMid meet"
-  role="img" aria-label="Cross section from a street trench through the sewer, pumping station and treatment plant to reuse"
-  xmlns="http://www.w3.org/2000/svg">
- <defs>
-  <pattern id="jn-soil" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(38)">
-    <line x1="0" y1="0" x2="0" y2="9" stroke="currentColor" stroke-width=".6" opacity=".3"/>
+      <div class="pr-hero__art">
+<svg class="pr-scene pr-hero__scene" viewBox="0 0 560 470" role="img"
+     xmlns="http://www.w3.org/2000/svg"
+     aria-label="Sectional drawing of a sewage pumping station with wet well, duty and standby pumps and a rising main">
+<defs>
+  <pattern id="prSoil" width="7" height="7" patternUnits="userSpaceOnUse"
+           patternTransform="rotate(40)">
+    <line x1="0" y1="0" x2="0" y2="7" stroke="#0D0D0D" stroke-width=".5" opacity=".3"/>
   </pattern>
-  <marker id="jn-a" markerWidth="8" markerHeight="8" refX="6.5" refY="2.6" orient="auto">
-    <path d="M0 0l6.5 2.6L0 5.2z" fill="currentColor"/>
+  <pattern id="prConc" width="6" height="6" patternUnits="userSpaceOnUse">
+    <circle cx="1.6" cy="1.6" r=".55" fill="#0D0D0D" opacity=".4"/>
+  </pattern>
+  <marker id="prAr" markerWidth="7" markerHeight="7" refX="6" refY="2.4" orient="auto">
+    <path d="M0 0l6 2.4L0 4.8z" fill="#0D0D0D"/>
   </marker>
- </defs>
+</defs>
 
- <g class="jn-ground"><rect x="0" y="150" width="2640" height="470" fill="url(#jn-soil)"/></g>
- <g class="jn-l"><path d="M0 150h2640"/></g>
+<!-- perspective floor -->
+<g class="s-grid">
+  <path d="M40 396h480"/>
+  <path d="M96 470L214 396M186 470L262 396M276 470L310 396M366 470L358 396
+           M456 470L406 396M540 470L452 396M8 470L166 396"/>
+  <path d="M22 434h516M40 414h480"/>
+</g>
 
- <!-- 1. the street and the trench -->
- <g class="jn-s" data-s="0">
-   <g class="jn-l">
-     <path d="M60 150v-64h56v64M132 150v-96h72v96M220 150v-48h44v48"/>
-     <path d="M300 150v190h190V150"/>
-     <path d="M300 340h190"/>
-     <path d="M292 150v190M498 150v190" opacity=".55"/>
-   </g>
-   <g class="jn-a">
-     <rect class="jn-lay" x="302" y="152" width="186" height="14"/>
-     <rect class="jn-lay jn-d1" x="302" y="168" width="186" height="20" opacity=".62"/>
-     <rect class="jn-lay jn-d2" x="302" y="190" width="186" height="26" opacity=".4"/>
-   </g>
-   <g class="jn-l"><circle cx="395" cy="300" r="26"/><circle cx="395" cy="300" r="19"/></g>
-   <g class="jn-t">
-     <text x="60" y="128">LIVE STREET</text>
-     <text x="512" y="172">WEARING COURSE</text>
-     <text x="512" y="196">BASE COURSE</text>
-     <text x="512" y="222">SUB BASE</text>
-     <text x="512" y="306">SEWER, BEDDED</text>
-   </g>
- </g>
+<!-- ground line and soil -->
+<rect x="40" y="118" width="480" height="278" fill="url(#prSoil)" opacity=".5"/>
+<path class="s-th" d="M40 118h140M380 118h140"/>
 
- <!-- 2. the line and the manhole -->
- <g class="jn-s" data-s="1">
-   <g class="jn-l">
-     <path d="M414 320h370M846 326h300"/>
-     <path d="M414 280h370M846 286h300" opacity=".55"/>
-     <path d="M790 150v176h56V150"/>
-     <path d="M784 150h68" stroke-width="2"/>
-     <path d="M796 326q22-18 44 0"/>
-   </g>
-   <g class="jn-a"><rect x="782" y="140" width="72" height="10"/></g>
-   <g class="jn-f">
-     <path class="jn-flow" d="M430 300h340" marker-end="url(#jn-a)"/>
-     <path class="jn-flow" d="M862 306h268" marker-end="url(#jn-a)"/>
-   </g>
-   <g class="jn-t">
-     <text x="818" y="126" text-anchor="middle">MANHOLE</text>
-     <text x="600" y="368" text-anchor="middle">GRAVITY, LAID TO FALL</text>
-     <text x="1000" y="368" text-anchor="middle">SELF CLEANSING VELOCITY</text>
-   </g>
- </g>
+<!-- incoming sewer -->
+<g class="s-ln">
+  <path d="M40 172h140M40 196h140"/>
+</g>
+<rect x="40" y="172" width="140" height="24" class="s-wtr"/>
+<text x="52" y="166" class="s-t">INCOMING SEWER</text>
 
- <!-- 3. the pumping station -->
- <g class="jn-s" data-s="2">
-   <g class="jn-l">
-     <path d="M1180 150v290h230V150"/>
-     <path d="M1180 440h230"/>
-     <path d="M1180 150h230" opacity=".4"/>
-     <path d="M1246 150v-70h100v70" />
-     <circle cx="1296" cy="382" r="30"/>
-     <path d="M1296 352v60M1266 382h60"/>
-     <path d="M1296 352V214h250"/>
-   </g>
-   <g class="jn-a">
-     <path class="jn-water" d="M1182 396h226v42h-226z" opacity=".34"/>
-     <path d="M1182 396q28-14 56 0t56 0 56 0 58 0" fill="none" stroke-width="2"/>
-   </g>
-   <g class="jn-f"><path class="jn-flow" d="M1296 340V220h236" marker-end="url(#jn-a)"/></g>
-   <g class="jn-t">
-     <text x="1296" y="68" text-anchor="middle">PUMPING STATION</text>
-     <text x="1430" y="404">WET WELL</text>
-     <text x="1430" y="238">RISING MAIN</text>
-     <text x="1180" y="484">DUTY AND STANDBY, ALTERNATED</text>
-   </g>
- </g>
+<!-- wet well chamber -->
+<g>
+  <rect x="180" y="118" width="200" height="278" class="s-pale"/>
+  <rect x="180" y="118" width="14" height="278" fill="url(#prConc)"/>
+  <rect x="366" y="118" width="14" height="278" fill="url(#prConc)"/>
+  <rect x="180" y="376" width="200" height="20" fill="url(#prConc)"/>
+  <rect x="194" y="196" width="172" height="180" class="s-wtr"/>
+  <path class="s-th" d="M180 118v278h200V118"/>
+  <path class="s-ln" d="M194 118v258M366 118v258M194 376h172"/>
+</g>
 
- <!-- 4. the treatment plant -->
- <g class="jn-s" data-s="3">
-   <g class="jn-l">
-     <rect x="1600" y="196" width="120" height="104" rx="2"/>
-     <rect x="1760" y="196" width="150" height="104" rx="2"/>
-     <circle cx="2010" cy="248" r="54"/>
-     <path d="M1546 214h54"/>
-     <path d="M1612 232h96M1612 252h72M1612 272h96" opacity=".5"/>
-     <path d="M1772 236h126M1772 256h126M1772 276h96" opacity=".5"/>
-     <path d="M1956 248h108M2010 194v108" opacity=".5"/>
-     <rect x="1600" y="392" width="310" height="76" rx="2"/>
-     <path d="M1614 410h282M1614 430h282M1614 450h236" opacity=".45"/>
-   </g>
-   <g class="jn-a"><rect class="jn-lay" x="1760" y="196" width="150" height="11"/></g>
-   <g class="jn-f">
-     <path class="jn-flow" d="M1720 248h34" marker-end="url(#jn-a)"/>
-     <path class="jn-flow" d="M1910 248h40" marker-end="url(#jn-a)"/>
-     <path class="jn-flow" d="M1962 292v100h-52" marker-end="url(#jn-a)" opacity=".7"/>
-   </g>
-   <g class="jn-t">
-     <text x="1660" y="182" text-anchor="middle">SCREEN</text>
-     <text x="1835" y="182" text-anchor="middle">AERATION</text>
-     <text x="2010" y="176" text-anchor="middle">CLARIFIER</text>
-     <text x="1600" y="500">SLUDGE DRYING BEDS</text>
-     <text x="1600" y="524">MLSS AND RETURN SLUDGE MEASURED, NOT ASSUMED</text>
-   </g>
- </g>
+<!-- water level -->
+<g class="s-acc">
+  <path d="M194 196h172"/>
+  <path d="M202 204q7-6 14 0t14 0"/>
+</g>
+<text x="200" y="190" class="s-t">TOP WATER LEVEL</text>
 
- <!-- 5. what leaves -->
- <g class="jn-s" data-s="4">
-   <g class="jn-l">
-     <path d="M2064 248h120"/>
-     <rect x="2200" y="200" width="140" height="96" rx="2"/>
-     <path d="M2214 220h112M2214 240h112" opacity=".5"/>
-     <path d="M2400 150v-52h44v52M2460 150v-84h56v84"/>
-     <path d="M2340 248h96v-70"/>
-   </g>
-   <g class="jn-a">
-     <path class="jn-water jn-d1" d="M2202 256h136v38h-136z" opacity=".34"/>
-     <circle class="jn-pulse" cx="2436" cy="166" r="6"/>
-   </g>
-   <g class="jn-f">
-     <path class="jn-flow" d="M2074 248h112" marker-end="url(#jn-a)"/>
-     <path class="jn-flow" d="M2346 248h84v-64" marker-end="url(#jn-a)"/>
-   </g>
-   <g class="jn-t">
-     <text x="2270" y="186" text-anchor="middle">TREATED STORAGE</text>
-     <text x="2400" y="128">REUSE</text>
-     <text x="2200" y="340">PARKS, CONSTRUCTION, FLUSHING, RECHARGE</text>
-   </g>
- </g>
-</svg></div></div>
-      <div class="wrap jn-lower">
-        <div class="jn-caps">
-        <div class="jn-cap" data-s="0">
-          <span class="jn-n">01</span>
-          <h3>The street</h3>
-          <a class="jn-div" href="civil-infrastructure-works.html">Civil Infrastructure Works <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <p>A trench in a live town is opened, shored, laid and closed in sequence. Three reinstatement layers go back exactly as they came out, before the next length opens.</p>
-        </div>
-        <div class="jn-cap" data-s="1">
-          <span class="jn-n">02</span>
-          <h3>The line</h3>
-          <a class="jn-div" href="civil-infrastructure-works.html">Civil Infrastructure Works <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <p>Gravity does the work, so the fall is the whole design. Laid flat, a sewer silts and surcharges. The manhole is where it is inspected, desilted and measured.</p>
-        </div>
-        <div class="jn-cap" data-s="2">
-          <span class="jn-n">03</span>
-          <h3>The pumping station</h3>
-          <a class="jn-div" href="operation-and-maintenance.html">Operation &amp; Maintenance <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <p>Where the ground runs out of fall, pumps take over. Duty and standby alternated, wet well levels logged, and a failure caught in the trend rather than at two in the morning.</p>
-        </div>
-        <div class="jn-cap" data-s="3">
-          <span class="jn-n">04</span>
-          <h3>The plant</h3>
-          <a class="jn-div" href="operation-and-maintenance.html">Operation &amp; Maintenance <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <p>Screening, aeration, settlement. Almost every plant that misses its consent parameters is failing at aeration or sludge return, which is why we measure those before proposing civil work.</p>
-        </div>
-        <div class="jn-cap" data-s="4">
-          <span class="jn-n">05</span>
-          <h3>What leaves</h3>
-          <a class="jn-div" href="environmental-solutions.html">Environmental Solutions <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <p>Treated water to parks, construction, flushing or recharge, and sludge to the drying beds with a disposal record. The outfall is the number a department is actually judged on.</p>
-        </div></div>
-        <div class="jn-rail">
-          <div class="jn-bar"><i></i></div>
-          <div class="jn-ticks"><button class="jn-tick" data-s="0" type="button" aria-label="Go to stage 1, The street"><span>01</span>The street</button><button class="jn-tick" data-s="1" type="button" aria-label="Go to stage 2, The line"><span>02</span>The line</button><button class="jn-tick" data-s="2" type="button" aria-label="Go to stage 3, The pumping station"><span>03</span>The pumping station</button><button class="jn-tick" data-s="3" type="button" aria-label="Go to stage 4, The plant"><span>04</span>The plant</button><button class="jn-tick" data-s="4" type="button" aria-label="Go to stage 5, What leaves"><span>05</span>What leaves</button></div>
-        </div>
-      </div>
+<!-- duty and standby pumps -->
+<g>
+  <rect x="216" y="300" width="44" height="56" class="s-mid"/>
+  <rect x="300" y="300" width="44" height="56" class="s-mid"/>
+  <path class="s-th" d="M216 300h44v56h-44zM300 300h44v56h-44z"/>
+  <circle cx="238" cy="322" r="11" fill="#F6F6F1" stroke="#0D0D0D" stroke-width="1.3"/>
+  <circle cx="322" cy="322" r="11" fill="#F6F6F1" stroke="#0D0D0D" stroke-width="1.3"/>
+  <path class="s-ln" d="M238 311v22M227 322h22M322 311v22M311 322h22"/>
+  <path class="s-th" d="M238 300v-70M322 300v-96"/>
+</g>
+<text x="206" y="372" class="s-t">DUTY</text>
+<text x="296" y="372" class="s-t">STANDBY</text>
+
+<!-- rising main out to the right -->
+<g class="s-th">
+  <path d="M238 230h84M322 204h122"/>
+  <path d="M444 204v-46"/>
+</g>
+<g class="s-ln">
+  <path d="M238 240h74M322 214h112"/>
+</g>
+<circle cx="380" cy="204" r="7" fill="#F6F6F1" stroke="#0D0D0D" stroke-width="1.4"/>
+<path class="s-ln" d="M375 199l10 10M385 199l-10 10"/>
+<text x="358" y="188" class="s-t">NRV</text>
+<text x="404" y="146" class="s-t">RISING MAIN</text>
+
+<!-- depth dimension -->
+<g class="s-fn" stroke="#0D0D0D">
+  <path d="M414 118v278" marker-start="url(#prAr)" marker-end="url(#prAr)"/>
+  <path d="M408 118h12M408 396h12"/>
+</g>
+<text x="422" y="262" class="s-t">SUMP DEPTH</text>
+
+<!-- control panel on the surface -->
+<g>
+  <rect x="424" y="66" width="52" height="52" class="s-pale"/>
+  <path class="s-th" d="M424 66h52v52h-52z"/>
+  <path class="s-ln" d="M432 80h36M432 90h36M432 100h20"/>
+  <circle cx="464" cy="102" r="4" fill="#0BA6E2"/>
+</g>
+<text x="424" y="58" class="s-t">PANEL</text>
+
+<!-- hand drawn accent marks -->
+<g class="s-acc" opacity=".9">
+  <path d="M110 96q14-20 26-4t24-2"/>
+</g>
+<g class="s-red" opacity=".9">
+  <path d="M496 250l22-16M498 268l24-17M500 286l22-16"/>
+</g>
+<g class="s-acc" opacity=".75">
+  <path d="M74 300q-16 18 2 30"/>
+</g>
+</svg>
+</div>
     </div>
-  </div>
-  <div class="jn-scroll" aria-hidden="true"></div>
-</section>
-
-
-<section class="stmt">
-  <div class="wrap rv">
-    <span class="idx">Our standard</span>
-    <p>A plant that is switched off is <b>not a compliant plant.</b> We scope work against the
-    budget a body can sustain after handover, not the one that wins the award.</p>
-    <div class="attrib">Zero manual entry &middot; Documented disposal &middot; TNPCB compliance</div>
   </div>
 </section>
 
-<section class="sec on-light tint">
-  <div class="wrap">
-    <div class="head-split rv">
-      <div>
-        <span class="idx">Our method</span>
-        <h2>Diagnose first. <em>Then quote.</em></h2>
-      </div>
-      <p class="lede">Six stages, in the same order on every job, from the first site visit to
-      the note that tells the department how to stop it happening again.
-      <a class="ilink" href="about.html">Read the method in full <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+<section class="pr-band" aria-label="Where we mobilise">
+  <p class="pr-band__label pr-label">Where we mobilise</p>
+  <div class="pr-band__track" aria-hidden="true"><div class="pr-band__row"><span>Ariyalur</span><span>Chidambaram</span><span>Cuddalore</span><span>Kumbakonam</span><span>Mannargudi</span><span>Mayiladuthurai</span><span>Nagapattinam</span><span>Perambalur</span><span>Poompuhar</span><span>Sirkazhi</span><span>Thanjavur</span><span>Tharangambadi</span><span>Tiruchirappalli</span><span>Tiruvarur</span><span>Vaitheeswaran Koil</span></div><div class="pr-band__row"><span>Ariyalur</span><span>Chidambaram</span><span>Cuddalore</span><span>Kumbakonam</span><span>Mannargudi</span><span>Mayiladuthurai</span><span>Nagapattinam</span><span>Perambalur</span><span>Poompuhar</span><span>Sirkazhi</span><span>Thanjavur</span><span>Tharangambadi</span><span>Tiruchirappalli</span><span>Tiruvarur</span><span>Vaitheeswaran Koil</span></div></div>
+</section>
+
+<section class="pr-sec">
+  <div class="pr-wrap">
+    <div class="pr-intro pr-rv">
+      <h2 class="pr-h2">Building it and keeping it running are two different problems.</h2>
+      <p class="pr-lede">They need different teams, different mobilisation and different
+      records. Most of the trouble on a municipal contract comes from treating them as
+      one job.</p>
     </div>
-    <ol class="seq stag"><li><span class="seq-n">01</span><span class="seq-t">Inspection</span></li><li><span class="seq-n">02</span><span class="seq-t">Root cause analysis</span></li><li><span class="seq-n">03</span><span class="seq-t">Technical diagnosis</span></li><li><span class="seq-n">04</span><span class="seq-t">Corrective action</span></li><li><span class="seq-n">05</span><span class="seq-t">Performance verification</span></li><li><span class="seq-n">06</span><span class="seq-t">Preventive recommendation</span></li></ol>
+    
+      <div class="pr-row pr-rv">
+        <div class="pr-row__text">
+          <span class="pr-label">Building it</span>
+          <h3 class="pr-h3" style="margin-top:10px">Capital works</h3>
+          <p class="pr-lede">New underground drainage, water mains, stormwater works, structures and road restoration, executed inside a town that has to keep functioning while you dig it up.</p>
+          <ul class="pr-row__list"><li>Programme is written around traffic and access, not around plant availability</li><li>Trench, bedding and reinstatement details agreed before the first cut</li><li>Survey and setting out held in house rather than subcontracted out</li><li>Handover documented so the operating team inherits a record, not a guess</li></ul>
+          <p style="margin:22px 0 0">
+            <a class="pr-btn pr-btn--ghost pr-btn--sm" href="civil-infrastructure-works.html">
+              How we run it <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+        </div>
+        <div class="pr-row__media"><svg class="dia" viewBox="0 0 520 300" role="img" aria-label="A trench cross section showing pipe bedding, surround, backfill layers and the restored road surface above.">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0BA6E2"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="#0BA6E2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M20 70 H500" stroke-width="1.4"/>
+  <g stroke-width="1" opacity=".35">
+    <path d="M20 62 l10 8 M60 62 l10 8 M100 62 l10 8 M140 62 l10 8 M180 62 l10 8
+             M320 62 l10 8 M360 62 l10 8 M400 62 l10 8 M440 62 l10 8 M480 62 l10 8"/>
+  </g>
+  <text x="118" y="52" fill="#0BA6E2" opacity=".5" font-family="IBM Plex Mono, monospace"
+        font-size="9" letter-spacing="1.6" text-anchor="middle" stroke="none">ROAD RESTORED</text>
+
+  <path d="M196 70 V96 H324 V70" stroke-width="1.6"/>
+  <path d="M196 96 V152 M324 96 V152" stroke-width="1.6"/>
+  <path d="M196 152 H324" stroke-width="1.6"/>
+
+  <path d="M196 96 H324" stroke-width="1" opacity=".45"/>
+  <path d="M196 118 H324" stroke-width="1" opacity=".45"/>
+  <g stroke-width=".9" opacity=".3">
+    <path d="M204 78 l8 -8 M228 78 l8 -8 M252 78 l8 -8 M276 78 l8 -8 M300 78 l8 -8"/>
+    <path d="M204 112 l8 -8 M236 112 l8 -8 M268 112 l8 -8 M300 112 l8 -8"/>
+  </g>
+  <circle cx="260" cy="136" r="15" stroke-width="1.8"/>
+  <circle cx="260" cy="136" r="9" stroke-width="1" opacity=".5"/>
+  <path d="M196 152 q32 -4 64 0 t64 0" stroke-width="1" opacity=".45"/>
+
+  <g stroke-width="1" opacity=".5">
+    <path d="M348 70 V152" marker-start="url(#ar)" marker-end="url(#ar)"/>
+    <path d="M342 70 h12 M342 152 h12"/>
+  </g>
+  <text x="372" y="116" fill="#0BA6E2" opacity=".5" font-family="IBM Plex Mono, monospace"
+        font-size="9" letter-spacing="1.4" stroke="none">DEPTH</text>
+
+  <g stroke-width="1" opacity=".38">
+    <path d="M100 172 H180 M100 172 V206 H180 V172"/>
+    <path d="M118 206 V186 M162 206 V186 M118 186 H162"/>
+  </g>
+  <text x="140" y="226" fill="#0BA6E2" opacity=".42" font-family="IBM Plex Mono, monospace"
+        font-size="8.5" letter-spacing="1.3" text-anchor="middle" stroke="none">MANHOLE</text>
+
+  <path d="M20 250 H500" stroke-width="1" opacity=".22"/>
+  <text x="260" y="272" fill="#0BA6E2" opacity=".4" font-family="IBM Plex Mono, monospace"
+        font-size="8.5" letter-spacing="1.6" text-anchor="middle" stroke="none">BEDDING / SURROUND / BACKFILL / WEARING COURSE</text>
+</g>
+</svg></div>
+      </div>
+      <div class="pr-row pr-row--flip pr-rv">
+        <div class="pr-row__text">
+          <span class="pr-label">Keeping it running</span>
+          <h3 class="pr-h3" style="margin-top:10px">Operations and maintenance</h3>
+          <p class="pr-lede">Sewerage networks, pumping stations, treatment plants and water supply assets held to parameter, with the log to show it.</p>
+          <ul class="pr-row__list"><li>Baseline measured before any recommendation is made</li><li>Preventive schedule sized to the budget the body can sustain after handover</li><li>Mechanised cleaning and confined space protocol on every deployment</li><li>Daily monitoring that produces a record the department can put in a file</li></ul>
+          <p style="margin:22px 0 0">
+            <a class="pr-btn pr-btn--ghost pr-btn--sm" href="operation-and-maintenance.html">
+              How we run it <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+        </div>
+        <div class="pr-row__media"><svg class="dia" viewBox="0 0 520 300" role="img" aria-label="A wet well and pump feeding a rising main, with the resulting monitoring trend and maintenance schedule.">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0BA6E2"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="#0BA6E2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M40 96 H150 V244 H40 z" stroke-width="1.6"/>
+  <path d="M40 150 H150" stroke-width="1" opacity=".5"/>
+  <path d="M40 162 q18 -9 36 0 t36 0 t36 0" stroke-width="1.2" opacity=".75"/>
+  <path d="M40 176 q18 -9 36 0 t36 0 t36 0" stroke-width="1" opacity=".4"/>
+  <text x="95" y="128" fill="#0BA6E2" opacity=".5" font-family="IBM Plex Mono, monospace"
+        font-size="9" letter-spacing="1.6" text-anchor="middle" stroke="none">WET WELL</text>
+
+  <circle cx="95" cy="212" r="19" stroke-width="1.6"/>
+  <path d="M95 200 v-8 M83 212 h-8 M107 212 h8 M95 224 v8" stroke-width="1" opacity=".5"/>
+  <path d="M88 205 L104 212 L88 219 z" stroke-width="1.2"/>
+
+  <path d="M114 212 H196 V70 H300" stroke-width="1.8"/>
+  <path d="M114 220 H190 V78 H300" stroke-width="1" opacity=".3"/>
+  <circle cx="196" cy="128" r="9" stroke-width="1.2"/>
+  <path d="M188 128 H204" stroke-width="1.2"/>
+
+  <rect x="300" y="46" width="180" height="94" stroke-width="1.4"/>
+  <path d="M300 118 L332 104 L356 118 L382 82 L410 96 L438 68 L462 78 L480 70"
+        stroke-width="1.5"/>
+  <g opacity=".22" stroke-width=".8">
+    <path d="M300 70 H480 M300 94 H480 M340 46 V140 M400 46 V140 M440 46 V140"/>
+  </g>
+  <circle cx="438" cy="68" r="3.4" fill="#0BA6E2" stroke="none"/>
+  <text x="390" y="160" fill="#0BA6E2" opacity=".5" font-family="IBM Plex Mono, monospace"
+        font-size="9" letter-spacing="1.6" text-anchor="middle" stroke="none">DAILY LOG / TREND</text>
+
+  <path d="M300 196 H480" stroke-width="1" opacity=".3"/>
+  <g stroke-width="1" opacity=".55">
+    <path d="M312 196 v-10 M348 196 v-16 M384 196 v-8 M420 196 v-20 M456 196 v-12"/>
+  </g>
+  <text x="390" y="216" fill="#0BA6E2" opacity=".4" font-family="IBM Plex Mono, monospace"
+        font-size="8.5" letter-spacing="1.4" text-anchor="middle" stroke="none">PREVENTIVE SCHEDULE</text>
+</g>
+</svg></div>
+      </div>
   </div>
 </section>
 
-<section class="sec on-light">
-  <div class="wrap">
-    <div class="head-split rv">
-      <div>
-        <span class="idx">04, Our plant</span>
-        <h2>Plant we own, <em>not plant we hire.</em></h2>
-      </div>
-      <p class="lede">Mobilisation does not wait on a third party, and a breakdown does not
-      stop the job while a hire agreement is renegotiated. The machines are ours.</p>
+<section class="pr-sec pr-sec--tight">
+  <div class="pr-wrap">
+    <div class="pr-intro pr-intro--left pr-rv" style="margin-bottom:36px">
+      <h2 class="pr-h2" style="font-size:clamp(1.6rem,2.9vw,2.3rem)">Working with RD Eco</h2>
+      <p class="pr-lede">The same six stages in the same order on every job, from the first
+      site visit to the note that tells the department how to stop it happening again.</p>
     </div>
-    <div class="fleet stag">
-      <div class="fleet-i">
-        <span class="fleet-k">JCB</span>
-        <h3>Backhoe loaders</h3>
-        <p>Excavation, loading and site clearance on trench, drain and pipeline works.</p>
+    <div class="pr-cards pr-cards--3 pr-rv">
+      <div class="pr-card">
+        <span class="pr-card__k">01</span>
+        <h3 class="pr-h3" style="font-family:var(--p-sans);font-size:1.02rem;font-weight:600">Enquiry</h3>
+        <p>You send the location, the scope and the stage it has reached. We come back within one working day, and say plainly if it is not work we should be doing.</p>
       </div>
-      <div class="fleet-i">
-        <span class="fleet-k">Hitachi</span>
-        <h3>Excavators</h3>
-        <p>Bulk earthwork, deep excavation and material handling on dumpsite remediation.</p>
+      <div class="pr-card">
+        <span class="pr-card__k">02</span>
+        <h3 class="pr-h3" style="font-family:var(--p-sans);font-size:1.02rem;font-weight:600">Site visit</h3>
+        <p>For anything beyond a supply item. A price given without seeing the ground is a price that changes later.</p>
       </div>
-      <div class="fleet-i">
-        <span class="fleet-k">Mixers</span>
-        <h3>Concrete mixers</h3>
-        <p>On site concrete for manholes, chambers, drain sections and restoration.</p>
+      <div class="pr-card">
+        <span class="pr-card__k">03</span>
+        <h3 class="pr-h3" style="font-family:var(--p-sans);font-size:1.02rem;font-weight:600">Proposal</h3>
+        <p>Scope, method, programme and a cost built from the current schedule of rates, with the assumptions written down where you can check them.</p>
       </div>
-      <div class="fleet-i">
-        <span class="fleet-k">Civil</span>
-        <h3>Site plant and tools</h3>
-        <p>Compaction, cutting, dewatering and the small plant a live urban site runs on.</p>
+      <div class="pr-card">
+        <span class="pr-card__k">04</span>
+        <h3 class="pr-h3" style="font-family:var(--p-sans);font-size:1.02rem;font-weight:600">Mobilisation</h3>
+        <p>Plant and crew from Sirkazhi, within a day across the delta districts. Records and reporting formats agreed before work starts.</p>
+      </div>
+      <div class="pr-card">
+        <span class="pr-card__k">05</span>
+        <h3 class="pr-h3" style="font-family:var(--p-sans);font-size:1.02rem;font-weight:600">Execution</h3>
+        <p>Joint measurement as the work proceeds, with the agreed documentation produced at the interval you asked for rather than at the end.</p>
+      </div>
+      <div class="pr-card">
+        <span class="pr-card__k">06</span>
+        <h3 class="pr-h3" style="font-family:var(--p-sans);font-size:1.02rem;font-weight:600">Handover and after</h3>
+        <p>Completion documentation, as executed records, and the operating arrangement if the contract carries one.</p>
       </div></div>
   </div>
 </section>
-<section class="sec on-dark">
-  <div class="wrap">
-    <div class="head-split rv">
-      <div>
-        <span class="idx">What makes us different</span>
-        <h2>We find the cause <em>before we quote the repair.</em></h2>
-      </div>
-      <p class="lede">Most contractors attend the complaint. We assess the site, analyse the
-      cause and classify the fault before proposing anything, because a temporary repair on a
-      misdiagnosed problem is money the department spends twice.</p>
+
+<section class="pr-sec">
+  <div class="pr-wrap">
+    <div class="pr-intro pr-rv">
+      <h2 class="pr-h2">Where the problem sits decides how we start.</h2>
+      <p class="pr-lede">Departments arrive at four different points. None of them is the
+      beginning of a standard playbook.</p>
     </div>
-    <div class="doms stag">
-      <article class="dom">
-        <div class="dom-h">
-          <span class="dom-n">01</span>
-          <div>
-            <h3>Underground drainage</h3>
-            <span class="dom-k">UGD and sewerage</span>
-          </div>
+    <div class="pr-cards pr-cards--4 pr-rv">
+      <div class="pr-card">
+        <h3 class="pr-h3" style="font-family:var(--p-sans);font-size:1.05rem;font-weight:600">A scheme is at DPR or tender stage</h3>
+        <p>The documentation has to stand up to technical scrutiny before it stands up to audit. We start at the estimate, not at the drawing.</p>
+        <div class="pr-card__foot">
+          <a class="pr-btn pr-btn--ghost pr-btn--sm" href="project-consultancy.html">Project Consultancy <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-        <p class="dom-l">We diagnose the hydraulic failure, then restore performance rather than clearing the symptom.</p>
-        <div class="dom-w">What we assess</div>
-        <div class="dom-a"><span>Sewer blockages and repeated overflows</span><span>Improper gradients and pipeline level mismatch</span><span>Damaged or collapsed pipelines</span><span>Silt accumulation and inadequate flow velocity</span><span>Manhole defects</span><span>Infiltration and inflow</span><span>Pumping system failures</span></div>
-      </article>
-      <article class="dom">
-        <div class="dom-h">
-          <span class="dom-n">02</span>
-          <div>
-            <h3>Wastewater treatment</h3>
-            <span class="dom-k">STP and process plant</span>
-          </div>
+      </div>
+      <div class="pr-card">
+        <h3 class="pr-h3" style="font-family:var(--p-sans);font-size:1.05rem;font-weight:600">A plant or network is not holding parameter</h3>
+        <p>We measure before we quote. An underperforming plant usually fails somewhere other than where the complaint says it does.</p>
+        <div class="pr-card__foot">
+          <a class="pr-btn pr-btn--ghost pr-btn--sm" href="operation-and-maintenance.html">Operation & Maintenance <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-        <p class="dom-l">We establish whether the problem is civil, mechanical, electrical, hydraulic or process, because the wrong classification produces the wrong repair.</p>
-        <div class="dom-w">What we assess</div>
-        <div class="dom-a"><span>Hydraulic loading against design</span><span>Treatment process efficiency</span><span>Equipment performance</span><span>Aeration</span><span>Sludge handling</span><span>Pumping operations</span><span>Treated effluent quality and compliance</span></div>
-      </article>
-      <article class="dom">
-        <div class="dom-h">
-          <span class="dom-n">03</span>
-          <div>
-            <h3>Solid waste management</h3>
-            <span class="dom-k">Collection to disposal</span>
-          </div>
+      </div>
+      <div class="pr-card">
+        <h3 class="pr-h3" style="font-family:var(--p-sans);font-size:1.05rem;font-weight:600">Work has to be executed in a live town</h3>
+        <p>Access, traffic and reinstatement decide whether a civil job is remembered well. We programme around them from the start.</p>
+        <div class="pr-card__foot">
+          <a class="pr-btn pr-btn--ghost pr-btn--sm" href="civil-infrastructure-works.html">Civil Infrastructure Works <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-        <p class="dom-l">We measure the operation before recommending resources, because most collection problems are routing and utilisation, not headcount.</p>
-        <div class="dom-w">What we assess</div>
-        <div class="dom-a"><span>Collection efficiency</span><span>Route planning</span><span>Manpower deployment</span><span>Vehicle utilisation</span><span>Waste segregation at source</span><span>Transportation and processing</span><span>Disposal practice</span></div>
-      </article>
-      <article class="dom">
-        <div class="dom-h">
-          <span class="dom-n">04</span>
-          <div>
-            <h3>Civil works</h3>
-            <span class="dom-k">Structures and site</span>
-          </div>
+      </div>
+      <div class="pr-card">
+        <h3 class="pr-h3" style="font-family:var(--p-sans);font-size:1.05rem;font-weight:600">A compliance condition has to be answered</h3>
+        <p>A TNPCB condition, a consent renewal or a septage problem needs a technical answer with a disposal record behind it.</p>
+        <div class="pr-card__foot">
+          <a class="pr-btn pr-btn--ghost pr-btn--sm" href="environmental-solutions.html">Environmental Solutions <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-        <p class="dom-l">We work from actual field conditions rather than from the drawing, because the site is what the work has to survive.</p>
-        <div class="dom-w">What we assess</div>
-        <div class="dom-a"><span>Structural condition</span><span>Construction quality and workmanship</span><span>Levels and alignment</span><span>Drainage arrangements</span><span>Material performance</span><span>Site specific constraints</span><span>Safety and long term operational needs</span></div>
-      </article></div>
+      </div></div>
   </div>
 </section>
 
+<section class="pr-plate">
+  <div class="pr-wrap">
+    <div class="pr-plate__grid">
+      <div class="pr-rv">
+        <h2 class="pr-h2">Built to survive the operating years.</h2>
+        <p class="pr-lede">A trench is judged on the reinstatement, and the reinstatement is
+        judged in the second monsoon. We detail bedding, surround, backfill and surface before
+        the first cut, and we hand over the record that proves what went in.</p>
+        <p style="margin-top:24px">
+          <a class="pr-btn pr-btn--ghost" href="civil-infrastructure-works.html">
+            Civil infrastructure works <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+      </div>
+      <div class="pr-plate__art pr-rv">
+<svg class="pr-scene" viewBox="0 0 620 300" role="img"
+     xmlns="http://www.w3.org/2000/svg"
+     aria-label="Sectional drawing of a trench, bedding, pipe and reinstated road surface">
+<defs>
+  <pattern id="prSoil2" width="7" height="7" patternUnits="userSpaceOnUse"
+           patternTransform="rotate(40)">
+    <line x1="0" y1="0" x2="0" y2="7" stroke="#F6F6F1" stroke-width=".5" opacity=".38"/>
+  </pattern>
+  <pattern id="prAgg" width="9" height="9" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1.3" fill="#F6F6F1" opacity=".5"/>
+    <circle cx="6.5" cy="6" r="1" fill="#F6F6F1" opacity=".4"/>
+  </pattern>
+</defs>
+<g stroke="#F6F6F1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- existing carriageway either side -->
+  <path stroke-width="1.9" d="M20 74h190M410 74h190"/>
+  <path stroke-width="1.1" opacity=".6" d="M20 92h190M410 92h190"/>
+  <rect x="20" y="74" width="190" height="18" fill="url(#prSoil2)" stroke="none"/>
+  <rect x="410" y="74" width="190" height="18" fill="url(#prSoil2)" stroke="none"/>
 
-<section class="sec on-dark">
-  <div class="wrap narrow rv">
-    <span class="idx">06, Questions</span>
-    <h2 style="margin-bottom:52px">Questions departments ask first</h2>
-    <div class="faq"><details><summary>Which districts and Urban Local Bodies do you serve?</summary><div class="a">We are based in Sirkazhi, Mayiladuthurai District, and work with municipal corporations, municipalities, town panchayats, water and sewerage boards and government departments across Tamil Nadu. Mobilisation outside our home district is routine and is planned into the contract programme rather than treated as an exception.</div></details><details><summary>What services can be combined under a single contract?</summary><div class="a">Consultancy, civil execution, operation and maintenance, solid waste management, environmental works, equipment supply and manpower deployment. The advantage of that range is accountability, a scheme that is designed, built and then operated by the same organisation has nobody to hand the problem to when performance falls short.</div></details><details><summary>What registration and statutory details do you provide with a bid?</summary><div class="a">The registration, GST, PAN and statutory compliance documents required by the tender are submitted with the technical cover. Please request our current credentials pack and we will send the applicable documents for the work you are tendering.</div></details><details><summary>How do we start a conversation about a project?</summary><div class="a">Send the tender document, or a short description of the site, scope and timeline, by email or phone. We will tell you quickly whether we are the right fit, including when we are not, which saves both sides time at evaluation.</div></details></div>
+  <!-- trench walls -->
+  <path stroke-width="1.9" d="M210 74v152h200V74"/>
+  <rect x="20" y="92" width="190" height="180" fill="url(#prSoil2)" stroke="none" opacity=".5"/>
+  <rect x="410" y="92" width="190" height="180" fill="url(#prSoil2)" stroke="none" opacity=".5"/>
+
+  <!-- reinstatement layers -->
+  <rect x="210" y="74" width="200" height="16" fill="#0BA6E2" opacity=".5" stroke="none"/>
+  <path stroke-width="1.1" d="M210 90h200"/>
+  <rect x="210" y="90" width="200" height="22" fill="url(#prAgg)" stroke="none"/>
+  <path stroke-width="1.1" opacity=".7" d="M210 112h200"/>
+
+  <!-- backfill -->
+  <rect x="210" y="112" width="200" height="66" fill="url(#prSoil2)" stroke="none" opacity=".7"/>
+  <path stroke-width="1.1" opacity=".7" d="M210 178h200"/>
+
+  <!-- surround and pipe -->
+  <rect x="210" y="178" width="200" height="48" fill="url(#prAgg)" stroke="none"/>
+  <circle cx="310" cy="200" r="27" fill="#0BA6E2" opacity=".28" stroke="none"/>
+  <circle cx="310" cy="200" r="27" stroke-width="1.9"/>
+  <circle cx="310" cy="200" r="21" stroke-width="1.1" opacity=".75"/>
+
+  <!-- bedding -->
+  <path stroke-width="1.9" d="M210 226h200"/>
+
+  <!-- level pegs -->
+  <path stroke-width=".8" opacity=".55" d="M310 60v-24M296 40h28"/>
+  <path stroke-width=".8" opacity=".55" d="M448 74v152" marker-start="" />
+  <path stroke-width=".8" opacity=".55" d="M442 74h12M442 226h12"/>
+</g>
+<g font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".07em" fill="#A9A9A4">
+  <text x="216" y="70">REINSTATEMENT</text>
+  <text x="216" y="128">BACKFILL, COMPACTED IN LAYERS</text>
+  <text x="216" y="246">PIPE SURROUND AND BEDDING</text>
+  <text x="458" y="154">TRENCH DEPTH</text>
+  <text x="286" y="32">CENTRE LINE</text>
+</g>
+<g stroke="#C42834" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".85">
+  <path d="M96 176l20-15M98 194l22-16"/>
+</g>
+<g stroke="#0BA6E2" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".8">
+  <path d="M520 150q16 16-2 30"/>
+</g>
+</svg>
+</div>
+    </div>
+  </div>
+  <div class="pr-plate__floor" aria-hidden="true"></div>
+</section>
+
+<section class="pr-sec pr-sec--dark">
+  <div class="pr-wrap">
+    <div class="pr-intro pr-rv" style="margin-bottom:52px">
+      <h2 class="pr-h2">Eight divisions connected to one outcome.</h2>
+      <p class="pr-lede">Consultancy through to operation, under one contracting party. A
+      department that needs three of these does not have to run three procurements.</p>
+    </div>
+    <div class="pr-cards pr-cards--4 pr-rv">
+      <div class="pr-rail">
+        <span class="pr-rail__k">DIVISION A</span>
+        <h3 class="pr-h3">Project Consultancy</h3>
+        <p>The paperwork that decides whether a scheme gets sanctioned.</p>
+        <div class="pr-rail__foot">
+          <a class="pr-rail__link" href="project-consultancy.html">Learn more</a>
+        </div>
+      </div>
+      <div class="pr-rail">
+        <span class="pr-rail__k">DIVISION B</span>
+        <h3 class="pr-h3">Operation &amp; Maintenance</h3>
+        <p>Keeping what is already built performing to its design figures.</p>
+        <div class="pr-rail__foot">
+          <a class="pr-rail__link" href="operation-and-maintenance.html">Learn more</a>
+        </div>
+      </div>
+      <div class="pr-rail">
+        <span class="pr-rail__k">DIVISION C</span>
+        <h3 class="pr-h3">Civil Infrastructure Works</h3>
+        <p>Building in a live town, around traffic, services and residents.</p>
+        <div class="pr-rail__foot">
+          <a class="pr-rail__link" href="civil-infrastructure-works.html">Learn more</a>
+        </div>
+      </div>
+      <div class="pr-rail">
+        <span class="pr-rail__k">DIVISION D</span>
+        <h3 class="pr-h3">Solid Waste Management</h3>
+        <p>From the household bin to the processing yard and the old dump.</p>
+        <div class="pr-rail__foot">
+          <a class="pr-rail__link" href="solid-waste-management.html">Learn more</a>
+        </div>
+      </div>
+      <div class="pr-rail">
+        <span class="pr-rail__k">DIVISION E</span>
+        <h3 class="pr-h3">Environmental Solutions</h3>
+        <p>Answering a compliance condition with a process fix, not a promise.</p>
+        <div class="pr-rail__foot">
+          <a class="pr-rail__link" href="environmental-solutions.html">Learn more</a>
+        </div>
+      </div>
+      <div class="pr-rail">
+        <span class="pr-rail__k">DIVISION F</span>
+        <h3 class="pr-h3">Equipment &amp; Technical Solutions</h3>
+        <p>Machinery specified against the duty it actually has to do.</p>
+        <div class="pr-rail__foot">
+          <a class="pr-rail__link" href="equipment-technical-solutions.html">Learn more</a>
+        </div>
+      </div>
+      <div class="pr-rail">
+        <span class="pr-rail__k">DIVISION G</span>
+        <h3 class="pr-h3">Manpower Services</h3>
+        <p>Crews on site, and the statutory record to prove it.</p>
+        <div class="pr-rail__foot">
+          <a class="pr-rail__link" href="manpower-services.html">Learn more</a>
+        </div>
+      </div>
+      <div class="pr-rail">
+        <span class="pr-rail__k">DIVISION H</span>
+        <h3 class="pr-h3">Survey &amp; Investigation</h3>
+        <p>Levels and alignment taken on the ground, not off an old drawing.</p>
+        <div class="pr-rail__foot">
+          <a class="pr-rail__link" href="survey-and-investigation.html">Learn more</a>
+        </div>
+      </div></div>
+    <p style="margin:40px 0 0;text-align:center">
+      <a class="pr-btn" href="services.html">All eight divisions <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
   </div>
 </section>
-<section class="cta-band">
-  <div class="wrap rv">
-    <h2>Let&rsquo;s build sustainable infrastructure together.</h2>
-    <p>Tell us about the project, the site and the timeline. We&rsquo;ll come back with a practical scope and a realistic cost.</p>
-    <div class="hero-btns" style="margin-top:0">
-      <a class="btn btn-p" href="contact.html">Contact us <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="btn btn-s" href="services.html">Our services</a>
+
+<section class="pr-sec pr-sec--tight">
+  <div class="pr-wrap">
+    <div class="pr-intro pr-intro--left pr-rv" style="margin-bottom:30px">
+      <h2 class="pr-h2" style="font-size:clamp(1.5rem,2.6vw,2rem)">The shape of the company</h2>
+    </div>
+    <div class="pr-stats pr-rv"><div class="pr-stat"><span class="pr-stat__n">8</span><span class="pr-stat__t">Service divisions, all under one contracting party</span></div><div class="pr-stat"><span class="pr-stat__n">8</span><span class="pr-stat__t">Districts across the delta region we work in</span></div><div class="pr-stat"><span class="pr-stat__n">4</span><span class="pr-stat__t">Types of Urban Local Body we are set up to contract with</span></div><div class="pr-stat"><span class="pr-stat__n">3</span><span class="pr-stat__t">Companies in the group, so one scheme needs one procurement</span></div></div>
+  </div>
+</section>
+
+<section class="pr-sec">
+  <div class="pr-wrap">
+    <div class="pr-intro pr-rv">
+      <h2 class="pr-h2">Most contractors deliver scope. We answer for what it does afterwards.</h2>
+      <p class="pr-lede">The difference shows up in the third year of a contract, which is exactly when nobody is watching.</p>
+    </div>
+    <div class="pr-vs pr-rv">
+      <div class="pr-vs__col pr-vs__col--them">
+        <p class="pr-vs__h">Scope delivered</p>
+        <ul><li>Priced against the tender drawing and defended against it later</li><li>Complaint attended, symptom cleared, cause left in place</li><li>Preventive schedule written for the bid, sized for nobody's budget</li><li>Records produced when an inspection is announced</li><li>Handover is a set of files and the end of the relationship</li><li>Divisions subcontracted out, so nobody answers for the whole</li></ul>
+      </div>
+      <div class="pr-vs__col pr-vs__col--us">
+        <p class="pr-vs__h">Outcome held</p>
+        <ul><li>Priced against what the site actually is, after we have been to it</li><li>Root cause identified through site assessment before a solution is proposed</li><li>Schedule sized to the budget the body can sustain once we have gone</li><li>Records produced daily, because that is the only way they are true</li><li>Handover is the point the operating years start being measured</li><li>One contracting party, one bill, one person who answers for all of it</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pr-sec pr-sec--sand">
+  <div class="pr-wrap">
+    <div class="pr-intro pr-rv">
+      <h2 class="pr-h2">We do not just execute. We have a position.</h2>
+      <p class="pr-lede">Four things we will not price differently to win an award.</p>
+    </div>
+    <div class="pr-cards pr-cards--2 pr-rv" style="gap:40px">
+      <div>
+        <h3 class="pr-h3">One contract, one point of contact</h3>
+        <p class="pr-lede" style="font-size:.95rem">Whichever divisions a scheme touches, the department deals with a single contracting party, a single bill and a single person who answers for the whole of it.</p>
+      </div>
+      <div>
+        <h3 class="pr-h3">Zero manual entry, without exception</h3>
+        <p class="pr-lede" style="font-size:.95rem">Mechanised cleaning and confined space protocol on every sewerage deployment. This is not negotiable on price and never has been.</p>
+      </div>
+      <div>
+        <h3 class="pr-h3">Documented as the work proceeds</h3>
+        <p class="pr-lede" style="font-size:.95rem">Daily logs, joint measurement, disposal records and monthly reporting are set up in the first week, not reconstructed at the final bill.</p>
+      </div>
+      <div>
+        <h3 class="pr-h3">Scoped to what can be sustained</h3>
+        <p class="pr-lede" style="font-size:.95rem">Against the operating budget a body will actually have after handover, rather than the sanction figure that wins the award.</p>
+      </div></div>
+  </div>
+</section>
+
+<section class="pr-sec">
+  <div class="pr-wrap">
+    <div class="pr-intro pr-rv">
+      <h2 class="pr-h2">Questions departments ask first</h2>
+    </div>
+    <div class="pr-faq pr-rv"><details><summary>Which districts and Urban Local Bodies do you serve?</summary><div class="pr-faq__a">We are based in Sirkazhi, Mayiladuthurai District, and work with municipal corporations, municipalities, town panchayats, water and sewerage boards and government departments across Tamil Nadu. Mobilisation outside our home district is routine and is planned into the contract programme rather than treated as an exception.</div></details><details><summary>What services can be combined under a single contract?</summary><div class="pr-faq__a">Consultancy, civil execution, operation and maintenance, solid waste management, environmental works, equipment supply and manpower deployment. The advantage of that range is accountability, a scheme that is designed, built and then operated by the same organisation has nobody to hand the problem to when performance falls short.</div></details><details><summary>What registration and statutory details do you provide with a bid?</summary><div class="pr-faq__a">The registration, GST, PAN and statutory compliance documents required by the tender are submitted with the technical cover. Please request our current credentials pack and we will send the applicable documents for the work you are tendering.</div></details><details><summary>How do we start a conversation about a project?</summary><div class="pr-faq__a">Send the tender document, or a short description of the site, scope and timeline, by email or phone. We will tell you quickly whether we are the right fit, including when we are not, which saves both sides time at evaluation.</div></details></div>
+  </div>
+</section>
+
+<section class="pr-final">
+  <div class="pr-wrap">
+    <div class="pr-rv">
+      <h2 class="pr-h2">Tell us the site, the stage and the problem.</h2>
+      <p class="pr-lede">We come back within one working day with a practical scope and a realistic cost, and we say plainly if it is not work we should be doing.</p>
+      <div class="pr-final__cta">
+        <a class="pr-btn" href="contact.html">Start an enquiry <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="pr-btn pr-btn--ghost" href="tel:+919659443759">+91 96594 43759</a>
+      </div>
     </div>
   </div>
 </section>
@@ -2573,6 +2979,31 @@ input,select,textarea{border-radius:var(--r)}
         if (btn) { btn.disabled = false; btn.textContent = original; }
       });
   });
+})();
+
+
+/* scroll reveal, pr layer */
+(function () {
+  var els = document.querySelectorAll(".pr-rv");
+  if (!els.length) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !("IntersectionObserver" in window)) {
+    Array.prototype.forEach.call(els, function (el) { el.classList.add("is-in"); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+    });
+  }, { rootMargin: "0px 0px -6% 0px", threshold: 0.04 });
+  Array.prototype.forEach.call(els, function (el) { io.observe(el); });
+  // safety: anything still hidden after 3s gets revealed
+  setTimeout(function () {
+    Array.prototype.forEach.call(document.querySelectorAll(".pr-rv:not(.is-in)"), function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight) el.classList.add("is-in");
+    });
+  }, 3000);
 })();
 
 /* scroll reveal */

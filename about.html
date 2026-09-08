@@ -106,7 +106,7 @@ p + p{margin-top:1.1em}
   font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
   color:var(--ink-3);margin-bottom:26px;display:block;
 }
-.on-dark .idx,.stmt .idx,.hero .idx,.page-hero .idx,.page-hero .crumb{color:#A8A8A2}
+.on-dark .idx,.stmt .idx,.hero .idx{color:#A8A8A2}
 
 /* ── dark / light grounds ───────────────────────────────────── */
 .on-dark{background:var(--void);color:#EFEEE7}
@@ -178,8 +178,8 @@ p + p{margin-top:1.1em}
 .btn-p:hover{background:var(--lime-2);transform:translateY(-2px)}
 .btn-s{border-color:rgba(12,26,20,.24);color:var(--ink)}
 .btn-s:hover{border-color:var(--ink);background:var(--ink);color:var(--bone)}
-.on-dark .btn-s,.hero .btn-s,.stmt .btn-s,.page-hero .btn-s,.cta-band .btn-s{border-color:rgba(239,238,231,.3);color:#F7F6F1;background:transparent}
-.on-dark .btn-s:hover,.hero .btn-s:hover,.stmt .btn-s:hover,.page-hero .btn-s:hover{border-color:#F7F6F1;background:rgba(255,255,255,.08);color:#F7F6F1}
+.on-dark .btn-s,.hero .btn-s,.stmt .btn-s{border-color:rgba(239,238,231,.3);color:#F7F6F1;background:transparent}
+.on-dark .btn-s:hover,.hero .btn-s:hover,.stmt .btn-s:hover{border-color:#F7F6F1;background:rgba(255,255,255,.08);color:#F7F6F1}
 .on-light .btn-s{border-color:rgba(12,26,20,.22);color:var(--ink)}
 .on-light .btn-s:hover{border-color:var(--ink);background:var(--ink);color:var(--bone)}
 .btn-d{background:var(--void);color:#F7F6F1}
@@ -721,8 +721,9 @@ form h3{color:#F7F6F1;font-size:1.5rem;font-weight:700}
 .concept .dia{width:100%;height:auto;display:block}
 .concept figcaption{
   margin-top:18px;padding-top:16px;border-top:1px solid var(--line-d);
-  font-size:14px;line-height:1.6;color:rgba(239,238,231,.6);max-width:52ch;
+  font-size:14px;line-height:1.6;color:var(--ink-2);max-width:52ch;
 }
+.on-dark .concept figcaption,.stmt .concept figcaption{color:rgba(239,238,231,.72)}
 /* the drawing traces itself in once, then holds */
 .concept .dia g > *{
   stroke-dasharray:1200;stroke-dashoffset:1200;
@@ -1952,6 +1953,17 @@ body.pr{background:var(--p-cream);color:var(--p-ink);font-family:var(--p-sans);
 .on-p-dark .pr-lede,.on-p-dark p{color:#D2D2CC}
 .on-p-dark .pr-label{color:#9E9E98}
 .on-p-dark .pr-eyebrow{color:#F26671}
+.pr-h1--soft{color:#6B6B6B;font-weight:600;display:block}
+.pr-h1--strong{color:var(--p-ink);font-weight:700;display:block}
+.on-p-dark .pr-h1--soft{color:#9A9A94}
+.on-p-dark .pr-h1--strong{color:var(--p-cream)}
+
+/* eyebrow above a section heading, uppercase and letterspaced */
+.pr-kick{font-family:var(--p-sans);font-weight:700;font-size:.78rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--p-ink-3);
+  display:block;margin:0 0 14px}
+.on-p-dark .pr-kick{color:#9E9E98}
+
 .pr-em{font-family:var(--p-serif);font-style:italic;font-weight:700;
   border-bottom:2px solid var(--p-acc);padding-bottom:2px}
 .pr-label{font-family:var(--p-sans);font-weight:500;font-size:.775rem;
@@ -2053,13 +2065,14 @@ body.pr{background:var(--p-cream);color:var(--p-ink);font-family:var(--p-sans);
 .pr-plate__art svg{width:100%;height:auto;display:block}
 
 /* ── stat band ── */
-.pr-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:0;border-top:1px solid var(--p-line);border-bottom:1px solid var(--p-line)}
-.pr-stat{padding:32px 26px;border-right:1px solid var(--p-line)}
-.pr-stat:last-child{border-right:0}
-.pr-stat__n{font-family:var(--p-serif);font-weight:600;font-size:2.7rem;line-height:1;
-  color:var(--p-ink);display:block;margin-bottom:9px;font-variant-numeric:tabular-nums}
-.pr-stat__t{font-size:.88rem;color:var(--p-ink-2);line-height:1.45;display:block}
+.pr-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.pr-stat{padding:30px 24px;border:1px solid var(--p-line);border-radius:5px;
+  background:var(--p-white);text-align:center}
+.pr-stat__n{font-family:var(--p-serif);font-weight:700;font-size:2.9rem;line-height:1;
+  color:var(--p-ink);display:block;margin-bottom:12px;font-variant-numeric:tabular-nums}
+.pr-stat__t{font-family:var(--p-sans);font-size:.76rem;font-weight:600;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--p-ink-2);
+  line-height:1.5;display:block}
 
 /* ── comparison ── */
 .pr-vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
@@ -2186,10 +2199,108 @@ body.pr .drop-t .chev{color:var(--p-ink-3);opacity:1}
   body.pr .drop-in > a,body.pr .drop-all{background:var(--p-cream)}
 }
 
+
+/* ══ inner pages ═══════════════════════════════════════════════════
+   PipeRocket runs the same design language on every page: cream hero,
+   the same type scale, the same chrome. RD Eco's inner pages were a
+   dark hero with a 99px headline against a 47px one on the home page,
+   which is what made the site read as two different sites. */
+body.pr .page-hero{background:var(--p-cream);color:var(--p-ink);
+  padding:58px 0 66px;border-bottom:1px solid var(--p-line)}
+body.pr .page-hero::after{display:none}
+body.pr .page-hero .crumb,body.pr .page-hero .idx{
+  font-family:var(--p-sans);font-weight:700;font-size:.78rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--p-ink-3);margin-bottom:18px}
+body.pr .page-hero .crumb a{color:var(--p-ink-3)}
+body.pr .page-hero .crumb a:hover{color:var(--p-ink)}
+body.pr .page-hero h1{font-family:var(--p-serif);font-weight:700;
+  font-size:clamp(2rem,4.1vw,2.75rem);line-height:1.15;letter-spacing:-.015em;
+  color:var(--p-ink);max-width:19ch;margin:0 0 20px;text-wrap:balance}
+body.pr .page-hero .lede{font-family:var(--p-sans);font-size:1.02rem;
+  line-height:1.62;color:var(--p-ink-2);max-width:62ch}
+
+/* the eight service pages use a split hero of their own */
+body.pr .svc-hero-split{background:var(--p-cream);color:var(--p-ink);
+  border-bottom:1px solid var(--p-line);padding:52px 0 60px}
+body.pr .svc-hero-split::after{display:none}
+body.pr .svc-hero-split h1{font-family:var(--p-serif);font-weight:700;
+  font-size:clamp(2rem,4.1vw,2.75rem);line-height:1.15;letter-spacing:-.015em;
+  color:var(--p-ink)}
+body.pr .svc-hero-split h1 i{font-style:italic}
+body.pr .svc-hero-split .lede{color:var(--p-ink-2)}
+body.pr .svc-hero-split .crumb,body.pr .svc-hero-split .idx{color:var(--p-ink-3)}
+
+/* the older dark blocks stay as punctuation but take the new palette */
+body.pr .on-dark,body.pr .stmt{background:var(--p-dark)}
+body.pr .sec.tint{background:var(--p-sand-2)}
+body.pr .sec.on-light{background:var(--p-cream)}
+body.pr h2{font-family:var(--p-serif);font-weight:700;letter-spacing:-.01em}
+body.pr h3{font-family:var(--p-serif);font-weight:600}
+body.pr .card,body.pr .row,body.pr .box{border-radius:5px}
+
+/* footer, matching PipeRocket's: uppercase column headers, a tagline under
+   the mark, and a plain description block below the rule */
+
+/* the inner hero is a two column split like the service pages and like
+   PipeRocket's, so the headline does not sit against dead space */
+body.pr .page-hero .ph-grid{display:grid;
+  grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:56px;align-items:center}
+body.pr .page-hero .ph-grid > div:first-child{max-width:600px}
+body.pr .page-hero .ph-art{background:var(--p-sand);border:1px solid var(--p-line-2);
+  border-radius:5px;padding:24px}
+body.pr .page-hero .ph-art svg{width:100%;height:auto;display:block;
+  color:var(--p-ink-2)}
+/* the engineering drawings trace themselves in, and that only completes inside
+   a reveal wrapper. There is none in the hero, so the strokes would sit fully
+   dashed off and the drawing would render as labels on an empty panel. */
+body.pr .ph-art .dwg .d-line,
+body.pr .ph-art .dwg .d-flow,
+body.pr .ph-art .dwg .d-dim{stroke-dasharray:none;stroke-dashoffset:0}
+body.pr .page-hero .ph-art figcaption{margin-top:16px;padding-top:14px;
+  border-top:1px solid var(--p-line-2);font-size:.82rem;line-height:1.55;
+  color:var(--p-ink-2)}
+@media (max-width:900px){
+  body.pr .page-hero .ph-grid{grid-template-columns:1fr;gap:30px}
+  body.pr .page-hero .ph-art{order:-1}
+}
+
+body.pr .ftr h4{font-family:var(--p-sans);font-weight:700;font-size:.78rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--p-ink-3)}
+body.pr .ftr-about{border-top:1px solid var(--p-line-2);margin-top:8px;
+  padding:26px 0 30px}
+body.pr .ftr-about h5{font-family:var(--p-sans);font-weight:700;font-size:.78rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--p-ink-3);margin:0 0 10px}
+body.pr .ftr-about p{font-size:.88rem;line-height:1.65;color:var(--p-ink-2);
+  margin:0;max-width:none}
+
 body.pr .ftr{background:var(--p-sand);color:var(--p-ink-2);
   border-top:1px solid var(--p-line-2);padding-top:76px}
 body.pr .ftr a{color:var(--p-ink-2)}
 body.pr .ftr a:hover{color:var(--p-acc-d)}
+
+/* the inner hero is a two column split like the service pages and like
+   PipeRocket's, so the headline does not sit against dead space */
+body.pr .page-hero .ph-grid{display:grid;
+  grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:56px;align-items:center}
+body.pr .page-hero .ph-grid > div:first-child{max-width:600px}
+body.pr .page-hero .ph-art{background:var(--p-sand);border:1px solid var(--p-line-2);
+  border-radius:5px;padding:24px}
+body.pr .page-hero .ph-art svg{width:100%;height:auto;display:block;
+  color:var(--p-ink-2)}
+/* the engineering drawings trace themselves in, and that only completes inside
+   a reveal wrapper. There is none in the hero, so the strokes would sit fully
+   dashed off and the drawing would render as labels on an empty panel. */
+body.pr .ph-art .dwg .d-line,
+body.pr .ph-art .dwg .d-flow,
+body.pr .ph-art .dwg .d-dim{stroke-dasharray:none;stroke-dashoffset:0}
+body.pr .page-hero .ph-art figcaption{margin-top:16px;padding-top:14px;
+  border-top:1px solid var(--p-line-2);font-size:.82rem;line-height:1.55;
+  color:var(--p-ink-2)}
+@media (max-width:900px){
+  body.pr .page-hero .ph-grid{grid-template-columns:1fr;gap:30px}
+  body.pr .page-hero .ph-art{order:-1}
+}
+
 body.pr .ftr h4{color:var(--p-ink)}
 body.pr .ftr .logo-n{color:var(--p-ink)}
 body.pr .ftr .about{color:var(--p-ink-2)}
@@ -2217,17 +2328,12 @@ body.pr .pr-row__media svg{max-height:none}
   .pr-plate__grid{grid-template-columns:1fr;gap:26px}
   .pr-cards--3{grid-template-columns:repeat(2,minmax(0,1fr))}
   .pr-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .pr-stat{border-bottom:1px solid var(--p-line)}
-  .pr-stat:nth-child(2n){border-right:0}
-  .pr-stat:nth-last-child(-n+2){border-bottom:0}
   .pr-vs{grid-template-columns:1fr}
 }
 @media (max-width:560px){
   :root{--p-pad:48px;--p-gut:18px}
   .pr-cards--4,.pr-cards--3,.pr-cards--2{grid-template-columns:1fr}
   .pr-stats{grid-template-columns:1fr}
-  .pr-stat{border-right:0;border-bottom:1px solid var(--p-line)}
-  .pr-stat:last-child{border-bottom:0}
   .pr-faq summary{padding-right:34px;font-size:.97rem}
   .pr-faq .pr-faq__a{padding-right:20px}
   .pr-intro{margin-bottom:38px}
@@ -2280,7 +2386,7 @@ body.pr .pr-row__media svg{max-height:none}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"@id":"https://rdecosolutions.org/#organization","name":"RD Eco Solutions","url":"https://rdecosolutions.org/","image":"https://rdecosolutions.org/og-card.png","logo":"https://rdecosolutions.org/apple-touch-icon.png","priceRange":"Quoted per project","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}],"description":"Civil and environmental infrastructure services for Urban Local Bodies and public sector organisations in Tamil Nadu, project consultancy, operation and maintenance, civil works, solid waste management, environmental solutions, equipment and manpower.","email":"rdecosolutionsofficial@gmail.com","telephone":"+919659443759","address":{"@type":"PostalAddress","addressLocality":"Sirkazhi","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":[{"@type":"State","name":"Tamil Nadu"},{"@type":"AdministrativeArea","name":"Mayiladuthurai"},{"@type":"AdministrativeArea","name":"Nagapattinam"},{"@type":"AdministrativeArea","name":"Thanjavur"},{"@type":"AdministrativeArea","name":"Tiruvarur"},{"@type":"AdministrativeArea","name":"Cuddalore"},{"@type":"AdministrativeArea","name":"Ariyalur"},{"@type":"AdministrativeArea","name":"Perambalur"},{"@type":"AdministrativeArea","name":"Tiruchirappalli"}],"knowsAbout":["Project Consultancy","Operation & Maintenance","Civil Infrastructure Works","Solid Waste Management","Environmental Solutions","Equipment & Technical Solutions","Manpower Services","Survey & Investigation"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+919659443759","email":"rdecosolutionsofficial@gmail.com","availableLanguage":["en","ta"]},"subOrganization":[{"@type":"Organization","name":"Sabareesan Civil Constructions","description":"Roads, drainage and stormwater works, structures, and technical and topographic survey.","url":"https://rdecosolutions.org/sabareesan-civil-constructions.html"},{"@type":"Organization","name":"Sabareesan IT Services","description":"IT services and solutions, run as a separate business with its own clients.","url":"https://rdecosolutions.org/sabareesan-it-services.html"}]},{"@type":"WebSite","@id":"https://rdecosolutions.org/#website","url":"https://rdecosolutions.org/","name":"RD Eco Solutions","publisher":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"WebPage","@id":"https://rdecosolutions.org/about.html#webpage","url":"https://rdecosolutions.org/about.html","name":"About Us, Infrastructure Company, TN | RD Eco Solutions","description":"Civil and environmental infrastructure company in Sirkazhi, supporting Tamil Nadu municipal projects from tender consultancy through to O&M.","isPartOf":{"@id":"https://rdecosolutions.org/#website"},"about":{"@id":"https://rdecosolutions.org/#organization"},"inLanguage":"en-IN"},{"@type":"BreadcrumbList","@id":"https://rdecosolutions.org/about.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rdecosolutions.org/"},{"@type":"ListItem","position":2,"name":"About","item":"https://rdecosolutions.org/about.html"}]}]}</script>
 </head>
-<body>
+<body class="pr">
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr">
   <div class="wrap hdr-in">
@@ -2337,8 +2443,49 @@ body.pr .pr-row__media svg{max-height:none}
 <section class="page-hero">
   <div class="wrap">
     <div class="crumb"><a href="index.html">Home</a> &rsaquo; About</div>
-    <h1>We work where the tender ends and the operating years begin.</h1>
-    <p class="lede">A civil and environmental infrastructure service company built around the realities of public sector delivery in Tamil Nadu.</p>
+    <div class="ph-grid"><div><h1><span class="pr-h1--soft">We work where the tender ends</span><span class="pr-h1--strong">and the operating years begin.</span></h1>
+      <p class="lede">A civil and environmental infrastructure service company built around the realities of public sector delivery in Tamil Nadu.</p></div><figure class="ph-art"><svg viewBox="0 0 560 340" class="dwg" role="img" aria-label="Process flow of a sewage treatment plant" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <marker id="ar2" markerWidth="7" markerHeight="7" refX="6" refY="2.4" orient="auto">
+    <path d="M0 0l6 2.4L0 4.8z" fill="currentColor"/>
+  </marker>
+</defs>
+<g class="d-line">
+  <rect x="34" y="128" width="74" height="76" rx="2"/>
+  <rect x="140" y="128" width="74" height="76" rx="2"/>
+  <rect x="246" y="112" width="96" height="108" rx="2"/>
+  <circle cx="422" cy="166" r="46"/>
+  <rect x="34" y="252" width="180" height="52" rx="2"/>
+</g>
+<g class="d-acc">
+  <path d="M246 112h96v22h-96z"/>
+  <path d="M148 190h58v6h-58zM40 190h58v6H40z"/>
+</g>
+<g class="d-line" opacity=".55">
+  <path d="M258 148h72M258 162h72M258 176h72M258 190h72"/>
+  <path d="M392 166h60M422 136v60"/>
+  <path d="M46 264h156M46 278h156M46 292h120"/>
+</g>
+<g class="d-flow">
+  <path d="M108 166h26" marker-end="url(#ar2)"/>
+  <path d="M214 166h26" marker-end="url(#ar2)"/>
+  <path d="M342 166h30" marker-end="url(#ar2)"/>
+  <path d="M468 166h44" marker-end="url(#ar2)"/>
+  <path d="M294 220v42H222" marker-end="url(#ar2)"/>
+  <path d="M124 252v-40" marker-end="url(#ar2)" opacity=".6"/>
+</g>
+<g class="d-t">
+  <text x="71" y="112" text-anchor="middle">SCREEN + GRIT</text>
+  <text x="177" y="112" text-anchor="middle">PRIMARY SETTLING</text>
+  <text x="294" y="98" text-anchor="middle">AERATION</text>
+  <text x="422" y="98" text-anchor="middle">SECONDARY CLARIFIER</text>
+  <text x="294" y="236" text-anchor="middle">MLSS 3000 to 4000 mg/l</text>
+  <text x="516" y="152" text-anchor="middle">TO</text>
+  <text x="516" y="166" text-anchor="middle">REUSE</text>
+  <text x="124" y="246" text-anchor="middle">SLUDGE DRYING BEDS</text>
+  <text x="252" y="284" text-anchor="start">RETURN ACTIVATED SLUDGE</text>
+</g>
+</svg><figcaption>Sewage treatment, process line</figcaption></figure></div>
   </div>
 </section>
 
@@ -2666,6 +2813,18 @@ body.pr .pr-row__media svg{max-height:none}
         <li>Sirkazhi, Mayiladuthurai District<br>Tamil Nadu, India</li>
         
       </ul></div>
+    </div>
+    <div class="ftr-about">
+      <h5>About RD Eco Solutions</h5>
+      <p>RD Eco Solutions is a civil and environmental infrastructure company based in
+      Sirkazhi, Mayiladuthurai District, Tamil Nadu, working with municipal
+      corporations, municipalities, town panchayats and water and sewerage boards across
+      Tamil Nadu. Eight divisions cover project consultancy and DPR preparation, operation
+      and maintenance of sewerage networks, pumping stations and treatment plants, civil
+      infrastructure execution, solid waste management and biomining, environmental
+      solutions, equipment and technical supply, manpower deployment, and survey and
+      investigation. Civil works and survey are delivered by Sabareesan Civil Constructions,
+      part of the same group.</p>
     </div>
     <div class="ftr-btm">
       <span>&copy; <span id="yr">2026</span> RD Eco Solutions</span>

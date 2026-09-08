@@ -2154,13 +2154,37 @@ body.pr .logo svg{background:#0B1A0E;border-radius:7px;padding:2px;
   box-sizing:content-box}
 body.pr .ftr .logo svg{background:transparent;padding:0}
 
-body.pr .drop-in{background:var(--p-white);border:1px solid var(--p-line);
-  border-radius:5px;box-shadow:none}
-body.pr .drop-in a{color:var(--p-ink-2)}
-body.pr .drop-in a:hover{background:var(--p-cream);color:var(--p-ink)}
-body.pr .drop-in em{color:var(--p-ink)}
-body.pr .drop-in b{color:var(--p-acc-d)}
-body.pr .drop-all{color:var(--p-acc-d)}
+/* The dropdown and the mobile panel were built for the dark header. On the
+   cream header their panels stayed dark while the text was restyled dark, so
+   the menu rendered black on black at 1.00:1 and was invisible. Both panels
+   are now light, with every colour inside them set explicitly rather than
+   inherited from the old dark stylesheet. */
+body.pr .drop{background:var(--p-white);border:1px solid var(--p-line);
+  box-shadow:0 24px 54px -28px rgba(13,13,13,.28)}
+body.pr .drop-in{background:var(--p-line)}
+body.pr .drop-in > a{background:var(--p-white)}
+body.pr .drop-in > a:hover{background:var(--p-cream)}
+body.pr .drop-in > a b{font-family:var(--p-serif);color:var(--p-ink-3)}
+body.pr .drop-in > a:hover b{color:var(--p-acc-d)}
+body.pr .drop-in > a em{color:var(--p-ink);font-weight:600}
+body.pr .drop-in > a span{color:var(--p-ink-2)}
+body.pr .drop-all{background:var(--p-cream);color:var(--p-acc-d);
+  border-top:1px solid var(--p-line)}
+body.pr .drop-all:hover{background:var(--p-sand)}
+body.pr .drop-t .chev{color:var(--p-ink-3);opacity:1}
+
+@media (max-width:1100px){
+  body.pr .nav{background:var(--p-white);border-bottom:1px solid var(--p-line);
+    box-shadow:0 24px 40px -28px rgba(13,13,13,.24)}
+  body.pr .nav a{color:var(--p-ink);border-bottom:1px solid var(--p-line)}
+  body.pr .nav a:hover,body.pr .nav a[aria-current="page"]{color:var(--p-acc-d)}
+  /* the row already has a divider, so the link inside it drops its own */
+  body.pr .has-drop{border-bottom:1px solid var(--p-line)}
+  body.pr .has-drop > a{border-bottom:0}
+  body.pr .nav > a:last-child{border-bottom:0}
+  body.pr .drop{background:var(--p-cream);border:0;box-shadow:none}
+  body.pr .drop-in > a,body.pr .drop-all{background:var(--p-cream)}
+}
 
 body.pr .ftr{background:var(--p-sand);color:var(--p-ink-2);
   border-top:1px solid var(--p-line-2);padding-top:76px}
